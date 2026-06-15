@@ -1,0 +1,2368 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An AI research toolkit for Claude Code + a team workflow for collaborating on shared papers.">
+      
+      
+      
+        <link rel="canonical" href="https://kaligi.github.io/kai-team-claude-docs/ARCHITECTURE/">
+      
+      
+        <link rel="prev" href="../terminal-101/">
+      
+      
+        <link rel="next" href="../maintainer-notes/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Architecture - kai-team-claude</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#architecture-how-this-repo-is-organised-and-how-it-ships" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="kai-team-claude" class="md-header__button md-logo" aria-label="kai-team-claude" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            kai-team-claude
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Architecture
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="kai-team-claude" class="md-nav__button md-logo" aria-label="kai-team-claude" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    kai-team-claude
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../updates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research foundations (any tool)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Research foundations (any tool)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../organizing-a-research-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizing a research project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What goes where (project structure)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../replication-packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Replication packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../choosing-your-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Choosing your setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start with Claude Code
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start with Claude Code
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-claude-code-thinks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Claude Code thinks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1 — The tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 1 — The tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../toolkit-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What the toolkit is
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../triggering-skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How skills are triggered
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install-toolkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install the Claude Code toolkit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What's inside (commands & skills)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to do a task (recipes)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../first-things-to-try/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First things to try
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2 — GitHub, Dropbox & Overleaf
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 2 — GitHub, Dropbox & Overleaf
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The ideas behind it
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manual-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The manual workflow (by hand)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3 — Working together
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 3 — Working together
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-collaboration-is-hard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why collaboration is hard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../co-author-quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Co-author quickstart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-walkthrough/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Illustrated setup walkthrough
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../per-project-onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set up your working clone
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../what-you-have-after-install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What you have after install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../co-author-handbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Daily workflow & recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practice-session/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A 15-minute practice run
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../co-author-onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paper-text-only collaborators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../common-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Common issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recommended setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New to any of this?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    New to any of this?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new-to-claude-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New to Claude Code?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new-to-overleaf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New to Overleaf?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../primer-git-and-claude-for-economists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git & Claude — plain-language primer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terminal-101/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminal in 10 minutes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For maintainers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    For maintainers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-two-layer-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The two-layer model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-three-distribution-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Three distribution mechanisms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-folder-layout-in-the-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Folder layout in the repo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Folder layout in the repo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top-level-skills-vs-pluginsbundleskills" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top-level skills/ vs plugins/&lt;bundle&gt;/skills/
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-where-things-live-on-a-co-authors-machine-after-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Where things live on a co-author's machine after install
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-activation-what-happens-in-a-new-claude-code-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Activation — what happens in a new Claude Code session
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-common-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Common workflows
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Common workflows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edit-a-skill-or-pipeline-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edit a skill or pipeline gate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-a-new-pipeline-eg-grants-papers-presentations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a new pipeline (e.g., grants, papers, presentations)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#share-with-a-new-co-author" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Share with a new co-author
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch-laptops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switch laptops
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-conventions-worth-keeping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Conventions worth keeping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-decisions-still-open-june-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Decisions still open (June 2026)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maintainer-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintainer notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../acknowledgements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Acknowledgements & sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-two-layer-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The two-layer model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-three-distribution-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Three distribution mechanisms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-folder-layout-in-the-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Folder layout in the repo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Folder layout in the repo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top-level-skills-vs-pluginsbundleskills" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top-level skills/ vs plugins/&lt;bundle&gt;/skills/
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-where-things-live-on-a-co-authors-machine-after-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Where things live on a co-author's machine after install
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-activation-what-happens-in-a-new-claude-code-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Activation — what happens in a new Claude Code session
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-common-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Common workflows
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Common workflows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edit-a-skill-or-pipeline-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edit a skill or pipeline gate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-a-new-pipeline-eg-grants-papers-presentations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a new pipeline (e.g., grants, papers, presentations)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#share-with-a-new-co-author" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Share with a new co-author
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch-laptops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switch laptops
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-conventions-worth-keeping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Conventions worth keeping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-decisions-still-open-june-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Decisions still open (June 2026)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="architecture-how-this-repo-is-organised-and-how-it-ships">Architecture — how this repo is organised and how it ships<a class="headerlink" href="#architecture-how-this-repo-is-organised-and-how-it-ships" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Audience: Kai, future-Kai, co-authors who clone this repo, and any Claude Code session reading the repo to orient itself.
+Last substantive revision: 2026-06 (staleness pass after the Sprint 1+2 hardening; plugin count, docs set, and workflow commands updated to match the tree).</p>
+</blockquote>
+<p>This doc explains <strong>what lives where</strong>, <strong>how things activate in a session</strong>, and <strong>how content is shared across machines and co-authors</strong>. If something here is out of date, it's the doc that's wrong, not the code — fix it.</p>
+<hr />
+<h2 id="1-the-two-layer-model">1. The two-layer model<a class="headerlink" href="#1-the-two-layer-model" title="Permanent link">&para;</a></h2>
+<p>Every workflow capability in this repo sits on one of two layers:</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Made of</th>
+<th>Portable?</th>
+<th>Co-author needs …</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Skills</strong> (design-time guidance)</td>
+<td>Pure markdown — SKILL.md, references/, templates/</td>
+<td>Yes — works in any Claude Code session, any OS, no runtime deps</td>
+<td>Nothing beyond Claude Code itself</td>
+</tr>
+<tr>
+<td><strong>Pipelines</strong> (skill + hard gates)</td>
+<td>A skill + Python scripts that enforce mechanical checks</td>
+<td>Files always portable; <strong>execution</strong> needs Python on the user's machine</td>
+<td>Python installed locally (Anaconda or equivalent)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Important:</strong> the skill is the load-bearing piece. Gate scripts are <em>enhancements</em> layered on top. If a co-author has the skill but no Python, the skill still produces good output — they just don't get the mechanical guardrails (lockdown audit, slide-count check, etc.). Skills never gate behind script execution.</p>
+<hr />
+<h2 id="2-three-distribution-mechanisms">2. Three distribution mechanisms<a class="headerlink" href="#2-three-distribution-mechanisms" title="Permanent link">&para;</a></h2>
+<p>We use all three, on purpose, for different jobs:</p>
+<table>
+<thead>
+<tr>
+<th>Mechanism</th>
+<th>What it syncs</th>
+<th>Direction</th>
+<th>Trigger</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>git</strong> (GitHub remote at <code>KaliGi/kai-team-claude</code>, private)</td>
+<td>Committed state of the repo</td>
+<td>Across people (you ↔ co-authors)</td>
+<td><code>git push</code> / <code>git pull</code>, manual</td>
+</tr>
+<tr>
+<td><strong>Dropbox</strong> (<code>~/Dropbox/GitHub/kai-team-claude/</code>)</td>
+<td>Entire working tree including uncommitted edits</td>
+<td>Across YOUR devices (laptop ↔ desktop ↔ phone)</td>
+<td>Continuous, automatic, background</td>
+</tr>
+<tr>
+<td><strong><code>install.sh</code></strong> / <code>install.ps1</code></td>
+<td>Repo → <code>~/.claude/</code> on a single machine</td>
+<td>Local, repo → user-level Claude config</td>
+<td>Run once after <code>git pull</code></td>
+</tr>
+</tbody>
+</table>
+<p>The three are independent. GitHub doesn't know or care about Dropbox; Dropbox doesn't know about git; <code>install.sh</code> doesn't know about either — it just copies files from a local repo clone.</p>
+<p>A future improvement (deferred): change <code>install.sh</code> to create junctions/symlinks instead of file copies. Junctions mean <code>~/.claude/skills/&lt;x&gt;/</code> and the team-repo working tree are the <em>same directory</em> at the OS level — edits in either location appear in both, eliminating the drift problem we hit in May 2026. Not urgent; doesn't change co-author UX.</p>
+<hr />
+<h2 id="3-folder-layout-in-the-repo">3. Folder layout in the repo<a class="headerlink" href="#3-folder-layout-in-the-repo" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>kai-team-claude/
+├── README.md                       co-author install guide (start here on a new machine)
+├── docs/
+│   ├── ARCHITECTURE.md             this file
+│   ├── INDEX.md                    GENERATED catalog of every command + skill (scripts/generate_index.py; never hand-edit)
+│   ├── recipes.md                  task-oriented &quot;I want to X&quot; recipes + decision tree
+│   ├── concepts.md                 the why-layer: ideas behind the conventions
+│   ├── primer-git-and-claude-for-economists.md  novice-first glossary + walkthroughs
+│   ├── co-author-handbook.md       role-based guide for humans working in shared projects
+│   ├── per-project-onboarding.md   day-1 procedure for a new paper/project (incl. multi-clone runbook)
+│   ├── what-you-have-after-install.md  post-install orientation
+│   ├── maintainer-notes.md         release / version conventions
+│   └── terminal-101.md             baseline for co-authors new to CLI
+│
+├── install/
+│   ├── install.sh                  Linux/macOS bulk install → ~/.claude/
+│   ├── install.ps1                 Windows equivalent
+│   ├── audit.sh                    detect drift between repo and ~/.claude/
+│   └── mcp-add-zotero.md           one-off MCP setup instructions
+│
+├── skills/                         &quot;always on&quot; — bulk-installed for everyone via install.sh
+│   ├── kai-writing/                writing in Kai&#39;s voice
+│   ├── tikz-figure/                TikZ diagram building + troubleshooting
+│   ├── real-data-figure/           publication-quality data figures (R/ggplot2)
+│   ├── adversarial-review/         hostile pre-ship review of any artefact
+│   ├── simulation-figure/          Monte Carlo + interactive method-breaking figures
+│   ├── scientific-writing-analysis/  Lebrun-style writing diagnostics
+│   └── qualitative-survey-coding/  LLM-coded survey variables with validation gate
+│
+├── agents/                         &quot;always on&quot; custom agents
+│   ├── bibliography-auditor.md
+│   ├── brainstormer.md             … (12 total)
+│   └── …
+│
+├── principles/                     core rules (9 files): academic writing, git +
+│                                   coding workflow, citation style, LaTeX packages,
+│                                   migration discipline, and
+│                                   project-structure-canonical.md (THE folder-layout spec)
+│
+├── scripts/                        repo maintenance (not installed to ~/.claude/)
+│   ├── generate_index.py           frontmatter → docs/INDEX.md generator
+│   └── release_check.sh            pre-push drift guard (INDEX diff, recipes token
+│                                   grep, canonical-mirror diff, opt-in harness)
+│
+├── templates/                      latex-preamble.tex, paper/appendix skeletons, …
+│   ├── 00_setup.do / .R / .py      replication setup scripts (multi-clone aware:
+│   │                               .data-in-parent marker, branch-aware output redirect)
+│   ├── replication_metadata.yaml   AEA replication-package schema
+│   └── tests/                      test_setup_templates.sh — 20-check harness for the setup trio
+│
+├── plugins/                        OPT-IN bundles — selectively installable
+│   ├── .claude-plugin/marketplace.json  declares all plugins below
+│   ├── project-workflow/           full project lifecycle: /bootstrap-project (day-1), /check-rules /new-sprint /plan-status /restructure-project, /housekeeping, /git-assistant, /sync-bib …
+│   ├── academic-workflow/          /academic, /review-paper(+light), /review-grant, /init-replication, /lit-review, bib + data-source tooling
+│   ├── r-research-workflow/        R analysis skills: /regression /descriptives /coef-plot /review-r /audit-reproducibility …
+│   ├── stata-research-workflow/    Stata equivalents: /review-stata /stata-replication
+│   ├── coord/                      cross-session coordination channel (single-user-multi-project; private folder + watcher)
+│   └── talks/                      research-presentation skill + intake agent + 2 Python gates
+│       ├── .claude-plugin/plugin.json   manifest
+│       ├── README.md
+│       ├── skills/
+│       │   └── research-presentation/   the skill (Phase 0–G workflow)
+│       ├── agents/
+│       │   └── intake-agent.md          Phase 0 paper-PDF intake
+│       ├── scripts/
+│       │   ├── lockdown_grep.py         numeric-token audit
+│       │   └── slide_count_check.py     Sargent rule check
+│       └── state/papers/_template/      schema scaffolding (for new papers)
+│
+└── .claude-plugin/
+    └── marketplace.json            top-level marketplace manifest
+</code></pre></div>
+<h3 id="top-level-skills-vs-pluginsbundleskills">Top-level <code>skills/</code> vs <code>plugins/&lt;bundle&gt;/skills/</code><a class="headerlink" href="#top-level-skills-vs-pluginsbundleskills" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Top-level <code>skills/</code></strong> = bulk-installed via <code>install.sh</code>. Everyone on the team gets all of these. Use this for items every teammate should have (basic writing skills, figure tools).</li>
+<li><strong><code>plugins/&lt;bundle&gt;/skills/</code></strong> = selectively installable via <code>/plugin install</code>. Use this for items where some teammates want them and others don't (specialised workflows, opinionated pipelines).</li>
+</ul>
+<p>Currently 7 skills live at top-level and 6 bundles live under <code>plugins/</code>. New workflow-specific bundles should be <strong>wrapped as plugins</strong> so co-authors can pick and choose; only universally wanted items go top-level. <code>docs/INDEX.md</code> is the generated catalog of everything installable — regenerate with <code>scripts/generate_index.py</code> whenever a skill or command is added or its description changes.</p>
+<hr />
+<h2 id="4-where-things-live-on-a-co-authors-machine-after-install">4. Where things live on a co-author's machine after install<a class="headerlink" href="#4-where-things-live-on-a-co-authors-machine-after-install" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>~/.claude/                          [USER-LEVEL Claude Code config]
+├── CLAUDE.md                       global user instructions
+├── CONTEXT.md                      reference material (folder layouts, conventions)
+├── skills/                         copied from team-repo skills/ by install.sh
+├── agents/                         copied from team-repo agents/
+├── commands/                       copied from team-repo commands/
+├── principles/                     copied from team-repo principles/
+├── templates/                      copied from team-repo templates/
+└── plugins/                        managed by Claude Code; selective install
+                                    (talks, coord, r/stata-research-workflow, …)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&lt;paper-repo&gt;/                       [PER-PAPER repo, e.g., ~/Dropbox/virality/]
+└── _presentations/state/           [PER-PAPER pipeline state — NOT in kai-team-claude]
+    ├── paper_extract.csv           lockdown CSV (every numeric claim)
+    ├── paper_extract_addendum_v*.csv  fix-pass extensions
+    ├── identification.md           named estimator + 10 hostile Q
+    ├── figure_inventory.md         use-as-is vs rebuild decisions
+    ├── defensive_appendix_priorities.md
+    ├── outline.md
+    └── venues/&lt;venue&gt;/
+        ├── deck.tex / .pdf
+        ├── adversarial_review_v*.md
+        └── lessons.md              post-talk debrief
+</code></pre></div>
+<p><strong>Confidentiality boundary:</strong>
+- ✅ Generic infrastructure (skills, agents, gates, templates) → <code>kai-team-claude/</code> (team-shared)
+- ❌ Paper-specific data (coefficients, deck.tex, reviews) → that paper's OWN repo (paper-author-shared)</p>
+<p>The team repo never contains unpublished paper-specific data. The boundary is enforced by <em>where files live</em>, not by access controls.</p>
+<hr />
+<h2 id="5-activation-what-happens-in-a-new-claude-code-session">5. Activation — what happens in a new Claude Code session<a class="headerlink" href="#5-activation-what-happens-in-a-new-claude-code-session" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>You open Claude Code (any working directory, VS Code or app)
+        ↓
+Claude Code reads ~/.claude/ at startup:
+  • Loads CLAUDE.md (global instructions, always in context)
+  • Indexes SKILL.md descriptions from ~/.claude/skills/* (metadata only — not full content)
+  • Registers ~/.claude/commands/*.md as available slash commands
+  • Registers ~/.claude/agents/*.md as invocable agents
+        ↓
+You type a natural-language request:
+  &quot;draft a 60-minute seminar talk on the virality paper&quot;
+        ↓
+Claude matches against skill descriptions, sees research-presentation triggers
+        ↓
+Claude reads the full SKILL.md (only now, on demand)
+        ↓
+SKILL.md points at:
+  • its plugin&#39;s scripts/ + agents/ via ${CLAUDE_PLUGIN_ROOT} (resolves to
+    the installed plugin folder on any machine)
+  • per-paper state convention: &lt;paper-repo&gt;/_presentations/state/
+        ↓
+Claude proceeds through Phase 0 → A → B → … → F
+        ↓
+At Phase F (pre-ship adversarial gate), Claude invokes:
+  &quot;&lt;python&gt;&quot; &quot;${CLAUDE_PLUGIN_ROOT}/scripts/lockdown_grep.py&quot; &lt;deck.tex&gt; &lt;csv&gt; …
+        ↓
+Gate exits 0/1 → Claude reads the report → loops fix-pass until clean
+</code></pre></div>
+<p>You don't "activate the pipeline." The skill triggers from natural language. Gates are invoked when the workflow reaches them. Slash commands are available the whole time (<code>/academic</code>, <code>/bootstrap-project</code>, etc.) and are entered with <code>/</code>.</p>
+<hr />
+<h2 id="6-common-workflows">6. Common workflows<a class="headerlink" href="#6-common-workflows" title="Permanent link">&para;</a></h2>
+<h3 id="edit-a-skill-or-pipeline-gate">Edit a skill or pipeline gate<a class="headerlink" href="#edit-a-skill-or-pipeline-gate" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/Dropbox/GitHub/kai-team-claude
+<span class="c1"># edit skills/&lt;name&gt;/SKILL.md  or  plugins/&lt;bundle&gt;/scripts/&lt;script&gt;.py</span>
+git<span class="w"> </span>diff<span class="w">                                 </span><span class="c1"># eyeball changes</span>
+git<span class="w"> </span>add<span class="w"> </span>skills/&lt;name&gt;/SKILL.md<span class="w">           </span><span class="c1"># explicit paths — never `git add -A`</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;skill X: ... (why)&quot;</span>
+bash<span class="w"> </span>scripts/release_check.sh<span class="w">            </span><span class="c1"># pre-push drift guard (must pass)</span>
+git<span class="w"> </span>push<span class="w">                                 </span><span class="c1"># propagate to GitHub for co-authors</span>
+
+<span class="c1"># Then sync the change into your live ~/.claude/</span>
+bash<span class="w"> </span>install/install.sh<span class="w">                  </span><span class="c1"># bulk re-copy (overwrites local edits with repo state)</span>
+</code></pre></div>
+<p>If you edited inside <code>~/.claude/skills/&lt;x&gt;/</code> instead of the repo (the drift trap), copy back to the repo before committing:
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>~/.claude/skills/&lt;x&gt;/.<span class="w"> </span>~/Dropbox/GitHub/kai-team-claude/skills/&lt;x&gt;/
+</code></pre></div></p>
+<h3 id="add-a-new-pipeline-eg-grants-papers-presentations">Add a new pipeline (e.g., grants, papers, presentations)<a class="headerlink" href="#add-a-new-pipeline-eg-grants-papers-presentations" title="Permanent link">&para;</a></h3>
+<p>Two patterns:</p>
+<p><strong>(a) Top-level folder</strong> — bulk-installed for everyone via <code>install.sh</code>. Good
+for items every teammate uses. No live example anymore: the last one
+(<code>talks-pipeline/</code>) was converted to a plugin in May 2026, and new pipelines
+should default to pattern (b).</p>
+<p><strong>(b) Plugin bundle</strong> (the default — matches all 6 current bundles):
+<div class="highlight"><pre><span></span><code>kai-team-claude/
+└── plugins/
+    └── grants/
+        ├── .claude-plugin/plugin.json
+        ├── skills/grant-writing/
+        ├── agents/grant-intake-agent.md
+        └── scripts/budget_check.py
+</code></pre></div>
+Add to <code>.claude-plugin/marketplace.json</code>. Co-authors install with <code>/plugin install grants@kai-team-claude</code>. Good for opinionated workflows not every teammate wants.</p>
+<h3 id="share-with-a-new-co-author">Share with a new co-author<a class="headerlink" href="#share-with-a-new-co-author" title="Permanent link">&para;</a></h3>
+<p>They run:
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/KaliGi/kai-team-claude.git<span class="w"> </span>~/Dropbox/GitHub/kai-team-claude
+<span class="nb">cd</span><span class="w"> </span>~/Dropbox/GitHub/kai-team-claude
+bash<span class="w"> </span>install/install.sh<span class="w">           </span><span class="c1"># macOS/Linux — or install.ps1 on Windows</span>
+</code></pre></div></p>
+<p>They now have all top-level skills/agents/principles/templates. Plugins are opt-in via <code>/plugin install</code> (the README's persona table says which bundles fit which role).</p>
+<p>If they have their own personal <code>~/.claude/skills/&lt;x&gt;/</code> that collides with a team skill, <code>install.sh</code> backs it up to <code>~/.claude/_backup_&lt;timestamp&gt;/</code> before overwriting. They recover the personal version if needed.</p>
+<h3 id="switch-laptops">Switch laptops<a class="headerlink" href="#switch-laptops" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># On new laptop, after Dropbox finishes syncing:</span>
+<span class="nb">cd</span><span class="w"> </span>~/Dropbox/GitHub/kai-team-claude
+git<span class="w"> </span>pull<span class="w">                                 </span><span class="c1"># in case anything was committed since</span>
+bash<span class="w"> </span>install/install.sh<span class="w">                  </span><span class="c1"># populates a fresh ~/.claude/</span>
+</code></pre></div>
+<p>The repo is the portability mechanism. No special "claude-portability" infrastructure needed.</p>
+<hr />
+<h2 id="7-conventions-worth-keeping">7. Conventions worth keeping<a class="headerlink" href="#7-conventions-worth-keeping" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Per-paper data never lands in this repo.</strong> Paper-specific lockdown CSVs, decks, reviews, lessons go in each paper's own repo at <code>&lt;paper-repo&gt;/_presentations/state/</code>. The team repo is generic infrastructure only.</li>
+<li><strong>Skills are markdown-only at heart.</strong> When a skill needs Python, the Python lives in <code>plugins/&lt;bundle&gt;/scripts/</code> and the skill's SKILL.md references it via <code>${CLAUDE_PLUGIN_ROOT}</code> — never a hardcoded install path. Skills themselves stay portable to Python-less machines.</li>
+<li><strong>Slash commands work without plugins.</strong> Anything in <code>~/.claude/commands/&lt;name&gt;.md</code> becomes a <code>/name</code> command. Plugins are needed only for <em>selective</em> distribution.</li>
+<li><strong>Don't auto-commit.</strong> Edits land in the working tree; you review with <code>git diff</code> before pushing. This catches the "paper-specific data accidentally in team repo" failure mode.</li>
+</ul>
+<hr />
+<h2 id="8-decisions-still-open-june-2026">8. Decisions still open (June 2026)<a class="headerlink" href="#8-decisions-still-open-june-2026" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Convert <code>install.sh</code> from copy-based to junction-based? Lower priority now: <code>scripts/release_check.sh</code> + the generated <code>docs/INDEX.md</code> catch the drift the junctions were meant to eliminate. Revisit only if drift recurs despite the guard.</li>
+<li>Wrap any other top-level skills as plugins (e.g., <code>tikz-figure</code>, <code>real-data-figure</code>, <code>adversarial-review</code>)? Only if a co-author has explicitly said they want a subset.</li>
+<li>Move <code>kai-writing</code> into a plugin too? Probably not — every co-author wants it; bulk install is right.</li>
+</ul>
+<p><strong>Resolved (May 2026):</strong>
+- ✅ <code>talks-pipeline</code> → wrapped as <code>plugins/talks/</code>. Co-authors install with <code>/plugin install talks@kai-team-claude</code>.</p>
+<p><strong>Resolved (June 2026):</strong>
+- ✅ Multi-clone pattern for shared Dropbox projects (LEADERLESS, 2026-06-13: project root is a shared container, NOT a git repo; every co-author in an equal nested <code>clone_&lt;XX&gt;/</code>; data singleton via <code>.data-in-parent</code>; lead-guard hook + kt.leademail retired). Spec: <code>principles/project-structure-canonical.md</code>; human runbook: <code>docs/per-project-onboarding.md</code> + <code>docs/co-author-handbook.md</code>.
+- ✅ Drift guard: <code>docs/INDEX.md</code> is generated, <code>scripts/release_check.sh</code> is the pre-push habit.
+- ✅ <code>plugins/coord/</code> — private cross-session message channel (single-user-multi-project), with optional Windows scheduled-task watcher for toast notifications.</p>
+<p>Defer the open decisions until there's a concrete reason. The current architecture is functional.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "content.code.copy", "search.highlight", "search.suggest", "search.share"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

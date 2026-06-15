@@ -1,0 +1,2508 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An AI research toolkit for Claude Code + a team workflow for collaborating on shared papers.">
+      
+      
+      
+        <link rel="canonical" href="https://kaligi.github.io/kai-team-claude-docs/install-toolkit/">
+      
+      
+        <link rel="prev" href="../triggering-skills/">
+      
+      
+        <link rel="next" href="../INDEX/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Install the Claude Code toolkit - kai-team-claude</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#install-the-claude-code-toolkit" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="kai-team-claude" class="md-header__button md-logo" aria-label="kai-team-claude" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            kai-team-claude
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Install the Claude Code toolkit
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="kai-team-claude" class="md-nav__button md-logo" aria-label="kai-team-claude" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    kai-team-claude
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../updates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research foundations (any tool)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Research foundations (any tool)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../organizing-a-research-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizing a research project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What goes where (project structure)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../replication-packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Replication packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../choosing-your-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Choosing your setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start with Claude Code
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start with Claude Code
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-claude-code-thinks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Claude Code thinks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1 — The tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 1 — The tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../toolkit-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What the toolkit is
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../triggering-skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How skills are triggered
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install the Claude Code toolkit
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install the Claude Code toolkit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-have-when-youre-done" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you'll have when you're done
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step-by-step install
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-step install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-0-things-you-need-before-starting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 0 — Things you need before starting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-install-nodejs-and-claude-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Install Node.js and Claude Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-sign-in-to-claude-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Sign in to Claude Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-install-zotero-and-the-zotero-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Install Zotero and the Zotero MCP server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-clone-this-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Clone this repo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-run-the-install-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Run the install script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-register-the-marketplace-then-install-the-plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — Register the marketplace, then install the plugins
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-test-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7 — Test it works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-get-added-to-per-project-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8 — Get added to per-project resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-later-the-canonical-ritual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updating later — THE canonical ritual
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removing-the-toolkit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Removing the toolkit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installed-heres-where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installed? Here's where to go next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What's inside (commands & skills)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to do a task (recipes)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../first-things-to-try/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First things to try
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2 — GitHub, Dropbox & Overleaf
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 2 — GitHub, Dropbox & Overleaf
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The ideas behind it
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manual-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The manual workflow (by hand)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3 — Working together
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 3 — Working together
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-collaboration-is-hard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why collaboration is hard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../co-author-quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Co-author quickstart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-walkthrough/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Illustrated setup walkthrough
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../per-project-onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set up your working clone
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../what-you-have-after-install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What you have after install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../co-author-handbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Daily workflow & recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practice-session/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A 15-minute practice run
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../co-author-onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paper-text-only collaborators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../common-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Common issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recommended setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New to any of this?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    New to any of this?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new-to-claude-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New to Claude Code?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new-to-overleaf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New to Overleaf?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../primer-git-and-claude-for-economists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git & Claude — plain-language primer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terminal-101/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminal in 10 minutes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For maintainers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    For maintainers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ARCHITECTURE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maintainer-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintainer notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../acknowledgements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Acknowledgements & sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-have-when-youre-done" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you'll have when you're done
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step-by-step install
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-step install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-0-things-you-need-before-starting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 0 — Things you need before starting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-install-nodejs-and-claude-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Install Node.js and Claude Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-sign-in-to-claude-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Sign in to Claude Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-install-zotero-and-the-zotero-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Install Zotero and the Zotero MCP server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-clone-this-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Clone this repo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-run-the-install-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Run the install script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-register-the-marketplace-then-install-the-plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — Register the marketplace, then install the plugins
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-test-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7 — Test it works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-get-added-to-per-project-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8 — Get added to per-project resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-later-the-canonical-ritual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updating later — THE canonical ritual
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removing-the-toolkit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Removing the toolkit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installed-heres-where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installed? Here's where to go next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="install-the-claude-code-toolkit">Install the Claude Code toolkit<a class="headerlink" href="#install-the-claude-code-toolkit" title="Permanent link">&para;</a></h1>
+<p><strong>Why bother.</strong> This is what turns Claude Code from a generic assistant into
+one that knows economics-paper conventions — drafting in your voice, referee
+reports, figures from real data, citation hygiene. If that payoff isn't worth
+a one-time setup to you yet, skip it; the collaboration workflow works without
+it. (New to what "skills", "plugins", and "the marketplace" mean? Read
+<a href="../toolkit-overview/">what the toolkit is</a> first — two minutes.)</p>
+<blockquote>
+<p>This is the <strong>optional</strong> toolkit install: Claude Code + the Zotero
+bridge + the plugin marketplace, so you get the writing helpers, review
+pipelines, and figure tools. If you only want to work on a shared paper
+(git + your stats software), you do <strong>not</strong> need this — see the
+<a href="../co-author-quickstart/">co-author quickstart</a> instead.</p>
+<p>Assumes no command-line experience: every step is copy-paste. Stuck?
+Ask whoever set you up, or open an issue on the repo, with the exact error
+text + the step number.</p>
+</blockquote>
+<h2 id="what-youll-have-when-youre-done">What you'll have when you're done<a class="headerlink" href="#what-youll-have-when-youre-done" title="Permanent link">&para;</a></h2>
+<p>Once setup is finished, in any terminal you can type <code>claude</code> to start a Claude Code
+session. Inside that session you can:</p>
+<ul>
+<li>Type <code>/academic</code> to launch a multi-agent review of a paper or chapter</li>
+<li>Type <code>/review-paper</code> to get a 6-agent referee report on a draft</li>
+<li>Type <code>/review-paper-light</code> for a fast 2-agent contribution-and-identification check</li>
+<li>Type <code>/bootstrap-project</code> on day 1 of a new project to scaffold a <code>CLAUDE.md</code> and <code>working/</code> folder</li>
+<li>Ask Claude to "draft this paragraph in Kai's style" → the <code>kai-writing</code> skill kicks in</li>
+<li>Ask Claude to search Zotero for a paper, fetch the BibTeX, and add it to the project's bib file</li>
+<li>Ask Claude to draft a TikZ diagram, build a real-data figure, or design a seminar talk</li>
+<li>Ask Claude to help turn open-ended survey answers into validated variables → the <code>qualitative-survey-coding</code> skill kicks in</li>
+</ul>
+<p>You'll also have access to the project's shared folders (Dropbox, GitHub, Overleaf, Zotero
+group library) once those per-project invitations are sent.</p>
+<p>The toolkit covers the whole research pipeline — each stage has its tools
+(every name below is in <a href="../INDEX/">the toolkit index</a>; the chains are in
+<a href="../recipes/">recipes</a>):</p>
+<pre class="mermaid"><code>flowchart LR
+    A["Start project&lt;br/&gt;/bootstrap-project"] --&gt; B["Get data&lt;br/&gt;data-catalog"]
+    B --&gt; C["Analyze&lt;br/&gt;/data-analysis &amp;#183; /stata-replication"]
+    C --&gt; D["Figures &amp; tables&lt;br/&gt;real-data-figure &amp;#183; /coef-plot&lt;br/&gt;/build-fragment-table"]
+    D --&gt; E["Write&lt;br/&gt;kai-writing &amp;#183; /academic"]
+    E --&gt; F["Pre-submission&lt;br/&gt;/review-paper-light &amp;#8594; /review-paper&lt;br/&gt;bib-audit &amp;#183; audit-reproducibility"]
+    F --&gt; G["Replication package&lt;br/&gt;init-replication &amp;#183; /audit-exhibits"]
+    E -.-&gt; H["Talks&lt;br/&gt;research-presentation"]
+    E -.-&gt; I["Grants&lt;br/&gt;/review-grant"]</code></pre>
+<hr />
+<h2 id="step-by-step-install">Step-by-step install<a class="headerlink" href="#step-by-step-install" title="Permanent link">&para;</a></h2>
+<p>Budget 60–90 minutes the first time. You only do it once per laptop.</p>
+<h3 id="step-0-things-you-need-before-starting">Step 0 — Things you need before starting<a class="headerlink" href="#step-0-things-you-need-before-starting" title="Permanent link">&para;</a></h3>
+<p><strong>A terminal.</strong> This is just a window where you type commands.
+- <strong>Windows</strong>: press <code>Win</code> key, type "Terminal", open the app called "Terminal" (or
+  "Windows Terminal"). It opens in PowerShell by default — that's what we'll use.
+- <strong>macOS</strong>: press <code>Cmd+Space</code>, type "Terminal", press Enter.
+- <strong>Linux</strong>: you already know.</p>
+<p>The three lines above are all you need to <em>open</em> a terminal — you don't need
+to know the difference between "Terminal" and "PowerShell"; either is fine.
+If the command line is genuinely new and you'd like a gentle 10-minute tour of
+the handful of commands you'll see (<code>cd</code>, <code>ls</code>, <code>pwd</code>, pasting safely, reading
+an error), <a href="../terminal-101/">terminal in 10 minutes</a> is there — optional, but
+it takes the nerves out of every step below.</p>
+<p><strong>About admin / root permissions.</strong> The install does <strong>not</strong> require admin / root
+privileges as a whole. The only step that <em>might</em> prompt for it is <code>npm install -g</code>
+on macOS/Linux, and Step 1 below tells you how to handle that. On Windows, leave
+"Add to PATH" ticked in the Node installer and pick "Install for me only" (not
+"all users") — that avoids any admin prompt.</p>
+<p><strong>An Anthropic account with Claude.ai access.</strong> Sign up at <a href="https://claude.ai/">https://claude.ai/</a>.
+The Pro plan (currently around 20 USD/month) is enough for normal academic use; the Max
+plan if you'll run many long sessions. If your team has a shared plan, ask whoever
+manages it about being added instead of paying personally.</p>
+<p><strong>Python 3</strong> (only needed for a couple of plugin hooks, not Claude Code itself).
+Most macOS/Linux machines already have it; on Windows, install from
+<a href="https://www.python.org/">https://www.python.org/</a> (tick "Add to PATH") or via Anaconda. Check with
+<code>python3 --version</code> (or <code>python --version</code>). Any recent 3.x is fine.</p>
+<p><strong>A GitHub account, and someone must have invited your GitHub username to the
+repository.</strong> Whoever set up your team's access does this — it doesn't have to
+be any particular person. Confirm you've accepted the invite before Step 4;
+without it, Step 4 fails with "repository not found".</p>
+<p><strong>Git itself.</strong> Windows: install <em>Git for Windows</em> from <a href="https://git-scm.com">https://git-scm.com</a>
+(accept all defaults — this also gives you "Git Bash", a terminal where every
+command in our docs works). macOS: open Terminal, type <code>git --version</code>; if a
+pop-up offers to install developer tools, click Install. Without this, Step 4
+fails with "<code>git</code> is not recognized".</p>
+<p><strong>(Optional) The GitHub CLI</strong> for easier GitHub auth. Install from <a href="https://cli.github.com">https://cli.github.com</a>.
+Then run <code>gh auth login</code> once and HTTPS clones won't ask for a password. Skip this if you
+already use GitHub Desktop or have an SSH key set up.</p>
+<hr />
+<h3 id="step-1-install-nodejs-and-claude-code">Step 1 — Install Node.js and Claude Code<a class="headerlink" href="#step-1-install-nodejs-and-claude-code" title="Permanent link">&para;</a></h3>
+<p>Claude Code is the command-line tool from Anthropic that everything else runs on top of.
+It needs Node.js.</p>
+<ol>
+<li>Open <a href="https://nodejs.org/">https://nodejs.org/</a> and click the <strong>"LTS"</strong> download button (currently 20.x or
+   22.x — either works). Run the installer. <strong>On Windows, leave "Add to PATH" ticked.</strong></li>
+<li>Close and reopen your terminal so it sees the new Node.</li>
+<li>Verify Node is installed:
+   <div class="highlight"><pre><span></span><code>node --version
+</code></pre></div>
+   Should print something like <code>v20.18.0</code>.</li>
+<li>Install Claude Code:
+   <div class="highlight"><pre><span></span><code>npm install -g @anthropic-ai/claude-code
+</code></pre></div></li>
+<li><strong>macOS / Linux</strong>: if you see <code>EACCES</code> (permission denied), either rerun with <code>sudo</code>
+     (<code>sudo npm install -g @anthropic-ai/claude-code</code>) OR follow the npm prefix
+     instructions at <a href="https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally">https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally</a>.</li>
+<li><strong>Windows</strong>: should just work; if you see "is not recognized", close and reopen the
+     terminal so Windows picks up the new PATH.</li>
+<li>Verify:
+   <div class="highlight"><pre><span></span><code>claude --version
+</code></pre></div></li>
+</ol>
+<hr />
+<h3 id="step-2-sign-in-to-claude-code">Step 2 — Sign in to Claude Code<a class="headerlink" href="#step-2-sign-in-to-claude-code" title="Permanent link">&para;</a></h3>
+<ol>
+<li>In the terminal, type <code>claude</code> and press Enter.</li>
+<li>The first time, it will ask you to sign in. <strong>A browser window will pop open.</strong> Sign in
+   with the same Anthropic account you used in Step 0. (If you're on a remote machine
+   without a browser, copy the URL it prints and open it on your laptop.)</li>
+<li>After the browser shows "success", come back to the terminal — it should say you're
+   signed in.</li>
+<li>Type <code>/quit</code> and press Enter to exit. We'll come back later.</li>
+</ol>
+<hr />
+<h3 id="step-3-install-zotero-and-the-zotero-mcp-server">Step 3 — Install Zotero and the Zotero MCP server<a class="headerlink" href="#step-3-install-zotero-and-the-zotero-mcp-server" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Most people should skip this on the first pass.</strong> Zotero powers citation
+search and bib Path 3 — nothing else. If you're new, or you mainly run
+Stata/R, or you just want to get going: <strong>skip to Step 4 now</strong> and come back
+only if/when you want Zotero-driven citations. (It's also the step most
+likely to blow the time budget — 20-40 min — and the only one that sends you
+to an external page.)</p>
+</blockquote>
+<p>Most of our workflows use Zotero (for managing references) and a small bridge program
+called an <strong>MCP server</strong> ("MCP" stands for Model Context Protocol — it's just the
+standard for letting Claude Code talk to outside services). Step-by-step instructions
+with screenshots-worth-of-detail are in
+<a href="https://github.com/KaliGi/kai-team-claude/blob/main/install/mcp-add-zotero.md"><code>install/mcp-add-zotero.md</code></a>.</p>
+<p><strong>Read that file in full and follow it before moving on.</strong> It covers:</p>
+<ul>
+<li>Installing the Zotero desktop app</li>
+<li>Generating a Zotero API key (with the exact UI labels)</li>
+<li>Finding your numeric Zotero user ID</li>
+<li>Installing <code>uv</code> (a Python package manager — needed because the MCP server is Python)</li>
+<li>Installing the MCP server itself</li>
+<li>Registering it with Claude Code</li>
+<li>Testing it works</li>
+</ul>
+<p>When you are invited to a project's Zotero <strong>group library</strong>, you'll switch to it
+inside a Claude Code session. That part is also covered in the linked file.</p>
+<hr />
+<h3 id="step-4-clone-this-repo">Step 4 — Clone this repo<a class="headerlink" href="#step-4-clone-this-repo" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Make sure you have been invited to <a href="https://github.com/KaliGi/kai-team-claude">https://github.com/KaliGi/kai-team-claude</a>.
+   Check your email for the invitation, click the link, and accept.</li>
+<li>Pick a place on your computer to keep the repo. Anywhere works — common choices are
+   <code>~/code/</code>, <code>~/repositories/</code>, or a dedicated <code>Dropbox/github/</code> folder if you already
+   keep cloned repos there. Cloning into a cloud-synced folder is fine for low-write
+   repos like this one (where you mostly <code>git pull</code> rather than make many local commits);
+   for very active development repos a non-synced folder is slightly safer.</li>
+<li>In the terminal, navigate to that location and clone:
+   <div class="highlight"><pre><span></span><code>git clone https://github.com/KaliGi/kai-team-claude.git
+cd kai-team-claude
+</code></pre></div></li>
+<li>If git asks for a username and password: the simplest beginner path is to
+     install <strong>GitHub Desktop</strong> (<a href="https://desktop.github.com">https://desktop.github.com</a>) and sign in once —
+     git in the terminal then reuses its login and never asks again.</li>
+<li>Advanced alternative: a fine-grained <strong>Personal Access Token</strong> (not your GitHub
+     password — GitHub disabled passwords for git over HTTPS in 2021). At
+     <a href="https://github.com/settings/tokens?type=beta">https://github.com/settings/tokens?type=beta</a> choose "Only select
+     repositories" → kai-team-claude → Permissions → Contents: Read and write.
+     When you paste it at the password prompt, <strong>nothing appears on screen — that's
+     normal</strong>; press Enter.</li>
+<li>Or run <code>gh auth login</code> once (if you installed the GitHub CLI in Step 0).</li>
+<li>Confirm you're inside the cloned folder:
+   <div class="highlight"><pre><span></span><code>pwd
+</code></pre></div>
+   The output should end in <code>kai-team-claude</code>. <strong>Stay in this folder for Step 5.</strong></li>
+</ol>
+<hr />
+<h3 id="step-5-run-the-install-script">Step 5 — Run the install script<a class="headerlink" href="#step-5-run-the-install-script" title="Permanent link">&para;</a></h3>
+<p>This copies the skills, agents, principles, templates, and docs from the repo into
+<code>~/.claude/</code> (the folder Claude Code reads from on your laptop). If you already
+have files there, the script backs them up first to <code>~/.claude/_backup_&lt;timestamp&gt;/</code>
+and then replaces them — nothing is lost.</p>
+<p><strong>Note:</strong> slash commands (<code>/academic</code>, <code>/review-paper</code>, <code>/bootstrap-project</code>,
+<code>/sync-bib</code>, etc.) are NOT installed by this script. They come from plugins —
+see Step 6 below.</p>
+<p><strong>Make sure your terminal is still in the <code>kai-team-claude</code> folder</strong> (Step 4.4 above).</p>
+<p><strong>Windows (PowerShell):</strong>
+<div class="highlight"><pre><span></span><code><span class="n">powershell</span> <span class="n">-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="o">-File</span> <span class="p">.\</span><span class="n">install</span><span class="p">\</span><span class="n">install</span><span class="p">.</span><span class="n">ps1</span>
+</code></pre></div>
+- If PowerShell complains "scripts is disabled on this system", paste this exact line
+  with the <code>-ExecutionPolicy Bypass</code> flag — it's the workaround.
+- The <code>\</code> (backslash) in <code>.\install\install.ps1</code> is correct on Windows.</p>
+<p><strong>macOS / Linux:</strong>
+<div class="highlight"><pre><span></span><code>bash<span class="w"> </span>install/install.sh
+</code></pre></div></p>
+<p>You should see "Done." at the end. If anything went wrong, the script prints the error
+and exits — copy the error and open an issue on the repo (or ask whoever set you up).</p>
+<hr />
+<h3 id="step-6-register-the-marketplace-then-install-the-plugins">Step 6 — Register the marketplace, then install the plugins<a class="headerlink" href="#step-6-register-the-marketplace-then-install-the-plugins" title="Permanent link">&para;</a></h3>
+<p>Slash commands ship via Claude Code's plugin marketplace. One-time install per laptop.
+These are built-in CLI commands — pasting them costs (almost) no tokens. Paste them
+exactly; don't describe to Claude what you want it to install:</p>
+<ol>
+<li><strong>Close the terminal window completely</strong>, then open a fresh one.</li>
+<li>Type <code>claude</code> and press Enter, wait for the prompt.</li>
+<li><strong>Register the marketplace first</strong> (without this, every install below fails
+   with "marketplace not found"). Point it at the repo you cloned in Step 4:
+   <div class="highlight"><pre><span></span><code>/plugin marketplace add ~/kai-team-claude
+</code></pre></div>
+   (Adjust the path if you cloned somewhere else. Alternative if you prefer
+   pulling straight from GitHub: <code>/plugin marketplace add KaliGi/kai-team-claude</code>
+   — requires your GitHub account to have access to the repo.)</li>
+<li>Install the plugins you need (each line is a separate command — type each,
+   press Enter):</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Plugin</th>
+<th>Who needs it</th>
+<th>Install command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>project-workflow</td>
+<td><strong>Everyone</strong> — project setup, bibliography, folder hygiene, git help</td>
+<td><code>/plugin install project-workflow@kai-team-claude</code></td>
+</tr>
+<tr>
+<td>academic-workflow</td>
+<td><strong>Everyone writing or reviewing papers</strong> — drafting, review pipelines, references, data sources</td>
+<td><code>/plugin install academic-workflow@kai-team-claude</code></td>
+</tr>
+<tr>
+<td>r-research-workflow</td>
+<td>Anyone running R analyses — regressions, tables, figures, code review</td>
+<td><code>/plugin install r-research-workflow@kai-team-claude</code></td>
+</tr>
+<tr>
+<td>stata-research-workflow</td>
+<td>Anyone running Stata — replication scaffolds, esttab tables, code review</td>
+<td><code>/plugin install stata-research-workflow@kai-team-claude</code></td>
+</tr>
+<tr>
+<td>talks</td>
+<td>Only if you give research presentations</td>
+<td><code>/plugin install talks@kai-team-claude</code></td>
+</tr>
+<tr>
+<td>coord</td>
+<td>Optional, advanced: coordinate YOUR OWN multiple Claude sessions across projects. Never shares data between users.</td>
+<td><code>/plugin install coord@kai-team-claude</code></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Restart Claude Code one more time so the plugin registry reloads.</li>
+</ol>
+<p><strong>Updating later:</strong> see the canonical 4-step ritual in the
+"Updating later" section below — don't improvise partial updates.</p>
+<h3 id="step-7-test-it-works">Step 7 — Test it works<a class="headerlink" href="#step-7-test-it-works" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Start Claude Code: <code>claude</code></li>
+<li>Type <code>/academic</code> and press Enter — you should see the academic-writing orchestrator
+   command load. Type <code>/quit</code> to exit.</li>
+<li>Try <code>/bootstrap-project</code> next — it should also load.</li>
+</ol>
+<p>If <code>/academic</code> or <code>/bootstrap-project</code> doesn't appear, check the plugin install:</p>
+<ul>
+<li><strong>Windows (PowerShell):</strong> <code>Get-Content $env:USERPROFILE\.claude\settings.json | Select-String enabledPlugins -Context 0,10</code></li>
+<li><strong>macOS / Linux:</strong> <code>grep -A 10 enabledPlugins ~/.claude/settings.json</code></li>
+</ul>
+<p>You should see <code>project-workflow@kai-team-claude</code> and <code>academic-workflow@kai-team-claude</code>
+in the list. If not, re-run Step 6.</p>
+<p><strong>If you have stale <code>bootstrap-project@kai-team-claude</code> or <code>research-pipeline@kai-team-claude</code>
+entries</strong> (those plugins were merged into <code>project-workflow</code> in May 2026 and removed
+from the marketplace), uninstall them:
+<div class="highlight"><pre><span></span><code>/plugin uninstall bootstrap-project@kai-team-claude
+/plugin uninstall research-pipeline@kai-team-claude
+</code></pre></div></p>
+<p><strong>Read what you now have.</strong> After steps 5-7, your toolkit includes a dozen
+skills, several slash commands, and four principle docs. The one-page reference
+is at <a href="../what-you-have-after-install/"><code>what-you-have-after-install.md</code></a>
+— scan it once so you know what to reach for when.</p>
+<hr />
+<h3 id="step-8-get-added-to-per-project-resources">Step 8 — Get added to per-project resources<a class="headerlink" href="#step-8-get-added-to-per-project-resources" title="Permanent link">&para;</a></h3>
+<p>This is per-project, not per-laptop. For each project, whoever runs it will
+invite you separately to:</p>
+<ul>
+<li>A <strong>Dropbox folder</strong> (the project working directory — papers, code, data, working files)</li>
+<li>A <strong>GitHub repository</strong> (the LaTeX source, bib file, and figures)</li>
+<li>An <strong>Overleaf project</strong> (only if you'll edit there directly; many predocs skip this and
+  let the Overleaf admin sync between GitHub and Overleaf — only the Overleaf project owner can set up that integration)</li>
+<li>A <strong>Zotero group library</strong> (the project's shared references)</li>
+</ul>
+<p>Send whoever manages the project the addresses you used for each service so they can invite the right account.</p>
+<hr />
+<h2 id="updating-later-the-canonical-ritual">Updating later — THE canonical ritual<a class="headerlink" href="#updating-later-the-canonical-ritual" title="Permanent link">&para;</a></h2>
+<p>This is the ONE place the update procedure is defined; other docs link here.
+The toolkit has two tiers, so updating has exactly four steps — the first two
+refresh the <code>~/.claude/</code> tier (skills, agents, principles), the third refreshes
+the plugin tier (slash commands), the fourth makes Claude Code reload both:</p>
+<ol>
+<li>Pull the repo. Terminal:
+   <div class="highlight"><pre><span></span><code>git -C ~/kai-team-claude pull
+</code></pre></div>
+   (Adjust the path if you cloned elsewhere.)</li>
+<li>Re-run the install script. Terminal:</li>
+<li><strong>Windows (PowerShell):</strong> <code>powershell -ExecutionPolicy Bypass -File .\install\install.ps1</code></li>
+<li><strong>macOS / Linux:</strong> <code>bash install/install.sh</code></li>
+<li>Refresh the plugins. Inside Claude Code:
+   <div class="highlight"><pre><span></span><code>/plugin marketplace update kai-team-claude
+</code></pre></div></li>
+<li>Restart Claude Code (close the session, start a new one).</li>
+</ol>
+<p><em>Why two tiers?</em> The install script copies files into <code>~/.claude/</code> directly;
+plugins are managed by Claude Code's own registry — neither mechanism updates
+the other, so both steps are needed. If a plugin still looks stale after step 3,
+see Troubleshooting ("plugin seems stale").</p>
+<p>The install script uses <strong>per-item overlay</strong> — it replaces just the items the repo
+contains, leaves any personal items in <code>~/.claude/</code> alone, and backs up the
+previous version of each item it touches to <code>~/.claude/_backup_&lt;timestamp&gt;/</code>.</p>
+<p><strong>Want to preview what the install would change before running it?</strong> Run the audit
+script — it lists what's in your <code>~/.claude/</code> vs the repo without making changes:</p>
+<div class="highlight"><pre><span></span><code>bash install/audit.sh
+</code></pre></div>
+<p>It shows three groups: items in both (would be replaced), repo-only items (would be
+added), and local-only items (would be left alone). Safe to run anytime.</p>
+<hr />
+<h2 id="removing-the-toolkit">Removing the toolkit<a class="headerlink" href="#removing-the-toolkit" title="Permanent link">&para;</a></h2>
+<p>Leaving the team or cleaning a machine:</p>
+<ol>
+<li>Inside Claude Code: <code>/plugin uninstall &lt;name&gt;@kai-team-claude</code> for each
+   installed plugin (list them with <code>/plugin</code>).</li>
+<li>Remove the Zotero bridge if you added it: <code>claude mcp remove zotero</code>.</li>
+<li>Delete the items the install script placed in <code>~/.claude/</code>
+   (<code>skills/</code>, <code>agents/</code>, <code>principles/</code>, <code>templates/</code>, <code>docs/</code> — run
+   <code>bash install/audit.sh</code> first to see exactly what's repo-managed vs
+   yours; backups live in <code>~/.claude/_backup_&lt;timestamp&gt;/</code>).</li>
+<li>Delete your clone of this repo, and revoke the Zotero API key +
+   GitHub access token in the respective web UIs.</li>
+</ol>
+<hr />
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<p><strong>"command not found: claude"</strong> — Node.js install probably didn't add npm's global folder
+to your PATH.
+- <strong>Windows</strong>: close and reopen the terminal so it picks up the new PATH; if still
+  broken, check that <code>node --version</code> works first.
+- <strong>macOS / Linux</strong>: run <code>npm config get prefix</code> to find where npm puts global packages
+  (e.g., <code>/usr/local</code>). Then add <code>export PATH="$(npm config get prefix)/bin:$PATH"</code> to
+  your shell profile (<code>~/.zshrc</code> on modern macOS, <code>~/.bashrc</code> on Linux), close the
+  terminal, reopen.</p>
+<p><strong>"command not found: uvx" / "uv"</strong> — <code>uv</code> adds itself to PATH only in newly-opened
+terminals after install. Open a new terminal and try again.</p>
+<p><strong>"npm install -g" fails with EACCES (macOS / Linux)</strong> — see Step 1.4 above.</p>
+<p><strong>A plugin seems stale after <code>/plugin marketplace update</code></strong> — the clean refresh
+is uninstall + reinstall: <code>/plugin uninstall &lt;name&gt;@kai-team-claude</code> then
+<code>/plugin install &lt;name&gt;@kai-team-claude</code>, then restart. (Only needed when the
+marketplace update didn't propagate; not part of the normal ritual.)</p>
+<p><strong><code>/academic</code> doesn't appear in Claude Code</strong> — the plugin isn't installed or enabled
+(slash commands ship via plugins, NOT via the install script). Inside Claude Code run
+<code>/plugin</code>, confirm <code>academic-workflow@kai-team-claude</code> is listed and enabled; if not,
+redo Step 6 (marketplace add, then install), then restart Claude Code.</p>
+<p><strong>Skills fire but the principles file is missing</strong> — agents look up
+<code>~/.claude/principles/academic-writing.md</code>. If that path doesn't exist on your machine,
+the install script didn't copy <code>principles/</code> correctly. Re-run the install script.</p>
+<p><strong>Zotero MCP errors out</strong> — the Zotero desktop app must be running for the MCP server
+to talk to it. Open Zotero and try again.</p>
+<p><strong><code>git clone</code> says "repository not found"</strong> — you have not been invited to the
+repository yet, or you accepted the invite with a different account. Ask whoever
+set up your access to (re-)invite the GitHub username you're cloning with.</p>
+<p><strong><code>uv</code> install on Windows blocked by IT policy</strong> — the <code>irm | iex</code> one-liner can be
+blocked. Download the installer manually from <a href="https://github.com/astral-sh/uv/releases">https://github.com/astral-sh/uv/releases</a>
+and run the <code>.msi</code> file.</p>
+<p><strong>Anything else</strong> — open an Issue on this repo (<a href="https://github.com/KaliGi/kai-team-claude/issues">https://github.com/KaliGi/kai-team-claude/issues</a>)
+or ask whoever set you up. Include the exact error text and what step you were on.</p>
+<hr />
+<h2 id="installed-heres-where-to-go-next">Installed? Here's where to go next<a class="headerlink" href="#installed-heres-where-to-go-next" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Brand new to the toolkit?</strong> → <a href="../toolkit-overview/">What the toolkit is</a>,
+  then <a href="../first-things-to-try/">First things to try</a> for a quick win.</li>
+<li><strong>Want the full catalogue?</strong> → <a href="../INDEX/">What's inside</a> ·
+  <a href="../recipes/">How to do a task (recipes)</a>.</li>
+<li><strong>Here to work on a shared paper?</strong> → head to <strong>Part 2</strong>:
+  <a href="../co-author-quickstart/">the co-author quickstart</a>.</li>
+<li>Or go back to the <a href="../">Home page</a> and pick a part.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "content.code.copy", "search.highlight", "search.suggest", "search.share"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

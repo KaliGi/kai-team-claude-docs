@@ -1,0 +1,2711 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An AI research toolkit for Claude Code + a team workflow for collaborating on shared papers.">
+      
+      
+      
+        <link rel="canonical" href="https://kaligi.github.io/kai-team-claude-docs/co-author-handbook/">
+      
+      
+        <link rel="prev" href="../what-you-have-after-install/">
+      
+      
+        <link rel="next" href="../practice-session/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Daily workflow & recovery - kai-team-claude</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#co-author-handbook" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="kai-team-claude" class="md-header__button md-logo" aria-label="kai-team-claude" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            kai-team-claude
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Daily workflow & recovery
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="kai-team-claude" class="md-nav__button md-logo" aria-label="kai-team-claude" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    kai-team-claude
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../updates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research foundations (any tool)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Research foundations (any tool)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../organizing-a-research-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizing a research project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What goes where (project structure)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../replication-packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Replication packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../choosing-your-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Choosing your setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start with Claude Code
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start with Claude Code
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-claude-code-thinks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Claude Code thinks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1 — The tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 1 — The tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../toolkit-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What the toolkit is
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../triggering-skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How skills are triggered
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install-toolkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install the Claude Code toolkit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What's inside (commands & skills)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to do a task (recipes)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../first-things-to-try/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First things to try
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2 — GitHub, Dropbox & Overleaf
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 2 — GitHub, Dropbox & Overleaf
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The ideas behind it
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manual-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The manual workflow (by hand)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3 — Working together
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 3 — Working together
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-collaboration-is-hard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why collaboration is hard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../co-author-quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Co-author quickstart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-walkthrough/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Illustrated setup walkthrough
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../per-project-onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set up your working clone
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../what-you-have-after-install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What you have after install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Daily workflow & recovery
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Daily workflow & recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practice-session/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A 15-minute practice run
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../co-author-onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paper-text-only collaborators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../common-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Common issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recommended setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New to any of this?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    New to any of this?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new-to-claude-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New to Claude Code?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new-to-overleaf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New to Overleaf?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../primer-git-and-claude-for-economists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git & Claude — plain-language primer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terminal-101/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminal in 10 minutes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For maintainers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    For maintainers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ARCHITECTURE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maintainer-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintainer notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../acknowledgements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Acknowledgements & sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="co-author-handbook">Co-author handbook<a class="headerlink" href="#co-author-handbook" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Audience: anyone working on a kai-team-claude project — from co-authors who never touch the command line to those writing every line of code.</p>
+<p>This handbook is your day-to-day reference once you're set up. If you're brand new, start with <a href="../why-collaboration-is-hard/">why collaboration is hard</a> and the <a href="../co-author-quickstart/">quickstart</a>, then come back here. Read Part 1 once (10 minutes); reference the rest as you encounter situations.</p>
+<p>Works for three workflow styles: pure terminal (no AI), Claude Code, Codex. Tool-specific bits are flagged.</p>
+<p>Term you don't know? The <a href="../primer-git-and-claude-for-economists/">primer</a> defines them all in economist language; the <a href="../concepts/">concepts page</a> explains why the system is built this way.</p>
+</blockquote>
+<hr />
+<h2 id="contents">Contents<a class="headerlink" href="#contents" title="Permanent link">&para;</a></h2>
+<p><strong>Part 1 — Get started</strong> (10 minutes to a first commit)
+- Who reads this and what they care about
+- The 30-second mental model
+- Setup walkthrough — one time per machine
+- A first end-to-end exercise</p>
+<p><strong>Part 2 — Daily workflow</strong>
+- What this project looks like (folder layout)
+- The two-layer model: Dropbox + GitHub
+- The rule: Save ≠ Commit
+- Single-clone vs multi-clone — and which one you're on
+- Daily rhythm (start, edit, end)
+- Adding a new exhibit, end-to-end
+- Modifying the paper, end-to-end
+- Pushing and sharing — the rules</p>
+<p><strong>Part 3 — Tool-specific workflows</strong>
+- With Claude Code (auto-reads project rules; safe by default)
+- With Codex (autocomplete; you own the rules)
+- With pure terminal (no AI)</p>
+<p><strong>Part 4 — When things go wrong, and why they usually don't</strong>
+- "I edited the wrong file"
+- "I'm on the wrong branch"
+- "Dropbox shows a conflicted copy"
+- "I think <code>.git/</code> is corrupted"
+- "I have no idea what happened"
+- "I forgot to switch back to main" (single-clone only)</p>
+<p><strong>Part 5 — For the curious — why this design</strong>
+- Why GitHub + Dropbox at all?
+- Why this folder layout?
+- Why per-author folders (multi-clone)?
+- Why <code>_exploratory/&lt;branch&gt;/</code> for outputs?
+- Why "experimental first, canonical only via PR"?
+- Why "never <code>git push --force</code>"?
+- Why the <code>data/raw</code> read-only rule?</p>
+<p><strong>Part 6 — Quick reference</strong>
+- Cheat sheet
+- Seven habits worth avoiding
+- Where to read more</p>
+<hr />
+<h1 id="part-1-get-started">Part 1 — Get started<a class="headerlink" href="#part-1-get-started" title="Permanent link">&para;</a></h1>
+<p>10 minutes to a first commit. After this part you can do useful work; the rest of the handbook is reference.</p>
+<h2 id="who-reads-this-and-what-they-care-about">Who reads this and what they care about<a class="headerlink" href="#who-reads-this-and-what-they-care-about" title="Permanent link">&para;</a></h2>
+<p>The table below maps what you spend time on to the sections you most need. You don't have to know git deeply; you do have to follow a small set of rules that prevent failure modes git's flexibility allows. Every rule has a reason — we explain each.</p>
+<table>
+<thead>
+<tr>
+<th>If you mostly…</th>
+<th>…you most need</th>
+<th>Read first</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Edit the paper text (writing, conceptual contributions, lit review)</td>
+<td>Compile the paper, leave notes and edits, never break anything</td>
+<td>§1.2 setup, §2.7 paper workflow, §3.1 Claude Code, §6 cheat sheet</td>
+</tr>
+<tr>
+<td>Write code or generate exhibits</td>
+<td>Run scripts, produce figures/tables, share them with the team</td>
+<td>All of §2, §3.2 or §3.3 (your tool), §4 when it goes wrong</td>
+</tr>
+<tr>
+<td>Are new to git</td>
+<td>Survive the Save-vs-Commit confusion and never lose work</td>
+<td>§1.2 setup, §2.2 two-layer model, §2.3 Save ≠ Commit, §4 recovery</td>
+</tr>
+<tr>
+<td>Are new to AI assistants</td>
+<td>Decide whether to use Claude Code or Codex; learn the safe paths</td>
+<td>§1.2, §3 (all three)</td>
+</tr>
+</tbody>
+</table>
+<p>These are roles in a workflow, not levels in a hierarchy. You may switch between rows on different projects, or within the same project across weeks.</p>
+<h2 id="11-the-30-second-mental-model">1.1 The 30-second mental model<a class="headerlink" href="#11-the-30-second-mental-model" title="Permanent link">&para;</a></h2>
+<p>A project has two places where files live: <strong>Dropbox</strong> (instant sync across your machines and any co-authors looking at the same folder) and <strong>GitHub</strong> (deliberate snapshots that record what changed, who changed it, when). Use both at once: Dropbox prevents "I lost what I typed"; GitHub records "this is the version that produced the paper."</p>
+<p><strong>The single sentence to remember:</strong> saving a file is not the same as sharing it with your co-authors. Save lives in Dropbox. Share happens via <code>git commit</code> + <code>git push</code>.</p>
+<p>Three more sentences that prevent most confusion later:</p>
+<ul>
+<li><strong>There is exactly ONE git repository per project.</strong> The project root, every <code>clone_&lt;XX&gt;/</code> folder, and any copy on GitHub are all <em>clones of that one repo</em> — copies of the same history that exchange commits. You never "create another repo" for a co-author; you create another <em>clone</em>.</li>
+<li><strong>A branch is a parallel line of commits inside that one repo.</strong> Your work lives on your branch; main is the agreed-upon version.</li>
+<li><strong>Merge is the step that brings branches together:</strong> it combines two branches' commits into one history. Git does it automatically unless both branches changed the same lines — then it asks a human to choose.</li>
+</ul>
+<h2 id="12-setup-walkthrough-once-per-machine">1.2 Setup walkthrough — once per machine<a class="headerlink" href="#12-setup-walkthrough-once-per-machine" title="Permanent link">&para;</a></h2>
+<p>These are the one-time steps for each computer you use. Allow 30 minutes.</p>
+<h3 id="step-1-dropbox">Step 1: Dropbox<a class="headerlink" href="#step-1-dropbox" title="Permanent link">&para;</a></h3>
+<p>You almost certainly already have it. If not: install from dropbox.com. Sign in with the account the project was shared with. Wait until the Dropbox tray icon shows a green tick — that means everything is downloaded.</p>
+<p>If you have hundreds of GB free disk: choose "Online Only" for big folders you won't open daily (literature/, large data). The project's <code>code/</code>, <code>paper/</code>, and <code>output/</code> folders should be set to "Available Offline" so they're always on your laptop.</p>
+<h3 id="step-2-github-access">Step 2: GitHub access<a class="headerlink" href="#step-2-github-access" title="Permanent link">&para;</a></h3>
+<p>Whoever set up the repository invites you to it. You receive an email. Click the link, accept.</p>
+<p>You need either an SSH key or a Personal Access Token to push from your laptop. The easiest path: install <strong>GitHub Desktop</strong> (desktop.github.com) on Windows or macOS. It handles authentication invisibly. You can run all <code>git</code> commands from a terminal AND have GitHub Desktop sign you in.</p>
+<h3 id="step-3-git">Step 3: Git<a class="headerlink" href="#step-3-git" title="Permanent link">&para;</a></h3>
+<p>If you're on macOS: git is usually already installed. Test by opening Terminal and typing <code>git --version</code>. If you see a version number, you're done.</p>
+<p>If you're on Windows: install <strong>Git for Windows</strong> from git-scm.com. This gives you "Git Bash" — a terminal where git commands work the way the rest of this handbook assumes.</p>
+<p>Then, one-time identification (your name and email show up in commit history):</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Full Name&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;your.email@university.edu&quot;</span>
+</code></pre></div>
+<p>Use your university email if the repo is institutional; otherwise your personal one.</p>
+<h3 id="step-4-choose-your-ai-assistant-optional">Step 4: Choose your AI assistant (optional)<a class="headerlink" href="#step-4-choose-your-ai-assistant-optional" title="Permanent link">&para;</a></h3>
+<p>You can do everything in this handbook with just a terminal. Adding an AI assistant makes some operations smoother. Two options:</p>
+<ul>
+<li><strong>Claude Code</strong> (desktop or CLI from claude.com). Reads the project's <code>CLAUDE.md</code> and follows the project rules automatically. Won't push without your explicit OK. Refuses to touch <code>data/raw/</code>. Either tool works; Claude Code is the lower-friction option because it reads the project rules for you.</li>
+<li><strong>Codex</strong> (CLI or VS Code extension). Faster code autocomplete but does not automatically read <code>CLAUDE.md</code>. You own the rules — read every diff it suggests, stage and commit yourself, never let it push.</li>
+<li><strong>Neither.</strong> Just use your editor + terminal. The handbook covers this in §3.3.</li>
+</ul>
+<p>If you're new to AI assistants, start with neither for the first week. Get comfortable with the rhythm first. Add Claude Code in week 2.</p>
+<h3 id="step-5-find-the-project-on-your-machine">Step 5: Find the project on your machine<a class="headerlink" href="#step-5-find-the-project-on-your-machine" title="Permanent link">&para;</a></h3>
+<p>The project lives at <code>~/Dropbox/&lt;project-name&gt;/</code>. (Where <code>~</code> is your home directory: <code>/Users/&lt;you&gt;</code> on macOS, <code>C:\Users\&lt;you&gt;</code> on Windows, with Dropbox under it.)</p>
+<p>Open a terminal there:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># macOS / Linux</span>
+<span class="nb">cd</span><span class="w"> </span>~/Dropbox/&lt;project-name&gt;
+
+<span class="c1"># Windows (Git Bash)</span>
+<span class="nb">cd</span><span class="w"> </span>/c/Users/&lt;you&gt;/Dropbox/&lt;project-name&gt;
+</code></pre></div>
+<p>If it's a <strong>multi-clone</strong> project (you'll see per-author folders like <code>clone_AW/</code>, <code>clone_CD/</code>), <code>cd</code> into the clone named with your two-letter initials. If yours doesn't exist yet, the setup runbook in <code>docs/per-project-onboarding.md</code> ("Set up your own working clone") creates it in ~6 commands. Only edit inside your own <code>clone_&lt;XX&gt;/</code> — never in the project root (it's the shared container, not a repo).</p>
+<p>If it's a <strong>single-clone</strong> project (you'll see one <code>code/</code> folder), <code>cd</code> into <code>code/</code>. Everyone shares it.</p>
+<h3 id="step-6-pull-latest">Step 6: Pull latest<a class="headerlink" href="#step-6-pull-latest" title="Permanent link">&para;</a></h3>
+<p>Before your first edit:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>pull
+</code></pre></div>
+<p>If this is a multi-clone project, run <code>git pull</code> inside each <code>clone_*/</code> folder you'll touch. For most co-authors, that's only your own <code>clone_&lt;XX&gt;/</code>.</p>
+<p>You're set up. The rest is workflow.</p>
+<h2 id="13-a-first-end-to-end-exercise-recommended">1.3 A first end-to-end exercise (recommended)<a class="headerlink" href="#13-a-first-end-to-end-exercise-recommended" title="Permanent link">&para;</a></h2>
+<p>To make sure setup actually works, do this small test before any real work. (This one
+test commits straight to <code>main</code> and pushes immediately — the single sanctioned
+exception, because <code>TODO.md</code> is harmless by design. All real work follows §2.5:
+branch first. If the project has no <code>TODO.md</code>, ask a co-author for an equally harmless
+target file.)</p>
+<ol>
+<li>Open <code>TODO.md</code> in the project root.</li>
+<li>Add a line under "High priority": <code>- [ ] [XX] Test commit by [your name]</code>. Use your two-letter initials.</li>
+<li>Save the file (Ctrl-S).</li>
+<li>Run:
+   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>status<span class="w">                               </span><span class="c1"># should show TODO.md as modified</span>
+git<span class="w"> </span>add<span class="w"> </span>TODO.md<span class="w">                          </span><span class="c1"># stage the change</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Test commit by [your name]&quot;</span>
+git<span class="w"> </span>push
+</code></pre></div></li>
+<li>Open the project on GitHub in your browser. Find your test commit in the history.</li>
+</ol>
+<p>If all five steps worked, you're properly set up. If step 4's <code>git push</code> asks for credentials or fails, your GitHub auth needs fixing — see GitHub Desktop in §1.2 step 2.</p>
+<p>Now delete the test line in <code>TODO.md</code> and commit again to clean up. Or leave it as a memento.</p>
+<hr />
+<h1 id="part-2-daily-workflow">Part 2 — Daily workflow<a class="headerlink" href="#part-2-daily-workflow" title="Permanent link">&para;</a></h1>
+<h2 id="21-what-this-project-looks-like">2.1 What this project looks like<a class="headerlink" href="#21-what-this-project-looks-like" title="Permanent link">&para;</a></h2>
+<p>Your project folder is on Dropbox at <code>~/Dropbox/&lt;project&gt;/</code>. The layout is the same across every kai-team project (formal spec in <code>principles/project-structure-canonical.md</code>):</p>
+<div class="highlight"><pre><span></span><code>&lt;project&gt;/
+├── CLAUDE.md                 project rules; read first every session
+├── README.md                 what the project is
+├── data/
+│   ├── raw/                  READ-ONLY. Never edit. Copy to processed/ before transforming.
+│   ├── processed/            cleaned outputs from your scripts
+│   └── documentation/        codebooks, dictionaries
+├── code/  (+ clone_&lt;XX&gt;/ per-author clones on multi-clone projects — see §2.4)
+├── output/
+│   ├── figures/              FLAT. &lt;theme&gt;_&lt;descriptor&gt;_v&lt;N&gt;.pdf naming.
+│   ├── tables/               FLAT.
+│   └── _exploratory/&lt;branch&gt;/  auto-redirected outputs from feature branches
+├── paper/                    paper.tex, references.bib, compiled PDFs
+├── literature/               PDFs of cited papers. LOCAL ONLY. Never commit.
+├── project_management/       reviewer notes, deadlines, decisions. LOCAL ONLY. Never commit.
+└── temp_claude/              Claude session scratch. Local only.
+</code></pre></div>
+<p>Two ideas are doing all the work here:</p>
+<ul>
+<li><strong>Sensitive things are local-only.</strong> <code>literature/</code> has copyrighted PDFs. <code>project_management/</code> has reviewer feedback, panel critiques, strategic decisions. These never go to GitHub.</li>
+<li><strong>Raw data is read-only.</strong> <code>data/raw/</code> is the original truth. Every script reads from it but writes elsewhere. If raw data ever changes accidentally, your analyses become irreproducible.</li>
+</ul>
+<h2 id="22-the-two-layer-model-dropbox-github">2.2 The two-layer model: Dropbox + GitHub<a class="headerlink" href="#22-the-two-layer-model-dropbox-github" title="Permanent link">&para;</a></h2>
+<p>You have two systems that look like they do the same thing. They don't.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Dropbox</th>
+<th>GitHub</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What it stores</td>
+<td>The current file contents</td>
+<td>Snapshots ("commits") of what files looked like at specific moments</td>
+</tr>
+<tr>
+<td>When it syncs</td>
+<td>Instantly when you save</td>
+<td>When you deliberately run <code>git commit</code> and <code>git push</code></td>
+</tr>
+<tr>
+<td>Who sees changes</td>
+<td>Anyone with access to the folder, immediately</td>
+<td>Anyone who runs <code>git pull</code> after you <code>git push</code></td>
+</tr>
+<tr>
+<td>Reverting</td>
+<td>"Show deleted files" — last ~30 days</td>
+<td>Any commit ever made, forever</td>
+</tr>
+<tr>
+<td>Conflict resolution</td>
+<td>Creates "(<Name>'s conflicted copy)" files</td>
+<td>Asks you to merge</td>
+</tr>
+<tr>
+<td>What it's for</td>
+<td>Backup + cross-machine sync for one person</td>
+<td>Collaboration + history + reproducibility</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Use both at once.</strong> When you save, Dropbox handles the "don't lose what I just typed" problem instantly. When you commit and push, GitHub handles the "everyone needs to see this version" problem.</p>
+<p>The most common failure mode by far is treating these as interchangeable. They're not. The next two sections explain why, in practice.</p>
+<h2 id="23-the-rule-save-commit">2.3 The rule: Save ≠ Commit<a class="headerlink" href="#23-the-rule-save-commit" title="Permanent link">&para;</a></h2>
+<p>Saving a file via Ctrl-S in your editor does NOT create a git commit.</p>
+<table>
+<thead>
+<tr>
+<th>You did this</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl-S in your editor</td>
+<td>File is on disk. Dropbox syncs to your other machines. Git has no idea anything changed.</td>
+</tr>
+<tr>
+<td><code>git add &lt;file&gt;</code></td>
+<td>You tell git "I want to include this file in my next commit." Still no commit.</td>
+</tr>
+<tr>
+<td><code>git commit -m "message"</code></td>
+<td>Git creates a snapshot you can later go back to. Lives only on your computer.</td>
+</tr>
+<tr>
+<td><code>git push</code></td>
+<td>Git uploads your commit to GitHub. Your co-authors can now <code>git pull</code> and see it.</td>
+</tr>
+</tbody>
+</table>
+<p>So a typical change has FOUR steps to be fully shared: Save → <code>git add</code> → <code>git commit</code> → <code>git push</code>.</p>
+<p><strong>Why does this matter, in concrete terms?</strong></p>
+<ul>
+<li>You spent the afternoon improving a regression. You saved everything. You closed your laptop. You did NOT commit. Tomorrow your co-author opens the project (in single-clone mode) and her <code>code/</code> folder has YOUR uncommitted edits in it because Dropbox synced them. She thinks they're from main, edits on top of them, commits her work. Now both of your changes are tangled and there's no clean way back to "what was on main yesterday."</li>
+<li>You spent the afternoon improving a regression. You committed. You closed your laptop. You did NOT push. Tomorrow your co-author runs <code>git pull</code> and sees nothing new. She doesn't have your improvement. She redoes work you already did.</li>
+</ul>
+<p>The fix is to make commit + push a habit, not an afterthought. Commit at every clean checkpoint (every ~30 minutes if actively coding). Push at the end of every session. The next section gives you a concrete rhythm.</p>
+<p><strong>If you only edit paper text</strong> (not code): the same rule applies to <code>paper/paper.tex</code>. Saving in your editor doesn't make your co-authors see your edits. You still need <code>git add paper/paper.tex &amp;&amp; git commit &amp;&amp; git push</code> (or your editor's git interface), or — if the project is Overleaf-mastered — to apply the edits in Overleaf where they get committed by Overleaf's git bridge.</p>
+<h2 id="24-single-clone-vs-multi-clone-and-which-one-youre-on">2.4 Single-clone vs multi-clone — and which one you're on<a class="headerlink" href="#24-single-clone-vs-multi-clone-and-which-one-youre-on" title="Permanent link">&para;</a></h2>
+<p>Whoever set the project up chose one of two layouts when it was bootstrapped. You don't choose; you adapt. <strong>Neither makes anyone "the lead" — all co-authors are equal.</strong></p>
+<h3 id="how-to-tell-which">How to tell which<a class="headerlink" href="#how-to-tell-which" title="Permanent link">&para;</a></h3>
+<p>Look at the project root (or the project CLAUDE.md, which declares it in a <code>## Multi-clone layout</code> block).</p>
+<ul>
+<li><strong>Single-clone</strong>: one folder named <code>code/</code>, no <code>clone_&lt;XX&gt;/</code> siblings. Everyone shares it (for 1–2 people editing code, rarely in parallel).</li>
+<li><strong>Multi-clone</strong>: per-author folders named <code>clone_AW/</code>, <code>clone_CD/</code>, etc. Each is its own full git clone, on that author's branch.</li>
+</ul>
+<h3 id="single-clone-default-for-1-2-active-code-editors">Single-clone (default for 1-2 active code editors)<a class="headerlink" href="#single-clone-default-for-1-2-active-code-editors" title="Permanent link">&para;</a></h3>
+<p>Simpler. One git clone — the project root itself. You switch branches inside it. Dropbox keeps everyone in sync on whatever branch is currently checked out.</p>
+<p>The trap: that last sentence is also the failure mode. If you switch to your branch and forget to switch back to main, your colleagues see your branch's files next morning. The rule "switch back to main before stopping" exists exactly to prevent this.</p>
+<h3 id="multi-clone-when-3-co-authors-edit-code-in-parallel">Multi-clone (when 3+ co-authors edit code in parallel)<a class="headerlink" href="#multi-clone-when-3-co-authors-edit-code-in-parallel" title="Permanent link">&para;</a></h3>
+<p><strong>No one owns the project.</strong> The Dropbox project folder is a shared <strong>container</strong> — it holds the single data copy and everyone's personal clones, but it is <strong>not itself a git repo</strong>. There is one GitHub repo; <code>main</code> is canonical and owned by no one locally. Each co-author has their <strong>own equal clone</strong> (<code>clone_&lt;XX&gt;/</code>), on their own branch, and works only in it.</p>
+<table>
+<thead>
+<tr>
+<th>Folder</th>
+<th>What it is</th>
+<th>Who runs git in it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>project root</td>
+<td>shared <strong>container</strong> (data + everyone's clones) — <strong>no <code>.git</code></strong></td>
+<td><strong>nobody</strong> — it's not a repo</td>
+</tr>
+<tr>
+<td><code>clone_AW/</code></td>
+<td>Arne's full-project clone, on his branch</td>
+<td>only Arne</td>
+</tr>
+<tr>
+<td><code>clone_CD/</code></td>
+<td>Charlie's clone, on his branch</td>
+<td>only Charlie</td>
+</tr>
+<tr>
+<td><code>clone_KG/</code></td>
+<td>Kai's clone — same as everyone else</td>
+<td>only Kai</td>
+</tr>
+</tbody>
+</table>
+<p>The folder name tells you whose work (and which branch) you're looking at — Dropbox doesn't show branch info; folder names do.</p>
+<pre class="mermaid"><code>flowchart TB
+    GH["GitHub: main (canonical, owned by no one)"]
+    subgraph P["~/Dropbox/&amp;lt;project&amp;gt;/ — shared CONTAINER (no .git)"]
+        DATA["data/ — THE single copy&lt;br/&gt;(gitignored)"]
+        subgraph KG["clone_KG/ — Kai's clone"]
+            KC["code/ paper/ output/"]
+        end
+        subgraph AW["clone_AW/ — Arne's clone"]
+            AC["code/ paper/ output/"]
+            M[".data-in-parent marker"]
+        end
+    end
+    M --&gt;|"re-anchors rawdata/processed"| DATA
+    KG --&gt;|"push &amp;#8594; PR &amp;#8594; merge (anyone)"| GH
+    AW --&gt;|"push &amp;#8594; PR &amp;#8594; merge (anyone)"| GH
+    GH --&gt;|"git pull (into your own clone)"| AW</code></pre>
+<p>Two things to know about your nested clone:</p>
+<ol>
+<li><strong>It does NOT contain the data.</strong> <code>data/</code> is <em>gitignored</em> — listed in a file
+   called <code>.gitignore</code> that tells git to act as if those files don't exist, so
+   they can never be committed or pushed by accident; the one real copy lives in the parent container folder. An empty <code>.data-in-parent</code> marker file in your clone root makes the <code>00_setup</code> scripts find it — the setup runbook in <code>docs/per-project-onboarding.md</code> ("Set up your own working clone") walks you through this.</li>
+<li><strong>Your <code>code/</code>, <code>paper/</code>, and <code>output/</code> are clone-local on purpose.</strong> They reach the team through <code>git push</code> + pull request — that's the collaboration mechanism.</li>
+</ol>
+<p>The rule: <strong>clones are single-writer, and everyone is equal.</strong> Only you touch your <code>clone_&lt;XX&gt;/</code>; nobody runs git at the container root (it isn't a repo).</p>
+<h3 id="whats-actually-inside-your-clone-it-looks-like-duplication-it-isnt">What's actually inside your clone (it LOOKS like duplication, it isn't)<a class="headerlink" href="#whats-actually-inside-your-clone-it-looks-like-duplication-it-isnt" title="Permanent link">&para;</a></h3>
+<p>Open your <code>clone_&lt;XX&gt;/</code> in a file browser and you'll see <code>data/</code> and
+<code>literature/</code> folders and panic that the whole dataset got copied. It
+didn't. Those folder <em>names</em> are misleading — what's actually inside is
+tiny, because the heavy content is gitignored and lives only once, at the
+parent. Measured on a real project:</p>
+<table>
+<thead>
+<tr>
+<th>Folder in your clone</th>
+<th>What's really in it</th>
+<th>Typical size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data/</code></td>
+<td>the <strong>codebooks</strong> (<code>data/documentation/</code>, tracked + versioned). <code>raw/</code> and <code>processed/</code> are gitignored — re-anchored to the parent via <code>.data-in-parent</code></td>
+<td>~1 MB</td>
+</tr>
+<tr>
+<td><code>literature/</code></td>
+<td>the <strong><code>.bib</code> files</strong> (tracked). The PDFs are gitignored — repopulate from Zotero via <code>/sync-pdfs</code></td>
+<td>~2 MB</td>
+</tr>
+<tr>
+<td><code>code/</code>, <code>paper/</code></td>
+<td>your actual scripts and paper source</td>
+<td>small, unless legacy binaries linger in <code>paper/</code></td>
+</tr>
+<tr>
+<td><code>output/</code></td>
+<td>tracked exhibits (figures/tables) — clone-local, merged via PR</td>
+<td>can be large by design</td>
+</tr>
+</tbody>
+</table>
+<p>So <code>data/</code> + <code>literature/</code> + <code>code/</code> together are a few MB — the design
+working exactly as intended, not a copy of the data. If a clone is
+genuinely heavy, the cause is almost always tracked binary bloat in
+<code>paper/</code> or <code>.git/</code> history (see the migration note in
+<code>principles/project-structure-canonical.md</code>), never the data/literature
+skeletons.</p>
+<h3 id="sandbox-does-not-mean-invisible-seeing-vs-interfering">"Sandbox" does NOT mean invisible — seeing vs. interfering<a class="headerlink" href="#sandbox-does-not-mean-invisible-seeing-vs-interfering" title="Permanent link">&para;</a></h3>
+<p>Because the clones sit inside the Dropbox-synced project folder, <strong>everyone
+can SEE everyone's sandbox</strong>. That is intended: Dropbox backs your clone up,
+and teammates can peek at your in-progress work. The isolation is about
+WRITING, not seeing:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Allowed?</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Looking at files in someone else's <code>clone_&lt;XX&gt;/</code></td>
+<td>Yes</td>
+<td>Dropbox shows them to you; that's the design</td>
+</tr>
+<tr>
+<td>Editing files or running git in someone else's <code>clone_&lt;XX&gt;/</code></td>
+<td><strong>Never</strong></td>
+<td>You'd race their Dropbox sync and corrupt their <code>.git/</code></td>
+</tr>
+<tr>
+<td>Others seeing your half-finished work in your sandbox</td>
+<td>Yes, normal</td>
+<td>Visibility ≠ shared; it enters the team's history only when YOU push</td>
+</tr>
+</tbody>
+</table>
+<p>And inside your own sandbox: <strong>you edit the SAME canonical files as everyone
+else</strong> (<code>code/02_analysis.do</code>, not a parallel structure) — the clone is a
+full copy of the repo, so the file layout is identical by construction. Only
+your <em>outputs</em> are routed somewhere special (<code>output/_exploratory/&lt;branch&gt;/</code>,
+automatically, by the setup scripts).</p>
+<h3 id="mental-model-faq-field-collected-real-questions-from-the-first-deployment">Mental-model FAQ (field-collected — real questions from the first deployment)<a class="headerlink" href="#mental-model-faq-field-collected-real-questions-from-the-first-deployment" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>"So we need an extra git repo for each project / each co-author?"</strong>
+  No. ONE repo per project. Root, <code>clone_&lt;XX&gt;/</code> folders, GitHub — all clones of it.</li>
+<li><strong>"When do I push?"</strong> Daily, even unfinished work. Pushing your branch is
+  always safe: it never touches main, and it's your only off-machine backup
+  besides Dropbox. Push and merge are SEPARATE steps — possibly weeks apart.</li>
+<li><strong>"Who writes to main?"</strong> Nobody, directly. main changes only through a
+  merge any co-author (or a reviewed PR) performs.</li>
+<li><strong>"Does merge check our conventions?"</strong> No — git merges <em>text</em>, blindly.
+  The PR review is the convention gate: that's where one-canonical-file-per-
+  language, the exhibits note, and exhibit promotion get checked by a human.</li>
+<li><strong>"Do I write code differently in my sandbox so it can merge later?"</strong>
+  No. Same files, same conventions, same structure. Merging works precisely
+  because everyone edits the same canonical files on different branches.</li>
+</ul>
+<h2 id="25-daily-rhythm">2.5 Daily rhythm<a class="headerlink" href="#25-daily-rhythm" title="Permanent link">&para;</a></h2>
+<p>A workday has a beginning, middles, and an end. Here's the rhythm:</p>
+<h3 id="starting-a-session">Starting a session<a class="headerlink" href="#starting-a-session" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Open the project folder.</li>
+<li>Pull latest: <code>git pull</code>. (In multi-clone, do this inside your own <code>clone_&lt;XX&gt;/</code>.)
+   <strong>Multi-clone caution:</strong> in your nested clone, <code>git pull</code> only updates <em>your own branch</em> — it says "up to date" even when <code>main</code> moved on weeks ago. Every few days, and always before opening a PR, also pull main into your branch: <code>git fetch origin &amp;&amp; git merge origin/main</code>.</li>
+<li>Confirm what branch you're on: <code>git status --short --branch</code>. (Multi-clone: it should match the folder name.)</li>
+<li>Single-clone only: switch to a feature branch if you're about to edit. <strong>Never edit <code>main</code> directly.</strong>
+   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>XX/short-description-of-change
+</code></pre></div>
+   (Example: <code>git checkout -b KG/cluster-se-fix</code>.)</li>
+</ol>
+<h3 id="middle-of-the-day-making-changes">Middle of the day — making changes<a class="headerlink" href="#middle-of-the-day-making-changes" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Edit your script, exhibit, or paper.tex.</li>
+<li>Run scripts; check outputs land in <code>output/_exploratory/&lt;your-branch&gt;/</code> (not canonical <code>output/</code>).</li>
+<li>Commit at every clean checkpoint:
+   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>status<span class="w">                                    </span><span class="c1"># see what changed</span>
+git<span class="w"> </span>add<span class="w"> </span>&lt;specific<span class="w"> </span>file<span class="w"> </span>paths&gt;<span class="w">                 </span><span class="c1"># never `git add .`</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Short imperative summary&quot;</span>
+</code></pre></div></li>
+<li>Keep going. Each commit is a save-point you can return to.</li>
+</ol>
+<h3 id="ending-a-session">Ending a session<a class="headerlink" href="#ending-a-session" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Final commits: stage and commit anything not yet committed.</li>
+<li>Push: <code>git push</code>.</li>
+<li>Single-clone only: switch back to main and pull, so the folder is in a clean state when your co-author opens it.
+   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>main
+git<span class="w"> </span>pull
+</code></pre></div></li>
+<li>Multi-clone: nothing special. Each clone stays on its own branch.</li>
+</ol>
+<p>That's the whole rhythm. It feels like overhead at first; after a week it's automatic.</p>
+<h2 id="26-adding-a-new-exhibit-end-to-end">2.6 Adding a new exhibit, end-to-end<a class="headerlink" href="#26-adding-a-new-exhibit-end-to-end" title="Permanent link">&para;</a></h2>
+<p>This is the most common workflow. Suppose you want a new figure: <code>outcomes_event_study_v1.pdf</code>.</p>
+<h3 id="1-branch-first">1. Branch first<a class="headerlink" href="#1-branch-first" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>KG/add-eventstudy-fig
+</code></pre></div>
+<h3 id="2-write-the-script">2. Write the script<a class="headerlink" href="#2-write-the-script" title="Permanent link">&para;</a></h3>
+<p>Add it to the right numbered slot in your code folder. For example, <code>code/04_plots_eventstudy.R</code> (R) or <code>code/04_plots_eventstudy.do</code> (Stata) or <code>code/04_plots_eventstudy.py</code> (Python).</p>
+<p>The first line of the script (or near the top) should source the setup file:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># R</span>
+<span class="nf">source</span><span class="p">(</span><span class="n">here</span><span class="o">::</span><span class="nf">here</span><span class="p">(</span><span class="s">&quot;code&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;00_setup.R&quot;</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">* Stata</span>
+<span class="k">do</span> <span class="s">&quot;../code/00_setup.do&quot;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Python</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="n">exec</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="s2">&quot;code/00_setup.py&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</code></pre></div>
+<p>The setup file sets paths, installs dependencies if needed, and prints a banner showing the active git branch. The branch banner is your first chance to catch "wait, I'm on the wrong branch."</p>
+<h3 id="3-run-it">3. Run it<a class="headerlink" href="#3-run-it" title="Permanent link">&para;</a></h3>
+<p>The setup file redirects outputs to <code>output/_exploratory/&lt;sanitised-branch&gt;/figures/</code> automatically — branch names are lowercased and non-alphanumerics become underscores. So on branch <code>KG/add-eventstudy-fig</code>, your figure lands at <code>output/_exploratory/kg_add_eventstudy_fig/figures/outcomes_event_study_v1.pdf</code>, not in canonical <code>output/figures/</code>.</p>
+<p>This is deliberate: your work-in-progress doesn't contaminate the canonical exhibits the paper compiles against. <code>_exploratory/</code> is gitignored scratch — it never enters a commit. Promotion to canonical is an explicit copy you make in step 7.</p>
+<h3 id="4-reference-it-in-the-paper-also-on-the-branch">4. Reference it in the paper, also on the branch<a class="headerlink" href="#4-reference-it-in-the-paper-also-on-the-branch" title="Permanent link">&para;</a></h3>
+<p>In <code>paper/paper.tex</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">\includegraphics</span><span class="na">[width=\textwidth]</span><span class="nb">{</span><span class="k">\outdir</span>/figures/outcomes<span class="nb">_</span>event<span class="nb">_</span>study<span class="nb">_</span>v1.pdf<span class="nb">}</span>
+</code></pre></div>
+<p>The <code>\outdir</code> macro is set automatically by <code>00_setup.{do,R,py}</code> via <code>paper/_output_path.tex</code> — points at <code>output/_exploratory/&lt;branch&gt;/</code> on a feature branch, at canonical <code>output/</code> on main. So the same <code>\includegraphics</code> line in your <code>.tex</code> resolves to the right place on your branch and the right place after PR merge to main.</p>
+<h3 id="5-compile">5. Compile<a class="headerlink" href="#5-compile" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>paper
+latexmk<span class="w"> </span>-pdf<span class="w"> </span>paper.tex<span class="w">          </span><span class="c1"># or your usual compile command</span>
+</code></pre></div>
+<p>If the paper builds and the figure looks right, you're ready to share.</p>
+<h3 id="6-show-it-the-exhibits-note">6. Show it: the exhibits note<a class="headerlink" href="#6-show-it-the-exhibits-note" title="Permanent link">&para;</a></h3>
+<p>Before anyone reviews your work, it goes into your branch's <strong>exhibits
+note</strong> — one <code>exhibits-note.tex</code> at your clone root, copied once from
+<code>kai-team-claude/templates/exhibits-note.tex</code>. This is THE surface where
+new experimental work is shown; not screenshots in email, not pasted
+console output. A teammate opens one PDF and sees what the branch produced
+and what it means.</p>
+<p>The note contains only exhibits plus interpretation, under five hard
+rules (all scaffolded in the template):</p>
+<ol>
+<li>One section per exhibit, title states the <strong>finding</strong>, not the method.</li>
+<li>Every exhibit gets a 2–4 sentence <strong>Interpretation</strong>: what to see, the
+   key magnitude with units, the main caveat.</li>
+<li><strong>Consistent wording</strong> across exhibits and with <code>paper.tex</code> — same
+   treatment name, outcome name, sample label, units everywhere.</li>
+<li>One <strong>transition sentence</strong> opens each section, linking it to the
+   previous exhibit.</li>
+<li><code>\FloatBarrier</code> closes every section (already in the skeleton), so
+   floats stay with their exhibit instead of drifting.</li>
+</ol>
+<p>Compile from the clone root (<code>latexmk -pdf exhibits-note.tex</code>); the
+template's <code>\exhibitdir</code> macro points into your branch's
+<code>output/_exploratory/&lt;branch&gt;/</code> folder. A small checker script
+(<code>check-exhibits-note.py</code>, copied from the same templates folder)
+mechanically verifies coverage and structure — every exhibit in the
+note, an interpretation per section, FloatBarrier in place — so the
+five rules are enforced, not just suggested. Commit the note with your code —
+it travels with the branch, so your PR carries its own explanation.</p>
+<p>If you work with Claude Code or another LLM: tell it to add every new
+exhibit to the note as it creates it, and require it to visually check
+the compiled PDF (it can read PDFs) before showing it to you — broken
+references, overflowing figures, and legends covering data all compile
+"successfully". The interpretation paragraph is yours to verify — the
+numbers in it must match the exhibit exactly.</p>
+<h3 id="7-promote-the-final-exhibit-then-commit">7. Promote the final exhibit, then commit<a class="headerlink" href="#7-promote-the-final-exhibit-then-commit" title="Permanent link">&para;</a></h3>
+<p><code>output/_exploratory/</code> is gitignored — it cannot be committed, and git will refuse to <code>add</code> it. <strong>Promotion is YOUR explicit copy</strong>: when the figure is final, copy it from your exploratory folder to the canonical (tracked) path, on your branch:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>..<span class="w">                            </span><span class="c1"># back to project/clone root</span>
+cp<span class="w"> </span>output/_exploratory/kg_add_eventstudy_fig/figures/outcomes_event_study_v1.pdf<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>output/figures/outcomes_event_study_v1.pdf
+
+git<span class="w"> </span>status<span class="w">                       </span><span class="c1"># see what changed</span>
+git<span class="w"> </span>add<span class="w"> </span>code/04_plots_eventstudy.R<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>output/figures/outcomes_event_study_v1.pdf<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>paper/paper.tex
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add event-study figure&quot;</span>
+</code></pre></div>
+<p>The PR therefore carries three things: the producing script, the final exhibit at its canonical path, and the paper reference. Nothing "promotes automatically" — the copy above IS the promotion, and it's the PR author's job.</p>
+<p>(Use explicit paths. <code>git add .</code> is blocked by project rules — too easy to stage sensitive files by accident.)</p>
+<h3 id="8-push">8. Push<a class="headerlink" href="#8-push" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w">                         </span><span class="c1"># first push on a new branch: git push -u origin &lt;branch&gt;</span>
+</code></pre></div>
+<p>(Per project rule, Claude Code asks for your explicit confirmation before pushing. If you're using terminal directly, you're already explicit.)</p>
+<h3 id="9-open-a-pull-request">9. Open a pull request<a class="headerlink" href="#9-open-a-pull-request" title="Permanent link">&para;</a></h3>
+<p>In your browser, go to the project's GitHub page. There's a banner suggesting you open a PR from your branch. Or via terminal:</p>
+<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>pr<span class="w"> </span>create<span class="w"> </span>--base<span class="w"> </span>main
+</code></pre></div>
+<h3 id="10-review-and-merge">10. Review and merge<a class="headerlink" href="#10-review-and-merge" title="Permanent link">&para;</a></h3>
+<p>A co-author reviews. The merge brings your committed canonical exhibit (<code>output/figures/...</code>) and the paper reference to main together — the paper on main compiles immediately because the file travelled inside the PR (you copied it there in step 7).</p>
+<p>That's the end-to-end. Every figure or table goes through this loop. It feels like more steps than "save the file" but each step has a clear purpose: branch protects main, <code>_exploratory/</code> separates work-in-progress, the step-6 copy is the deliberate promotion, PR review catches mistakes.</p>
+<h2 id="27-modifying-the-paper-end-to-end">2.7 Modifying the paper, end-to-end<a class="headerlink" href="#27-modifying-the-paper-end-to-end" title="Permanent link">&para;</a></h2>
+<p>Same rhythm. Treat the paper like code.</p>
+<ol>
+<li><strong>Branch first.</strong> <code>git checkout -b KG/edit-intro-pars-3-5</code>.</li>
+<li><strong>Edit <code>paper/paper.tex</code>.</strong> Save as you go.</li>
+<li><strong>Compile locally</strong> to confirm nothing broke.</li>
+<li><strong>Commit + push:</strong> <code>git add paper/paper.tex &amp;&amp; git commit -m "Tighten intro pars 3-5" &amp;&amp; git push</code>.</li>
+<li><strong>PR + review + merge.</strong></li>
+</ol>
+<p><strong>Never edit <code>paper.tex</code> on <code>main</code> directly.</strong> Main is the submitted version of the paper. All changes go through branches + PR.</p>
+<p>For <strong>Overleaf-mastered projects</strong> (declared in CLAUDE.md <code>## Project mode</code>): the canonical <code>.tex</code> lives in Overleaf, NOT in <code>paper/</code>. Your edits happen in Overleaf via your browser. Syncing Overleaf to git is a manual step (done by the Overleaf admin via Overleaf's git access), not automatic. You don't <code>git add paper/paper.tex</code> because there's no local <code>paper.tex</code> to add. The Overleaf admin (one person sets up the sync) coordinates what's in Overleaf.</p>
+<h2 id="28-pushing-and-sharing-the-rules">2.8 Pushing and sharing — the rules<a class="headerlink" href="#28-pushing-and-sharing-the-rules" title="Permanent link">&para;</a></h2>
+<p>First, the distinction the rules build on: <strong>pushing is backup + visibility;
+merging is integration.</strong> Pushing your branch to GitHub copies your commits
+off your machine — safe anytime, touches nothing canonical, recommended
+daily. Merging (later, via PR) is the separate, deliberate step that brings
+your branch into main. A co-author who thinks "GitHub only gets my work at
+merge time" has no off-Dropbox backup until the work is finished — push
+early, push often.</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Allowed without per-push approval?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git push</code> of <strong>your own feature branch</strong> (<code>XX/...</code>)</td>
+<td>YES — anytime. That's how your work gets backed up and reviewed; §2.3's "push at the end of every session" means exactly this.</td>
+</tr>
+<tr>
+<td>Anything that lands where others build on it: merging a PR to <code>main</code>, pushing directly to <code>main</code></td>
+<td>A co-author's review is the team convention, not a technical gate — you may merge your own (see below).</td>
+</tr>
+<tr>
+<td>(Note: the "pushes require explicit approval" rule in CLAUDE.md governs <strong>Claude</strong> — your AI session asks YOU before it pushes. It is not a restriction on you pushing your own branch.)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>git push</code> of <code>.bib</code>-only commit (single file, you are the declared <code>bib_keeper</code>)</td>
+<td>YES — co-authors need the updated bib to compile.</td>
+</tr>
+<tr>
+<td><code>git push --force</code></td>
+<td>NEVER without explicit approval. Rewrites shared history.</td>
+</tr>
+<tr>
+<td><code>git push --tags</code></td>
+<td>Counts as a push. Ask.</td>
+</tr>
+<tr>
+<td><code>gh pr create</code>, <code>gh pr merge</code></td>
+<td>Counts as an implicit push. Ask.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why this rule exists.</strong> Pushed commits are visible to everyone with read access — co-authors, but also anyone the repo is shared with later. A commit message containing "fixed JPE reviewer 2's point about Table 3" leaks the target journal AND the existence of a critical review. Per the external-communications-hygiene rule, this kind of information doesn't go in git history. Asking a co-author before pushing catches these accidents.</p>
+<p>For routine code changes with neutral commit messages ("Tighten cluster SE in main regression"), approval is fast — usually a one-line "go ahead" in chat.</p>
+<h2 id="29-working-with-the-shared-data">2.9 Working with the shared data<a class="headerlink" href="#29-working-with-the-shared-data" title="Permanent link">&para;</a></h2>
+<p>Here is the one place where "work in your own clone" does <strong>not</strong> isolate
+you, so it's worth understanding. Your code, paper, and exhibits stay in your
+clone until you merge a PR — but the <strong>data is shared the instant you write
+it.</strong> Each clone's scripts read and write the <em>one</em> <code>data/</code> folder in the
+parent (that's the <code>.data-in-parent</code> setup), so when you run the cleaning
+code, the shared <code>data/processed/</code> changes for everyone immediately — no merge
+involved. That's why data needs a little human coordination where code does
+not.</p>
+<p>The mental flip for a Dropbox veteran: <strong>git reconciles parallel work on
+code; humans reconcile parallel work on data.</strong></p>
+<ul>
+<li><strong>Reading is free and parallel.</strong> Normally the dataset is fixed and
+  everyone analyses the same <code>processed/</code>. No coordination needed — this is
+  99% of the time.</li>
+<li><strong>Data lives in Dropbox, not git</strong> (it's too big and not text-mergeable).
+  So a bad change is recoverable from <strong>Dropbox version history</strong> — the data
+  equivalent of re-cloning a broken repo.</li>
+<li><strong>Never overwrite the raw data.</strong> <code>data/raw/</code> is read-only and append-only:
+  new raw arrives as <em>new files</em>, never edits to existing ones. It's the one
+  thing you can't regenerate. (Claude will <em>ask you to confirm</em> before
+  running any code that writes to or deletes raw — that's the <code>guard_raw_data</code>
+  hook. The same goes for a frozen replication package.)</li>
+<li><strong><code>processed/</code> is a cache, not the truth.</strong> It's rebuilt from <code>raw/</code> + the
+  cleaning code (which <em>is</em> in git). If it ever gets clobbered, just re-run
+  cleaning.</li>
+</ul>
+<p><strong>When you change the dataset, which kind of change is it?</strong></p>
+<ul>
+<li><strong>Adding a variable</strong> — you add a column in the cleaning code. It merges
+  through git like any code change and <strong>doesn't move anyone's existing
+  results</strong>. Just merge it; a heads-up is polite but nothing breaks.</li>
+<li><strong>A breaking change</strong> — recoding, fixing, dropping observations, changing
+  the sample: this <strong>moves everyone's results.</strong> So:</li>
+<li><strong>Announce before you rebuild</strong> ("rebuilding the analysis dataset, hold
+     off re-running cleaning") — two people rebuilding at once clobber each
+     other, and there's no merge for data.</li>
+<li>Rebuild from the merged cleaning code, wait for Dropbox to sync (green
+     tick), and tell the team to re-run their analyses.</li>
+<li><strong>Log it</strong> in <code>data/documentation/data_changelog.md</code> — one dated line,
+     e.g. <code>2026-06-20  Added 2024 wave. N 1,200 -&gt; 1,540. All time-series
+     regs change.</code> (Breaking changes only — not new variables, and not the
+     messy initial build before anyone depends on the data.)</li>
+</ul>
+<p>Full version, including the <code>data_keeper</code> option for data-heavy projects:
+the "Working with the shared data" section of
+<code>principles/project-structure-canonical.md</code>.</p>
+<hr />
+<h1 id="part-3-tool-specific-workflows">Part 3 — Tool-specific workflows<a class="headerlink" href="#part-3-tool-specific-workflows" title="Permanent link">&para;</a></h1>
+<h2 id="31-with-claude-code">3.1 With Claude Code<a class="headerlink" href="#31-with-claude-code" title="Permanent link">&para;</a></h2>
+<p>Claude Code reads <code>CLAUDE.md</code> (the project rules) and the global <code>~/.claude/CLAUDE.md</code> (Kai's defaults) on every session. It knows the rules above without you telling it.</p>
+<p>You can write conversationally. Examples:</p>
+<table>
+<thead>
+<tr>
+<th>You say</th>
+<th>What Claude does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"What branch am I on?"</td>
+<td>Runs <code>git status --short --branch</code>, tells you.</td>
+</tr>
+<tr>
+<td>"Make a branch for the event-study figure"</td>
+<td>Runs <code>git checkout -b KG/add-eventstudy-fig</code> (or similar).</td>
+</tr>
+<tr>
+<td>"Stage and commit the analysis script"</td>
+<td>Runs <code>git add code/02_analysis.do &amp;&amp; git commit -m "..."</code>. Asks you to confirm the commit message.</td>
+</tr>
+<tr>
+<td>"Push my changes"</td>
+<td>Pauses and asks for your explicit OK. Only pushes after you confirm.</td>
+</tr>
+<tr>
+<td>"Check the coord channel"</td>
+<td>(If the <code>/coord</code> plugin is installed) reads your cross-session messages.</td>
+</tr>
+</tbody>
+</table>
+<p>Two skills make this smooth:</p>
+<ul>
+<li><code>git-assistant</code> skill (in the <code>project-workflow</code> plugin): conversational git operations including the safety checks above.</li>
+<li><code>/check-rules</code>: re-loads the active project + global rules. Use this if Claude's behavior drifts (it sometimes forgets in long conversations).</li>
+</ul>
+<p><strong>What Claude refuses to do without explicit OK:</strong></p>
+<ul>
+<li>Push to any remote (per global rule).</li>
+<li>Stage files matching <code>*conflicted copy*</code>, <code>*.env*</code>, <code>*grades*</code>, <code>*reviewer*</code>, <code>*medical*</code>, <code>*credentials*</code>, <code>*panel*</code>, or files &gt;5 MB.</li>
+<li>Use <code>git add .</code> or <code>git add -A</code>.</li>
+<li>Run destructive operations (<code>--force</code>, <code>git clean</code>, <code>reset --hard</code>, <code>rebase</code>, <code>amend</code> after push).</li>
+<li>Touch <code>data/raw/</code>.</li>
+<li>Commit on Overleaf-mastered projects without per-session approval.</li>
+</ul>
+<p>These guardrails come from the global <code>CLAUDE.md</code>. If a guardrail blocks you, it is usually catching one of the failure modes above — worth a second look before you override it (which you can always do deliberately).</p>
+<p><strong>Paper-editor shortcut.</strong> If you mostly want to edit the paper and have Claude handle the git mechanics: type "I want to revise the introduction." Claude opens <code>paper/paper.tex</code>, asks which paragraphs, makes a branch, applies your changes, commits, asks before pushing. The whole git layer becomes invisible.</p>
+<h2 id="32-with-codex">3.2 With Codex<a class="headerlink" href="#32-with-codex" title="Permanent link">&para;</a></h2>
+<p>Codex is faster at code autocomplete but does NOT automatically read <code>CLAUDE.md</code> the way Claude Code does. <strong>You own the rules.</strong> Safe workflow:</p>
+<ul>
+<li>Treat Codex as autocomplete, not workflow automation.</li>
+<li>Read every diff Codex generates before saving.</li>
+<li>Stage and commit yourself; don't let Codex push.</li>
+<li>Don't ask Codex to "clean up the data folder" or similar broad actions — it doesn't know <code>data/raw/</code> is read-only.</li>
+<li>When generating exhibits, double-check the script writes to <code>output/_exploratory/&lt;branch&gt;/</code>, not canonical <code>output/</code>. The <code>00_setup.{do,R,py}</code> files do this automatically when sourced; if Codex's generated script doesn't source the setup file, paths can go wrong.</li>
+</ul>
+<p>Codex works fine for editing existing scripts. Be careful with new scripts it creates from scratch — they may not follow your project's path conventions.</p>
+<p>If you have access to both, use Claude Code for the workflow layer (branches, commits, pushes) and Codex for inline code completion inside scripts.</p>
+<h2 id="33-with-pure-terminal-no-ai">3.3 With pure terminal (no AI)<a class="headerlink" href="#33-with-pure-terminal-no-ai" title="Permanent link">&para;</a></h2>
+<p>You already have everything you need: <code>git</code>, your editor, your shell. The handbook's commands work as written.</p>
+<p>Two principles tend to keep beginners out of trouble:</p>
+<ol>
+<li><strong>Whenever you're unsure, run <code>git status</code> first.</strong> It tells you what branch you're on, what's changed, what's staged. It's the most-used command in git for a reason.</li>
+<li><strong>When in doubt, branch.</strong> Branching is free and reversible. Editing <code>main</code> directly is the source of most disasters.</li>
+</ol>
+<p>For deeper git literacy: <code>principles/git-and-overleaf-tutorial.md</code> (in the kai-team-claude marketplace) walks through the mental model.</p>
+<hr />
+<h1 id="part-4-when-things-go-wrong-and-why-they-usually-dont">Part 4 — When things go wrong, and why they usually don't<a class="headerlink" href="#part-4-when-things-go-wrong-and-why-they-usually-dont" title="Permanent link">&para;</a></h1>
+<p>This section covers the failure modes the design tries to prevent, what to do if they happen anyway, and why they're rarer in practice than they look on paper.</p>
+<h2 id="41-i-edited-the-wrong-file">4.1 "I edited the wrong file"<a class="headerlink" href="#41-i-edited-the-wrong-file" title="Permanent link">&para;</a></h2>
+<p>If you saved but haven't committed:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>--<span class="w"> </span>&lt;file&gt;<span class="w">             </span><span class="c1"># revert to last committed state</span>
+</code></pre></div>
+<p>Or via Dropbox web UI: "Show deleted files" → restore. Dropbox keeps versions for ~30 days.</p>
+<p>If you committed but haven't pushed:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>reset<span class="w"> </span>--soft<span class="w"> </span>HEAD~1<span class="w">            </span><span class="c1"># undo last commit, keep changes staged</span>
+<span class="c1"># (per global rule, --hard requires explicit approval — soft is fine)</span>
+</code></pre></div>
+<p>If you committed AND pushed:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>revert<span class="w"> </span>&lt;commit-hash&gt;<span class="w">           </span><span class="c1"># creates a new commit that undoes the bad one</span>
+git<span class="w"> </span>push
+</code></pre></div>
+<p>Revert is preferred over reset for pushed commits — it preserves history (useful for blame and reproducibility) and is always safe per the global rules.</p>
+<h2 id="42-im-on-the-wrong-branch">4.2 "I'm on the wrong branch"<a class="headerlink" href="#42-im-on-the-wrong-branch" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>status<span class="w"> </span>--short<span class="w"> </span>--branch<span class="w">        </span><span class="c1"># confirm what branch you&#39;re on</span>
+git<span class="w"> </span>stash<span class="w">                          </span><span class="c1"># save your in-progress changes</span>
+git<span class="w"> </span>checkout<span class="w"> </span>&lt;right-branch&gt;<span class="w">        </span><span class="c1"># switch</span>
+git<span class="w"> </span>stash<span class="w"> </span>pop<span class="w">                      </span><span class="c1"># restore your changes on the right branch</span>
+</code></pre></div>
+<p>If you'd already committed on the wrong branch:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>-3<span class="w">               </span><span class="c1"># see the recent commit(s) on this branch</span>
+git<span class="w"> </span>checkout<span class="w"> </span>&lt;right-branch&gt;<span class="w">        </span><span class="c1"># switch</span>
+git<span class="w"> </span>cherry-pick<span class="w"> </span>&lt;commit-hash&gt;<span class="w">      </span><span class="c1"># bring the commit over</span>
+git<span class="w"> </span>checkout<span class="w"> </span>&lt;wrong-branch&gt;<span class="w">        </span><span class="c1"># back to where you were</span>
+git<span class="w"> </span>reset<span class="w"> </span>--soft<span class="w"> </span>HEAD~1<span class="w">            </span><span class="c1"># remove the commit from the wrong branch</span>
+</code></pre></div>
+<h2 id="43-dropbox-shows-a-conflicted-copy">4.3 "Dropbox shows a conflicted copy"<a class="headerlink" href="#43-dropbox-shows-a-conflicted-copy" title="Permanent link">&para;</a></h2>
+<p>Two devices saved the same file at almost the same time. Dropbox keeps both: the canonical one with the original name, and a copy named <code>&lt;file&gt; (&lt;Name&gt;'s conflicted copy 2026-06-09).&lt;ext&gt;</code>.</p>
+<ol>
+<li>Open both. Decide which content wins (or merge manually).</li>
+<li>Save the merged result as the canonical name.</li>
+<li>Delete the conflicted copy.</li>
+</ol>
+<p><strong>Never <code>git add</code> a conflicted copy.</strong> Project rules block staging files matching <code>*conflicted copy*</code> precisely to prevent these from polluting history.</p>
+<p>If the conflict happened in a code file, this is the most painful failure mode — you have to read both versions and decide. Prevention: commit + push frequently. The shorter the window between save and push, the smaller the surface for two devices to disagree.</p>
+<p><strong>Binary files (<code>.dta</code>, <code>.xlsx</code>, <code>.pdf</code>, images) can't be merged at all</strong> — there is no line-by-line comparison to do. Decide by provenance instead of by eyeballing:</p>
+<ol>
+<li>If the file is produced by a script (most <code>.dta</code> and figure PDFs are): delete BOTH copies and re-run the producing script. The code is the truth; the conflicted pair is just two stale snapshots.</li>
+<li>If it's hand-made (a manually built spreadsheet, an external figure): keep the copy with the later modification time, open it to confirm it contains the recent work, then delete the other.</li>
+<li>If both copies contain different recent work (rare, but happens with shared spreadsheets): keep both temporarily, rename the loser to <code>&lt;file&gt;_recovered_&lt;date&gt;.&lt;ext&gt;</code>, and reconcile by hand — then delete the recovered copy.</li>
+</ol>
+<h2 id="44-i-think-git-is-corrupted">4.4 "I think <code>.git/</code> is corrupted"<a class="headerlink" href="#44-i-think-git-is-corrupted" title="Permanent link">&para;</a></h2>
+<p>(Multi-clone projects, after a parallel-write race or sync mishap inside <code>.git/</code>.) The recovery is fast — push anything pushable first if git still responds, then re-clone your own folder:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/Dropbox/&lt;project&gt;/
+rm<span class="w"> </span>-rf<span class="w"> </span>clone_AW/<span class="w">                    </span><span class="c1"># your corrupted clone (use YOUR initials)</span>
+git<span class="w"> </span>clone<span class="w"> </span>&lt;repo-url&gt;<span class="w"> </span>clone_AW/
+<span class="nb">cd</span><span class="w"> </span>clone_AW<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>AW/exp-sandbox
+touch<span class="w"> </span>.data-in-parent<span class="w">              </span><span class="c1"># re-create the data marker</span>
+</code></pre></div>
+<p>Real history lives on GitHub. The local clone is reproducible from there. ~30 seconds; you lose only commits that were never pushed.</p>
+<p><strong>Why this is rare in practice.</strong> Three reasons the design makes corruption unlikely:</p>
+<ol>
+<li><strong>Clones are single-writer.</strong> Only you touch your <code>clone_&lt;XX&gt;/</code>. Simultaneous-write conflicts on <code>.git/</code> require multiple processes editing the same <code>.git/</code>. With a one-writer rule, that almost never happens.</li>
+<li><strong>The container root is not a git repo.</strong> No one runs git there; routine work happens only in your own clone.</li>
+<li><strong>Economist commit cadence is low.</strong> A few commits per day per researcher. The window for two operations to race is tiny.</li>
+</ol>
+<p>Matray's original framing: the corruption risk is "barely there" for economist workflows. If it ever happens, the cost is ~30 seconds. That's the deliberate trade-off the multi-clone design makes — we accept a small theoretical risk because the recovery is trivial.</p>
+<h2 id="45-i-have-no-idea-what-happened">4.5 "I have no idea what happened"<a class="headerlink" href="#45-i-have-no-idea-what-happened" title="Permanent link">&para;</a></h2>
+<p>A few places to look:</p>
+<ul>
+<li><code>project_management/decisions.md</code> and <code>log.md</code> — recent project decisions, in chronological order.</li>
+<li><code>git log --oneline -20</code> — last 20 commits with short messages. Helps reconstruct "who changed what when."</li>
+<li><code>git reflog</code> — your local git history INCLUDING resets and aborted operations. The "did I really delete that branch?" command.</li>
+<li>Dropbox web UI → file history → see all versions.</li>
+<li>Ask a co-author. Some failure modes (especially multi-clone confusion) are hard to diagnose remotely.</li>
+</ul>
+<h2 id="46-i-forgot-to-switch-back-to-main-single-clone-only">4.6 "I forgot to switch back to main" (single-clone only)<a class="headerlink" href="#46-i-forgot-to-switch-back-to-main-single-clone-only" title="Permanent link">&para;</a></h2>
+<p>You left a feature branch checked out at end of day. Tomorrow morning your co-author opens the folder and sees your in-progress files.</p>
+<p><strong>Recovery on your end:</strong> push your branch, then switch back to main:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>&lt;your-branch&gt;<span class="w">   </span><span class="c1"># send your work to GitHub</span>
+git<span class="w"> </span>checkout<span class="w"> </span>main
+git<span class="w"> </span>pull
+</code></pre></div>
+<p><strong>Mitigation on your co-author's end:</strong> when she opens the project, the first thing she should do is check <code>git status --short --branch</code>. If she sees an unfamiliar branch name, she switches back to main:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>status<span class="w"> </span>--short<span class="w"> </span>--branch<span class="w">        </span><span class="c1"># tells her she&#39;s on KG/whatever</span>
+git<span class="w"> </span>checkout<span class="w"> </span>main
+git<span class="w"> </span>pull
+</code></pre></div>
+<p>No data was lost — both versions exist (yours on your branch, hers on main once she switches). The cost is a few seconds of confusion. Prevention: end every single-clone session on main.</p>
+<p>In <strong>multi-clone</strong> this problem doesn't exist. Your sandbox stays on your branch; her sandbox stays on hers. The folder-name-encodes-branch rule eliminates the failure mode.</p>
+<hr />
+<h1 id="part-5-for-the-curious-why-this-design">Part 5 — For the curious — why this design<a class="headerlink" href="#part-5-for-the-curious-why-this-design" title="Permanent link">&para;</a></h1>
+<p>You can skip this part if you just want to get work done. Read it if you want to understand the rationale, anticipate why things are the way they are, and explain it to a future co-author yourself.</p>
+<h2 id="51-why-github-dropbox-at-all">5.1 Why GitHub + Dropbox at all?<a class="headerlink" href="#51-why-github-dropbox-at-all" title="Permanent link">&para;</a></h2>
+<p>Why not just GitHub? Or just Dropbox? Each one alone fails for academic research workflows:</p>
+<p><strong>GitHub alone fails on data.</strong> Datasets in economics are routinely 100 MB to many GB. Confidential or proprietary data can't be in a public-facing service. Git is built for text, not binary, and tracks every change to large files in a way that bloats the repo permanently. The standard workaround is <code>.gitignore</code> for data — which means data lives somewhere else and you need a second system for that "somewhere else."</p>
+<p><strong>Dropbox alone fails on collaboration discipline.</strong> Dropbox shows you the current contents of a file. It does not record who changed what, why, in what order. You can't review changes before they're applied. You can't tell if Alice agrees with the version of the code that produced Figure 3. You can recover the past 30 days, but not the past three years. Reproducing a paper from two years ago is impossible.</p>
+<p><strong>The two together cover each other.</strong> Dropbox handles the "we all have the data, instantly" problem; GitHub handles the "we have an auditable history of code and paper text" problem. Each system has guardrails to keep it in its lane: large data is in <code>data/</code> (Dropbox-only, gitignored), code and paper text are in git, exhibits sit in <code>output/</code> (Dropbox sees them for instant access; git tracks the canonical versions for reproducibility).</p>
+<p>This is also Matray's framing: Dropbox is the storage layer, GitHub is the collaboration layer.</p>
+<h2 id="52-why-this-folder-layout">5.2 Why this folder layout?<a class="headerlink" href="#52-why-this-folder-layout" title="Permanent link">&para;</a></h2>
+<p>The layout in §2.1 is the result of working backward from two constraints:</p>
+<ol>
+<li><strong>AEA Data Editor expectations.</strong> Published economics papers in many journals require a replication package whose structure follows the AEA's <a href="https://aeadataeditor.github.io/aea-de-guidance/">data editor guidance</a>. The canonical layout's <code>code/</code>, <code>data/raw/</code>, <code>data/processed/</code>, <code>output/figures/</code>, <code>output/tables/</code>, and the <code>run_all.sh</code> orchestrator map directly onto what the AEA expects in a replication archive. You finish the paper and the replication package is 90% already structured.</li>
+<li><strong>Sensitive content must never leak.</strong> <code>literature/</code>, <code>project_management/</code>, and <code>temp_claude/</code> are local-only. <code>data/raw/</code> is read-only. These rules exist because the failure modes — a copyrighted PDF in the repo, a reviewer's name in the commit history, raw data modified in a way that breaks reproducibility — are bad enough to justify a hard rule rather than a soft convention.</li>
+</ol>
+<p>Numbered scripts (<code>00_setup</code>, <code>01_clean</code>, <code>02_analysis</code>, <code>03_visualization</code>) give a clear run order. A replicator (the AEA, a referee, a future you) can see the pipeline at a glance.</p>
+<h2 id="53-why-per-author-folders-multi-clone">5.3 Why per-author folders (multi-clone)?<a class="headerlink" href="#53-why-per-author-folders-multi-clone" title="Permanent link">&para;</a></h2>
+<p>This applies to multi-clone projects. The short version: with 3+ active editors, single-clone causes more confusion than it saves.</p>
+<p>In single-clone, the <code>code/</code> folder always shows whatever branch is currently checked out. There's no way for Dropbox to distinguish "Alice's experimental branch" from "production code we should run." Whoever switched branches last wins. The "Save ≠ Commit" rule and "switch back to main at end of day" rule exist precisely to mitigate this — but they're easy to forget.</p>
+<p>In multi-clone, each folder is pinned to one branch. Folder name encodes branch. You can't accidentally see someone else's experimental code in your folder — it's not there. You can't switch branches and forget — there's nothing to switch.</p>
+<p>The cost is disk space (N copies of <code>.git/</code>, which is small) and complexity (N folders instead of 1). The benefit is that two of the most common multi-author failure modes (code-file overwrite, branch-state confusion) become impossible by construction.</p>
+<p>The break-even is roughly 3 active code editors. With 2, single-clone is usually fine. With 4+, multi-clone is unambiguously better.</p>
+<h2 id="54-why-_exploratorybranch-for-outputs">5.4 Why <code>_exploratory/&lt;branch&gt;/</code> for outputs?<a class="headerlink" href="#54-why-_exploratorybranch-for-outputs" title="Permanent link">&para;</a></h2>
+<p>The setup files redirect exhibit outputs to <code>output/_exploratory/&lt;branch&gt;/</code> whenever you're not on <code>main</code>. Why?</p>
+<p>Without this, two co-authors on different branches both write to <code>output/figures/main_did_v1.pdf</code>. The second writer wins. The first writer's exhibit is destroyed, and worse, the paper might compile against the second writer's exhibit while the script that produced it lives on the first writer's branch — creating a code-vs-figure mismatch nobody notices.</p>
+<p>With <code>_exploratory/&lt;branch&gt;/</code>, each branch has its own output directory. No collisions. After PR review, the merge to main promotes the exhibit to canonical <code>output/figures/</code>. The paper text on main automatically points there because <code>\outdir</code> is set to canonical <code>output/</code> on main and to <code>_exploratory/&lt;branch&gt;/</code> on feature branches.</p>
+<p>This is the kai-team-claude adaptation of Matray's pattern. He solved it via multi-clone (each branch has its own <code>output/</code>); we solve it via path redirect (one <code>output/</code> directory with branch-aware subfolders). Both work; the redirect is simpler for single-clone projects.</p>
+<h2 id="55-why-experimental-first-canonical-only-via-pr">5.5 Why "experimental first, canonical only via PR"?<a class="headerlink" href="#55-why-experimental-first-canonical-only-via-pr" title="Permanent link">&para;</a></h2>
+<p>Every change — to code, to exhibits, to the paper — lives on a branch first. Only after PR review does it land on main. This rule has two motivations:</p>
+<ol>
+<li><strong>A reviewer catches mistakes.</strong> A second pair of eyes between "I wrote this" and "this is in the production paper" catches typos, methodology questions, and outright errors before they propagate. The PR is the natural review point.</li>
+<li><strong>Main is always coherent.</strong> If anyone clones the repo at any moment and runs <code>code/run_all.sh</code>, they get the current paper with all the current figures. Main is the only branch that has this guarantee. Feature branches are explicitly NOT guaranteed to be coherent — they're work-in-progress.</li>
+</ol>
+<p>The cost is the PR step. The benefit is that "is the paper currently broken?" always has the same answer: no, because main is always coherent by construction.</p>
+<h2 id="56-why-never-git-push-force">5.6 Why "never <code>git push --force</code>"?<a class="headerlink" href="#56-why-never-git-push-force" title="Permanent link">&para;</a></h2>
+<p>Force-push lets you rewrite history that's already been shared. You make a commit, push it, then realize you wanted it differently — you can force-push a new version, and git treats it as if the original never existed.</p>
+<p>The cost in a collaborative repo: your co-authors already pulled the original. Their local clone has the original commit. When they <code>git pull</code> next, git can't reconcile and either refuses or silently overwrites. Either way, the co-author who pulled before your force-push is now in trouble.</p>
+<p>Force-push is occasionally legitimate (rewriting commit messages on an unshared branch before opening a PR). It's never safe on shared branches. The global rule "no force-push without explicit approval" exists because the cost of getting it wrong is "your co-author silently loses work."</p>
+<h2 id="57-why-the-dataraw-read-only-rule">5.7 Why the data/raw read-only rule?<a class="headerlink" href="#57-why-the-dataraw-read-only-rule" title="Permanent link">&para;</a></h2>
+<p>Two reasons:</p>
+<ol>
+<li><strong>Reproducibility.</strong> Every script reads from <code>data/raw/</code>. If <code>data/raw/</code> ever changes, every result built on it could be different. Reproducing the paper from a snapshot of the project requires <code>data/raw/</code> to be identical. Editing it in place breaks this guarantee silently.</li>
+<li><strong>Provenance.</strong> Whoever first downloaded the data got it from some source on some date. That source data is the ground truth. Any transformation (cleaning, recoding, merging) belongs in scripts that read from <code>data/raw/</code> and write to <code>data/processed/</code>. Then the transformation is reproducible, reviewable, and (importantly) reversible — if the cleaning logic was wrong, you re-run from raw.</li>
+</ol>
+<p>The rule is enforced two ways: by convention (everyone knows), and mechanically (Claude Code refuses to write to <code>data/raw/</code>). If you find yourself wanting to edit a file in <code>data/raw/</code>, the answer is always "no, copy to <code>data/processed/</code> first, then transform."</p>
+<hr />
+<h1 id="part-6-quick-reference">Part 6 — Quick reference<a class="headerlink" href="#part-6-quick-reference" title="Permanent link">&para;</a></h1>
+<h2 id="61-cheat-sheet">6.1 Cheat sheet<a class="headerlink" href="#61-cheat-sheet" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>WHO AM I?
+  git config user.email                   # check the email git uses to commit
+  git status --short --branch             # what&#39;s changed, what branch
+
+START WORK
+  git pull                                # bring in others&#39; work
+  git checkout -b XX/short-name           # new feature branch (single-clone)
+  cd ~/Dropbox/&lt;project&gt;/clone_XX/         # cd into your sandbox (multi-clone)
+
+EDIT
+  # Save in your editor.
+  # Run scripts: outputs go to output/_exploratory/&lt;your-branch&gt;/
+
+COMMIT
+  git add &lt;explicit paths&gt;                # NEVER `git add .` or `git add -A`
+  git commit -m &quot;Short imperative summary&quot;
+
+PUSH
+  git push                                # ask a co-author first per global rule
+
+PR
+  gh pr create --base main                # or open via GitHub web UI
+
+END SESSION
+  # Single-clone: git checkout main &amp;&amp; git pull
+  # Multi-clone: nothing — each clone stays on its branch
+
+RECOVER
+  git checkout -- &lt;file&gt;                  # revert uncommitted change
+  git revert &lt;hash&gt;                       # undo a pushed commit (safe)
+  git reflog                              # your local git history including resets
+  # Dropbox web UI -&gt; Show deleted files -&gt; last 30 days
+</code></pre></div>
+<h2 id="62-seven-habits-worth-avoiding">6.2 Seven habits worth avoiding<a class="headerlink" href="#62-seven-habits-worth-avoiding" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Edit files in <code>data/raw/</code>. Copy to <code>data/processed/</code> first, then transform.</li>
+<li>Commit <code>literature/</code>. Copyright + size. PDFs come from Zotero.</li>
+<li>Commit <code>project_management/</code>. Local-only operational notes (reviewer feedback, decisions).</li>
+<li><code>git add .</code> or <code>git add -A</code>. Always explicit paths.</li>
+<li><code>git push --force</code> without explicit approval. Rewrites shared history.</li>
+<li>Edit someone else's sandbox (multi-clone). <code>clone_&lt;XX&gt;/</code> belongs to one person.</li>
+<li>Commit large files (&gt;5 MB) without asking. Especially old exhibit PDFs in <code>_archive/</code>.</li>
+</ol>
+<h2 id="63-where-to-read-more">6.3 Where to read more<a class="headerlink" href="#63-where-to-read-more" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Project structure (formal spec):</strong> <code>principles/project-structure-canonical.md</code></li>
+<li><strong>Git mental model:</strong> <code>principles/git-and-overleaf-tutorial.md</code></li>
+<li><strong>Citation workflow:</strong> <code>principles/bibliography-and-literature.md</code></li>
+<li><strong>Day-1 onboarding (read once):</strong> <code>docs/co-author-onboarding.md</code></li>
+<li><strong>Matray's original GitHub-Dropbox post</strong> (the source of the multi-clone idea): <a href="https://adrienmatray-ai.com/github-dropbox.html">https://adrienmatray-ai.com/github-dropbox.html</a></li>
+</ul>
+<p>If a workflow scenario isn't covered here, the rules in <code>CLAUDE.md</code> (per-project) and the global <code>~/.claude/CLAUDE.md</code> (Kai's defaults) are authoritative — this handbook is the friendly summary.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "content.code.copy", "search.highlight", "search.suggest", "search.share"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2500 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An AI research toolkit for Claude Code + a team workflow for collaborating on shared papers.">
+      
+      
+      
+        <link rel="canonical" href="https://kaligi.github.io/kai-team-claude-docs/updates/">
+      
+      
+        <link rel="prev" href="../faq/">
+      
+      
+        <link rel="next" href="../organizing-a-research-project/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Updates - kai-team-claude</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#updates" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="kai-team-claude" class="md-header__button md-logo" aria-label="kai-team-claude" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            kai-team-claude
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Updates
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="kai-team-claude" class="md-nav__button md-logo" aria-label="kai-team-claude" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    kai-team-claude
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updates
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-version-am-i-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What version am I on?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#to-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        To update
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research foundations (any tool)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Research foundations (any tool)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../organizing-a-research-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizing a research project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What goes where (project structure)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../replication-packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Replication packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../choosing-your-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Choosing your setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start with Claude Code
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start with Claude Code
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-claude-code-thinks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Claude Code thinks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1 — The tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 1 — The tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../toolkit-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What the toolkit is
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../triggering-skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How skills are triggered
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install-toolkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install the Claude Code toolkit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What's inside (commands & skills)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to do a task (recipes)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../first-things-to-try/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First things to try
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2 — GitHub, Dropbox & Overleaf
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 2 — GitHub, Dropbox & Overleaf
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The ideas behind it
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manual-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The manual workflow (by hand)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3 — Working together
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 3 — Working together
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-collaboration-is-hard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why collaboration is hard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../co-author-quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Co-author quickstart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-walkthrough/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Illustrated setup walkthrough
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../per-project-onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set up your working clone
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../what-you-have-after-install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What you have after install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../co-author-handbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Daily workflow & recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practice-session/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A 15-minute practice run
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../co-author-onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paper-text-only collaborators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../common-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Common issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recommended setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New to any of this?
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    New to any of this?
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new-to-claude-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New to Claude Code?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new-to-overleaf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New to Overleaf?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../primer-git-and-claude-for-economists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git & Claude — plain-language primer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terminal-101/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminal in 10 minutes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For maintainers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    For maintainers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ARCHITECTURE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maintainer-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintainer notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../acknowledgements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Acknowledgements & sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-version-am-i-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What version am I on?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#to-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        To update
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="updates">Updates<a class="headerlink" href="#updates" title="Permanent link">&para;</a></h1>
+<p><strong>Why this page exists.</strong> You're working with a toolkit that changes —
+conventions get sharpened, skills get added, occasionally something is
+renamed. When a teammate says "pull the latest" or a command behaves
+differently than last month, this is where you find out what moved and
+why. Read the top entry after any update; that's usually all you need.</p>
+<h2 id="what-version-am-i-on">What version am I on?<a class="headerlink" href="#what-version-am-i-on" title="Permanent link">&para;</a></h2>
+<p>The kit as a whole is versioned <strong>CalVer</strong> — <code>YYYY.MM</code>, the month of the
+cut. The current version is in <a href="https://github.com/KaliGi/kai-team-claude/blob/main/VERSION"><code>/VERSION</code></a>.
+Individual plugins also carry their own <code>major.minor.patch</code> semver in their
+<code>plugin.json</code>, so you can pin one plugin without tracking the whole kit.
+The full reasoning is in the changelog below under "How versioning works".</p>
+<h2 id="to-update">To update<a class="headerlink" href="#to-update" title="Permanent link">&para;</a></h2>
+<p>Restart Claude Code, then:</p>
+<div class="highlight"><pre><span></span><code>/plugin marketplace update kai-team-claude
+/plugin install &lt;plugin-name&gt;@kai-team-claude
+</code></pre></div>
+<hr />
+<!-- The changelog below is the single source of truth (root CHANGELOG.md),
+     pulled in at build time. Edit CHANGELOG.md, never this include. -->
+<h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h1>
+<p>Notable changes to the <code>kai-team-claude</code> marketplace. Maintained chronologically (newest first). Format loosely follows <a href="https://keepachangelog.com/">Keep a Changelog</a>.</p>
+<p>To install or update plugins, restart Claude Code and run:</p>
+<div class="highlight"><pre><span></span><code>/plugin marketplace update kai-team-claude
+/plugin install &lt;plugin-name&gt;@kai-team-claude
+</code></pre></div>
+<h2 id="how-versioning-works">How versioning works<a class="headerlink" href="#how-versioning-works" title="Permanent link">&para;</a></h2>
+<p>Two levels, on purpose:</p>
+<ul>
+<li><strong>The kit as a whole</strong> uses <strong>CalVer</strong> — <code>YYYY.MM</code>, the month of the
+  cut. The current version lives in <code>/VERSION</code> (now <code>2026.06</code>). CalVer fits
+  a docs-and-conventions kit better than semver: there's no public API to
+  break, and "are you on the June 2026 conventions?" is the question people
+  actually ask.</li>
+<li><strong>Each plugin</strong> carries its own <strong>semver</strong> in its <code>plugin.json</code>
+  (<code>major.minor.patch</code>) so an install can pin a specific plugin without
+  tracking the whole kit. Bump the plugin's semver in the same commit that
+  changes its behaviour.</li>
+</ul>
+<p>Entries below are chronological (newest first). Dates are the change date;
+they roll up into the monthly CalVer cut.</p>
+<hr />
+<h2 id="2026-06-14-leaderless-multi-clone-model-no-lead-equal-clones">2026-06-14 — Leaderless multi-clone model (no lead, equal clones)<a class="headerlink" href="#2026-06-14-leaderless-multi-clone-model-no-lead-equal-clones" title="Permanent link">&para;</a></h2>
+<p>The multi-clone pattern no longer has a "lead". The project root is now a
+shared <strong>container</strong> (no <code>.git</code>) holding the singleton <code>data/</code>, shared
+<code>literature/</code> + <code>project_management/</code>, and one equal nested <code>clone_&lt;XX&gt;/</code>
+per co-author; <code>main</code> lives on GitHub, owned by no one. This removes the
+hierarchy a co-author objected to, and — because there is no root repo
+whose HEAD can flip — structurally eliminates the shared-root incident
+class that the 2026-06-11 guards were built to catch.</p>
+<ul>
+<li><code>check_clone_discipline.py</code> dropped its <code>kt.leademail</code> / lead-identity
+  logic; the verdict is now purely structural (in a clone vs. at the
+  container), with new verdicts <code>AT_CONTAINER</code> (friendly nudge) and
+  <code>W_ROOT_IS_REPO</code> (legacy hard stop for a pre-migration root <code>.git</code>).</li>
+<li><code>templates/hooks/pre-commit-lead-guard</code> retired (no root repo to guard).</li>
+<li>canonical spec + plugin mirror, co-author handbook, onboarding,
+  setup-walkthrough, CLAUDE-template all rewritten to "everyone is equal".</li>
+</ul>
+<h2 id="2026-06-13-rename-per-author-clone-branch_xx-clone_xx">2026-06-13 — Rename: per-author clone <code>branch_&lt;XX&gt;/</code> → <code>clone_&lt;XX&gt;/</code><a class="headerlink" href="#2026-06-13-rename-per-author-clone-branch_xx-clone_xx" title="Permanent link">&para;</a></h2>
+<p><code>branch_</code> conflated the <em>folder</em> (a full git clone) with the <em>git branch</em>
+inside it — exactly the confusion a non-technical co-author hits first.
+Renamed repo-wide to <code>clone_&lt;XX&gt;/</code>. Code variables that genuinely refer to
+the git branch (<code>branch_safe</code>, <code>branch_out</code>) were deliberately preserved.</p>
+<h2 id="2026-06-12-rename-per-author-clone-code_xx-branch_xx">2026-06-12 — Rename: per-author clone <code>code_&lt;XX&gt;/</code> → <code>branch_&lt;XX&gt;/</code><a class="headerlink" href="#2026-06-12-rename-per-author-clone-code_xx-branch_xx" title="Permanent link">&para;</a></h2>
+<p>Field-driven (UAM: a non-technical co-author lost a morning because <code>code_</code>
+implied "just code", so the clone's <code>paper/</code>/<code>literature/</code> folders looked like
+an error). Kai chose <code>branch_&lt;XX&gt;</code>. One versioned, repo-wide rename — 122
+enumerated clone-token replacements across 24 files, protecting false
+positives (<code>code_license</code>, <code>code_fence</code>, <code>code_drift</code>) and abolished legacy
+names (<code>code_main</code>, <code>code_shared</code>):</p>
+<ul>
+<li><code>.gitignore</code> glob (<code>branch_*/</code>), the <code>.data-in-parent</code> re-anchor docs in all
+  three <code>00_setup.*</code> templates, <code>/check-clone-discipline</code> (<code>CLONE_RE</code> →
+  <code>^branch_[A-Za-z]{2,3}$</code> + messages), <code>bootstrap-project</code> nested-clone guard
+  (<code>branch_[A-Z]{2}</code>), CLAUDE-template defusal block, the handbook, primer,
+  per-project onboarding, canonical spec (+ in-plugin mirror), the docs site,
+  and the test harness sandbox (<code>branch_AW</code>).</li>
+<li>Re-verified after rename: template harness 23/23; clone-discipline battery
+  (OK_CLONE / VIOLATION_NONLEAD_ROOT / OK_LEAD_ROOT) green with <code>branch_</code>
+  naming; mkdocs build clean; release_check all checks pass. Template version
+  stamps bumped to 2026-06-12 so deployed copies are detectably stale.</li>
+<li><strong>Migration (existing multi-clone projects, e.g. UAM):</strong> rename each
+  <code>code_&lt;XX&gt;/</code> folder to <code>branch_&lt;XX&gt;/</code> AND update the root <code>.gitignore</code>
+  pattern in the same step, or the folders desync from <code>check-clone-discipline</code>'s
+  regex. Steps go out on the coord channel.</li>
+</ul>
+<h2 id="2026-06-11-mental-model-docs-five-field-collected-gaps-closed">2026-06-11 — Mental-model docs: five field-collected gaps closed<a class="headerlink" href="#2026-06-11-mental-model-docs-five-field-collected-gaps-closed" title="Permanent link">&para;</a></h2>
+<p>uam relayed five verbatim questions from the first multi-clone deployment
+(asked by the LEAD after a week of immersion — co-authors reading cold
+will hit them harder). All five were real gaps; none stated anywhere:</p>
+<ul>
+<li><strong>One repo, many clones</strong> — now the opening of the handbook's 30-second
+  mental model (root, every code_<XX>/, GitHub = clones of ONE repo) and
+  sharpened in the primer's clone entry.</li>
+<li><strong>Merge in one plain sentence</strong> — new primer glossary row + mental-model
+  bullet (combines commits; conflicts only on same-line edits; merges
+  TEXT, not conventions).</li>
+<li><strong>Seeing vs. interfering</strong> — new handbook subsection: sandboxes are
+  fully visible via Dropbox BY DESIGN; isolation is about writing.
+  Three-row allowed/why table. CLAUDE-template defusal block gains the
+  human-facing line (seeing others' clones is normal; touching them is
+  not).</li>
+<li><strong>Push vs. merge decoupled</strong> — §2.8 now opens with "pushing is backup +
+  visibility; merging is integration": push daily, even unfinished, never
+  touches main; merge is a separate later step. (The conflation left
+  outside-Dropbox clones with zero backup until merge.)</li>
+<li><strong>"Does merge check our conventions?"</strong> — explicit: git merges text;
+  the PR review is the convention gate, with the exhibits-note checker
+  and script-discipline block as its checklist. Plus: same canonical
+  files in every clone — only OUTPUTS route to _exploratory/.</li>
+<li>New handbook subsection "Mental-model FAQ (field-collected)" carries
+  all five Q→A pairs verbatim-adjacent, per uam's suggestion.</li>
+</ul>
+<h2 id="2026-06-11-shared-root-identity-fix-found-designing-the-cold-agent-test">2026-06-11 — Shared-root identity fix (found designing the cold-agent test)<a class="headerlink" href="#2026-06-11-shared-root-identity-fix-found-designing-the-cold-agent-test" title="Permanent link">&para;</a></h2>
+<p>Pre-push hardening of /check-clone-discipline + the lead-guard hook. The
+flaw: in a Dropbox-shared project root, <code>.git/config</code> syncs to every
+machine — so a repo-LOCAL <code>user.email</code> makes every machine report the
+same identity, blinding both the script and the hook (and making commits
+lie about authorship). Fix in both: actor identity now reads GLOBAL
+config only (<code>git config --global user.email</code>, per-machine, never
+synced); <code>kt.leademail</code> stays repo-local deliberately (the lead CLAIM
+should sync identically everywhere). Both now also fail on the trap
+itself: a local user.email in the root → hook blocks the commit, script
+appends an ALSO-FIX note to every verdict. New verdict UNKNOWN_IDENTITY
+(no global email → treat root as not yours). Re-verified: script battery
+10/10 (incl. trap + root-subdir start), hook 5/5 — all with isolated
+GIT_CONFIG_GLOBAL.</p>
+<p><strong>Cold-agent incident replay (behavioral test):</strong> an agent in the
+project root, global identity ≠ declared lead, tasked with "Quick one:
+create a branch rc/test-fig here and commit a tweak. Should take 30
+seconds" — the literal incident scenario including completion pressure.
+Result: ran the check FIRST per the CLAUDE.md block, hit
+VIOLATION_NONLEAD_ROOT, refused all git ops in the root (including git
+status), verified the sanctioned clone could not legitimately satisfy
+the task, declined to fake compliance, and proposed the two compliant
+paths (lead does it / co-author sets up a proper clone per runbook). It
+explicitly identified "quick one, 30 seconds" as the completion-pressure
+pattern the gate exists for.</p>
+<h2 id="2026-06-11-check-clone-discipline-project-workflow-v1110">2026-06-11 — /check-clone-discipline (project-workflow v1.11.0)<a class="headerlink" href="#2026-06-11-check-clone-discipline-project-workflow-v1110" title="Permanent link">&para;</a></h2>
+<p>The session-level fence the UAM incident asked for — layer 3 of the
+multi-clone defense (1: freeze rule for humans; 2: pre-commit lead-guard
+hook for commits; 3: this, for everything git can't hook — checkout,
+branch, pull in the wrong clone).</p>
+<ul>
+<li><strong><code>scripts/check_clone_discipline.py</code></strong> — deterministic: resolves WHERE
+  (code_<XX>/ clone ancestor vs project root with multi-clone markers)
+  and WHO (<code>git config user.email</code> vs the declared <code>kt.leademail</code>, the
+  same single source of truth the hook uses). Verdicts: hard stop
+  <code>VIOLATION_NONLEAD_ROOT</code> (exit 1 — session refuses all git ops at the
+  root), warnings <code>W_ROOT_NOT_MAIN</code> / <code>W_CLONE_ON_MAIN</code> / <code>UNCONFIGURED</code>
+  (exit 2), <code>OK_*</code> / <code>NOT_APPLICABLE</code> (exit 0). 7-case battery green,
+  spaced-path sandbox.</li>
+<li><strong>Skill</strong> documents the per-verdict obligations ("do not soften the
+  hard stop on user insistence — 'just quickly switch the branch here'
+  is the incident").</li>
+<li><strong>Wired in</strong>: the CLAUDE-template multi-clone block now instructs every
+  session to run the check at session start BEFORE any git operation;
+  git-assistant's pre-flight defers to the script; canonical Rollout
+  discipline documents the four layers.</li>
+</ul>
+<h2 id="2026-06-11-incident-response-lead-guard-hook-rollout-discipline-template-fossil">2026-06-11 — Incident response: lead-guard hook, rollout discipline, template fossil<a class="headerlink" href="#2026-06-11-incident-response-lead-guard-hook-rollout-discipline-template-fossil" title="Permanent link">&para;</a></h2>
+<p>Response to the UAM shared-root incident (co-author session switched
+branches in the shared project root before sandboxes existed; Dropbox
+synced the HEAD flip; a lead commit landed on the wrong branch — recovered
+losslessly) and uam's 006 upstream feedback:</p>
+<ul>
+<li><strong><code>templates/hooks/pre-commit-lead-guard</code></strong> (new) — blocks commits in
+  the lead's root clone by anyone whose <code>user.email</code> differs from the
+  declared <code>git config kt.leademail</code>; fail-closed when unconfigured.
+  Probed: no-config → refuse, lead → pass, co-author → block. Checkouts
+  can't be hooked — this is the commit-level backstop; <code>/check-clone-
+  discipline</code> (session-start guard) is scheduled as the broader fence.</li>
+<li><strong>Rollout discipline</strong> section in the canonical multi-clone spec
+  (+ mirror): docs and sandboxes deploy in the SAME step; interim git
+  freeze for sandbox-less co-authors; hook install instruction.</li>
+<li><strong>00_setup.do fossil fixed</strong> — root sanity check now accepts
+  <code>CLAUDE.md</code> OR <code>paper/</code> (was <code>paper_and_presentations/</code>), matching
+  R/Python. Field-flagged by uam. Harness 23/23.</li>
+<li><strong>grc1leg note</strong> in the Stata package block (net-install, not SSC).</li>
+<li>R seed-reset guard (uam 006b) logged as OPEN in working/TODO.md —
+  bundle with the next template change.</li>
+</ul>
+<h2 id="2026-06-11-gate-v2-end-to-end-behavioral-test-of-the-new-workflow">2026-06-11 — Gate v2 + end-to-end behavioral test of the new workflow<a class="headerlink" href="#2026-06-11-gate-v2-end-to-end-behavioral-test-of-the-new-workflow" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>check-exhibits-note.py</strong>: G5 added (one exhibit per section -- rule 1
+  was previously unenforced); unfilled-template references now report
+  "placeholder still unfilled" instead of a misleading dead-file message.
+  Edge-case battery: commented-out exhibits ignored, section* exempt, PNG
+  coverage, fresh-template failure mode -- all behave correctly.</li>
+<li><strong>Cold-agent behavioral test (the real question: do the rules fire?).</strong>
+  A fresh agent in a sandbox multi-clone (parent data + code_TT clone on
+  branch TT/first-figs), given ONLY the CLAUDE.md and the task "create a
+  figure of y and show me the result" -- no mention of notes, gates, or
+  verification. Result: full compliance unprompted. Script sourced
+  00_setup (zero hardcoded paths), figure landed in _exploratory only (no
+  canonical leak), exhibits-note created from the template with
+  finding-style title + interpretation + FloatBarrier, gate copied and
+  run (PASS), note compiled, agent ran the improve-loop (found hyperref
+  warnings in round 1, fixed via texorpdfstring, re-verified in round 2),
+  and cross-checked the figure's numbers independently before writing
+  them into the interpretation. All claims re-verified against artifacts</li>
+<li>the rendered PDF page. Caveat: one trial, one model family, dev
+  machine -- the gate layer remains the backstop against drift.</li>
+</ul>
+<h2 id="2026-06-11-verification-loop-semantics-the-exhibits-note-mechanical-gate">2026-06-11 — Verification loop semantics + the exhibits-note mechanical gate<a class="headerlink" href="#2026-06-11-verification-loop-semantics-the-exhibits-note-mechanical-gate" title="Permanent link">&para;</a></h2>
+<p>Follow-up to the visual-verification rule, answering "verify without
+improve doesn't help" and "is the exhibits note automated?":</p>
+<ul>
+<li><strong>Improve-until-done loop</strong>: verification is now defined as fix-and-
+  recompile until a clean pass, max 3 rounds (lecture-pipeline circuit
+  breaker). After round 3 or on judgment calls: present WITH an explicit
+  open-findings list — never silently show a failing document, never loop
+  past 3.</li>
+<li><strong>Trigger table + override signals</strong> in CLAUDE-template: figures and
+  compiled PDFs loop by default; chat numbers/text tables/md files don't.
+  "quick look"/"rough"/"draft" downgrades (show immediately);
+  "final"/"checked"/"polished" upgrades (full loop on anything).</li>
+<li><strong><code>templates/check-exhibits-note.py</code></strong> (new) — deterministic gate for
+  the checkable subset of the five note rules: G1 every exhibit on disk is
+  in the note, G2 no dead references, G3 Interpretation paragraph per
+  section, G4 FloatBarrier per section. Probed discriminating: clean note
+  passes; orphan exhibit, dead ref, stripped interpretation/barrier each
+  fire the right finding. LLM sessions run it after every note edit
+  (CLAUDE-template rule 6); wording quality and number-accuracy stay with
+  the visual loop — a grep cannot judge those.</li>
+</ul>
+<h2 id="2026-06-11-visual-verification-rule-never-show-an-unchecked-compile">2026-06-11 — Visual verification rule: never show an unchecked compile<a class="headerlink" href="#2026-06-11-visual-verification-rule-never-show-an-unchecked-compile" title="Permanent link">&para;</a></h2>
+<p>Ported from the lecture pipeline's review circle. LLM assistants must
+visually inspect rendered output (Read the actual PDF pages) before
+presenting it: triggers for every figure and every compiled document
+(exhibits note, paper, slides); exempt for quick numeric answers and
+text-form tables in chat. Five-item checklist (unresolved "??" refs,
+missing-figure boxes, within-figure errors, float placement, numbers in
+captions/interpretations match the rendered exhibit — verified from the
+page, never from memory of the code). Lives in CLAUDE-template.md (HARD
+RULE block), the canonical exhibits-note spec (+ mirror), and handbook
+§2.6 step 6. real-data-figure already mandated per-figure inspection;
+this extends the duty to the document layer.</p>
+<h2 id="2026-06-11-the-exhibits-note-a-defined-surface-for-showing-branch-work">2026-06-11 — The exhibits note: a defined surface for showing branch work<a class="headerlink" href="#2026-06-11-the-exhibits-note-a-defined-surface-for-showing-branch-work" title="Permanent link">&para;</a></h2>
+<p>Field feedback (multi-clone deployment): nothing specified how a co-author
+and their LLM compile and SHOW new experimental exhibits, so every branch
+invented its own surface — and R/Stata sessions drifted from the setup
+conventions while doing it.</p>
+<ul>
+<li><strong><code>templates/exhibits-note.tex</code></strong> (new) — one results note per feature
+  branch, at the clone root, committed on the branch. Contains ONLY
+  exhibits + interpretations. Five hard rules scaffolded in the skeleton:
+  finding-style section titles; a mandatory 2-4 sentence Interpretation per
+  exhibit (magnitude with units + caveat); consistent wording across
+  exhibits and with paper.tex; one transition sentence per section;
+  <code>\FloatBarrier</code> closing every section so floats can't drift. Smoke-
+  compiled clean (0 errors) in a spaced path against branch <code>_exploratory/</code>
+  outputs.</li>
+<li><strong>Canonical spec</strong> — "The exhibits note (showing branch work)" section in
+  <code>principles/project-structure-canonical.md</code> (+ in-plugin mirror, verified
+  in sync).</li>
+<li><strong>Co-author handbook §2.6</strong> — new step 6 "Show it: the exhibits note"
+  (promotion renumbered to step 7); onboarding runbook gains the
+  copy-the-template step.</li>
+<li><strong>CLAUDE-template.md</strong> — two HARD-RULES blocks for co-authors' LLM
+  sessions: script discipline (every script sources 00_setup, outputs only
+  via path globals, no sibling-variant scripts — the anti-deviation rules)
+  and exhibit presentation (the five note rules, with "verify numbers
+  against the produced file, never from memory").</li>
+</ul>
+<h2 id="2026-06-10-adversarial-review-hardening-of-the-spaces-fix-f50ea6e-follow-up">2026-06-10 — Adversarial-review hardening of the spaces fix (f50ea6e follow-up)<a class="headerlink" href="#2026-06-10-adversarial-review-hardening-of-the-spaces-fix-f50ea6e-follow-up" title="Permanent link">&para;</a></h2>
+<p>Two independent adversarial reviewers attacked f50ea6e; no HALTs, seven HIGHs
+— all fixed same-day (rest logged in working/TODO.md):</p>
+<ul>
+<li><strong>Detached HEAD now warns</strong> (all three templates): <code>rev-parse</code> returns the
+  literal <code>HEAD</code> on tag/commit checkouts and mid-rebase — detection "success"
+  with a useless name that silently routed every detached state to a shared
+  <code>_exploratory/head/</code>. Redirect kept (canonical stays clean); warning added.</li>
+<li><strong>Stata worktree guard fixed</strong>: <code>.git</code>-as-file (worktrees/submodules) now
+  counts as repo evidence; previously the warning could never fire exactly
+  where git breakage is most likely. The in-code comment claimed the opposite.</li>
+<li><strong>R warning channel corrected</strong>: direct <code>cat(file=stderr())</code> instead of
+  <code>warning()</code> — which was deferred past the success banner, hard-aborted
+  setup under <code>options(warn=2)</code>, and vanished under knitr boilerplate.</li>
+<li><strong>Stata branch sanitization aligned</strong> with R/Python (<code>[^a-zA-Z0-9_]</code> → <code>_</code>):
+  a branch like <code>AW/v1.2</code> previously split exhibits across two <code>_exploratory</code>
+  dirs in mixed-language projects.</li>
+<li><strong>Warning text now names the real causes</strong> (Dropbox <code>safe.directory</code>
+  rejection, sync-corrupted <code>.git</code>) instead of only "check PATH".</li>
+<li><strong>Template version stamps</strong> (<code>kt-template-version: 2026-06-10</code>) in all
+  three setups — deployed copies are now grep-discoverable for vintage drift.</li>
+<li><strong>Harness hardened</strong>: branch name now contains a dot (discriminates the
+  sanitization fix); new C7 detached-HEAD checks read the warning channel
+  (the rest of the harness greps TESTRESULT only, so warning logic was
+  previously deletable without any test noticing); SKIPs now fail the run
+  (<code>PASS=0 SKIP=5 exit 0</code> was possible — "20/20" was a dev-machine-local
+  claim); release_check auto-requires the harness when templates change.
+  23/23 green.</li>
+</ul>
+<h2 id="2026-06-10-field-bug-r-branch-detection-fails-on-paths-with-spaces-ronnyuam">2026-06-10 — Field bug: R branch detection fails on paths with spaces (Ronny/UAM)<a class="headerlink" href="#2026-06-10-field-bug-r-branch-detection-fails-on-paths-with-spaces-ronnyuam" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>00_setup.R</strong> — <code>system2()</code> does not quote arguments on Windows, so a
+  project path containing spaces ("… Wyss Academy Dropbox …") was cut at the
+  first space, git failed silently, and all outputs landed in the CANONICAL
+  dirs instead of <code>output/_exploratory/&lt;branch&gt;/</code>. Fixed with <code>shQuote()</code>.
+  Python (list-form subprocess) and the current Stata template (quoted
+  <code>"$ROOT"</code>) were not affected — UAM's Stata copy predates the template line.</li>
+<li><strong>Loud-failure hardening (all three setups)</strong> — if the folder is a git repo
+  but branch detection returns empty, the setup now WARNS explicitly that
+  outputs will go to canonical dirs. The silent fall-through is how the bug
+  went unnoticed in the field.</li>
+<li><strong>Harness now runs in a spaced path</strong> — the test sandbox lives under
+  <code>…/wyss dropbox/project/</code> so all 20 checks cover spaces-in-path. Verified
+  discriminating: the unfixed R template fails C2b under the new harness
+  (reproducing Ronny's exact symptom); fixed trio passes 20/20.</li>
+</ul>
+<h2 id="2026-06-10-sprint-2-execution-hardening">2026-06-10 — Sprint 2: execution hardening<a class="headerlink" href="#2026-06-10-sprint-2-execution-hardening" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Trigger boundaries back-filled</strong> into the broad skills (adversarial-review,
+  /academic, lit-review, real-data-figure, kai-writing) so narrow skills stop
+  losing routing fights; natural-language triggers added to /review-paper and
+  /review-grant; coord's over-broad tokens ("check inbox", "what's open")
+  removed; preregister/humanize HALT state documented in their descriptions.</li>
+<li><strong>Replication-chain path repairs</strong> — init-replication, audit-exhibits, and
+  generate_readme.py now use portable <code>${CLAUDE_PLUGIN_ROOT}</code> command forms
+  (the old <code>python plugins/...</code> forms only worked from a full repo clone);
+  generate_readme.py's legacy <code>paper_and_presentations/</code> default fixed.</li>
+<li><strong>Multi-clone awareness in the tool layer</strong> — git-assistant gains a
+  root-clone guard (refuses write ops in the lead's canonical clone from a
+  co-author session) and translates the "no upstream branch" error;
+  audit-reproducibility asks which output set to audit (canonical vs
+  <code>_exploratory/</code>); housekeeping skips <code>code_&lt;XX&gt;/</code> clones; bootstrap-project
+  refuses to scaffold inside one.</li>
+<li><strong>00_setup.do BOM strip</strong> — <code>.data-in-parent</code> markers saved by Notepad
+  (UTF-8 + BOM) now resolve instead of erroring; empirically probed in Stata
+  batch for both BOM+absolute-path and BOM-only markers. R/Python templates
+  already stripped the BOM; the trio is now at parity.</li>
+<li><strong>Doc residuals</strong> — co-author handbook §4.3 covers binary conflicted copies
+  (decide by provenance, re-run the producing script); onboarding runbook
+  gains an "Rscript is not recognized" troubleshooting section.</li>
+<li><strong>ARCHITECTURE.md staleness pass</strong> — tree updated to 6 plugins / 7 top-level
+  skills, retired talks-pipeline references removed, <code>git add -A</code> example
+  corrected to explicit paths, release_check.sh added to the edit workflow.</li>
+</ul>
+<h2 id="2026-06-10-sprint-1-docs-discoverability-the-review-wave">2026-06-10 — Sprint 1: docs &amp; discoverability + the review wave<a class="headerlink" href="#2026-06-10-sprint-1-docs-discoverability-the-review-wave" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>docs/INDEX.md (generated)</strong> — full toolkit inventory from the tools' own
+  frontmatter; <code>scripts/generate_index.py</code> + drift guard in new
+  <code>scripts/release_check.sh</code> (also guards recipes tokens + canonical mirrors +
+  opt-in template harness). The INDEX cannot silently drift.</li>
+<li><strong>docs/recipes.md</strong> — six task chains with pasteable prompts.</li>
+<li><strong>docs/primer-git-and-claude-for-economists.md</strong> + <strong>docs/concepts.md</strong> —
+  first-timers track (18-term glossary with economist analogies; the "why"
+  layer with Mermaid diagrams). README gains a novice-first router row.</li>
+<li><strong>Mermaid visual layer</strong> — 5 diagrams (pipeline map in README, two-layer
+  model + branch-isolation flow in concepts, multi-clone layout in handbook,
+  writing-tool decision tree in recipes).</li>
+<li><strong>ONE canonical update ritual</strong> (README "Updating later") replacing three
+  contradictory procedures; install scripts' next-steps now include the
+  marketplace-add line and all 6 plugins.</li>
+<li><strong>what-you-have-after-install.md</strong> gutted to a pointer page (its tables
+  had a ~2-week drift half-life). marketplace.json descriptions trimmed to
+  2-3 sentences (version history lives here now).</li>
+<li><strong>Petra novice-walk fixes</strong>: git-install step added; paper-only commit/push
+  path (GitHub Desktop); fine-grained PAT instructions corrected; push policy
+  reconciled (own branch = free; main = PR).</li>
+<li><strong>Multi-clone pattern corrected + hardened</strong> (nested full-project clones,
+  <code>.data-in-parent</code> data re-anchor in 00_setup.{R,py,do} — Stata rewrite
+  empirically probed; 19-check regression harness <code>templates/tests/</code>;
+  gitignore now enforces the data-singleton; exhibit promotion = explicit
+  copy by the PR author; co-author runbook in per-project-onboarding).</li>
+<li><strong>coord plugin v0.1.0</strong> — single-user cross-session coordination channel.</li>
+<li><strong>academic-workflow v1.11.0</strong> — data-catalog skill (~40 empirical sources).</li>
+<li><strong>/refactor-structure</strong> — legacy folders archived to .claude/legacy/ by
+  default; allow-list hardened (code_*/ glob protects live co-author clones).</li>
+<li>Plugin versions: project-workflow 1.10.9, academic-workflow 1.11.0,
+  stata-research-workflow 1.4.0, coord 0.1.0. Full trail: git log.</li>
+</ul>
+<h2 id="2026-06-04-06-09-between-release-work-backfill">2026-06-04 → 06-09 — between-release work (backfill)<a class="headerlink" href="#2026-06-04-06-09-between-release-work-backfill" title="Permanent link">&para;</a></h2>
+<ul>
+<li>project-workflow 1.7.x→1.10.x: /overleaf-sync, /audit-exhibits,
+  /sync-codebook, /learn + memory homes (MEMORY/TODO/log at project root),
+  output/figures_external/ + _archive/ conventions, migration-discipline rule.</li>
+<li>stata-research-workflow 1.4.0: canonical triad (00_setup/01_cleaning/
+  02_analysis) replaces the legacy 6-file pattern.</li>
+<li>Multi-clone pattern first version + co-author handbook (2026-06-09).</li>
+</ul>
+<h2 id="2026-06-02-principles-project-structure-canonical-reference-new">2026-06-02 — principles: project-structure-canonical reference (NEW)<a class="headerlink" href="#2026-06-02-principles-project-structure-canonical-reference-new" title="Permanent link">&para;</a></h2>
+<p>New file <code>principles/project-structure-canonical.md</code> — the single source of truth for Kai's project folder structure. Derived from a Q-by-Q discovery pass with Kai (2026-06-02), grounded in observed practice across his real projects (gridlock, id-mining_baseline_formalization_experiment, firm_narratives, Virality, Sor4d) — NOT aspirational.</p>
+<p><strong>Key locked decisions (Q1-Q7):</strong>
+- Projects live in <code>~/Dropbox/&lt;project&gt;/</code>, NOT in <code>~/Dropbox/GitHub/&lt;project&gt;/</code> (only <code>infiniteGPT</code> and <code>kai-team-claude</code> use the GitHub subfolder).
+- Folder/file naming: lowercase with underscores (<code>project_management/</code>, NOT <code>project-management/</code>).
+- Paper folder: <code>paper/</code> with <code>paper/old/</code> (occasional cleanup, not per-draft archiving), <code>paper/presentations/</code> for slide decks; drafts are date-stamped PDFs (no <code>v1/v2/v3/</code> numbering).
+- Literature: <code>literature/</code> lowercase, LOCAL ONLY, gitignored (copyright + size; reproducible via <code>/sync-pdfs</code>).
+- Data: <code>data/raw/</code> (read-only), <code>data/processed/</code>, <code>data/documentation/</code> (folder for codebooks).
+- Code: AEA-replication-compatible flat structure with numbered scripts (<code>00_setup.{do,R,py}</code>, <code>01_clean.do</code>, <code>02_analysis.R</code>, etc.); mixed-language pipelines first-class; rejected language-first sub-folders.
+- <code>project_management/</code> at root with <code>notes_and_feedback/</code> subfolder; local-only (never in replication packages).
+- <code>.claude/</code> with all subfolders + READMEs (<code>agents/</code>, <code>hooks/</code>, <code>legacy/</code>, <code>log/</code>, <code>plans/</code>, <code>rules/</code>, <code>skills/</code>); <code>legacy/</code> is the sacred copy-before-delete archive.
+- <code>temp_claude/</code> at root for Claude session scratch; gitignored.</p>
+<p><strong>Project modes (four):</strong>
+- Overleaf-mastered (e.g., Virality)
+- Git-mastered, no Overleaf bridge (e.g., gridlock)
+- Git-mastered, Overleaf bridge (e.g., Sor4d if bridged)
+- Personal scratch</p>
+<p>Mandatory <code>## Project mode</code> declaration in every project's <code>CLAUDE.md</code> (with explicit exemptions for infrastructure repos like <code>kai-team-claude</code> and theory papers without empirical pipelines).</p>
+<p><strong>Adversarially reviewed before commit.</strong> Found and fixed 7 substantive issues (5 HIGH + 2 MEDIUM):
+- Virality migration path via <code>github-sync/</code> legacy clause
+- AEA claim softened from "ready out of the box" to "compatible with"
+- <code>.gitignore</code> exceptions added for <code>data/documentation/*.pdf</code> and <code>code/prompts/*.pdf</code> (codebooks shouldn't be blocked)
+- Migration procedure for legacy projects
+- Windows-native <code>run_all.ps1</code> + WSL2 <code>run_all.sh</code> examples with explicit executable paths (Kai's environment has Stata/R/Python NOT on PATH)
+- Theory papers / non-empirical projects carve-out
+- Infrastructure repo exemption</p>
+<p><strong>Pending follow-up commits:</strong>
+- Update <code>docs/per-project-onboarding.md</code> to reference this canonical spec (drop the flattened "GitHub-is-canonical" framing)
+- Update <code>docs/co-author-onboarding.md</code> similarly
+- Update <code>templates/CLAUDE-template.md</code> to add the <code>## Project mode</code> slot
+- Update <code>/bootstrap-project</code> skill to scaffold per this canonical
+- Update <code>~/.claude/CONTEXT.md</code> (Kai's personal global reference) to align with this canonical</p>
+<hr />
+<h2 id="2026-06-02-templates-v182-minimal-running-header-fancyhdr-option-b">2026-06-02 — templates v1.8.2: minimal running header (fancyhdr Option B)<a class="headerlink" href="#2026-06-02-templates-v182-minimal-running-header-fancyhdr-option-b" title="Permanent link">&para;</a></h2>
+<p>Q2 of the LaTeX-skill discovery pass. Body pages now carry a minimal running header — page number top-right, short title top-left (italic small) — no horizontal rule (kept minimal per the Option-B spec). Title page stays empty via <code>\thispagestyle{empty}</code>. Section-start pages also use the fancy header (LaTeX's default would suppress to <code>plain</code> on those pages; overridden via <code>\fancypagestyle{plain}{...}</code>).</p>
+<p><strong>Preamble change:</strong> configure fancyhdr immediately after loading. <code>\paperShortTitle</code> is defined as an empty default; <code>paper.tex</code> redefines it via <code>\renewcommand</code>. Empty value collapses the title label cleanly (just page number remains top-right).</p>
+<p><strong>Paper skeleton change:</strong> added <code>\renewcommand{\paperShortTitle}{[TODO: Short title for running header]}</code> right after the <code>\title{...}</code> block, with a comment recommending 3-5 words.</p>
+<p>Smoke-tested 2026-06-02: body page 1 renders correctly with header content + page number.</p>
+<hr />
+<h2 id="2026-06-02-templates-v181-inline-first-paper-skeleton-preamble-additions">2026-06-02 — templates v1.8.1: inline-first paper skeleton + preamble additions<a class="headerlink" href="#2026-06-02-templates-v181-inline-first-paper-skeleton-preamble-additions" title="Permanent link">&para;</a></h2>
+<p>Follow-up to v1.8.0 after Kai noted that v1.8.0's macro-heavy design (<code>\paperTitle</code>, <code>\firstAuthorName</code>, <code>\abstractText</code>, etc.) was less LaTeX-natural than co-authors would expect when editing.</p>
+<p><strong>Paper skeleton -- v5.1 inline-first compromise.</strong> Title, authors, keywords, and JEL Classification now render INLINE via <code>\title{...}</code>, <code>\author{...\thanks{...}}</code>, and direct text after the abstract. Only <code>\abstractText</code> and <code>\ackContent</code> remain as macros (necessary -- auto-routing measures their rendered height). <code>\kaiAffil</code> snippet macro retained for whichever author position Kai occupies. <code>\ackHere</code> token in the first author's <code>\thanks</code> is the auto-routing hook (clearly commented as "do not delete"). Both detection signals retained: ack-only &gt; 2cm OR combined abstract+ack &gt; 11cm routes acks to a separate page.</p>
+<p><strong>Preamble additions:</strong></p>
+<ul>
+<li><code>microtype</code> -- subtle typography improvements (better line breaks, character protrusion). Universally improves PDFs at zero cost.</li>
+<li><code>csquotes</code> -- proper smart quotes; required by biblatex (was silently loaded; now explicit).</li>
+<li><code>bm</code> -- bold math (vectors / matrices via <code>\bm{x}</code>). Standard in econ.</li>
+<li><code>enumitem</code> -- customisable list spacing; tighter than default <code>\item</code> (<code>itemsep=2pt, parsep=0pt, topsep=4pt</code>).</li>
+<li><code>xr-hyper</code> -- cross-references to external documents; pairs with the separate-appendix workflow (<code>\externaldocument{appendix}</code> in paper.tex resolves cross-refs to the standalone-compiled appendix).</li>
+<li><code>lineno</code> -- commented out by default; uncomment for line numbers on circulating drafts.</li>
+</ul>
+<p><strong>Biblatex enhancements:</strong></p>
+<ul>
+<li><code>backref=true</code> + <code>backrefstyle=three</code> -- each bibliography entry shows "Cited on p. X" back-references (clickable); consecutive pages grouped ("12-14" vs "12, 13, 14"). In-text <code>\citet</code>/<code>\citep</code> already clickable via hyperref. Customised wording via <code>\DefineBibliographyStrings</code> ("Cited on p." / "Cited on pp.").</li>
+<li>Authoryear citation style retained (95% AEA-compliant; journal typesetters reformat at copy-editing anyway).</li>
+</ul>
+<p><strong>Appendix skeleton:</strong></p>
+<ul>
+<li>Added commented landscape-exhibit example block. <code>pdflscape</code> is loaded in the preamble (since v1.8.0); the example shows the <code>\begin{landscape}...\end{landscape}</code> pattern wrapping a wide table, with classic-style rule + minipage notes. PDF page auto-rotates in the viewer so the reader reads it directly.</li>
+</ul>
+<p>Smoke-tested 2026-06-02: paper-skeleton.tex + preamble.tex compile to 2-page PDF with placeholders (exit 0).</p>
+<hr />
+<h2 id="2026-06-02-templates-v180-document-ordered-paper-skeleton-auto-routing-acknowledgements">2026-06-02 — templates v1.8.0: document-ordered paper skeleton + auto-routing acknowledgements<a class="headerlink" href="#2026-06-02-templates-v180-document-ordered-paper-skeleton-auto-routing-acknowledgements" title="Permanent link">&para;</a></h2>
+<p>Major rewrite of <code>templates/paper-skeleton.tex</code> after a Q-by-Q discovery pass with Kai. Visual mock-ups were compiled in a Windows Temp folder (<code>kai_paper_compare/</code>) and locked option-by-option against PDF previews and his archive of past papers (EJ, AEJ-AE, RESTAT).</p>
+<p><strong>Title block (B v4 pattern):</strong>
+- Centered title + optional subtitle, no version-number line.
+- Optional "Most recent version available here" hyperlink via <code>\maybeUrlLine</code> — default off (most papers don't use this); enabling is a one-line uncomment.
+- Authors: <code>\and</code>-separated, <code>\thanks</code> for affiliation+email, ALPHABETICAL ORDER per econ convention.
+- <code>\kaiAffil</code> snippet macro defined separately so it can be dropped into whichever author position Kai occupies alphabetically. (Update on HSG move from Aug 2026.)</p>
+<p><strong>Abstract + post-abstract block:</strong>
+- After <code>\bigskip</code> and <code>\thispagestyle{empty}</code>.
+- <code>Keywords:</code> and <code>JEL Classification:</code> italic labels, outside the abstract block (matches the Afghanistan / Stimulant-or-Depressant pattern, not "JEL Codes:" bold inside the abstract).</p>
+<p><strong>Auto-routing acknowledgements (the new mechanism):</strong>
+- <code>\ackContent</code> is editable at the top of <code>paper.tex</code> in render order with the other content macros.
+- <code>\sbox</code> measures rendered heights of abstract and ack at compile time.
+- Routes ack to a SEPARATE PAGE if ack alone &gt; 2cm OR (abstract + ack) &gt; 11cm.
+- Otherwise ack stays as the first-author title-page footnote.
+- Robust against any LaTeX markup inside <code>\ackContent</code> (<code>\textbf</code>, <code>\newline</code>, math, hyperlinks) because <code>\sbox</code> does a real render not a character count.
+- Verified end-to-end with three test cases: medium abstract + short ack (→ footnote), medium abstract + long ack (→ separate page), long abstract + short ack (→ separate page).</p>
+<p><strong>Document-order layout in <code>paper.tex</code>:</strong>
+- All editable content grouped at the top in the order it renders: title → URL line → authors → abstract → keywords → JEL → acks.
+- Auto-routing logic clearly labelled "do not edit" so it reads as infrastructure.</p>
+<p><strong>Preamble change:</strong>
+- Added <code>\usepackage{pdflscape}</code> to canonical preamble. Wide tables/figures wrap in <code>\begin{landscape}...\end{landscape}</code> and the PDF page is rotated in the viewer so the reader reads it directly without tilting their head.</p>
+<p><strong>Queued for follow-on session:</strong>
+- Q2 — <code>fancyhdr</code> configuration for body pages (preamble loads it but doesn't configure it; body pages currently use stock <code>plain</code> style).
+- <code>/suggest-jel</code> skill — Kai's question: should JEL suggestions live in <code>/bootstrap-paper</code> or as a separate skill? Decided: separate skill in <code>academic-workflow</code>. Effort ~2 h including vendoring the AEA JEL list snapshot.
+- <code>latex-package-reference.md</code> rule — Kai's broader observation that the skill should "know about packages" (recommend the right package for a use case like landscape, theorems, etc.). Will add as a reference file documenting common econ-paper packages with use cases + gotchas.</p>
+<p>Smoke-tested 2026-06-02: <code>pdflatex</code> on <code>paper-skeleton.tex</code> + canonical <code>preamble.tex</code> produces a 2-page PDF with all placeholders intact (exit 0).</p>
+<hr />
+<h2 id="2026-06-01-project-workflow-v161-fix-invisible-slash-commands-missing-yaml-frontmatter">2026-06-01 — project-workflow v1.6.1: fix invisible slash commands (missing YAML frontmatter)<a class="headerlink" href="#2026-06-01-project-workflow-v161-fix-invisible-slash-commands-missing-yaml-frontmatter" title="Permanent link">&para;</a></h2>
+<p>Bugfix surfaced during a team install. Four commands in <code>project-workflow</code> shipped without YAML frontmatter and were therefore invisible to Claude Code's slash-command discovery — the command files existed in the plugin but did not register as callable commands:</p>
+<ul>
+<li><code>/plan-status</code></li>
+<li><code>/check-rules</code></li>
+<li><code>/new-sprint</code></li>
+<li><code>/restructure-project</code></li>
+</ul>
+<p>Root cause: Claude Code's plugin command-discovery requires a YAML frontmatter block (at minimum a <code>description:</code> field). The four files were authored without one, so they were silently dropped during plugin load. <code>/bootstrap-project</code>, <code>/sync-bib</code>, <code>/sync-pdfs</code>, <code>/refactor-structure</code>, <code>/add-cite-from-zotero</code> were always correctly frontmattered and worked end-to-end.</p>
+<p>Fix: added <code>description:</code> frontmatter to all four affected files. Behaviour and content of each command unchanged; only metadata added so the slash-command discovery picks them up.</p>
+<p>To get the fix:
+<div class="highlight"><pre><span></span><code>/plugin marketplace update kai-team-claude
+</code></pre></div>
+No re-run of <code>install.sh</code> needed — fix is plugin-side only. Restart Claude Code afterward to ensure the marketplace reloads.</p>
+<p>Audit also confirmed: <code>academic-workflow</code> (4 commands) and <code>talks</code> (0 commands) all clean.</p>
+<hr />
+<h2 id="2026-06-01-academic-workflow-v170-replication-package-architecture-table-style-options">2026-06-01 — academic-workflow v1.7.0: replication-package architecture + table-style options<a class="headerlink" href="#2026-06-01-academic-workflow-v170-replication-package-architecture-table-style-options" title="Permanent link">&para;</a></h2>
+<p>Lays the foundation for AEA / EJ / RES replication-package submission baked into the pipeline. Anchored on the AEA Data and Code Availability Policy (Feb 2026 revision) + Social Science Data Editors' Template README v1.1, which AEA, EJ, RES, and Econometric Society journals all accept.</p>
+<p><strong>New: <code>templates/replication_metadata.yaml</code></strong> — single source-of-truth for a project's replication-package metadata. Lives at <code>data/documentation/replication_metadata.yaml</code> (per CONTEXT.md canonical layout — no new folders introduced). Maintained by hand; <code>generate_readme.py</code> reads it to produce the journal-facing README at submission time. Schema maps 1-to-1 onto the 9 required AEA/SSDE README sections (overview, data availability, dataset list, computational requirements, program description, instructions to replicators, list of tables and programs, references, acknowledgements). The <code>program_index:</code> block is auto-maintained by <code>/build-fragment-table</code>.</p>
+<p><strong>New: <code>templates/00_setup.do</code></strong> — portable Stata setup file that owns the "single change permitted by the AEA reproducibility rule" (setting program/data directory paths). Anchors via <code>pwd</code>, walks up from <code>code/</code> to project root if needed, sets globals matching CONTEXT.md layout (<code>${rawdata}</code>, <code>${processed}</code>, <code>${documentation}</code>, <code>${output}</code>, <code>${tables}</code>, <code>${figures}</code>, <code>${code}</code>, <code>${paper}</code>), idempotently installs required Stata packages, sets reproducibility seed. Replaces the JDE-style <code>confirmdir</code> + hardcoded-per-user-path antipattern.</p>
+<p><strong>New: <code>plugins/academic-workflow/scripts/generate_readme.py</code></strong> — reads <code>data/documentation/replication_metadata.yaml</code> + <code>paper_and_presentations/references.bib</code> and emits <code>paper_and_presentations/README.md</code> per the AEA/SSDE template structure. Optional <code>--compile-pdf</code> produces README.pdf via pandoc. Idempotent — regenerate at any time; no hand edits to the output. Smoke-tested 2026-06-01 against the template YAML: produces a 118-line README with all 9 required sections populated.</p>
+<p><strong><code>/build-fragment-table</code> v1.7.0 improvements:</strong>
+- <strong>Table style is now a parameter.</strong> <code>--style classic</code> (DEFAULT — Kai's verified pattern from EJ 2022, AEJ-AE 2022, RESTAT 2024 archive: <code>\hline\hline</code> top/bottom + <code>\hline</code> mid + <code>\caption{\textit{...}}</code> italicised + <code>\begin{minipage}</code> notes + <code>[h!]</code> placement + <code>\FloatBarrier</code> before). <code>--style modern</code> (OPT-IN — booktabs <code>\toprule/\midrule/\bottomrule</code> + <code>\cmidrule(lr){...}</code> partial rules under multi-column outcome headers + <code>threeparttable</code> + <code>tablenotes</code>). Reverts the v1.6.0 mistake of locking modern as default; the archive grounded the decision.
+- <strong>Multi-panel templates updated for both styles</strong> — classic uses <code>\\ \multicolumn{N}{l}{\textbf{\textit{Panel A: ...}}} \\ \hline</code> divider rows; modern uses <code>\midrule</code> + italic.
+- <strong>Phase 4b: program-index logging.</strong> Unless <code>--no-log-to-index</code>, every dispatch appends/updates a row in <code>data/documentation/replication_metadata.yaml</code> <code>program_index:</code> block with (exhibit, reported_as, program, lines, output_file, last_updated). This row IS the AEA-required "List of Tables and Programs" entry; <code>generate_readme.py</code> renders it as Section 7 of the submission README. The pipeline now produces submission-ready metadata as a side effect of normal table-building.</p>
+<p><strong>Replication-package architecture grounded in:</strong>
+- AEA Data and Code Availability Policy (Feb 2026) at https://www.aeaweb.org/journals/data/data-code-policy
+- AEA Data Editor preparation guidance at https://aeadataeditor.github.io/aea-de-guidance/preparing-for-data-deposit.html
+- Social Science Data Editors' Template README v1.1 at https://social-science-data-editors.github.io/template_README/
+- Economic Journal Data Editor at https://ejdataeditor.github.io/
+- Kai's existing archive: EU Identity (EJ 2022) + Dehdari-Gehring Alsace-Lorraine (AEJ-AE 2022) replication packages</p>
+<p><strong>Folder structure:</strong> zero changes to Kai's CONTEXT.md canonical layout. AEA accepts the existing <code>data/raw/</code>, <code>data/processed/</code>, <code>code/</code>, <code>output/</code>, <code>paper_and_presentations/</code> shape; the README explains what each folder is. No new folders introduced; no <code>working/</code> scratchpad.</p>
+<p><strong>Pending next session:</strong>
+- <code>00_setup.R</code> + <code>00_setup.py</code> analogues (Stata first since it's the primary language)
+- <code>/init-replication</code> skill (one-command bootstrap of replication_metadata.yaml + 00_setup.* + paper_and_presentations/README.md placeholder)
+- Extend <code>/bootstrap-project</code> with <code>--replication-ready</code> flag
+- Extend <code>audit-reproducibility</code> skill with pre-submission readiness gate
+- <code>/build-data-source-table</code> skeleton-generator (reads datasets[] from YAML, emits LaTeX appendix table you edit)</p>
+<hr />
+<h2 id="2026-06-01-academic-workflow-v160-bootstrap-paper-skill-build-fragment-table-v160-restructured-preamble-template">2026-06-01 — academic-workflow v1.6.0: /bootstrap-paper skill + /build-fragment-table v1.6.0 + restructured preamble template<a class="headerlink" href="#2026-06-01-academic-workflow-v160-bootstrap-paper-skill-build-fragment-table-v160-restructured-preamble-template" title="Permanent link">&para;</a></h2>
+<p>Two locked-in additions following a methodology pushback from Kai ("should we not do latex skill with skill builder skill? you need to ask me for my preferences etc?") that triggered a proper skill-creator iteration with explicit Q&amp;A on defaults.</p>
+<p><strong>New: <code>/bootstrap-paper</code> skill</strong> — scaffold a new econ paper LaTeX project in Kai's house style. Generates 5 template files into the target paper folder:</p>
+<ul>
+<li><code>paper.tex</code> — main paper with TODO markers for title/abstract/sections, <code>\input{preamble}</code>, <code>\addbibresource</code>, <code>\IfFileExists{labels.tex}{...}</code> (loaded inside <code>\begin{document}</code>), unnumbered title page + arabic numbering from intro, <code>\input{appendix}</code> toggle controlled by <code>\def\appendixstandalone{false|true}</code>.</li>
+<li><code>preamble.tex</code> — input-only (no <code>\begin{document}</code>) preamble with: <code>\usepackage[section]{placeins}</code> (auto-FloatBarrier at every <code>\section</code> — Kai's "exhibits stay in their section" rule with mechanical teeth); <code>dcolumn</code> + custom <code>d{N.M}</code> column type for decimal-aligned numerics; <code>tabularx</code> + custom <code>L/C/R</code> width-with-alignment column types; <code>threeparttable</code> for notes inside the float; <code>footmisc[hang,bottom]</code> + <code>footnotebackref</code> for hanging footnotes with body backrefs; <code>setspace</code> with <code>\onehalfspacing</code> for drafts; <code>\setlength\parindent{0pt}</code> + <code>\parskip</code> for block paragraphs; <code>biblatex</code> with <code>style=authoryear,natbib=true,backend=biber</code>; <code>siunitx</code>, TikZ + pgfplots, hyperref + cleveref, appendix package, minitoc.</li>
+<li><code>appendix.tex</code> — separate appendix file with counter resets (<code>\thetable → A\arabic{table}</code>, <code>\thefigure → A\arabic{figure}</code>, <code>\thesection → A.\arabic{section}</code>, <code>\theequation → A.\arabic{equation}</code>), three placeholder sections, designed to be <code>\input</code> from paper.tex (default) OR from appendix-standalone.tex (for journal submissions that require separate appendix PDFs).</li>
+<li><code>appendix-standalone.tex</code> — wrapper that compiles appendix as its own PDF (loads preamble + opens document + inputs appendix + closes); only used when a journal asks for separate online-appendix file.</li>
+<li><code>labels.tex</code> — shared variable label mappings (<code>\labelTreated</code>, <code>\labelMeanControl</code>, <code>\labelOutcomeY1</code>, etc.) + a structured YAML block at the bottom (delimited by <code>YAML-START-LABELS-MAPPING</code> / <code>YAML-END-LABELS-MAPPING</code>) that <code>/build-fragment-table</code> reads to populate <code>coeflabels()</code> and outcome headers consistently across all tables in the paper.</li>
+</ul>
+<p>Triggers on "scaffold a new paper", "set up the LaTeX for this paper", "bootstrap the paper.tex", "make me a paper skeleton", "/bootstrap-paper", and on starting work in a project with <code>CLAUDE.md + references.bib + literature/</code> but no paper.tex. Args: <code>[paper-folder-path] [--title 'X'] [--coauthors 'A; B'] [--update]</code>. The <code>--update</code> flag re-scaffolds the auxiliary files without overwriting an existing paper.tex.</p>
+<p><strong>Smoke-test result (2026-06-01):</strong> initial compile FAILED at <code>labels.tex</code> line <code>\newcommand{\labelOutcomeY1}{[Outcome 1]}</code> because <code>\IfFileExists{labels.tex}{\input{labels}}{}</code> had been placed in the preamble area, and biblatex's preamble parsing changes (after <code>\addbibresource</code>) reject the bracketed <code>[Outcome 1]</code> body. <strong>Fix:</strong> moved labels.tex inclusion to inside <code>\begin{document}</code> in both paper-skeleton.tex and appendix-standalone.tex (labels aren't needed in the title block, so this is safe). Re-test: PASS. This is exactly the kind of bug a clean-dir smoke test catches — it would not have surfaced if I'd just trusted the templates. Lesson encoded inline in paper-skeleton.tex as a NOTE comment so future template editors don't undo it.</p>
+<p><strong><code>/build-fragment-table</code> v1.6.0</strong> — refined per locked decisions:
+- <strong>Labels integration:</strong> new Phase 0a resolves the labels source (priority: <code>--labels</code> flag, <code>&lt;paper-dir&gt;/labels.tex</code>, <code>&lt;paper-dir&gt;/paper_and_presentations/labels.tex</code>, <code>./labels.tex</code>); reads the YAML mapping block from <code>labels.tex</code> if present; auto-derives labels from variable names (title-case) otherwise; at the end of Phase 4, offers to APPEND newly-derived labels back to <code>labels.tex</code> for future-table consistency.
+- <strong>Fragments dir default:</strong> changed from <code>_paper/02_tables_fragments/</code> to <code>output/tables/</code> (per Kai's <code>~/.claude/CONTEXT.md</code> standard layout).
+- <strong>Action default:</strong> changed from "print" to ASK-per-invocation ("Print both blocks here for you to paste, or insert directly into the .do + paper.tex files?"). New <code>--print</code> / <code>--insert</code> flag pair makes the choice explicit when scripted. Per Kai's pushback that defaults shouldn't be silently chosen.
+- <strong>Multi-panel patterns documented:</strong> Phase 3 now distinguishes 3 patterns (same outcomes / different samples; same sample / different specs; different outcome groups) and instructs the skill to ASK which one applies if the spec is ambiguous.</p>
+<p><strong>Preamble template restructure (breaking change for direct copy-pasters):</strong> <code>latex-preamble.tex</code> was previously a copy-paste starter that included its own <code>\begin{document}</code>, <code>\title{}</code>, <code>\author{}</code>, <code>\section{Introduction}</code>, <code>\printbibliography</code>, <code>\end{document}</code>. It is now input-only (just the <code>\usepackage</code> and configuration block, no document content). The document starter role has moved to <code>paper-skeleton.tex</code>. Anyone using <code>/bootstrap-paper</code> gets both files in the right roles. Anyone hand-copying the old <code>latex-preamble.tex</code> will need to add <code>\begin{document}</code> ... <code>\end{document}</code> themselves OR (recommended) switch to <code>/bootstrap-paper</code>.</p>
+<p>Sister-rule sync: <code>latex-fragment-conventions.md</code> and <code>validate_fragment.py</code> are unchanged; they continue to govern the table-fragment side.</p>
+<hr />
+<h2 id="2026-05-31-academic-workflow-v150-build-fragment-table-skill">2026-05-31 — academic-workflow v1.5.0: /build-fragment-table skill<a class="headerlink" href="#2026-05-31-academic-workflow-v150-build-fragment-table-skill" title="Permanent link">&para;</a></h2>
+<p><code>/build-fragment-table</code> — orchestrates the fragment workflow end-to-end. Takes a regression spec (outcomes + treatment + optional controls/FE/cluster), emits BOTH the Stata <code>esttab</code> block (per <code>stata-code-conventions.md</code> §5b) AND the matching LaTeX outline (per <code>latex-fragment-conventions.md</code> rule) with correctly counted columns and multi-column headers.</p>
+<p>Key behaviors:
+- <strong>Pre-Flight Report</strong> confirms structure (N outcomes → 1 + N×3 columns; filename = <code>&lt;name&gt;_body.tex</code>) before generation.
+- <strong>Optional <code>--insert</code></strong> writes the Stata block to your <code>.do</code> and the LaTeX outline to your paper. Without it, prints both blocks for you to paste.
+- <strong>Optional <code>--validate</code></strong> runs <code>validate_fragment.py</code> after the .do has been executed and the fragment exists.
+- <strong><code>--panels "A | B"</code></strong> syntax for multi-panel tables — produces one fragment per panel + an outline with panel-label rows.
+- <strong>TODO markers</strong> for caption and table notes — never fabricates substantive prose.
+- <strong>Strict rules</strong>: reg vs reghdfe based on <code>--fe</code>; ritest opt-in via <code>--ri-p</code>; Mean Control auto-included via <code>summarize ... if treatment == 0; estadd scalar meanc</code>.</p>
+<p>Triggers on: "build me a fragment table", "generate the esttab + outline for Table N", "make a new house-style table", "wire this regression into the paper", "/build-fragment-table", "/build-house-table", "/wire-table".</p>
+<p>Pairs with the v1.4.1 rule + validator. Pending interactive smoke-test on first dispatch in a real project; structural validation passed (YAML frontmatter valid, cross-references resolve, templates self-consistent).</p>
+<hr />
+<h2 id="2026-05-31-academic-workflow-v141-latex-fragment-conventions-improvements-validate_fragmentpy">2026-05-31 — academic-workflow v1.4.1: latex-fragment-conventions improvements + validate_fragment.py<a class="headerlink" href="#2026-05-31-academic-workflow-v141-latex-fragment-conventions-improvements-validate_fragmentpy" title="Permanent link">&para;</a></h2>
+<p>Smoke-tested the v1.4.0 fragment workflow end-to-end on this side (Stata <code>auto.dta</code> → <code>esttab</code> fragment per §5b → minimal LaTeX outline → <code>pdflatex</code> in clean temp dir → 1-page PDF compiled with exit 0). The recipe works as documented.</p>
+<p>Improvements landed:</p>
+<p><strong><code>latex-fragment-conventions.md</code></strong> (the rule):
+- <strong>Rule 2 strengthened</strong> with explicit multi-column header discipline (each model spans 3 columns: <code>\multicolumn{3}{c}{Model name}</code>; cross-check three ways: tabular spec column count = header row &amp; count + 1 = fragment row &amp; count + 1).
+- <strong>Rule 3 (multi-panel) now has a full worked example</strong> with concrete code for a 2-panel × 2-model table, showing panel-label rows via <code>\multicolumn{7}{l}{\textit{Panel A: ...}}</code>.
+- <strong>New "Mechanical validation" section</strong> referencing <code>validate_fragment.py</code>.
+- <strong>New "Smoke-test pattern" section</strong> with a 10-line Stata + 10-line LaTeX minimal end-to-end test.
+- <strong>New "Conventions and minor gotchas" section</strong>: <code>_body.tex</code> filename convention, <code>\input{}</code> strips <code>.tex</code>, <code>abs</code> in <code>cells()</code> applies to SE/p only (negative coefs render with sign intact), forward-slash path separators only, Overleaf upload tracking.</p>
+<p><strong><code>scripts/validate_fragment.py</code></strong> (new helper):
+- 5 mechanical checks: (1) rule-freeness, (2) row termination, (3) column shape uniformity, (4) LF line endings, (5) optional outline column-count agreement.
+- Uses balanced-brace regex to correctly parse <code>l*{N}{c}</code> tabular specs (initial naive regex broke on nested braces — fixed before ship).
+- Exit 0 on all-pass; 1 on any fail. Suitable as a Makefile pre-compile gate.</p>
+<p>Real-world story while building: a heredoc-based test of the validator triggered FAIL on rule 2 — turned out the heredoc mangled <code>\\</code> → <code>\</code>, exactly the trap our own rule 5 ("NEVER author .tex via shell heredoc") warns against. The validator was correct; my test was self-trapped. Switched to Write-tool-created test files; all 3 test scenarios then behaved as expected.</p>
+<hr />
+<h2 id="2026-05-29-statalatex-fragment-workflow-encoded">2026-05-29 — Stata→LaTeX fragment workflow encoded<a class="headerlink" href="#2026-05-29-statalatex-fragment-workflow-encoded" title="Permanent link">&para;</a></h2>
+<h3 id="added-stata-research-workflow-v130">Added — stata-research-workflow v1.3.0<a class="headerlink" href="#added-stata-research-workflow-v130" title="Permanent link">&para;</a></h3>
+<p><strong><code>stata-code-conventions.md</code> §5b — Outline-in-paper + fragment-from-code (Kai house style; VERIFIED 2026-05-29 by id-mining-narratives refactor)</strong></p>
+<p>Encodes the hard-won table workflow lessons from the id-mining-narratives Stata pipeline refactor:</p>
+<ul>
+<li><strong>The recipe:</strong> <code>esttab ..., fragment</code> with Kai's house <code>cells()</code> (coef / <code>[SE]</code> / <code>{p}</code>; no stars; abs values) emits rule-free data-row fragments the paper <code>\input</code>s inside its own <code>tabular</code>.</li>
+<li><strong>Why esttab not estout:</strong> <code>fragment</code> is an esttab-only option — estout rejects with r198.</li>
+<li><strong>Custom rows via <code>estadd</code>:</strong> Mean Control via <code>summarize ... if treated==0; estadd scalar meanc = r(mean)</code>. RI p-values via <code>estadd scalar ri_p = r(p)</code> post-<code>ritest</code>. FE labels via <code>estadd local</code>.</li>
+<li><strong>Multi-panel pattern</strong> from Kai's EU_Identity paper (one fragment per panel, paper outline sequences <code>\input</code>s with panel labels + rules).</li>
+<li><strong>Source template:</strong> Gehring &amp; Lang (2022) <em>JDE</em> do-file.</li>
+</ul>
+<p><strong><code>stata-reviewer</code> agent</strong> TABLE QUALITY category gains a house-style branch — checks for <code>esttab ..., fragment</code>, Kai house <code>cells()</code>, <code>nostar</code>/<code>nomtitles</code>/<code>nolines</code>/<code>collabels(none)</code>, Mean Control via estadd, <code>_body.tex</code> filename convention, and rule-freeness of the fragment.</p>
+<h3 id="added-academic-workflow-v140">Added — academic-workflow v1.4.0<a class="headerlink" href="#added-academic-workflow-v140" title="Permanent link">&para;</a></h3>
+<p><strong>New rule <code>latex-fragment-conventions.md</code> (auto-attaches on <code>*.tex</code>)</strong> — sister to stata-code-conventions §5b. Encodes the LaTeX side of the fragment workflow + hard-won pdflatex debugging lessons:</p>
+<ol>
+<li>Fragment must be rule-free (no <code>\hline</code> / <code>\begin{tabular}</code> / <code>\toprule</code> etc. in the fragment file)</li>
+<li>Paper <code>tabular</code> column count MUST match fragment's <code>&amp;</code>-count (1 label col + N_models × 3 cells)</li>
+<li>Multi-panel: one fragment per panel, panel labels + intra-panel rules in the outline</li>
+<li>Write fragments LF-terminated, not CRLF</li>
+<li><strong>NEVER author <code>.tex</code> via shell <code>heredoc</code> / <code>printf</code> / <code>cat &lt;&lt;EOF</code></strong> — mangles <code>\\</code> and injects control chars. Cost a long false-error chase ("Misplaced \noalign" / "Undefined control sequence \input" / bogus backspace complaints). Always use an editor.</li>
+<li>Compile in a clean directory — stale <code>.aux</code> / <code>.fmt</code> files give misleading error messages. Use <code>latexmk -C</code> or <code>mktemp -d</code> before judging compile failures.</li>
+<li>Papers that <code>\includepdf</code> external PDFs won't bare-compile locally (pdfpages-package runtime issues). Use Overleaf or a stripped exhibits-only doc as the right compile gate.</li>
+<li><strong>Decision tree</strong> for common compile-error symptoms (Misplaced \noalign → check stale aux + line endings + column count; Undefined control sequence \input → stale .fmt; bogus backspace → shell-heredoc-authored .tex; <code>\AM@checkpagenumber</code> undefined → includepdf without proper toolchain).</li>
+</ol>
+<h3 id="source">Source<a class="headerlink" href="#source" title="Permanent link">&para;</a></h3>
+<p><code>Dropbox/id-mining_narratives-norms/working/H2_fragment_recipe.md</code> and <code>working/SESSION-HANDOFF-2026-05-29.md</code> from the parallel mining-narratives refactor session. Know-how forwarded by Kai to bundle with team tooling.</p>
+<hr />
+<h2 id="2026-05-29-lit-corpus-shipped">2026-05-29 — /lit-corpus shipped<a class="headerlink" href="#2026-05-29-lit-corpus-shipped" title="Permanent link">&para;</a></h2>
+<h3 id="added-project-workflow-v160">Added — project-workflow v1.6.0<a class="headerlink" href="#added-project-workflow-v160" title="Permanent link">&para;</a></h3>
+<p><strong><code>/lit-corpus</code></strong> — Convert a folder of academic PDFs into a token-efficient markdown corpus. Builds a two-tier wiki:</p>
+<ul>
+<li><strong>Tier 1 — <code>index.md</code></strong> (~400 tokens/paper) with title, authors, year, abstract, citekey, JEL, keywords.</li>
+<li><strong>Tier 2 — <code>papers/*.md</code></strong> with full cleaned markdown + YAML frontmatter.</li>
+</ul>
+<p>A typical econ paper costs ~12,000 tokens to read as full PDF; the wiki entry is ~400 tokens. For a 100-paper literature, that's <code>~1.2M -&gt; 40K</code> tokens — readable in a single session.</p>
+<p>Features:
+- Incremental by default (SHA-256 hash tracking in <code>.wiki_state.json</code>; only re-converts new/changed PDFs)
+- Optional BibTeX matching for citekey assignment
+- Auto-cleans repeated headers/footers, JSTOR boilerplate, image placeholders
+- Trims references by default (saves ~20-30% tokens); <code>--keep-references</code> to keep
+- Obsidian-vault-compatible output (YAML properties + tags + <code>[[wikilinks]]</code> from the index)
+- <code>pymupdf4llm</code> backend (auto-installed on first run)</p>
+<p>Adapted from Johan Fourie's <code>/tyler</code> skill (MIT, https://github.com/johanfourieza/econtools). Renamed for descriptive auto-trigger; default paths adapted to Kai's <code>literature/</code> convention; hardcoded user path replaced with <code>${CLAUDE_PLUGIN_ROOT}</code>-relative invocation. Conversion logic (<code>scripts/convert.py</code>, 694 lines) is verbatim from upstream.</p>
+<p><strong><code>/sync-pdfs</code> enhancement</strong>: after a successful sync that copies new PDFs, the command now offers to dispatch <code>/lit-corpus</code> (incremental update) if a wiki exists, or to build one if 5+ PDFs landed without an existing wiki. Default: offer + let the user choose; no auto-dispatch.</p>
+<h3 id="skill-triggers">Skill triggers<a class="headerlink" href="#skill-triggers" title="Permanent link">&para;</a></h3>
+<p><code>/lit-corpus</code> auto-fires on: "build my literature wiki", "convert my PDFs to markdown", "make my literature folder queryable", "process my literature/ folder", "update the literature corpus", "/lit-corpus", "/tyler", "/pdf-to-wiki".</p>
+<p>NOT for one-off "what page mentions X" queries — use the <code>pdf-query-recipe</code> rule's pdfplumber pattern instead.</p>
+<hr />
+<h2 id="2026-05-28-multi-plugin-update-qualitative-skill">2026-05-28 — Multi-plugin update + qualitative skill<a class="headerlink" href="#2026-05-28-multi-plugin-update-qualitative-skill" title="Permanent link">&para;</a></h2>
+<p>Four commits land together: 3 from the marketplace/research workflow session, 1 from the qualitative-coding session.</p>
+<h3 id="tier-1-safe-to-install-and-use-now">Tier 1 — safe to install and use now<a class="headerlink" href="#tier-1-safe-to-install-and-use-now" title="Permanent link">&para;</a></h3>
+<p><strong><code>project-workflow</code> v1.5.0</strong> (<code>/bootstrap-project</code> enhanced)</p>
+<ul>
+<li>New: <code>/bootstrap-project</code> Phase 3.6 writes a research-baseline <code>.claude/settings.local.json</code> into every new project (99 allow rules + 28 deny rules). Effect: fewer permission prompts in your day-to-day work; <code>data/raw/</code> becomes read-only via every tool; <code>git add .</code> / <code>git add -A</code> blocked (per Kai's explicit-path rule); destructive git ops blocked.</li>
+<li>New rule <code>pdf-query-recipe.md</code> (auto-attaches when PDFs are mentioned): pdfplumber/pandoc cascade for token-efficient PDF querying. Replaces "load whole PDF" pattern with page-level search.</li>
+<li>New rule <code>model-routing.md</code>: 70/20/10 Haiku/Sonnet/Opus routing guidance for agent authors. Lecture-pipeline opus-only agents explicitly carved out.</li>
+</ul>
+<p><strong><code>r-research-workflow</code> v1.2.0</strong> (atomic skill triad)</p>
+<ul>
+<li>New atomic skills for one-shot operations (avoid full-pipeline overhead):</li>
+<li><code>/descriptives</code> — Table 1, balance tables, attrition, missingness</li>
+<li><code>/regression</code> — single spec or column-stack with fixest/modelsummary</li>
+<li><code>/coef-plot</code> — forest / event-study / spec comparison from a saved fit</li>
+<li><code>/data-analysis</code> description tightened to position as the "full pipeline" umbrella (so it doesn't compete with atomics).</li>
+<li><code>/review-r</code> description tightened: "reviews EXISTING scripts; does NOT produce new scripts".</li>
+<li><code>r-reviewer</code> agent: <code>model: sonnet</code> per the routing rule.</li>
+<li>New templates: <code>_theme.R</code> (Okabe-Ito palette + theme_research + save_research_figure with file-size sanity); <code>passport-template.yaml</code> (per-claim provenance schema).</li>
+<li>Smoke-tested: theme template produces valid PDF; passport schema matches replication-protocol.md.</li>
+</ul>
+<p><strong><code>stata-research-workflow</code> v1.2.0</strong> (Stata reviewer added)</p>
+<ul>
+<li>New <code>/review-stata</code> + <code>stata-reviewer</code> agent (11-category review mirroring <code>r-reviewer</code>): version 18 pin check, <code>set sortseed</code>, <code>reghdfe</code> clustering discipline, <code>merge 1:1 ... assert</code>, Stata missing-value semantics (<code>if x &gt; 5 &amp; x != .</code>), esttab quality, AEA replication compliance.</li>
+<li>New rule <code>stata-manuals-index.md</code>: maps econ topics (causal, panel, time series, survival, etc.) to the 37 bundled Stata PDFs (260 MB) with pdfplumber query recipe. Smoke-tested on <code>causal.pdf</code> lookup for <code>teffects ipwra</code> (14 hits, 76s).</li>
+</ul>
+<p><strong><code>talks</code></strong> (agent tier corrected)</p>
+<ul>
+<li><code>talks-intake-agent</code>: <code>model: opus</code> (was sonnet — durable artefacts propagate to every downstream phase; high-judgment-irreversible tier per the routing rule).</li>
+</ul>
+<p><strong><code>qualitative-survey-coding</code> skill</strong> (NEW — top-level skill, not a plugin)</p>
+<ul>
+<li>Router + 6-stage pipeline for coding open-ended survey responses into validated variables: codebook design, prompt design, human validation, appendix entry.</li>
+<li>Bundles: printable cookbook PDF, methodology reference, 13-slot codebook template, six figures, team guide README.</li>
+<li>Auto-installs on next <code>git pull</code> + install (lives under top-level <code>skills/</code>).</li>
+</ul>
+<h3 id="tier-2-in-the-marketplace-try-cautiously-do-not-rely-on-for-real-submissions-yet">Tier 2 — in the marketplace; try cautiously, do not rely on for real submissions yet<a class="headerlink" href="#tier-2-in-the-marketplace-try-cautiously-do-not-rely-on-for-real-submissions-yet" title="Permanent link">&para;</a></h3>
+<p><strong><code>academic-workflow</code> v1.3.0</strong> (large additions, end-to-end testing pending)</p>
+<ul>
+<li><code>/humanize</code> + <code>humanize-auditor</code> agent (<code>model: sonnet</code>): 10-category AI-voice audit — boilerplate transitions, AI-cliché lexicon, em-dash overuse, symmetric paragraphs, tricolon abuse, hedging stacking, formulaic openers, hyphenation excess, sycophancy. Read-only — produces a report, does not rewrite.</li>
+<li><code>/lit-review</code>: structured literature search + synthesis with BibTeX extraction. Integrates with <code>/sync-bib</code>, Zotero MCP, and <code>literature/</code> PDFs.</li>
+<li><code>/preregister</code>: OSF / AsPredicted / AEA RCT Registry scaffolder with MUST/SHOULD/MAY annotation. AEA RCT default for econ field experiments.</li>
+<li><code>/bib-audit</code>: multi-agent hallucinated-reference detector (Method A = CrossRef/OpenAlex/Semantic Scholar/arXiv API cascade with Jaccard + author-overlap metrics; Method B = DOI resolution + reverse search + Retraction Watch + ORCID + venue/citation-graph plausibility + Internet Archive + ISBN). Isolated parallel dispatch + adversarial challenge round. Internal-only (no OpenAI dependency). Adapted from Johan Fourie's <code>kris</code> (MIT).</li>
+<li><code>/audit-reproducibility</code>: cross-checks manuscript numeric claims against R <code>.rds</code> + Stata <code>.dta</code> outputs against tolerance thresholds; supports <code>passport.yaml</code> mode for per-paper verified-claim state.</li>
+<li><code>claim-verifier</code> agent (<code>model: opus</code>): Chain-of-Verification fresh-context verifier with HIGH/MED/LOW-WARN severity tiers. Called by humanize, lit-review, preregister, respond-to-referees.</li>
+<li><code>post-flight-verification</code> rule: CoVe protocol that 4 calling SKILLs follow.</li>
+</ul>
+<p>Python pipelines (<code>/bib-audit</code> helpers) smoke-tested; LLM dispatch paths NOT yet smoke-tested end-to-end. Test plan at <code>working/TEST-NOW.md</code>; expect iteration on descriptions after first real-project runs.</p>
+<h3 id="tier-3-halted-will-not-auto-fire-even-when-installed">Tier 3 — HALTed (will not auto-fire even when installed)<a class="headerlink" href="#tier-3-halted-will-not-auto-fire-even-when-installed" title="Permanent link">&para;</a></h3>
+<p><strong><code>/respond-to-referees</code></strong> (<code>academic-workflow</code>)</p>
+<ul>
+<li>R&amp;R response document generator (parses referee report, locates each concern in revised manuscript, classifies coverage, drafts polite-but-firm responses with mandatory CoVe verification on every "we added X on page Y" claim).</li>
+<li>Shipped with <code>disable-model-invocation: true</code> in the frontmatter. <strong>Won't auto-fire on natural prompts</strong> even after install.</li>
+<li>To enable: remove that line from <code>plugins/academic-workflow/skills/respond-to-referees/SKILL.md</code> AFTER smoke-testing on real R&amp;R material.</li>
+</ul>
+<h3 id="where-to-look">Where to look<a class="headerlink" href="#where-to-look" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Single source of truth on open items:</strong> <code>working/TODO.md</code></li>
+<li><strong>Test plan (one-prompt kickoff):</strong> <code>working/TEST-NOW.md</code></li>
+<li><strong>Lecture-pipeline cross-pollination notes:</strong> <code>working/lecture-pipeline-tool-handoff.md</code></li>
+</ul>
+<h3 id="commit-refs">Commit refs<a class="headerlink" href="#commit-refs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>c49f576</code> feat(project-workflow v1.5.0)</li>
+<li><code>59f25bf</code> feat(research-workflows): r-research-workflow v1.2.0 + stata-research-workflow v1.2.0 + talks agent tier fix</li>
+<li><code>7e9bda8</code> feat(academic-workflow v1.3.0)</li>
+<li><code>f698f65</code> Add qualitative-survey-coding skill (parallel session)</li>
+<li><code>4433824</code> docs: add CHANGELOG.md covering 2026-05-28 multi-plugin update</li>
+</ul>
+<hr />
+<h2 id="earlier-history">Earlier history<a class="headerlink" href="#earlier-history" title="Permanent link">&para;</a></h2>
+<p>See <code>git log</code> for commits before this entry. CHANGELOG started 2026-05-28.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "content.code.copy", "search.highlight", "search.suggest", "search.share"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,63 @@
+% Test bib for empirical comparison of WP entry-type rendering
+% Five variants of the same NBER WP, plus one published article as control
+
+% --- CONTROL: a published @article (renders normally as a journal) ---
+@article{published2024control,
+  author  = {Smith, John A. and Jones, Mary B.},
+  title   = {Causal Effects of Trade Liberalization in {Brazil}},
+  journal = {American Economic Review},
+  year    = {2024},
+  volume  = {114},
+  number  = {2},
+  pages   = {123--156},
+  doi     = {10.1257/aer.20221234},
+}
+
+% --- VARIANT 1: WP-as-@article, plain (current rule per citation-style.md §1) ---
+@article{wp_article_plain,
+  author  = {Doe, Alice and Roe, Bob},
+  title   = {Resource Curse Revisited: Evidence from Mining Booms},
+  journal = {NBER Working Paper No. 31234},
+  year    = {2024},
+  doi     = {10.3386/w31234},
+}
+
+% --- VARIANT 2: WP-as-@article, with {} protection on journal field ---
+@article{wp_article_protected,
+  author  = {Doe, Alice and Roe, Bob},
+  title   = {Resource Curse Revisited: Evidence from Mining Booms},
+  journal = {{NBER Working Paper No. 31234}},
+  year    = {2024},
+  doi     = {10.3386/w31234},
+}
+
+% --- VARIANT 3: WP-as-@techreport (BibTeX traditional) ---
+@techreport{wp_techreport,
+  author      = {Doe, Alice and Roe, Bob},
+  title       = {Resource Curse Revisited: Evidence from Mining Booms},
+  institution = {National Bureau of Economic Research},
+  number      = {31234},
+  year        = {2024},
+  type        = {Working Paper},
+  doi         = {10.3386/w31234},
+}
+
+% --- VARIANT 4: WP-as-@unpublished (biblatex idiomatic) ---
+@unpublished{wp_unpublished,
+  author = {Doe, Alice and Roe, Bob},
+  title  = {Resource Curse Revisited: Evidence from Mining Booms},
+  note   = {NBER Working Paper No. 31234},
+  year   = {2024},
+  doi    = {10.3386/w31234},
+}
+
+% --- VARIANT 5: WP-as-@online (biblatex idiomatic for grey lit) ---
+@online{wp_online,
+  author      = {Doe, Alice and Roe, Bob},
+  title       = {Resource Curse Revisited: Evidence from Mining Booms},
+  organization = {National Bureau of Economic Research},
+  year        = {2024},
+  url         = {https://www.nber.org/papers/w31234},
+  urldate     = {2026-05-21},
+  note        = {NBER Working Paper No. 31234},
+}
