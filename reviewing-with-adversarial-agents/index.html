@@ -1367,7 +1367,7 @@
   <a href="#why-adversarial-and-why-separate-agents" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why "adversarial", and why separate agents
+        Why adversarial, and why separate agents
       
     </span>
   </a>
@@ -2035,7 +2035,7 @@
   <a href="#why-adversarial-and-why-separate-agents" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why "adversarial", and why separate agents
+        Why adversarial, and why separate agents
       
     </span>
   </a>
@@ -2104,22 +2104,19 @@
 
 
 <h1 id="reviewing-with-adversarial-agents">Reviewing with adversarial agents<a class="headerlink" href="#reviewing-with-adversarial-agents" title="Permanent link">&para;</a></h1>
-<p><strong>Why this page.</strong> The single most useful thing the toolkit does before you ship
-anything — a paper, a grant, a figure, a plan, a chunk of code — is run it past
-agents whose job is to <strong>find what's wrong</strong>, not to confirm it's fine. This page
-explains the pattern and how to fire it.</p>
-<h2 id="why-adversarial-and-why-separate-agents">Why "adversarial", and why <em>separate</em> agents<a class="headerlink" href="#why-adversarial-and-why-separate-agents" title="Permanent link">&para;</a></h2>
-<p>Ask the same agent that wrote something to check it, and it tends to agree with
-itself. It has already committed to a line of reasoning, so it's poorly placed to
-see the fundamental weakness in its own approach — the same reason authors miss
-typos in their own drafts. A <em>separate</em> agent, with no investment in the work,
-starts fresh and judges it on the merits. That's exactly why peer review catches
-more than self-review.</p>
-<p>So the pattern is two things at once: the reviewers are <strong>adversarial</strong> (tasked
-to break it, defaulting to "this is flawed unless proven otherwise") and they are
-<strong>independent</strong> (fresh context, not the agent that produced the work). Running
-<em>several</em> independent reviewers in parallel raises the catch rate further — each
-sees flaws the others miss.</p>
+<p>Before you ship a paper, grant, figure, plan, or chunk of code, the toolkit can
+run it past agents whose job is to find what's wrong, not to tell you it's fine.
+Here's the pattern and how to run it.</p>
+<h2 id="why-adversarial-and-why-separate-agents">Why adversarial, and why <em>separate</em> agents<a class="headerlink" href="#why-adversarial-and-why-separate-agents" title="Permanent link">&para;</a></h2>
+<p>Ask the agent that wrote something to check its own work and it tends to agree
+with itself: it has committed to an approach and is poorly placed to see that
+approach's weakness. (You miss typos in your own drafts for the same reason.) A
+separate agent starts fresh and judges the work on its merits, which is why peer
+review catches more than self-review.</p>
+<p>So the reviewers are two things at once. <strong>Adversarial:</strong> told to break the work,
+assuming it's flawed until shown otherwise. <strong>Independent:</strong> a fresh context, not
+the agent that produced it. Run several in parallel and the catch rate rises,
+since each finds flaws the others miss.</p>
 <h2 id="how-to-fire-it">How to fire it<a class="headerlink" href="#how-to-fire-it" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2157,23 +2154,20 @@ sees flaws the others miss.</p>
 </tr>
 </tbody>
 </table>
-<p>You can also just <em>describe</em> it in plain language — "spawn two independent agents
-to find the weakest points in this, default to skeptical" — which is how you
-adversarially check a <strong>plan</strong> before approving it (see
-<a href="../working-with-claude-code/">Working with Claude Code</a>).</p>
+<p>You can also just describe it: "spawn two independent agents to find the weakest
+points in this, default to skeptical." That's how you check a plan before
+approving it (see <a href="../working-with-claude-code/">Working with Claude Code</a>).</p>
 <h2 id="the-heavyweight-option-coarse">The heavyweight option: COARSE<a class="headerlink" href="#the-heavyweight-option-coarse" title="Permanent link">&para;</a></h2>
-<p>For a full, referee-grade review of a finished paper, the referee-report workflow
-runs <strong>COARSE</strong> — David van Dijcke's open-source multi-agent peer-review pipeline
-(<a href="https://coarse.ink">coarse.ink</a>) — under the hood. It simulates a real
-referee's scrutiny across many agents and returns a structured report. It's the
-most thorough end of this spectrum; the lighter skills above are for faster,
-in-the-loop checks.</p>
+<p>For a referee-grade review of a finished paper, the referee-report workflow runs
+<strong>COARSE</strong> under the hood — David van Dijcke's open-source multi-agent
+peer-review pipeline (<a href="https://coarse.ink">coarse.ink</a>). It simulates a real
+referee across many agents and returns a structured report. It's the most
+thorough option; the lighter skills above are for faster checks while you work.</p>
 <h2 id="when-to-reach-for-it">When to reach for it<a class="headerlink" href="#when-to-reach-for-it" title="Permanent link">&para;</a></h2>
-<p>Before <em>anything</em> leaves your hands: a draft to co-authors, a figure into the
-paper, a plan before execution, code before a merge. The cost is a few minutes;
-the alternative is finding the flaw after it's shipped. Adversarial review is the
-default mode here, not a special occasion — balanced "tell me what's good" review
-is the exception you ask for explicitly.</p>
+<p>Run it before anything leaves your hands: a draft to co-authors, a figure going
+into the paper, a plan before you execute it, code before a merge. It costs a few
+minutes and saves you from shipping the flaw. Adversarial review is the default
+here; a balanced "tell me what's good" review is the exception you ask for.</p>
 <h2 id="next">Next<a class="headerlink" href="#next" title="Permanent link">&para;</a></h2>
 <p>→ <a href="../working-with-claude-code/">Working with Claude Code</a> ·
 <a href="../self-correcting-figures/">Self-correcting figures &amp; diagrams</a> ·
