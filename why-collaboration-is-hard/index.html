@@ -1606,10 +1606,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#option-b-one-shared-dropbox-folder-that-is-itself-a-git-repo" class="md-nav__link">
+  <a href="#option-b-shared-dropbox-container-one-git-clone-per-person-inside-it" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option B — One shared Dropbox folder that is itself a git repo
+        Option B — Shared Dropbox container + one git clone per person inside it
       
     </span>
   </a>
@@ -1617,10 +1617,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#option-c-shared-dropbox-container-one-git-clone-per-person-inside-it" class="md-nav__link">
+  <a href="#not-an-option-one-shared-dropbox-folder-that-is-itself-a-git-repo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option C — Shared Dropbox container + one git clone per person inside it
+        Not an option — one shared Dropbox folder that is itself a git repo
       
     </span>
   </a>
@@ -2136,10 +2136,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#option-b-one-shared-dropbox-folder-that-is-itself-a-git-repo" class="md-nav__link">
+  <a href="#option-b-shared-dropbox-container-one-git-clone-per-person-inside-it" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option B — One shared Dropbox folder that is itself a git repo
+        Option B — Shared Dropbox container + one git clone per person inside it
       
     </span>
   </a>
@@ -2147,10 +2147,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#option-c-shared-dropbox-container-one-git-clone-per-person-inside-it" class="md-nav__link">
+  <a href="#not-an-option-one-shared-dropbox-folder-that-is-itself-a-git-repo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option C — Shared Dropbox container + one git clone per person inside it
+        Not an option — one shared Dropbox folder that is itself a git repo
       
     </span>
   </a>
@@ -2303,24 +2303,7 @@ nails (2), (3), (4). It fails (1) and (5). Unpushed work isn't backed up —
 forget to push before your laptop dies and it's gone. And it asks everyone
 to live in git fluently, which is a real barrier for co-authors who just
 want to edit prose. Great for an all-engineer team; rough for a mixed one.</p>
-<h3 id="option-b-one-shared-dropbox-folder-that-is-itself-a-git-repo">Option B — One shared Dropbox folder that is <em>itself</em> a git repo<a class="headerlink" href="#option-b-one-shared-dropbox-folder-that-is-itself-a-git-repo" title="Permanent link">&para;</a></h3>
-<p>The intuitive move: put the git repo straight into the shared Dropbox
-folder so everyone sees the same files and gets Dropbox backup.</p>
-<pre class="mermaid"><code>flowchart TD
-    GH[("GitHub&lt;br/&gt;main")]
-    D["Shared Dropbox folder&lt;br/&gt;= ONE git repo (.git at root)"]
-    A["Ann edits here"] --&gt; D
-    B["Ben edits here"] --&gt; D
-    D -- "Dropbox syncs the .git folder too" --&gt; CONFLICT{{"two people, one .git →&lt;br/&gt;corrupted history,&lt;br/&gt;HEAD flips under your feet"}}
-    D --&gt; GH</code></pre>
-<p>This looks like it gives you everything — and it's the trap. A git repo's
-internals (<code>.git/</code>) are a live database. When Dropbox syncs <em>that</em> between
-two people working at once, it corrupts. Worse, one person switching
-branches flips the shared <code>HEAD</code> (git's pointer to "which branch you're on
-right now"), so a teammate's next commit silently lands on the wrong branch. This is not hypothetical — it's exactly the
-incident this kit was hardened against. Option B fails (2) and (4) in the
-most damaging way: it <em>looks</em> fine until it isn't.</p>
-<h3 id="option-c-shared-dropbox-container-one-git-clone-per-person-inside-it">Option C — Shared Dropbox <em>container</em> + one git clone per person inside it<a class="headerlink" href="#option-c-shared-dropbox-container-one-git-clone-per-person-inside-it" title="Permanent link">&para;</a></h3>
+<h3 id="option-b-shared-dropbox-container-one-git-clone-per-person-inside-it">Option B — Shared Dropbox <em>container</em> + one git clone per person inside it<a class="headerlink" href="#option-b-shared-dropbox-container-one-git-clone-per-person-inside-it" title="Permanent link">&para;</a></h3>
 <p>This is what we use. The Dropbox folder is a plain <strong>container</strong> — it is
 <em>not</em> a git repo. It holds the single shared data copy and one <strong>nested
 git clone per person</strong> (<code>clone_AB/</code>, <code>clone_CD/</code>, …). Each person works
@@ -2355,9 +2338,31 @@ root.</p>
   the human just stays in their own folder. The <a href="../manual-workflow/">manual workflow</a>
   spells out the by-hand path for those who want it.</li>
 </ul>
-<p>The cost — there's exactly one, and we don't hide it — is below.</p>
+<p>There's exactly one cost, and we don't hide it — see <em>The one honest cost</em>
+further down.</p>
+<h3 id="not-an-option-one-shared-dropbox-folder-that-is-itself-a-git-repo">Not an option — one shared Dropbox folder that is <em>itself</em> a git repo<a class="headerlink" href="#not-an-option-one-shared-dropbox-folder-that-is-itself-a-git-repo" title="Permanent link">&para;</a></h3>
+<p>This is the move almost everyone reaches for first, so it's worth saying
+clearly why it is <strong>not on the list above</strong>: put the git repo straight into
+the shared Dropbox folder, so everyone sees the same files and gets Dropbox
+backup. It looks like it gives you everything — and it breaks.</p>
+<pre class="mermaid"><code>flowchart TD
+    GH[("GitHub&lt;br/&gt;main")]
+    D["Shared Dropbox folder&lt;br/&gt;= ONE git repo (.git at root)"]
+    A["Ann edits here"] --&gt; D
+    B["Ben edits here"] --&gt; D
+    D -- "Dropbox syncs the .git folder too" --&gt; CONFLICT{{"two people, one .git →&lt;br/&gt;corrupted history,&lt;br/&gt;HEAD flips under your feet"}}
+    D --&gt; GH</code></pre>
+<p>A git repo's internals (<code>.git/</code>) are a live database. When Dropbox syncs
+<em>that</em> between two people working at once, it corrupts. Worse, one person
+switching branches flips the shared <code>HEAD</code> (git's pointer to "which branch
+you're on right now"), so a teammate's next commit silently lands on the
+wrong branch. This is not hypothetical — it's exactly the incident this kit
+was hardened against. It fails (2) and (4) in the most damaging way: it
+<em>looks</em> fine until it isn't. <strong>Option B above exists precisely to get the
+same benefits without this failure</strong> — which is why it's a real option and
+this is not.</p>
 <h2 id="why-leaderless-and-why-that-matters">Why "leaderless", and why that matters<a class="headerlink" href="#why-leaderless-and-why-that-matters" title="Permanent link">&para;</a></h2>
-<p>Option C has a tempting shortcut: make one person's clone the "main" one at
+<p>Option B has a tempting shortcut: make one person's clone the "main" one at
 the container root and have everyone else nest under it. We deliberately
 <strong>don't</strong>. There is no lead and no root clone. The container root is just a
 folder; every co-author's <code>clone_&lt;XX&gt;/</code> is equal; <code>main</code> lives on GitHub,
@@ -2366,7 +2371,7 @@ owned by no one.</p>
 "lead's canonical copy" into the folder structure creates a hierarchy that
 doesn't reflect how the work actually happens. Second, technical: the moment
 the root is <em>someone's clone</em> (a <code>.git</code> at the root), you've quietly slid
-back into Option B's failure mode — a shared repo whose HEAD can flip.
+back into the shared-repo trap above — a shared repo whose HEAD can flip.
 Keeping the root a plain container makes <em>that specific</em> incident — the
 shared <code>.git</code> two people fight over — <strong>structurally impossible</strong>: there's
 no shared repo at the root to corrupt. (Each person's own <code>clone_&lt;XX&gt;/</code>
