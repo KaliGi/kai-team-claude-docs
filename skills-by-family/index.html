@@ -2202,173 +2202,257 @@ and how to fire it. Most skills <strong>auto-trigger</strong> on matching langua
 with a <code>/name</code> you can also type explicitly (see <a href="../triggering-skills/">Triggering skills</a>).
 Install is per plugin — see <a href="../install-toolkit/">Install the toolkit</a>.</p>
 <h2 id="writing-editing">Writing &amp; editing<a class="headerlink" href="#writing-editing" title="Permanent link">&para;</a></h2>
-<p>??? note "kai-writing — drafts and revises academic prose in your voice"
-    For writing or polishing any paper prose — contribution paragraphs,
-    intros, abstracts, referee responses. Runs two drafters → critic → rewriter
-    internally, so you see a revised draft, not a first pass.
-    <strong>Fire it:</strong> ask "write/revise this in my style," or it auto-triggers on prose tasks.</p>
-<p>??? note "scientific-writing-analysis — diagnoses writing quality (Lebrun framework)"
-    For a structured critique of <em>how</em> a section is written (paragraph
-    progression, lead sentences, flow) rather than what it claims.
-    <strong>Fire it:</strong> "analyze the writing quality of this section."</p>
-<p>??? note "/academic — heavyweight orchestrator across several dimensions at once"
-    When a task spans review + polish + figures + bibliography together. Reach
-    for the individual skills when it doesn't; reach for this when it does.
-    <strong>Fire it:</strong> <code>/academic</code> (or it engages when you're working across a paper).</p>
+<details class="note">
+<summary>kai-writing — drafts and revises academic prose in your voice</summary>
+<p>For writing or polishing any paper prose — contribution paragraphs,
+intros, abstracts, referee responses. Runs two drafters → critic → rewriter
+internally, so you see a revised draft, not a first pass.
+<strong>Fire it:</strong> ask "write/revise this in my style," or it auto-triggers on prose tasks.</p>
+</details>
+<details class="note">
+<summary>scientific-writing-analysis — diagnoses writing quality (Lebrun framework)</summary>
+<p>For a structured critique of <em>how</em> a section is written (paragraph
+progression, lead sentences, flow) rather than what it claims.
+<strong>Fire it:</strong> "analyze the writing quality of this section."</p>
+</details>
+<details class="note">
+<summary>/academic — heavyweight orchestrator across several dimensions at once</summary>
+<p>When a task spans review + polish + figures + bibliography together. Reach
+for the individual skills when it doesn't; reach for this when it does.
+<strong>Fire it:</strong> <code>/academic</code> (or it engages when you're working across a paper).</p>
+</details>
 <h2 id="review-critique">Review &amp; critique<a class="headerlink" href="#review-critique" title="Permanent link">&para;</a></h2>
-<p>??? note "adversarial-review — hostile pre-ship review of any artefact"
-    The default before shipping anything (figure, plan, code, draft). Independent
-    agents tasked to find flaws, graded HALT/HIGH/MEDIUM/LOW — not reassurance.
-    See <a href="../reviewing-with-adversarial-agents/">Reviewing with adversarial agents</a>.
-    <strong>Fire it:</strong> "run an adversarial review of this."</p>
-<p>??? note "/review-paper — full 6-agent pre-submission referee report"
-    A journal-grade referee panel (contribution, identification, consistency,
-    maths, tables, claims) for a finished paper targeting a named journal.
-    <strong>Fire it:</strong> <code>/review-paper</code>.</p>
-<p>??? note "/review-paper-light — ~1-minute pre-screen"
-    A fast 2-agent check (contribution + identification) to decide whether a
-    paper is ready for the full report. Run it first.
-    <strong>Fire it:</strong> <code>/review-paper-light</code>.</p>
-<p>??? note "/review-grant — 6-agent funder-panel review"
-    A pre-submission panel review of a grant proposal for a specified funder.
-    <strong>Fire it:</strong> <code>/review-grant</code>.</p>
-<p>??? note "/review-r — reviews existing R scripts"
-    Checks R code already on disk for quality, reproducibility, and correctness.
-    Does not write new scripts.
-    <strong>Fire it:</strong> <code>/review-r</code>.</p>
-<p>??? note "/review-stata — reviews existing Stata .do files"
-    The Stata counterpart to /review-r: 12-category review of existing do-files.
-    <strong>Fire it:</strong> <code>/review-stata</code>.</p>
-<p>??? note "bib-audit — catches hallucinated and broken references"
-    Dual-Claude audit of a .bib file for fabricated, chimeric, or malformed
-    entries before you submit.
-    <strong>Fire it:</strong> auto-triggers on .bib work, or ask to "audit the bibliography."</p>
+<details class="note">
+<summary>adversarial-review — hostile pre-ship review of any artefact</summary>
+<p>The default before shipping anything (figure, plan, code, draft). Independent
+agents tasked to find flaws, graded HALT/HIGH/MEDIUM/LOW — not reassurance.
+See <a href="../reviewing-with-adversarial-agents/">Reviewing with adversarial agents</a>.
+<strong>Fire it:</strong> "run an adversarial review of this."</p>
+</details>
+<details class="note">
+<summary>/review-paper — full 6-agent pre-submission referee report</summary>
+<p>A journal-grade referee panel (contribution, identification, consistency,
+maths, tables, claims) for a finished paper targeting a named journal.
+<strong>Fire it:</strong> <code>/review-paper</code>.</p>
+</details>
+<details class="note">
+<summary>/review-paper-light — ~1-minute pre-screen</summary>
+<p>A fast 2-agent check (contribution + identification) to decide whether a
+paper is ready for the full report. Run it first.
+<strong>Fire it:</strong> <code>/review-paper-light</code>.</p>
+</details>
+<details class="note">
+<summary>/review-grant — 6-agent funder-panel review</summary>
+<p>A pre-submission panel review of a grant proposal for a specified funder.
+<strong>Fire it:</strong> <code>/review-grant</code>.</p>
+</details>
+<details class="note">
+<summary>/review-r — reviews existing R scripts</summary>
+<p>Checks R code already on disk for quality, reproducibility, and correctness.
+Does not write new scripts.
+<strong>Fire it:</strong> <code>/review-r</code>.</p>
+</details>
+<details class="note">
+<summary>/review-stata — reviews existing Stata .do files</summary>
+<p>The Stata counterpart to /review-r: 12-category review of existing do-files.
+<strong>Fire it:</strong> <code>/review-stata</code>.</p>
+</details>
+<details class="note">
+<summary>bib-audit — catches hallucinated and broken references</summary>
+<p>Dual-Claude audit of a .bib file for fabricated, chimeric, or malformed
+entries before you submit.
+<strong>Fire it:</strong> auto-triggers on .bib work, or ask to "audit the bibliography."</p>
+</details>
 <h2 id="figures-diagrams">Figures &amp; diagrams<a class="headerlink" href="#figures-diagrams" title="Permanent link">&para;</a></h2>
-<p>??? note "real-data-figure — publication figures from real data"
-    Time series, choropleths, scatter, coefficient, lollipop — sourced from OWID,
-    World Bank, V-Dem, UCDP, ACLED and friends, with OWID-style design.
-    <strong>Fire it:</strong> "plot <indicator> for <countries> from <source> data."</p>
-<p>??? note "tikz-figure — TikZ diagrams"
-    DAGs, mechanism diagrams, game trees, decision trees, flowcharts — built and
-    compile-tested. Also debugs failed TikZ compiles.
-    <strong>Fire it:</strong> "make a DAG / mechanism diagram of …"</p>
-<p>??? note "simulation-figure — Monte Carlo &amp; parameter explorations"
-    Shows how an estimator breaks under assumption violations (weak IV, parallel-
-    trends, staggered DID). Produces a static PDF + an interactive HTML.
-    <strong>Fire it:</strong> "simulate what happens when …" / "show when this method fails."</p>
-<p>??? note "/coef-plot — one coefficient/event-study plot from a saved fit"
-    Atomic plot from a saved regression (.rds) or fresh estimation. (For a plot
-    hand-entered from a paper's table, use real-data-figure.)
-    <strong>Fire it:</strong> <code>/coef-plot</code>.</p>
+<details class="note">
+<summary>real-data-figure — publication figures from real data</summary>
+<p>Time series, choropleths, scatter, coefficient, lollipop — sourced from OWID,
+World Bank, V-Dem, UCDP, ACLED and friends, with OWID-style design.
+<strong>Fire it:</strong> "plot <indicator> for <countries> from <source> data."</p>
+</details>
+<details class="note">
+<summary>tikz-figure — TikZ diagrams</summary>
+<p>DAGs, mechanism diagrams, game trees, decision trees, flowcharts — built and
+compile-tested. Also debugs failed TikZ compiles.
+<strong>Fire it:</strong> "make a DAG / mechanism diagram of …"</p>
+</details>
+<details class="note">
+<summary>simulation-figure — Monte Carlo &amp; parameter explorations</summary>
+<p>Shows how an estimator breaks under assumption violations (weak IV, parallel-
+trends, staggered DID). Produces a static PDF + an interactive HTML.
+<strong>Fire it:</strong> "simulate what happens when …" / "show when this method fails."</p>
+</details>
+<details class="note">
+<summary>/coef-plot — one coefficient/event-study plot from a saved fit</summary>
+<p>Atomic plot from a saved regression (.rds) or fresh estimation. (For a plot
+hand-entered from a paper's table, use real-data-figure.)
+<strong>Fire it:</strong> <code>/coef-plot</code>.</p>
+</details>
 <h2 id="data-tables-analysis">Data, tables &amp; analysis<a class="headerlink" href="#data-tables-analysis" title="Permanent link">&para;</a></h2>
-<p>??? note "data-catalog — find and retrieve empirical data sources"
-    Catalogue + search + download for economics / political-economy / conflict
-    data, outside a lecture context.
-    <strong>Fire it:</strong> "find data on …" / "download <dataset>."</p>
-<p>??? note "/descriptives — publication-ready descriptive &amp; balance tables"
-    Summary stats, treatment-vs-control balance, distribution/missingness
-    diagnostics.
-    <strong>Fire it:</strong> <code>/descriptives</code>.</p>
-<p>??? note "/regression — estimate one specification"
-    A single regression (or a small column-stack of related specs) for analysis.
-    <strong>Fire it:</strong> <code>/regression</code>.</p>
-<p>??? note "/data-analysis — full R analysis pipeline (umbrella)"
-    Spans exploration → cleaning → regression → publication-ready tables and
-    figures. The big one; the atomic skills above are its parts.
-    <strong>Fire it:</strong> <code>/data-analysis</code>.</p>
-<p>??? note "build-fragment-table — paper-ready regression tables"
-    Both halves of Kai's outline-in-paper + fragment-from-code pattern (no stars;
-    coef / [SE] / {p}; Mean-Control + N rows). Pairs with the exhibits workflow.
-    <strong>Fire it:</strong> "build the table for this regression."</p>
-<p>??? note "/build-data-source-table — data-sources appendix table"
-    Generates the LaTeX data-sources table from the <code>datasets:</code> block of your
-    replication metadata (the YAML is the source of truth).
-    <strong>Fire it:</strong> <code>/build-data-source-table</code>.</p>
-<p>??? note "sync-codebook — keep survey + derived codebooks in sync"
-    Two-codebook (survey-frozen + derived-live) synchronization for survey +
-    analysis projects.
-    <strong>Fire it:</strong> <code>/sync-codebook</code>.</p>
-<p>??? note "stata-replication — end-to-end Stata replication pipeline"
-    Scaffolds the canonical 00_setup / 01_cleaning / 02_analysis triad per the
-    one-canonical-script rule.
-    <strong>Fire it:</strong> auto-triggers on Stata replication work.</p>
+<details class="note">
+<summary>data-catalog — find and retrieve empirical data sources</summary>
+<p>Catalogue + search + download for economics / political-economy / conflict
+data, outside a lecture context.
+<strong>Fire it:</strong> "find data on …" / "download <dataset>."</p>
+</details>
+<details class="note">
+<summary>/descriptives — publication-ready descriptive &amp; balance tables</summary>
+<p>Summary stats, treatment-vs-control balance, distribution/missingness
+diagnostics.
+<strong>Fire it:</strong> <code>/descriptives</code>.</p>
+</details>
+<details class="note">
+<summary>/regression — estimate one specification</summary>
+<p>A single regression (or a small column-stack of related specs) for analysis.
+<strong>Fire it:</strong> <code>/regression</code>.</p>
+</details>
+<details class="note">
+<summary>/data-analysis — full R analysis pipeline (umbrella)</summary>
+<p>Spans exploration → cleaning → regression → publication-ready tables and
+figures. The big one; the atomic skills above are its parts.
+<strong>Fire it:</strong> <code>/data-analysis</code>.</p>
+</details>
+<details class="note">
+<summary>build-fragment-table — paper-ready regression tables</summary>
+<p>Both halves of Kai's outline-in-paper + fragment-from-code pattern (no stars;
+coef / [SE] / {p}; Mean-Control + N rows). Pairs with the exhibits workflow.
+<strong>Fire it:</strong> "build the table for this regression."</p>
+</details>
+<details class="note">
+<summary>/build-data-source-table — data-sources appendix table</summary>
+<p>Generates the LaTeX data-sources table from the <code>datasets:</code> block of your
+replication metadata (the YAML is the source of truth).
+<strong>Fire it:</strong> <code>/build-data-source-table</code>.</p>
+</details>
+<details class="note">
+<summary>sync-codebook — keep survey + derived codebooks in sync</summary>
+<p>Two-codebook (survey-frozen + derived-live) synchronization for survey +
+analysis projects.
+<strong>Fire it:</strong> <code>/sync-codebook</code>.</p>
+</details>
+<details class="note">
+<summary>stata-replication — end-to-end Stata replication pipeline</summary>
+<p>Scaffolds the canonical 00_setup / 01_cleaning / 02_analysis triad per the
+one-canonical-script rule.
+<strong>Fire it:</strong> auto-triggers on Stata replication work.</p>
+</details>
 <h2 id="bibliography-citations">Bibliography &amp; citations<a class="headerlink" href="#bibliography-citations" title="Permanent link">&para;</a></h2>
-<p>??? note "/sync-bib — refresh references.bib from Zotero"
-    Rebuilds the ZOTERO zone of your .bib and flags orphan citations in the .tex.
-    Read-only against Zotero — safe for anyone to run.
-    <strong>Fire it:</strong> <code>/sync-bib</code>.</p>
-<p>??? note "/add-cite-from-zotero — add one reference"
-    Pulls a single BibTeX entry from Zotero into the manual zone of references.bib
-    without changing your global setup.
-    <strong>Fire it:</strong> <code>/add-cite-from-zotero &lt;query-or-citekey&gt;</code>.</p>
-<p>??? note "/suggest-jel — JEL classification codes"
-    3-5 suggested JEL codes (primary first) for a paper or proposal.
-    <strong>Fire it:</strong> <code>/suggest-jel</code> (paste the abstract).</p>
-<p>??? note "lit-review — structured literature search + synthesis"
-    Search, thematic clustering, citation extraction, and gap identification.
-    <strong>Fire it:</strong> "do a literature review on …"</p>
-<p>??? note "lit-corpus — turn a folder of PDFs into a markdown corpus"
-    Converts academic PDFs into a token-efficient corpus for literature work.
-    <strong>Fire it:</strong> "build a corpus from these PDFs."</p>
-<p>??? note "/sync-pdfs — pull cited PDFs from Zotero"
-    Copies PDFs from local Zotero storage into <code>literature/</code> for every citekey
-    in the project's bib.
-    <strong>Fire it:</strong> <code>/sync-pdfs</code>.</p>
+<details class="note">
+<summary>/sync-bib — refresh references.bib from Zotero</summary>
+<p>Rebuilds the ZOTERO zone of your .bib and flags orphan citations in the .tex.
+Read-only against Zotero — safe for anyone to run.
+<strong>Fire it:</strong> <code>/sync-bib</code>.</p>
+</details>
+<details class="note">
+<summary>/add-cite-from-zotero — add one reference</summary>
+<p>Pulls a single BibTeX entry from Zotero into the manual zone of references.bib
+without changing your global setup.
+<strong>Fire it:</strong> <code>/add-cite-from-zotero &lt;query-or-citekey&gt;</code>.</p>
+</details>
+<details class="note">
+<summary>/suggest-jel — JEL classification codes</summary>
+<p>3-5 suggested JEL codes (primary first) for a paper or proposal.
+<strong>Fire it:</strong> <code>/suggest-jel</code> (paste the abstract).</p>
+</details>
+<details class="note">
+<summary>lit-review — structured literature search + synthesis</summary>
+<p>Search, thematic clustering, citation extraction, and gap identification.
+<strong>Fire it:</strong> "do a literature review on …"</p>
+</details>
+<details class="note">
+<summary>lit-corpus — turn a folder of PDFs into a markdown corpus</summary>
+<p>Converts academic PDFs into a token-efficient corpus for literature work.
+<strong>Fire it:</strong> "build a corpus from these PDFs."</p>
+</details>
+<details class="note">
+<summary>/sync-pdfs — pull cited PDFs from Zotero</summary>
+<p>Copies PDFs from local Zotero storage into <code>literature/</code> for every citekey
+in the project's bib.
+<strong>Fire it:</strong> <code>/sync-pdfs</code>.</p>
+</details>
 <h2 id="project-setup-hygiene">Project setup &amp; hygiene<a class="headerlink" href="#project-setup-hygiene" title="Permanent link">&para;</a></h2>
-<p>??? note "/bootstrap-project — day-1 setup for a new or messy project"
-    Scaffolds the canonical folders + CLAUDE.md + .gitignore; asks project mode,
-    collaborators, code stack.
-    <strong>Fire it:</strong> <code>/bootstrap-project</code> in the project folder.</p>
-<p>??? note "bootstrap-paper — scaffold a new paper in house style"
-    A LaTeX paper skeleton in Kai's conventions (preamble, sections, bib zones).
-    <strong>Fire it:</strong> "scaffold the paper skeleton."</p>
-<p>??? note "/refactor-structure — reorganize the folder/file layout"
-    Surveys the layout against the canonical structure and proposes a safe,
-    confirm-each-step refactor (never deletes). Back up first.
-    <strong>Fire it:</strong> <code>/refactor-structure</code> (read-only plan; <code>--apply</code> to act).</p>
-<p>??? note "/restructure-project — reorganize CLAUDE.md content"
-    The content counterpart to /refactor-structure (which does the folders).
-    <strong>Fire it:</strong> <code>/restructure-project</code>.</p>
-<p>??? note "/housekeeping — read-only project audit"
-    Flags drift, stragglers, and hygiene issues without changing anything.
-    <strong>Fire it:</strong> <code>/housekeeping</code>.</p>
-<p>??? note "/git — conversational git for non-experts"
-    Plain-language git help — describe what you want, no commands to memorise.
-    <strong>Fire it:</strong> <code>/git</code> (or just describe the git situation).</p>
-<p>??? note "check-clone-discipline — confirm you're in your own clone"
-    On multi-clone projects, checks you're standing in your <code>clone_&lt;XX&gt;/</code> before
-    any git write. Cheap insurance against the shared-root hazard.
-    <strong>Fire it:</strong> auto, at session start on multi-clone projects.</p>
-<p>??? note "/overleaf-sync — resolve Overleaf↔GitHub conflicts"
-    Diagnoses and recommends fixes for sync conflicts (often post-restructure).
-    <strong>Fire it:</strong> <code>/overleaf-sync</code>.</p>
-<p>??? note "Workflow helpers — /check-rules · /new-sprint · /plan-status · /learn"
-    Small hygiene commands: re-read the active rules; start a fresh sprint plan;
-    report sprint status; append a one-line memory correction.
-    <strong>Fire them:</strong> type the <code>/name</code>.</p>
+<details class="note">
+<summary>/bootstrap-project — day-1 setup for a new or messy project</summary>
+<p>Scaffolds the canonical folders + CLAUDE.md + .gitignore; asks project mode,
+collaborators, code stack.
+<strong>Fire it:</strong> <code>/bootstrap-project</code> in the project folder.</p>
+</details>
+<details class="note">
+<summary>bootstrap-paper — scaffold a new paper in house style</summary>
+<p>A LaTeX paper skeleton in Kai's conventions (preamble, sections, bib zones).
+<strong>Fire it:</strong> "scaffold the paper skeleton."</p>
+</details>
+<details class="note">
+<summary>/refactor-structure — reorganize the folder/file layout</summary>
+<p>Surveys the layout against the canonical structure and proposes a safe,
+confirm-each-step refactor (never deletes). Back up first.
+<strong>Fire it:</strong> <code>/refactor-structure</code> (read-only plan; <code>--apply</code> to act).</p>
+</details>
+<details class="note">
+<summary>/restructure-project — reorganize CLAUDE.md content</summary>
+<p>The content counterpart to /refactor-structure (which does the folders).
+<strong>Fire it:</strong> <code>/restructure-project</code>.</p>
+</details>
+<details class="note">
+<summary>/housekeeping — read-only project audit</summary>
+<p>Flags drift, stragglers, and hygiene issues without changing anything.
+<strong>Fire it:</strong> <code>/housekeeping</code>.</p>
+</details>
+<details class="note">
+<summary>/git — conversational git for non-experts</summary>
+<p>Plain-language git help — describe what you want, no commands to memorise.
+<strong>Fire it:</strong> <code>/git</code> (or just describe the git situation).</p>
+</details>
+<details class="note">
+<summary>check-clone-discipline — confirm you're in your own clone</summary>
+<p>On multi-clone projects, checks you're standing in your <code>clone_&lt;XX&gt;/</code> before
+any git write. Cheap insurance against the shared-root hazard.
+<strong>Fire it:</strong> auto, at session start on multi-clone projects.</p>
+</details>
+<details class="note">
+<summary>/overleaf-sync — resolve Overleaf↔GitHub conflicts</summary>
+<p>Diagnoses and recommends fixes for sync conflicts (often post-restructure).
+<strong>Fire it:</strong> <code>/overleaf-sync</code>.</p>
+</details>
+<details class="note">
+<summary>Workflow helpers — /check-rules · /new-sprint · /plan-status · /learn</summary>
+<p>Small hygiene commands: re-read the active rules; start a fresh sprint plan;
+report sprint status; append a one-line memory correction.
+<strong>Fire them:</strong> type the <code>/name</code>.</p>
+</details>
 <h2 id="replication-reproducibility">Replication &amp; reproducibility<a class="headerlink" href="#replication-reproducibility" title="Permanent link">&para;</a></h2>
-<p>??? note "init-replication — scaffold the replication package"
-    Adds replication_metadata.yaml + 00_setup scripts + a paper/README
-    placeholder to an existing project.
-    <strong>Fire it:</strong> "set up the replication package."</p>
-<p>??? note "audit-reproducibility — check the paper's numbers against the code"
-    Cross-checks numeric claims in the manuscript against actual R/Stata/Python
-    outputs. A pre-submission gate.
-    <strong>Fire it:</strong> "audit reproducibility of this paper."</p>
-<p>??? note "/audit-exhibits — provenance manifest for every exhibit"
-    Classifies each file in output/ as CODE-REPRODUCED / EXTERNAL / MANUAL /
-    ORPHAN; <code>--strict</code> fails on any orphan.
-    <strong>Fire it:</strong> <code>/audit-exhibits</code>.</p>
+<details class="note">
+<summary>init-replication — scaffold the replication package</summary>
+<p>Adds replication_metadata.yaml + 00_setup scripts + a paper/README
+placeholder to an existing project.
+<strong>Fire it:</strong> "set up the replication package."</p>
+</details>
+<details class="note">
+<summary>audit-reproducibility — check the paper's numbers against the code</summary>
+<p>Cross-checks numeric claims in the manuscript against actual R/Stata/Python
+outputs. A pre-submission gate.
+<strong>Fire it:</strong> "audit reproducibility of this paper."</p>
+</details>
+<details class="note">
+<summary>/audit-exhibits — provenance manifest for every exhibit</summary>
+<p>Classifies each file in output/ as CODE-REPRODUCED / EXTERNAL / MANUAL /
+ORPHAN; <code>--strict</code> fails on any orphan.
+<strong>Fire it:</strong> <code>/audit-exhibits</code>.</p>
+</details>
 <h2 id="talks">Talks<a class="headerlink" href="#talks" title="Permanent link">&para;</a></h2>
-<p>??? note "research-presentation — design academic talks"
-    Conference, seminar, job-market, brown-bag talks — architecture by length,
-    intro design, identification defense, slide rhetoric.
-    <strong>Fire it:</strong> "design my seminar / JMP / conference talk."</p>
+<details class="note">
+<summary>research-presentation — design academic talks</summary>
+<p>Conference, seminar, job-market, brown-bag talks — architecture by length,
+intro design, identification defense, slide rhetoric.
+<strong>Fire it:</strong> "design my seminar / JMP / conference talk."</p>
+</details>
 <h2 id="cross-session-coordination">Cross-session coordination<a class="headerlink" href="#cross-session-coordination" title="Permanent link">&para;</a></h2>
-<p>??? note "/coord — a message channel between your own sessions"
-    Lets your Claude Code sessions in different project folders leave each other
-    messages (single user, many projects — not team chat).
-    <strong>Fire it:</strong> <code>/coord &lt;verb&gt;</code> or "check coord."</p>
+<details class="note">
+<summary>/coord — a message channel between your own sessions</summary>
+<p>Lets your Claude Code sessions in different project folders leave each other
+messages (single user, many projects — not team chat).
+<strong>Fire it:</strong> <code>/coord &lt;verb&gt;</code> or "check coord."</p>
+</details>
 
 
 
