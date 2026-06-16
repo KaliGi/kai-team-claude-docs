@@ -2104,15 +2104,14 @@
 
 
 <h1 id="how-it-works-skills-processes-gates">How it works — skills, processes &amp; gates<a class="headerlink" href="#how-it-works-skills-processes-gates" title="Permanent link">&para;</a></h1>
-<p><strong>Why this page.</strong> People keep asking the same fair question: <em>when the toolkit
-"does a process" — like iterating over a figure before showing it to me — what
-is that, actually? Is it a program running in the background? Where does it live
-on my computer?</em> This page answers that, because once you see how a "process" is
-built, you can read, trust, change, and even add your own.</p>
+<p>People keep asking the same fair question: <em>when the toolkit "does a process" —
+like iterating over a figure before showing it to me — what is that, actually? Is
+it a program running in the background? Where does it live on my computer?</em> Once
+you see how a "process" is built, you can read it, change it, and add your own.</p>
 <p>The short version: <strong>everything here is just files on disk — readable text, plus
 a few small scripts. Nothing runs in the background.</strong> A "process" is either a
 set of <em>instructions</em> Claude follows when you ask, or a <em>script</em> that fires
-automatically on an event. That's the whole story.</p>
+automatically on an event.</p>
 <h2 id="the-building-blocks">The building blocks<a class="headerlink" href="#the-building-blocks" title="Permanent link">&para;</a></h2>
 <p>Six things, and they're all plain files you can open:</p>
 <ul>
@@ -2149,7 +2148,7 @@ automatically on an event. That's the whole story.</p>
     AG -.-&gt;|"reads"| PR
     HK["Hook&lt;br/&gt;guard_raw_data.py"] ==&gt;|"fires on a tool event&lt;br/&gt;(deterministic)"| EV["before a write to data/raw/"]</code></pre>
 <h2 id="two-ways-a-process-is-enforced-and-the-difference-matters">Two ways a process is enforced — and the difference matters<a class="headerlink" href="#two-ways-a-process-is-enforced-and-the-difference-matters" title="Permanent link">&para;</a></h2>
-<p>This is the key distinction, and it's the thing that's easy to miss:</p>
+<p>There are two levels of enforcement:</p>
 <table>
 <thead>
 <tr>
@@ -2167,7 +2166,7 @@ automatically on an event. That's the whole story.</p>
 <tr>
 <td><strong>Hard (a gate / hook)</strong></td>
 <td>an actual script that runs no matter what</td>
-<td>deterministic — it happens every single time</td>
+<td>deterministic — runs every time its event fires</td>
 </tr>
 </tbody>
 </table>
@@ -2178,7 +2177,7 @@ isn't good enough — safety rails (never overwrite raw data) or a step you want
 <em>guaranteed</em> to run.</p>
 <p>You can <strong>promote a soft rule to a hard gate</strong> when it earns it: take an
 instruction the model sometimes skips, and wire it as a hook so it always fires.
-That's the main way the toolkit hardens over time.</p>
+This is how the toolkit hardens over time.</p>
 <h2 id="a-worked-example-iterating-over-a-figure-before-you-see-it">A worked example: iterating over a figure before you see it<a class="headerlink" href="#a-worked-example-iterating-over-a-figure-before-you-see-it" title="Permanent link">&para;</a></h2>
 <p>You ask for a figure. Behind the scenes the figure skill's instructions say:
 <em>build it → render it → look for the obvious problems (a legend overlapping a
