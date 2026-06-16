@@ -1685,6 +1685,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#resolving-a-conflict-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resolving a conflict, step by step
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resolving a conflict, step by step">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-git-conflict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A git conflict
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-dropbox-conflicted-copy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Dropbox conflicted copy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-silent-logical-break" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The silent logical break
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#next" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2204,6 +2254,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#resolving-a-conflict-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resolving a conflict, step by step
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resolving a conflict, step by step">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-git-conflict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A git conflict
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-dropbox-conflicted-copy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Dropbox conflicted copy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-silent-logical-break" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The silent logical break
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#next" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2342,6 +2442,88 @@ where a person catches the logical conflict</strong> git can't see — "wait, yo
 the variable my new code uses." Git merges the <em>text</em>; the review merges the
 <em>meaning</em>. That is the real reason the workflow routes everything through a PR
 instead of letting everyone push straight to <code>main</code>.</p>
+<h2 id="resolving-a-conflict-step-by-step">Resolving a conflict, step by step<a class="headerlink" href="#resolving-a-conflict-step-by-step" title="Permanent link">&para;</a></h2>
+<p>First figure out <em>which</em> kind you have — they live in different systems and you
+fix them in different places:</p>
+<ul>
+<li>A <strong>git conflict</strong> — on your tracked files (code, paper) when you pull <code>main</code>
+  into your branch and the same lines were changed two ways. You fix it <strong>in
+  your own clone, locally</strong> (not on GitHub).</li>
+<li>A <strong>Dropbox "conflicted copy"</strong> — only on the <strong>shared container files</strong> that
+  live in Dropbox and are not in anyone's git clone (<code>data/processed/</code>,
+  <code>literature/</code>, <code>project_management/</code>). Two people edited the same shared file
+  at once, so Dropbox kept both and renamed one. You fix it <strong>in Dropbox</strong>.</li>
+<li>The <strong>silent logical break</strong> (different lines, one breaks the other) is not
+  flagged by either system — a person catches it. Covered last.</li>
+</ul>
+<h3 id="a-git-conflict">A git conflict<a class="headerlink" href="#a-git-conflict" title="Permanent link">&para;</a></h3>
+<p>You see it after <code>git merge origin/main</code> (or when opening a PR): git prints
+<code>CONFLICT</code> and lists the files.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">With Claude Code (recommended)</label><label for="__tabbed_1_2">By hand</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Say: <em>"I have a merge conflict — show me each one, explain both sides, and
+propose a resolution."</em> Claude reads the markers, tells you what each side
+changed and why, proposes the merged text, and (once you approve) stages and
+commits. You never touch the marker syntax. If you want to bail out:
+<em>"abort the merge"</em> puts you back where you started.</p>
+</div>
+<div class="tabbed-block">
+<ol>
+<li><code>git status</code> — lists the conflicted files.</li>
+<li>Open one. The clash is wrapped in markers:
+   <div class="highlight"><pre><span></span><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD          (your branch)
+your version
+=======
+the incoming version (from main)
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; origin/main
+</code></pre></div></li>
+<li>Edit that region to what you want — keep yours, keep theirs, or combine —
+   and <strong>delete all three marker lines</strong>.</li>
+<li><code>git add &lt;file&gt;</code> to mark it resolved. Repeat for each file.</li>
+<li><code>git commit</code> (finishes the merge), then <code>git push</code>.</li>
+<li>Wrong turn? <code>git merge --abort</code> returns you exactly to the start — nothing
+   lost.</li>
+</ol>
+</div>
+</div>
+</div>
+<p>Either way it happens <strong>in your clone, locally</strong> — that's where the files and the
+merge live. GitHub's web editor can handle a trivial one-file conflict, but local
+is the normal path, and Claude Code makes it painless. So no: a git conflict is
+<em>not</em> something you can only fix "on GitHub."</p>
+<h3 id="a-dropbox-conflicted-copy">A Dropbox conflicted copy<a class="headerlink" href="#a-dropbox-conflicted-copy" title="Permanent link">&para;</a></h3>
+<p>Dropbox leaves a second file next to the original, named like
+<code>TODO (Ann's conflicted copy 2026-06-16).md</code>. Nothing is lost — both versions
+are sitting there.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">With Claude Code</label><label for="__tabbed_2_2">By hand</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Say: <em>"Dropbox made a conflicted copy of <code>&lt;file&gt;</code> — diff it against the
+original, merge the two into one, then delete the copy."</em> Claude shows the
+differences, merges them, and removes the stray file.</p>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>Open the original and the "(conflicted copy)" file side by side.</li>
+<li>Copy any edits that exist only in the conflicted copy into the original.</li>
+<li>Save the original and <strong>delete the conflicted-copy file.</strong></li>
+<li>Unsure what changed? Dropbox's <em>Version history</em> on the original shows the
+   timeline.</li>
+</ol>
+</div>
+</div>
+</div>
+<p>This only ever happens on the shared container files. To prevent it: give each
+shared file an owner, edit it one person at a time, or — for anything that
+benefits from history — keep it in git instead of the plain container.</p>
+<h3 id="the-silent-logical-break">The silent logical break<a class="headerlink" href="#the-silent-logical-break" title="Permanent link">&para;</a></h3>
+<p>Neither git nor Dropbox flags this one (different lines, but one change breaks
+the other's assumptions). A <strong>person</strong> catches it — usually at PR review, or
+when a script suddenly errors. The fix isn't mechanical: re-pull, re-run, and
+<strong>talk to whoever changed the shared foundation</strong> so you both build on the new
+version. That's exactly why foundational changes are coordinated up front rather
+than merged blindly.</p>
 <h2 id="next">Next<a class="headerlink" href="#next" title="Permanent link">&para;</a></h2>
 <p>→ <a href="../why-collaboration-is-hard/">Why collaboration is hard</a> ·
 <a href="../co-author-handbook/">Daily workflow (handbook)</a></p>
