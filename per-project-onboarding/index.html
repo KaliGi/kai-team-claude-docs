@@ -1675,6 +1675,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#before-you-start-the-accounts-and-tools-you-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before you start — the accounts and tools you need
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#what-to-send-the-organizer" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2149,6 +2160,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#before-you-start-the-accounts-and-tools-you-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before you start — the accounts and tools you need
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#what-to-send-the-organizer" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2315,8 +2337,47 @@ access steps — folder, repo, bibliography, and (sometimes) Overleaf. Doing
 them once, in the right order, is what lets everything afterwards "just
 work". This page is that runbook; whoever set the project up sends it to you
 with the project-specific details filled in.</p>
+<blockquote>
+<p><strong>Two roles — make sure you're reading the right one.</strong></p>
+<ul>
+<li><strong>Setting up the project for the first time</strong> (or migrating an existing one
+  to the shared layout)? That's a <em>one-time</em> job for <em>one</em> person — see the
+  <a href="../setup-walkthrough/">setup walkthrough</a> and run <code>/bootstrap-project</code> (new
+  project) or <code>/refactor-structure --migrate-to-multi-clone</code> (existing one).
+  You create the container + your own clone, push <code>main</code> to GitHub, and invite
+  everyone else as collaborators.</li>
+<li><strong>Joining a project someone else already set up?</strong> This page is for you —
+  you receive a few invitations and create your own working clone.</li>
+</ul>
+</blockquote>
 <p>Once your laptop is set up (see the main <code>README.md</code> for the one-time install), each
 project you join needs a few separate access invitations.</p>
+<h2 id="before-you-start-the-accounts-and-tools-you-need">Before you start — the accounts and tools you need<a class="headerlink" href="#before-you-start-the-accounts-and-tools-you-need" title="Permanent link">&para;</a></h2>
+<p>Four things must be in place before the clone steps below will work. The first
+two are the ones people most often miss, and <strong>the organizer cannot do them for
+you</strong>:</p>
+<ol>
+<li><strong>Your own GitHub account, added as a collaborator on the repo.</strong> The repo is
+   private, so without a GitHub account <em>and</em> an accepted collaborator invite you
+   cannot clone it or push to it. Create one free at github.com, then send the
+   organizer your GitHub username/email (below) so they can invite you.</li>
+<li><strong>Git installed on your machine</strong> — the <code>git</code> program itself. On Windows,
+   install <strong>Git for Windows</strong> (it also signs you in to GitHub via a browser
+   pop-up the first time); macOS/Linux usually already have git.</li>
+<li><strong>The Dropbox container shared with you</strong> (accept the share) so the project
+   folder syncs to your machine.</li>
+<li><strong>Only if you'll use Claude Code</strong> to do the setup: Claude Code installed + a
+   Claude subscription. Two things happen the first time, both normal and worth
+   expecting:</li>
+<li><strong>Claude asks permission before it runs a git command.</strong> When you ask it to
+     set up your clone, it pauses and asks you to approve each command (e.g.
+     <code>git clone …</code>) — say yes (you can allow git for the whole session). It never
+     runs git silently.</li>
+<li><strong>The first clone or push asks you to sign in to GitHub</strong> — a browser window
+     opens to log in once. (If it asks for a "password" instead, paste a
+     <strong>Personal Access Token</strong>, not your account password; the screen stays blank
+     as you paste — that's expected.) It's remembered afterwards.</li>
+</ol>
 <h2 id="what-to-send-the-organizer">What to send the organizer<a class="headerlink" href="#what-to-send-the-organizer" title="Permanent link">&para;</a></h2>
 <p>For each new project, send whoever set the project up the <strong>email address you use for each of these services</strong>. They'll send invitations against those exact addresses.</p>
 <ul>
@@ -2389,9 +2450,17 @@ work happens inside your own <code>clone_&lt;XX&gt;/</code>. Full rationale:
 <code>data/raw</code> and <code>data/processed</code> are gitignored — the one canonical data
 copy lives in the parent Dropbox folder. The <code>.data-in-parent</code> marker
 (step 5 below) makes your clone's scripts find it.</p>
-<p>One-time setup, ~6 commands. Replace <code>AW</code>/<code>aw</code> with your two-letter
-initials (the ones in the project CLAUDE.md <code>## Collaborators</code> table).
-Works the same in Git Bash, PowerShell, or macOS Terminal:</p>
+<p><strong>Two ways to do it — pick one:</strong></p>
+<ul>
+<li><strong>Ask Claude Code (easiest).</strong> Open a session <strong>at the container</strong> (see the box
+  above) and say: <em>"Set up my working clone — my initials are AW."</em> It runs the
+  commands below for you, pausing to ask you to <strong>approve each git command</strong>
+  (say yes), and the first <code>git clone</code> triggers the <strong>GitHub sign-in</strong> described
+  in "Before you start." You stay hands-off after approving.</li>
+<li><strong>By hand.</strong> Run the ~6 commands yourself. Replace <code>AW</code>/<code>aw</code> with your
+  two-letter initials (the ones in the project CLAUDE.md <code>## Collaborators</code>
+  table). Works the same in Git Bash, PowerShell, or macOS Terminal:</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="c1"># 1. Go to the Dropbox project folder</span>
 <span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;&lt;path-to-Dropbox&gt;/&lt;project&gt;&quot;</span>
 
