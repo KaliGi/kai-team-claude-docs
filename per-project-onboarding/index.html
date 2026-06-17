@@ -1770,10 +1770,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-published-copy-at-the-container" class="md-nav__link">
+  <a href="#the-current-paper-pdf-at-the-container" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The published copy at the container
+        The current paper PDF at the container
       
     </span>
   </a>
@@ -2255,10 +2255,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-published-copy-at-the-container" class="md-nav__link">
+  <a href="#the-current-paper-pdf-at-the-container" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The published copy at the container
+        The current paper PDF at the container
       
     </span>
   </a>
@@ -2481,15 +2481,15 @@ touch<span class="w"> </span>.data-in-parent<span class="w">          </span><sp
 cp<span class="w"> </span>../&lt;path-to-kai-team-claude&gt;/templates/clone-readme.md<span class="w"> </span>./README.md
 <span class="c1">#    (Or just ask Claude Code: &quot;add the clone README to my clone.&quot;)</span>
 
-<span class="c1"># 4c. Install the publish-on-merge hook, so that every time you pull a merge</span>
-<span class="c1">#     into your clone the container&#39;s read-only paper/ + output/ + code/</span>
-<span class="c1">#     copy refreshes automatically (one obvious place to grab the current</span>
-<span class="c1">#     paper at submission time — see &quot;The published copy at the container&quot;</span>
-<span class="c1">#     below). Then run it once to populate the container the first time.</span>
-cp<span class="w"> </span>../&lt;path-to-kai-team-claude&gt;/templates/hooks/post-merge-publish<span class="w"> </span>.git/hooks/post-merge
+<span class="c1"># 4c. Install the paper-PDF hook, so that every time you pull a merge into</span>
+<span class="c1">#     your clone the container&#39;s paper/ folder gets a freshly compiled PDF of</span>
+<span class="c1">#     main (one obvious place to grab the current paper at submission time —</span>
+<span class="c1">#     see &quot;The current paper PDF at the container&quot; below). Then run it once to</span>
+<span class="c1">#     populate the container the first time.</span>
+cp<span class="w"> </span>../&lt;path-to-kai-team-claude&gt;/templates/hooks/post-merge-paper<span class="w"> </span>.git/hooks/post-merge
 chmod<span class="w"> </span>+x<span class="w"> </span>.git/hooks/post-merge
 sh<span class="w"> </span>.git/hooks/post-merge<span class="w">            </span><span class="c1"># first-time populate (safe to re-run)</span>
-<span class="c1">#    (Or just ask Claude Code: &quot;install the publish-on-merge hook in my clone.&quot;)</span>
+<span class="c1">#    (Or just ask Claude Code: &quot;install the paper-PDF merge hook in my clone.&quot;)</span>
 
 <span class="c1"># 5. Verify: run the setup script — the banner must show your branch</span>
 <span class="c1">#    and the rawdata/processed paths must point at ../data/</span>
@@ -2502,17 +2502,21 @@ Rscript<span class="w"> </span>code/00_setup.R
 <p>From now on, <strong>every session (Claude Code, R, Stata) starts inside
 <code>clone_AW/</code></strong> — never in the parent. Your code, paper edits, and exhibits
 live on your branch and reach the team via <code>git push</code> + pull request.</p>
-<h3 id="the-published-copy-at-the-container">The published copy at the container<a class="headerlink" href="#the-published-copy-at-the-container" title="Permanent link">&para;</a></h3>
-<p>Once the hook (step 4c) is installed, the container also holds a <strong>read-only
-<code>paper/</code> + <code>output/</code> + <code>code/</code></strong> that mirror the current <code>main</code>. Every time
-anyone pulls a merge into their clone (<code>git merge origin/main</code>), that copy
-refreshes automatically. <strong>This is the one place to grab the current paper —
-e.g. at submission time — without opening anyone's clone.</strong> A
-<code>PUBLISHED_README.md</code> sits next to it as a reminder: <strong>do not edit there.</strong>
-Those files are regenerated on the next merge and are not in git; all real
-work happens in your clone and reaches <code>main</code> through a PR. (No <code>.git</code> is
-involved at the container, so this gives you the single canonical view
-<em>without</em> the shared-repo corruption risk.)</p>
+<h3 id="the-current-paper-pdf-at-the-container">The current paper PDF at the container<a class="headerlink" href="#the-current-paper-pdf-at-the-container" title="Permanent link">&para;</a></h3>
+<p>Once the hook (step 4c) is installed, the container holds a <strong><code>paper/</code> folder
+with the compiled PDF of <code>main</code></strong>. Every time anyone pulls a merge into their
+clone (<code>git merge origin/main</code>), the hook recompiles <code>main</code>'s paper and drops
+the fresh PDF there. <strong>This is the one place to grab the current paper — e.g.
+at submission time — without opening anyone's clone.</strong> It holds only the PDF,
+not the sources or outputs: every clone already has those from <code>main</code>, so the
+container deliberately doesn't duplicate them.</p>
+<p>A <code>PAPER_README.md</code> sits next to it: <strong>do not edit there</strong> — the PDF is
+regenerated on the next merge and is not in git; all real work happens in your
+clone and reaches <code>main</code> through a PR. The hook is best-effort: if your
+machine has no LaTeX or the paper can't bare-compile (e.g. it uses
+<code>\includepdf</code>), it skips silently and leaves the previous PDF rather than
+breaking your merge — so refresh happens on whichever machine can compile
+<code>main</code> cleanly.</p>
 <h3 id="working-in-your-clone-the-two-step-session-setup">Working in your clone — the two-step session setup<a class="headerlink" href="#working-in-your-clone-the-two-step-session-setup" title="Permanent link">&para;</a></h3>
 <p><strong>Why this matters:</strong> Claude Code acts on the folder you open it in. Open it
 in your clone and your work lands on your branch; open it in the parent and it

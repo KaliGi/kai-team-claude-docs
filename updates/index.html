@@ -2105,6 +2105,143 @@ The full reasoning is in the changelog below under "How versioning works".</p>
 <p>Entries below are chronological (newest first). Dates are the change date;
 they roll up into the monthly CalVer cut.</p>
 <hr />
+<h2 id="2026-06-17-container-keeps-a-compiled-paper-pdf-not-a-mirror-project-workflow-v1190">2026-06-17 — Container keeps a compiled paper PDF, not a mirror (project-workflow v1.19.0)<a class="headerlink" href="#2026-06-17-container-keeps-a-compiled-paper-pdf-not-a-mirror-project-workflow-v1190" title="Permanent link">&para;</a></h2>
+<p>Replaced the container's <code>PUBLISHED/</code> read-only mirror (<code>paper/</code>+<code>output/</code>+
+<code>code/</code>) with a single <code>paper/</code> folder holding the <strong>compiled PDF of <code>main</code></strong>.
+The mirror was a redundant third copy — every clone already has the tracked
+sources and outputs from <code>main</code>. What's actually wanted at the container is one
+obvious, Dropbox-synced place to grab the current paper PDF for submission.</p>
+<ul>
+<li><code>templates/hooks/post-merge-publish</code> → renamed <strong><code>post-merge-paper</code></strong>. On
+  every <code>git merge origin/main</code> it exports <code>main</code>'s <code>paper/</code> (+<code>output/</code> for
+  figures), compiles (latexmk preferred so citations resolve; pdflatex
+  fallback), and copies <strong>only the PDF</strong> to <code>&lt;container&gt;/paper/</code> with a
+  <code>PAPER_README.md</code>.</li>
+<li><strong>Graceful — never blocks a merge.</strong> No LaTeX, or a failed compile (e.g. the
+  <code>\includepdf</code> bare-compile gotcha) → skip silently, leave the previous PDF.
+  Refresh happens on whichever machine can compile <code>main</code> cleanly.</li>
+<li>No binary in git, no manual step, leaderless. Verified end-to-end (minimal
+  paper → <code>container/paper/paper.pdf</code>; no-LaTeX PATH exits 0).</li>
+<li>Canonical spec + co-author onboarding updated; the old mirror is gone.</li>
+</ul>
+<h2 id="2026-06-17-fix-move-mode-nesting-bug-in-refactor-structure-project-workflow-v1180">2026-06-17 — Fix MOVE-mode nesting bug in <code>/refactor-structure</code> (project-workflow v1.18.0)<a class="headerlink" href="#2026-06-17-fix-move-mode-nesting-bug-in-refactor-structure-project-workflow-v1180" title="Permanent link">&para;</a></h2>
+<p>A latent bug surfaced while building the safety loop: when a canonical
+directory was both a safe-rename target and pre-created in phase 1 — directly
+(e.g. <code>code</code>) or as a parent of a created child (<code>code/prompts</code>) — the
+phase-2 <code>git mv scripts code</code> nested the source inside it, landing files at
+<code>code/scripts/</code>.</p>
+<ul>
+<li><code>build_plan</code> now drops exact rename-target dirs from <code>creates</code>.</li>
+<li><code>apply_plan</code> skips creating a dir equal to a safe target, and <strong>defers</strong>
+  creating canonical children under a target (<code>code/prompts</code>) until after the
+  rename lands — so the move reaches the target flat and the empty children
+  still get scaffolded.</li>
+<li>COPY mode (<code>dirs_exist_ok</code> merge) was already correct; the version-bump
+  caught up the field, which had drifted to <code>1.16.0</code> while the description
+  carried <code>1.17.0</code>.</li>
+<li>Verified on four fixtures: <code>scripts→code</code> MOVE (flat, <code>code/prompts</code>
+  deferred), <code>scripts→code</code> COPY (flat, original preserved), <code>raw→data/raw</code>
+  nested-target (flat), and a no-rename baseline (all canonical dirs created).</li>
+</ul>
+<h2 id="2026-06-17-float-placement-house-rule-exhibits-stay-in-their-section">2026-06-17 — Float-placement house rule: exhibits stay in their section<a class="headerlink" href="#2026-06-17-float-placement-house-rule-exhibits-stay-in-their-section" title="Permanent link">&para;</a></h2>
+<p>Baked Kai's "every table sits in its section, never floats to the page top"
+rule into the LaTeX conventions and both code reviewers, so it stops being
+re-fixed per project. A table that floats to the top can land above its own
+section heading — exactly what happened to an id-mining donation table that
+used <code>[ht]</code>.</p>
+<ul>
+<li><strong>Convention</strong> (academic-workflow v1.13.0): new <code>latex-fragment-conventions</code>
+  rule 8 — paper exhibits use <code>\begin{table}[H]</code> (strict; <code>float</code> is in the
+  standard preamble) or <code>[h!]</code> (confined to its section by
+  <code>[section]{placeins}</code>), <strong>never</strong> <code>[ht]</code>/<code>[htbp]</code>/<code>[t]</code>/<code>[tbp]</code>/<code>[b]</code>/<code>[p]</code>.
+  The rule's own examples and <code>/build-fragment-table</code>'s modern style moved from
+  <code>[htbp]</code> to <code>[H]</code>; the classic style keeps its verified <code>[h!]</code> +
+  <code>\FloatBarrier</code>. The Stata recipe (<code>stata-code-conventions</code> §5b) switched to
+  <code>[H]</code>.</li>
+<li><strong>Reviewers flag the default</strong>: <code>stata-reviewer</code> §6 and <code>r-reviewer</code>'s new
+  §6b (TABLE OUTPUT) flag a <code>[ht]</code>/<code>[htbp]</code>/<code>[t]</code> spec in any emitted
+  <code>\begin{table}</code> (MEDIUM; recommend <code>[H]</code>). stata-research-workflow v1.4.1,
+  r-research-workflow v1.2.1.</li>
+<li><strong>Fix-at-the-source caveat</strong>: change the generator's float spec and
+  regenerate; never <code>sed -i</code>/<code>perl -i</code> fragments in place on a Dropbox-hosted
+  repo — sync races corrupt files mid-write (a <code>.do</code> Stata was reading got
+  corrupted this way).</li>
+<li><code>\usepackage{float}</code> + <code>[section]{placeins}</code> were already in
+  <code>templates/latex-preamble.tex</code>, so no preamble change was needed.</li>
+</ul>
+<h2 id="2026-06-17-paper_structuremd-source-of-truth-exhibits-preview-drift-check">2026-06-17 — <code>paper_structure.md</code> source of truth + exhibits-preview drift check<a class="headerlink" href="#2026-06-17-paper_structuremd-source-of-truth-exhibits-preview-drift-check" title="Permanent link">&para;</a></h2>
+<p>A per-paper "what goes where, and why" file, plus the tooling to keep the
+paper honest against it. <code>/bootstrap-paper</code> now scaffolds
+<code>paper_structure.md</code> from <code>templates/paper_structure.md</code>: a section outline
+(one <em>claim</em> per section, not a label), an exhibit map (every table/figure
+slot → its file, marked <code>TO BUILD</code> until produced), and a
+conventions/decisions log (main contrast, key measure, sample, what's
+dropped and why). It records structural intent so iterative sessions and
+co-authors stop re-litigating settled choices — updated in the same turn a
+decision is made, like a memory note.</p>
+<ul>
+<li><code>/build-exhibits-preview</code> (project-workflow v1.17.0) gained a <strong>plan-drift
+  check</strong>: it auto-detects <code>paper_structure.md</code> (or <code>--structure &lt;path&gt;</code>),
+  parses the exhibit-map table, and cross-checks it against what the paper
+  actually <code>\input</code>/<code>\includegraphics</code>. The report flags exhibits in the
+  paper but not the plan, exhibits marked <code>built</code> but never included, and
+  slots still <code>TO BUILD</code>. Reported as guidance — does not change the exit
+  code. Skip with <code>--no-structure</code>.</li>
+<li><code>/bootstrap-paper</code> is academic-workflow v1.12.0.</li>
+</ul>
+<h2 id="2026-06-17-refactor-structure-safety-loop-project-workflow-v1160">2026-06-17 — <code>/refactor-structure</code> safety loop (project-workflow v1.16.0)<a class="headerlink" href="#2026-06-17-refactor-structure-safety-loop-project-workflow-v1160" title="Permanent link">&para;</a></h2>
+<p>Closed the refactoring loop: plan → independently CHECK the plan → execute
+WITH a mandatory backup → VERIFY nothing was lost → DELETE only recoverable
+duplicates. <code>refactor_structure.py</code> gained <code>--backup</code>, <code>--check-plan</code>,
+<code>--inventory</code>, <code>--verify</code>, <code>--cleanup</code>, governed by one rule
+(REPLACED-vs-MOVED: a layout refactor only moves/copies, never destroys, so
+the backup is temporary and deleted after a clean verify).</p>
+<ul>
+<li>The backup lives <strong>in-project</strong> at <code>.claude/legacy/refactor_backup_&lt;date&gt;/</code>
+  (workspace boundary; tar-pipe with <code>--exclude</code> so it can't nest in itself),
+  not a parent sibling.</li>
+<li>DELETE is the only destroy path and is triple-gated: clean verify required,
+  per-target <code>--delete-*</code> default to keep, and <code>--execute</code> required — a
+  missing/unclean verify refuses all deletes.</li>
+<li>The <code>_delete</code> step retry-loops (5×, backoff) on Windows
+  "Device or resource busy" / WinError 32 from Dropbox sync handles.</li>
+<li>Known latent bug (queued): MOVE mode pre-creates the target dir before
+  <code>git mv</code>, which can nest one level too deep; COPY mode (the canonical path)
+  is unaffected and VERIFY catches the bad shape.</li>
+</ul>
+<h2 id="2026-06-16-resolve-conflict-project-workflow-v1150">2026-06-16 — <code>/resolve-conflict</code> (project-workflow v1.15.0)<a class="headerlink" href="#2026-06-16-resolve-conflict-project-workflow-v1150" title="Permanent link">&para;</a></h2>
+<p>A conflict-triage command. Detects which of three kinds is present and routes
+each:</p>
+<ul>
+<li><strong>git merge conflict</strong> (tracked files) — walk the <code>&lt;&lt;&lt;&lt;</code>/<code>====</code>/<code>&gt;&gt;&gt;&gt;</code>
+  markers to a chosen resolution + <code>git add</code>, with <code>git merge --abort</code> named
+  as the no-loss escape; never force-push or reset.</li>
+<li><strong>Dropbox <code>(conflicted copy)</code></strong> on the shared container — diff, merge, and
+  delete the stray copy.</li>
+<li><strong>silent logical break</strong> a clean merge introduced (the case git cannot see)
+  — identify the foundational change and draft a heads-up to the co-author for
+  human coordination.</li>
+</ul>
+<p>Complements <code>git-assistant</code> (conversational git) with the Dropbox + logical
+routing. Pairs with <code>docs/how-merging-works.md</code>.</p>
+<h2 id="2026-06-16-build-exhibits-preview-project-workflow-v1140">2026-06-16 — <code>/build-exhibits-preview</code> (project-workflow v1.14.0)<a class="headerlink" href="#2026-06-16-build-exhibits-preview-project-workflow-v1140" title="Permanent link">&para;</a></h2>
+<p>Scaffold + compile a prose-free "exhibits preview" proof sheet of a paper —
+every <code>\input</code> table fragment and <code>\includegraphics</code> figure, in document
+order, under its section heading, with first-pass <code>\interp</code>/<code>\trans</code> handover
+lines for the author to edit.</p>
+<ul>
+<li><code>build_exhibits_preview.py</code> discovers exhibits (comment-aware, <code>.tex</code>-optional
+  <code>\input</code>, multi-line <code>\includegraphics</code>, nearest section title) and flags
+  inline-authored floats (exit 2, hand-add).</li>
+<li><code>--compile</code>/<code>--scratch-dir</code> run one nonstopmode <code>pdflatex</code> pass with cwd =
+  clone root (so <code>output/</code> paths resolve); degrades gracefully when pdflatex
+  is missing and when referenced exhibits aren't built yet (<code>\IfFileExists</code> +
+  <code>\safeincludegraphics</code> render visible red placeholders instead of a fatal
+  stop).</li>
+<li>The command enforces a <strong>required self-view gate</strong>: open the rendered pages
+  and run a 6-point defect checklist before sharing. Preview lives in
+  <code>temp_claude/</code> + scratch — zero git footprint.</li>
+</ul>
 <h2 id="2026-06-14-leaderless-multi-clone-model-no-lead-equal-clones">2026-06-14 — Leaderless multi-clone model (no lead, equal clones)<a class="headerlink" href="#2026-06-14-leaderless-multi-clone-model-no-lead-equal-clones" title="Permanent link">&para;</a></h2>
 <p>The multi-clone pattern no longer has a "lead". The project root is now a
 shared <strong>container</strong> (no <code>.git</code>) holding the singleton <code>data/</code>, shared
