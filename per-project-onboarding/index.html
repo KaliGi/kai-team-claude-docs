@@ -2369,6 +2369,15 @@ appends it to the project's <code>.bib</code> file in the GitHub repo.</p>
 <p><strong>Skip this section</strong> if the project's CLAUDE.md has no
 <code>## Multi-clone layout</code> block — then you work directly in the shared
 Dropbox folder per the Quick-start below.</p>
+<p><strong>"But I don't have a clone yet — where do I open Claude Code?"</strong> This is the
+one apparent exception to the open-in-your-clone rule, and it trips every new
+co-author. You don't need your clone to <em>exist</em> to create it — you create it
+by cloning from GitHub. So for <strong>this one-time setup only</strong>, open your terminal
+(or a Claude Code session) <strong>at the container</strong> (the shared Dropbox project
+folder). Once your <code>clone_&lt;XX&gt;/</code> exists, every session opens <strong>inside it</strong> as
+usual. Two accesses must be in place first: the Dropbox container shared with
+you, and GitHub collaborator access on the repo. (Or just open at the container
+and ask Claude Code: <em>"set up my working clone, my initials are MC."</em>)</p>
 </blockquote>
 <p>On multi-clone projects, each co-author works in their <strong>own nested git
 clone</strong> inside the Dropbox project folder. The project root is a shared
