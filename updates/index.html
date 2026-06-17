@@ -2105,6 +2105,24 @@ The full reasoning is in the changelog below under "How versioning works".</p>
 <p>Entries below are chronological (newest first). Dates are the change date;
 they roll up into the monthly CalVer cut.</p>
 <hr />
+<h2 id="2026-06-17-session-hygiene-where-does-a-non-code-figure-go-docs-project-workflow-v1200">2026-06-17 — Session hygiene + "where does a non-code figure go" docs (project-workflow v1.20.0)<a class="headerlink" href="#2026-06-17-session-hygiene-where-does-a-non-code-figure-go-docs-project-workflow-v1200" title="Permanent link">&para;</a></h2>
+<p>A field finding (a teammate's container root held <code>temp_claude/</code>, Stata logs,
+and a retired <code>code_AW/</code> — all symptoms of sessions run <em>at the container root</em>
+instead of inside a clone) plus a docs gap on where non-code figures live.</p>
+<ul>
+<li><strong>The container is inert.</strong> The multi-clone defusal block (<code>CLAUDE-template</code></li>
+<li>canonical spec) now states plainly: never launch Claude/R/Stata at the
+  root; scratch there (<code>temp_claude/</code>, <code>*.log</code>, a build PDF) is a red flag to
+  clean up and move into a clone; a retired <code>code_&lt;XX&gt;/</code> name is an unmigrated
+  clone. (A <code>check_clone_discipline</code> scan that auto-detects this is queued.)</li>
+<li><strong>New-figure docs.</strong> The FAQ gains a (deliberately open-framed) "I have a
+  figure that isn't made by code — where does it go?" entry, and
+  <code>project-structure.md</code> gains an "Adding a figure that isn't made by code"
+  section: non-code assets go in your clone's <code>output/figures_external/</code>,
+  commit → PR → others pull; there is no <code>output/</code> at the container root.</li>
+<li>Fixed a stale FAQ line that still described the container as holding a
+  read-only copy of the paper (it's the compiled PDF now).</li>
+</ul>
 <h2 id="2026-06-17-container-keeps-a-compiled-paper-pdf-not-a-mirror-project-workflow-v1190">2026-06-17 — Container keeps a compiled paper PDF, not a mirror (project-workflow v1.19.0)<a class="headerlink" href="#2026-06-17-container-keeps-a-compiled-paper-pdf-not-a-mirror-project-workflow-v1190" title="Permanent link">&para;</a></h2>
 <p>Replaced the container's <code>PUBLISHED/</code> read-only mirror (<code>paper/</code>+<code>output/</code>+
 <code>code/</code>) with a single <code>paper/</code> folder holding the <strong>compiled PDF of <code>main</code></strong>.

@@ -1999,8 +1999,17 @@ Nobody — it's <strong>leaderless</strong>. Every co-author is equal; <code>mai
 owned by no one; anyone can push and merge. → <a href="../why-collaboration-is-hard/">why collaboration is hard</a></p>
 <p><strong>Where's the latest paper? Which clone has it?</strong>
 The canonical version is <code>main</code> on GitHub. On team projects, the shared
-container also keeps a read-only copy of the current paper so you never have to
-hunt through clones. → <a href="../project-structure/">what goes where</a></p>
+container also keeps the <strong>compiled PDF</strong> of the current paper (recompiled
+automatically whenever anyone merges) so you can grab it for submission without
+hunting through clones. → <a href="../project-structure/">what goes where</a></p>
+<p><strong>I have a figure that isn't made by code (a photo, a hand-drawn diagram, a logo) — where does it go?</strong> <em>(open question — current answer)</em>
+In your own clone, under <code>output/figures_external/</code> — the sibling to
+<code>output/figures/</code> that exists specifically for assets no script generates (so
+the tooling doesn't flag them as "exhibit with no code"). Then commit it, push,
+open a PR; when co-authors pull <code>main</code> they get it too. There is <strong>no</strong> output
+folder at the shared container root — outputs live in each clone and travel via
+<code>main</code>. (We're still settling the finer points of where working files live; if
+something feels ambiguous, ask before improvising.) → <a href="../project-structure/#non-code-figures">what goes where</a></p>
 <p><strong>What if I mess up or lose work?</strong>
 Almost nothing here is unrecoverable <em>if you stop and ask before improvising</em> —
 git history and Dropbox both back you up. → <a href="../common-issues/">common issues</a></p>

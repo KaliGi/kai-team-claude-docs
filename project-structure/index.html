@@ -484,6 +484,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#non-code-figures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding a figure that isn't made by code
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#turning-a-messy-project-into-this" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2060,6 +2071,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#non-code-figures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding a figure that isn't made by code
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#turning-a-messy-project-into-this" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2189,6 +2211,28 @@ stays once at the container — see <a href="../why-collaboration-is-hard/">why 
 <p>The deeper rationale (the two-layer model, the canonical-file rule) is in
 <a href="../concepts/">the ideas behind it</a>; the full machine-readable spec is the
 <a href="https://github.com/KaliGi/kai-team-claude/blob/main/principles/project-structure-canonical.md">canonical structure reference</a>.</p>
+<h2 id="non-code-figures">Adding a figure that isn't made by code<a class="headerlink" href="#non-code-figures" title="Permanent link">&para;</a></h2>
+<p><code>output/figures/</code> is for exhibits a script produces — every file there should
+trace back to code. But some figures aren't generated: a photograph, a
+hand-drawn mechanism diagram, a logo, a screenshot. Those have their own home:</p>
+<ul>
+<li><strong><code>output/figures_external/</code></strong> — the sibling folder for any visual no script
+  made. Putting them here keeps the "every exhibit traces to code" rule honest
+  (the tooling knows to skip this folder instead of flagging the file as an
+  orphan exhibit with no backing script).</li>
+</ul>
+<p><strong>Where do you put a new one, and how does the team get it?</strong> On a team project
+you work in <em>your own clone</em>, so:</p>
+<ol>
+<li>Drop the file in your clone's <code>output/figures_external/</code>.</li>
+<li>Commit it, push, open a pull request.</li>
+<li>When co-authors pull <code>main</code> into their clones, they get it automatically.</li>
+</ol>
+<p>There is <strong>no <code>output/</code> folder at the shared container</strong> — the container holds
+only <code>data/</code>, <code>project_management/</code>, the per-author clones, and the compiled
+paper PDF. All outputs live inside each clone and travel between people through
+<code>main</code>, exactly like code and paper edits. (If you're solo, it's simpler still:
+one clone, same <code>output/figures_external/</code>, commit when ready.)</p>
 <h2 id="turning-a-messy-project-into-this">Turning a messy project into this<a class="headerlink" href="#turning-a-messy-project-into-this" title="Permanent link">&para;</a></h2>
 <p>Most real projects don't start this clean. Here's the before→after — and the
 one rule that comes first.</p>
