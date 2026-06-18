@@ -2502,6 +2502,14 @@ Rscript<span class="w"> </span>code/00_setup.R
 <p>From now on, <strong>every session (Claude Code, R, Stata) starts inside
 <code>clone_AW/</code></strong> — never in the parent. Your code, paper edits, and exhibits
 live on your branch and reach the team via <code>git push</code> + pull request.</p>
+<blockquote>
+<p><strong>Which <code>CLAUDE.md</code> is the real one?</strong> Your clone holds a git-tracked
+<code>CLAUDE.md</code>, but it is only a <strong>thin pointer stub</strong> — it tells the session
+the real rules live one level up. The <strong>canonical project rules are at the
+container root, <code>../CLAUDE.md</code></strong>. To change a project rule, edit
+<code>../CLAUDE.md</code> (the container's copy), never the stub inside your clone (a
+change there reaches no one — the clone copies are not canonical).</p>
+</blockquote>
 <h3 id="the-current-paper-pdf-at-the-container">The current paper PDF at the container<a class="headerlink" href="#the-current-paper-pdf-at-the-container" title="Permanent link">&para;</a></h3>
 <p>Once the hook (step 4c) is installed, the container holds a <strong><code>paper/</code> folder
 with the compiled PDF of <code>main</code></strong>. Every time anyone pulls a merge into their

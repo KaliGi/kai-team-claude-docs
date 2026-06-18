@@ -2106,6 +2106,164 @@ of truth, and a partial (plugin-only) update leaves you half-updated:
 <p>Entries below are chronological (newest first). Dates are the change date;
 they roll up into the monthly CalVer cut.</p>
 <hr />
+<h2 id="2026-06-18-clone-claudemd-thin-stub-model-project-workflow-v1310">2026-06-18 — clone-CLAUDE.md thin-stub model (project-workflow v1.31.0)<a class="headerlink" href="#2026-06-18-clone-claudemd-thin-stub-model-project-workflow-v1310" title="Permanent link">&para;</a></h2>
+<p>In the leaderless multi-clone layout, the <strong>container's loose <code>CLAUDE.md</code> is
+the single canonical project doc</strong>. The repo-TRACKED <code>clone_&lt;XX&gt;/CLAUDE.md</code>
+copies were allowed to be full mirrors — and full mirrors drift from the
+container as the rules evolve, with nothing keeping them in sync. They now
+become thin LOUD pointer stubs.</p>
+<ul>
+<li><strong>New template <code>templates/clone-CLAUDE-stub.md</code></strong> (~15 lines, brand-neutral,
+  matches <code>clone-readme.md</code>'s tone): a loud header that THIS file is a
+  per-author clone marker, NOT the project rules; the canonical rules are at
+  the container root (<code>../CLAUDE.md</code>) and carry every hard rule; "at session
+  start, read <code>../CLAUDE.md</code>"; and editing the rules means editing the
+  container's <code>CLAUDE.md</code>, not this stub.</li>
+<li><strong><code>/refactor-structure --migrate-to-multi-clone</code> Phase 6</strong> gains step 2b:
+  after the container CLAUDE.md defusal block is set up, each tracked
+  <code>clone_&lt;XX&gt;/CLAUDE.md</code> is replaced with the stub (dry-run lists; <code>--execute</code>
+  writes; the container's own <code>CLAUDE.md</code> is never touched). Phase 6 is
+  prose-driven — there is no migrate flag in <code>refactor_structure.py</code>, so the
+  wiring is an explicit prose step matching the rest of the phase.</li>
+<li><strong>Documented</strong> in <code>principles/project-structure-canonical.md</code> + the plugin
+  rules mirror (canonical-vs-stub note under the multi-clone setup items),
+  <code>bootstrap-project</code> §3.2a.bis, and <code>docs/per-project-onboarding.md</code> (a
+  "which CLAUDE.md is the real one?" note in the clone-setup section).</li>
+<li><strong>Interim-PR note:</strong> an EXISTING multi-clone project (e.g. UAM) retires its
+  drifting full-mirror clone <code>CLAUDE.md</code> via a one-time PR to <code>main</code> replacing
+  the tracked <code>clone_*/CLAUDE.md</code> with the stub — which then reaches every
+  clone, including co-authors who never re-run <code>--migrate</code>.</li>
+</ul>
+<h2 id="2026-06-18-check_clone_discipline-per-container-scratch-allowlist-project-workflow-v1300">2026-06-18 — check_clone_discipline: per-container scratch allowlist (project-workflow v1.30.0)<a class="headerlink" href="#2026-06-18-check_clone_discipline-per-container-scratch-allowlist-project-workflow-v1300" title="Permanent link">&para;</a></h2>
+<p>Closes uam's Q4: the v1.27.0 container scratch scan is advisory-only (never
+blocks), but it would nag about load-bearing container content — e.g. uam's
+transitional <code>temp_claude/</code> holding pending rescue stashes. Now an optional
+<code>&lt;container&gt;/.scratch-allow</code> (one fnmatch glob/name per line, <code>#</code> comments)
+declares known-keep exceptions; matching entries aren't flagged. Mirrors
+<code>/housekeeping</code>'s <code>root_allow</code>; selective (a <code>*.pdf</code> allow silences the PDF but
+<code>temp_claude/</code> is still flagged); the advisory now points users to the file.
+32/32 test battery green (+3 allowlist cases).</p>
+<h2 id="2026-06-18-map-figure-comprehensiveness-cartographic-craft-layer">2026-06-18 — map-figure comprehensiveness: cartographic craft layer<a class="headerlink" href="#2026-06-18-map-figure-comprehensiveness-cartographic-craft-layer" title="Permanent link">&para;</a></h2>
+<p>Folded a vetted cartography research memo into <code>skills/map-figure/</code> —
+the CORRECTNESS core (key reconciliation, the <code>iso_a3 == "-99"</code> trap,
+equal-area projection, binning, sequential-vs-diverging, dateline/
+Antarctica, labels) was already solid, so this adds the CRAFT layer on
+top without doubling the skill:</p>
+<ul>
+<li><strong>§9 Normalize: rates not counts (+ proportional symbols).</strong> A
+  choropleth fills <em>area</em>, so raw counts just redraw the population map —
+  normalise to a rate before filling, with a small-denominator caveat;
+  inherent counts go on a proportional-symbol map (<code>scale_size_area</code>, the
+  area-proportional one, not <code>scale_size</code>).</li>
+<li><strong>§10 Map furniture &amp; display.</strong> Scale bar / north arrow only on a
+  single-country extent; missing data needs its OWN legend key (the
+  silent-grey-NA bug at the display layer); graticules off by default;
+  interactive (<code>mapview</code> / <code>tmap_mode("view")</code>) for exploration, static
+  for print.</li>
+<li><strong>§11 Advanced layouts (pointers).</strong> Faceted small-multiples with ONE
+  shared scale; insets (<code>cowplot</code>/<code>patchwork</code>); topology-aware
+  generalisation (<code>rmapshaper::ms_simplify</code>, not <code>st_simplify</code>);
+  bivariate choropleths (<code>biscale</code>).</li>
+<li><strong>na.value fix:</strong> the §5/§6 examples (and the <code>map_core.R</code> worked
+  skeleton) used <code>na.value = "grey85"</code> with no legend entry; now recode
+  NA to an explicit "No data" level. Added a lean <code>to_no_data_factor()</code>
+  helper to <code>map_core.R</code> for exactly that.</li>
+<li>Checklist + sources extended (tmap book, r-spatial "beautiful maps"
+  Part 3, biscale, rmapshaper). <code>test_map_core.R</code> stays 5/5.</li>
+</ul>
+<p>Repo-level skill, so no <code>plugin.json</code> bump.</p>
+<h2 id="2026-06-18-trigger-overlap-fixes-project-workflow-v1290-r-research-workflow-v122">2026-06-18 — Trigger-overlap fixes (project-workflow v1.29.0, r-research-workflow v1.2.2)<a class="headerlink" href="#2026-06-18-trigger-overlap-fixes-project-workflow-v1290-r-research-workflow-v122" title="Permanent link">&para;</a></h2>
+<p>Two skill descriptions the architecture audit flagged for over-firing:</p>
+<ul>
+<li><strong><code>git-assistant</code></strong> was the broadest trigger in the toolkit. Trimmed bare
+  generic verbs (<code>status</code>/<code>update</code>/<code>sync</code>/"what's my situation" — which fired on
+  non-git intents like "update the table") to repo-scoped phrasing; removed the
+  experiment-scaffolding phrases that collided with <code>/experiment</code>; added a defer
+  clause (scaffolding a throwaway experiment script → <code>/experiment</code>;
+  git-assistant only does the branch plumbing) and a generic-verb scoping guard.</li>
+<li><strong><code>/coef-plot</code></strong> now carries the boundary its siblings have — NOT for
+  lecture/slide figures (the lecture-pipeline <code>data-visualizer</code> owns those), and
+  choropleths route to <code>map-figure</code>.</li>
+</ul>
+<h2 id="2026-06-18-new-map-figure-skill-choropleth-maps-in-r">2026-06-18 — new map-figure skill (choropleth maps in R)<a class="headerlink" href="#2026-06-18-new-map-figure-skill-choropleth-maps-in-r" title="Permanent link">&para;</a></h2>
+<p>New repo-level skill <code>skills/map-figure/</code> for publication-quality
+choropleth / country-level maps (paper / working-paper / policy-brief
+contexts — NOT lecture slides, which stay on the pipeline
+data-visualizer). It encodes only the non-trivial map mechanics agents
+get wrong by default and defers the rest to siblings:</p>
+<ul>
+<li><strong>Country-name / ISO3 reconciliation + a LOUD anti-join</strong> — reuses the
+  proven join core from the lecture pipeline (<code>match_to_naturalearth()</code>),
+  bundled in <code>assets/map_core.R</code>.</li>
+<li><strong>The Natural Earth <code>iso_a3 == "-99"</code> trap</strong> — France/Norway/etc. carry
+  <code>-99</code>, so an ISO3 join silently drops them; helper coalesces
+  <code>iso_a3_eh</code> / <code>adm0_a3</code> over <code>iso_a3</code> (<code>ne_iso_code()</code>).</li>
+<li><strong>Equal-area projection per region</strong> (Equal Earth world / LAEA Europe /
+  Albers US / Africa), resolving the map_core-vs-§6 Robinson contradiction
+  in favour of Equal Earth for choropleths.</li>
+<li>Binning for skewed data (jenks/quantile/log10, stated in caption),
+  sequential-vs-diverging fill, antimeridian/Antarctica handling, and
+  <code>st_point_on_surface()</code> direct labels.</li>
+</ul>
+<p>Defers data sourcing → <code>data-catalog</code>; naming/saving/source-line/1–5
+scoring → <code>real-data-figure</code>; theme/palette → <code>theme_research()</code> +
+Okabe-Ito. Updated <code>real-data-figure</code>'s choropleth-routing line to point
+here. Repo-level skill, so no <code>plugin.json</code> bump.</p>
+<h2 id="2026-06-18-rule-scoping-fixes-from-the-architecture-audit-project-workflow-v1280">2026-06-18 — Rule-scoping fixes from the architecture audit (project-workflow v1.28.0)<a class="headerlink" href="#2026-06-18-rule-scoping-fixes-from-the-architecture-audit-project-workflow-v1280" title="Permanent link">&para;</a></h2>
+<p>An adversarial audit of skill/trigger overlap and rule scoping found two
+auto-attach bugs (same class as the v1.25.0 coding-workflow fix):</p>
+<ul>
+<li><strong><code>migration-discipline.md</code> had no <code>paths:</code> frontmatter</strong> — so the "resilient
+  paths during a layout change" rule could never auto-load. Added
+  <code>**/*.do</code>, <code>**/*.R</code>, <code>**/*.py</code>, <code>code/**</code> (plugin mirror + <code>principles/</code> master).</li>
+<li><strong><code>model-routing.md</code> listed <code>**/*.md</code></strong> — auto-attaching an agent/skill
+  routing rule to <em>every</em> markdown file in <em>every</em> project (pure always-on
+  noise). Removed it; kept only <code>agents/**/*.md</code> + <code>skills/**/SKILL.md</code>.</li>
+</ul>
+<p>The audit's larger findings (skill-trigger disambiguations; whether high-cost
+conventions need to be hooks; and the sub-agent-bypass question — do PreToolUse
+hooks fire on a delegated sub-agent's tool calls?) are tracked separately.</p>
+<h2 id="2026-06-18-check_clone_discipline-detects-scratch-at-the-shared-container-root-project-workflow-v1270">2026-06-18 — check_clone_discipline detects scratch at the shared container root (project-workflow v1.27.0)<a class="headerlink" href="#2026-06-18-check_clone_discipline-detects-scratch-at-the-shared-container-root-project-workflow-v1270" title="Permanent link">&para;</a></h2>
+<p>Closes the v1.20.0 queued item: the script judged WHERE the session runs but
+never looked at WHAT junk had piled up at the inert shared container. That is the
+id-mining failure mode — sessions run AT the container deposit <code>temp_claude/</code>,
+stray <code>*.log</code>, build PDFs, and a retired <code>code_&lt;XX&gt;/</code> clone name at the root
+instead of inside a clone.</p>
+<ul>
+<li>New <code>scan_container_scratch()</code> flags four categories at the container root:
+  <code>temp_claude/</code> (should be per-clone), stray <code>*.log</code>, build artifacts
+  (<code>*.pdf</code> / <code>*.aux</code> / <code>*.synctex.gz</code>), and retired <code>code_&lt;XX&gt;/</code> clone names
+  (rename to <code>clone_&lt;XX&gt;/</code>). Excludes the legitimate singletons (<code>data/</code>,
+  <code>literature/</code>, <code>project_management/</code>, <code>paper/</code>, <code>clone_&lt;XX&gt;/</code>, <code>CLAUDE.md</code>,
+  <code>README</code>, <code>.gitignore</code>, <code>.claude/</code>); each category capped at 10.</li>
+<li>Runs whenever the container is known — from inside a clone (parent = container)
+  OR <code>AT_CONTAINER</code> — and APPENDS a "Container hygiene" advisory naming the
+  findings + the fix ("the container is inert; move scratch into your clone or
+  delete it; rename code_<XX>/ to clone_<XX>/").</li>
+<li>ADVISORY only: never turns a clean <code>OK_CLONE</code> into a hard stop; at most raises a
+  clean exit 0 to soft-warning exit 2. The five verdicts and their exit codes are
+  unchanged. ASCII-only output (Windows cp1252 console).</li>
+<li>New <code>test_check_clone_discipline.py</code> battery (29 checks, spaced-path temp
+  fixtures) green: all five verdict classes + the scratch cases and the
+  clean-container / canonical-clone controls that must NOT warn.</li>
+</ul>
+<h2 id="2026-06-18-portability-core-conventions-travel-in-every-project-claudemd-project-workflow-v1260">2026-06-18 — Portability: core conventions travel in every project CLAUDE.md (project-workflow v1.26.0)<a class="headerlink" href="#2026-06-18-portability-core-conventions-travel-in-every-project-claudemd-project-workflow-v1260" title="Permanent link">&para;</a></h2>
+<p>The eval showed the conventions were carried by the user's <strong>global</strong>
+<code>~/.claude/CLAUDE.md</code> + plugin agent descriptions, not the project files — so a
+co-author without that global config could miss them. Fix: make the project's
+own <code>CLAUDE.md</code> (always loaded, for everyone) carry the hard rules.</p>
+<ul>
+<li><code>CLAUDE-template.md</code> gains a mandatory <strong>"Core conventions (always apply — do
+  NOT delete)"</strong> block right after Project mode: (1) raw-data read-only,
+  (2) version-with-git-not-copies, (3) one-canonical-file + <code>/experiment</code>,
+  (4) exhibits-trace-to-code incl. <code>output/figures_external/</code> for non-code
+  assets, (5) scratch-is-disposable. The hook-backed ones say so.</li>
+<li>Closes two real holes: <strong>raw-read-only</strong> previously lived only inside the
+  multi-clone block (which single-clone projects delete), and
+  <strong><code>figures_external</code></strong> wasn't mentioned anywhere in the template.</li>
+<li><code>bootstrap-project</code> §3.1 marks the block mandatory for <em>every</em> project; the
+  repo-structure diagram now shows <code>output/figures_external/</code>.</li>
+</ul>
 <h2 id="2026-06-18-coding-workflowmd-now-auto-attaches-project-workflow-v1250">2026-06-18 — <code>coding-workflow.md</code> now auto-attaches (project-workflow v1.25.0)<a class="headerlink" href="#2026-06-18-coding-workflowmd-now-auto-attaches-project-workflow-v1250" title="Permanent link">&para;</a></h2>
 <p>An empirical eval (4 fresh agents, realistic tasks in a throwaway research-project
 fixture) showed behaviour was correct 4/4 — but for a revealing reason: the
