@@ -2663,27 +2663,43 @@ invite you separately to:</p>
 <p>Send whoever manages the project the addresses you used for each service so they can invite the right account.</p>
 <hr />
 <h2 id="updating-later-the-canonical-ritual">Updating later — THE canonical ritual<a class="headerlink" href="#updating-later-the-canonical-ritual" title="Permanent link">&para;</a></h2>
-<p>This is the ONE place the update procedure is defined; other docs link here.
-The toolkit has two tiers, so updating has exactly four steps — the first two
-refresh the <code>~/.claude/</code> tier (skills, agents, principles), the third refreshes
-the plugin tier (slash commands), the fourth makes Claude Code reload both:</p>
-<ol>
-<li>Pull the repo. Terminal:
-   <div class="highlight"><pre><span></span><code>git -C ~/kai-team-claude pull
+<p>This is the ONE place the update procedure is defined; other docs link here.</p>
+<p><strong>Three places — don't mix them up (this is what trips people):</strong>
+- a <strong>terminal window</strong> (PowerShell on Windows, Terminal on macOS) — steps 1–2;
+- <strong>inside Claude Code</strong> (the chat box itself) — step 3;
+- the <strong>Claude Code app</strong> — step 4, the restart.</p>
+<p>The toolkit has two halves updated two different ways, so it's four steps. Run
+each block on its own — copy it, run it, then move to the next.</p>
+<p><strong>Step 1 — open a terminal and go to your repo clone.</strong> On Windows: click Start,
+type "PowerShell", press Enter. Then move into wherever you cloned
+kai-team-claude (replace the path with yours — right-click pastes in PowerShell):</p>
+<div class="highlight"><pre><span></span><code>cd &quot;C:\path\to\your\kai-team-claude&quot;
 </code></pre></div>
-   (Adjust the path if you cloned elsewhere.)</li>
-<li>Re-run the install script. Terminal:</li>
-<li><strong>Windows (PowerShell):</strong> <code>powershell -ExecutionPolicy Bypass -File .\install\install.ps1</code></li>
-<li><strong>macOS / Linux:</strong> <code>bash install/install.sh</code></li>
-<li>Refresh the plugins. Inside Claude Code:
-   <div class="highlight"><pre><span></span><code>/plugin marketplace update kai-team-claude
-</code></pre></div></li>
-<li>Restart Claude Code (close the session, start a new one).</li>
-</ol>
-<p><em>Why two tiers?</em> The install script copies files into <code>~/.claude/</code> directly;
-plugins are managed by Claude Code's own registry — neither mechanism updates
-the other, so both steps are needed. If a plugin still looks stale after step 3,
-see Troubleshooting ("plugin seems stale").</p>
+<p>(macOS/Linux: <code>cd ~/kai-team-claude</code>.) Everything below assumes you ran this
+first — the <code>.\</code> in step 2 means "in the folder I'm standing in", so if you skip
+the <code>cd</code> it will fail.</p>
+<p><strong>Step 2 — pull the latest, then run the install script</strong> (this refreshes the
+<code>~/.claude/</code> half: skills, agents, principles). Two lines, one at a time:</p>
+<div class="highlight"><pre><span></span><code>git pull
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>powershell -ExecutionPolicy Bypass -File .\install\install.ps1
+</code></pre></div>
+<p>(macOS/Linux: <code>bash install/install.sh</code>.) It prints some backup/copy lines and
+finishes with no red errors.</p>
+<p><strong>Step 3 — refresh the plugins. Type this INSIDE Claude Code</strong>, not the terminal
+(slash commands + hooks live in Claude Code's own plugin registry, which the
+script doesn't touch):</p>
+<div class="highlight"><pre><span></span><code>/plugin marketplace update kai-team-claude
+</code></pre></div>
+<p><strong>Step 4 — restart Claude Code.</strong> Fully close the app and reopen it.</p>
+<p><em>Why all four?</em> The two halves live in different places and neither update
+touches the other: the install script copies files into <code>~/.claude/</code>, while the
+plugins are managed by Claude Code's own registry — so you need both step 2 and
+step 3, or you end up half-updated (e.g. the new rule text but not the new
+command). And the <strong>restart</strong> matters because Claude Code loads everything once,
+at startup — like a phone app, downloading the update isn't enough; you have to
+quit and relaunch for it to run the new version. If a plugin still looks stale
+after step 3, see Troubleshooting ("plugin seems stale").</p>
 <p>The install script uses <strong>per-item overlay</strong> — it replaces just the items the repo
 contains, leaves any personal items in <code>~/.claude/</code> alone, and backs up the
 previous version of each item it touches to <code>~/.claude/_backup_&lt;timestamp&gt;/</code>.</p>

@@ -2105,6 +2105,126 @@ The full reasoning is in the changelog below under "How versioning works".</p>
 <p>Entries below are chronological (newest first). Dates are the change date;
 they roll up into the monthly CalVer cut.</p>
 <hr />
+<h2 id="2026-06-18-coding-workflowmd-now-auto-attaches-project-workflow-v1250">2026-06-18 — <code>coding-workflow.md</code> now auto-attaches (project-workflow v1.25.0)<a class="headerlink" href="#2026-06-18-coding-workflowmd-now-auto-attaches-project-workflow-v1250" title="Permanent link">&para;</a></h2>
+<p>An empirical eval (4 fresh agents, realistic tasks in a throwaway research-project
+fixture) showed behaviour was correct 4/4 — but for a revealing reason: the
+conventions were carried by the <strong>global <code>~/.claude/CLAUDE.md</code> + the plugin agent
+descriptions</strong>, NOT by the project rule files. <code>coding-workflow.md</code> — the file that
+holds the canonical-file / no-<code>_v2</code> / experimentation rule — had <strong>no <code>paths:</code>
+frontmatter</strong>, so it could never auto-load when editing code.</p>
+<ul>
+<li>Added <code>paths:</code> (<code>**/*.do</code>, <code>**/*.R</code>, <code>**/*.py</code>, <code>code/**</code>) to both the plugin
+  mirror and the <code>principles/</code> master, so the rule auto-attaches on code edits.</li>
+<li>This is necessary but not sufficient: the deeper portability fix — putting the
+  core conventions in the <code>bootstrap-project</code>-generated project <code>CLAUDE.md</code> so a
+  co-author gets them <em>without</em> the user's personal global config — is queued.</li>
+<li>Verify in a real session with <code>/memory</code> (lists the rules actually loaded).</li>
+</ul>
+<h2 id="2026-06-17-guard_clutter-hook-stop-versioning-by-copying-project-workflow-v1240">2026-06-17 — <code>guard_clutter</code> hook: stop versioning-by-copying (project-workflow v1.24.0)<a class="headerlink" href="#2026-06-17-guard_clutter-hook-stop-versioning-by-copying-project-workflow-v1240" title="Permanent link">&para;</a></h2>
+<p>The bullet-proof layer for the clutter problem. Soft rules couldn't stop an
+agent from filling a project with <code>paper_backup_*/</code>, <code>_ORIG</code>, <code>_pre_rerun_*</code>,
+<code>draft_v2</code>, and one-off <code>_*.py</code> — so this is a deterministic gate, the same
+shape as the raw-data guard.</p>
+<ul>
+<li><strong><code>guard_clutter</code> PreToolUse hook</strong> asks before <em>creating</em> a backup / snapshot
+  / version-suffixed copy — a Write to a path like <code>paper_backup_2026-06-02/</code>,
+  <code>02_analysis_ORIG.do</code>, <code>draft_v2.tex</code>, <code>results_final.do</code>, <code>_paper_new/</code>, or a
+  Bash <code>cp</code>/<code>mv</code>/<code>mkdir</code>/<code>rsync</code>/redirect whose target carries a
+  backup/version/date marker. It returns an <em>ask</em> (not a block) and points to
+  the right home: a git <strong>branch</strong> for safety, <code>temp_claude/</code> for scratch,
+  <code>/experiment</code> (<code>code/_exploratory/</code>) for an experiment, <code>.claude/legacy/</code> to
+  park something recoverable.</li>
+<li><strong>Exempts the sanctioned homes</strong> (<code>.claude/legacy/</code>, <code>temp_claude/</code>,
+  <code>_archive/</code>, <code>old/</code>, <code>.git/</code>) so archiving correctly is never nagged.</li>
+<li><strong>Fences the day-archive escape hatch</strong> in <code>coding-workflow.md</code>: dated copies
+  only when git is genuinely unavailable, and into <code>.claude/legacy/</code> (which the
+  guard exempts), never <code>code/</code> siblings.</li>
+<li>22-case smoke test green (<code>hooks/guard_clutter_smoke_test.sh</code>).</li>
+</ul>
+<h2 id="2026-06-17-build-exhibits-preview-becomes-a-bare-bones-copy-of-the-paper-project-workflow-v1230">2026-06-17 — <code>/build-exhibits-preview</code> becomes a bare-bones copy of the paper (project-workflow v1.23.0)<a class="headerlink" href="#2026-06-17-build-exhibits-preview-becomes-a-bare-bones-copy-of-the-paper-project-workflow-v1230" title="Permanent link">&para;</a></h2>
+<p>The exhibits preview is now the artifact you actually want to review figures in:
+a <strong>bare-bones version of the real paper</strong> — its real preamble, its real
+section/subsection skeleton (titles kept, prose stripped), and every exhibit
+with its notes — auto-compiled and opened in your desktop PDF app. Previously it
+was a flat list of exhibits under a "nearest section title" with a hardcoded
+minimal preamble; now each exhibit sits in its true structural context.</p>
+<ul>
+<li><strong>Real preamble.</strong> <code>build_exhibits_preview.py</code> borrows the paper's OWN
+  preamble: it resolves <code>\input{...preamble...}</code> relative to the paper (and
+  prepends the main file's <code>\documentclass</code> if the standalone preamble lacks
+  one), else lifts everything from <code>\documentclass</code> to <code>\begin{document}</code> out of
+  the main <code>.tex</code>. The preview's helper macros (<code>\interp</code>/<code>\trans</code>/<code>\fignote</code>/
+  <code>\safeincludegraphics</code>) are always appended, guarded so there is never a
+  double <code>\documentclass</code>. Falls back to the minimal preamble only if neither
+  strategy works; the report states which strategy was used.</li>
+<li><strong>Real heading skeleton.</strong> Every <code>\section</code>/<code>\subsection</code>/<code>\subsubsection</code>
+  (and starred variants) is reproduced in document order via one
+  position-sorted walk — even headings with no exhibits, so it is a true
+  skeleton — with each exhibit placed under the heading where it appears. A
+  minimal <code>\title</code>/<code>\author</code>/<code>\maketitle</code> is emitted when the paper has them.</li>
+<li><strong>Auto-compile + auto-open.</strong> <code>--compile</code> is now the default; on a clean
+  compile the PDF opens in the OS default viewer (<code>os.startfile</code> on Windows,
+  <code>open</code>/<code>xdg-open</code> elsewhere — best-effort, never crashes). New <code>--no-compile</code>
+  and <code>--no-open</code> flags.</li>
+<li><strong>Preserved verbatim:</strong> inline-float detection (exit 2), the
+  <code>paper_structure.md</code> plan-drift check, graceful compile-degradation
+  (<code>\IfFileExists</code> guards + red <code>[exhibit not built yet]</code> placeholders), and the
+  command's REQUIRED self-view defect-checklist gate before sharing.</li>
+</ul>
+<p>Smoke-tested on a temp fixture (a <code>paper.tex</code> with <code>\input{preamble.tex}</code>,
+sections + subsections, a real <code>\includegraphics</code> and an
+<code>\input{output/tables/...}</code> fragment): the borrowed preamble + helper macros, a
+correctly ordered heading skeleton with exhibits under the right headings, and a
+clean 1-page PDF were all confirmed; the documentclass-lift and fallback
+preamble strategies and the guarded desktop-open path were verified separately.</p>
+<h2 id="2026-06-17-experiment-experiment-then-merge-back-workflow-project-workflow-v1220">2026-06-17 — <code>/experiment</code>: experiment-then-merge-back workflow (project-workflow v1.22.0)<a class="headerlink" href="#2026-06-17-experiment-experiment-then-merge-back-workflow-project-workflow-v1220" title="Permanent link">&para;</a></h2>
+<p>A repeated pattern (Kai + Ronny): try new analysis in a small scratch file rather
+than hacking inside the long canonical file, then fold the working part back in.
+Now a command, with the gotchas an agent gets wrong baked in.</p>
+<ul>
+<li><code>/experiment start &lt;topic&gt;</code> → scaffolds <strong>one</strong> transient scratch script at
+  <code>code/_exploratory/exp_&lt;topic&gt;.{do,R,py}</code> that <strong>sources <code>00_setup</code></strong> (so the
+  branch-aware redirect sends its outputs to <code>output/_exploratory/&lt;branch&gt;/</code> and
+  the canonical exhibits are never touched), on a feature branch. One file, no
+  <code>_v2</code> versioning.</li>
+<li><code>/experiment merge</code> → folds the working code into <code>02_analysis</code> as a clean
+  bannered section, drops the duplicate <code>00_setup</code> source, routes outputs through
+  the globals, <strong>verifies the full pipeline runs</strong>, then deletes the scratch
+  (verify-before-tidy; if it breaks, it stops and keeps the scratch).</li>
+<li><code>code/_exploratory/</code> is a <strong>transient</strong> exception to the one-canonical-file
+  rule — deleted at merge-back, so the end state is still one analysis file.
+  <code>coding-workflow.md</code> gains a pointer to the command.</li>
+</ul>
+<h2 id="2026-06-17-clone-readme-where-things-go-multi-clone-claudemd-talking-post-merge-hook-project-workflow-v1210">2026-06-17 — Clone README "where things go", multi-clone CLAUDE.md, talking post-merge hook (project-workflow v1.21.0)<a class="headerlink" href="#2026-06-17-clone-readme-where-things-go-multi-clone-claudemd-talking-post-merge-hook-project-workflow-v1210" title="Permanent link">&para;</a></h2>
+<p>Carries the inert-container knowledge to where co-authors actually meet it, and
+makes the compile-on-merge paper hook stop failing silently now that everyone is
+expected to have LaTeX.</p>
+<ul>
+<li><strong>Clone README tells co-authors where things go.</strong> <code>templates/clone-readme.md</code>
+  gains a "Where things live (and where NOT to work)" section: the shared
+  container is <strong>inert</strong> (never run Claude/R/Stata at the container root; stray
+  scratch there means a session ran in the wrong place); a non-code figure
+  (photo, hand-drawn diagram, logo) goes in your clone's
+  <code>output/figures_external/</code> then commit → push → PR (there is no <code>output/</code> at
+  the container root); the current submission PDF lives at <code>&lt;container&gt;/paper/</code>,
+  auto-compiled from <code>main</code> on every merge.</li>
+<li><strong>Bootstrap propagates the multi-clone block.</strong> <code>bootstrap-project</code> §3.1 now
+  states explicitly (alongside the existing §3.2a.bis handling) that a
+  multi-clone project includes the "## Multi-clone layout (intentional)" block
+  from <code>CLAUDE-template.md</code> verbatim, and single-clone projects omit it — so a
+  new co-author's generated <code>CLAUDE.md</code> carries the inert-container rules
+  automatically.</li>
+<li><strong>post-merge-paper hook no longer skips silently.</strong> <code>templates/hooks/post-merge-paper</code>
+  still NEVER blocks a merge (always <code>exit 0</code>, no <code>set -e</code>), but now: prints one
+  stderr line + writes <code>STATUS=SKIPPED_NO_LATEX</code> when no LaTeX engine is found;
+  prints one line, saves the compile log to <code>&lt;container&gt;/paper/.last_build.log</code>,
+  and writes <code>STATUS=FAILED</code> on a failed compile; detects <code>\includepdf</code> and
+  prints a tailored "grab the PDF from Overleaf/CI" line with
+  <code>STATUS=SKIPPED_INCLUDEPDF</code> instead of a generic failure; and writes
+  <code>&lt;container&gt;/paper/LAST_BUILD.txt</code> (date, ref short-SHA, engine, STATUS) on
+  every run including success. All marker/log writes are best-effort.
+  Smoke-tested on a temp clone fixture: OK, SKIPPED_NO_LATEX, SKIPPED_INCLUDEPDF.</li>
+</ul>
 <h2 id="2026-06-17-session-hygiene-where-does-a-non-code-figure-go-docs-project-workflow-v1200">2026-06-17 — Session hygiene + "where does a non-code figure go" docs (project-workflow v1.20.0)<a class="headerlink" href="#2026-06-17-session-hygiene-where-does-a-non-code-figure-go-docs-project-workflow-v1200" title="Permanent link">&para;</a></h2>
 <p>A field finding (a teammate's container root held <code>temp_claude/</code>, Stata logs,
 and a retired <code>code_AW/</code> — all symptoms of sessions run <em>at the container root</em>
