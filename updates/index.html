@@ -2076,10 +2076,11 @@ Individual plugins also carry their own <code>major.minor.patch</code> semver in
 <code>plugin.json</code>, so you can pin one plugin without tracking the whole kit.
 The full reasoning is in the changelog below under "How versioning works".</p>
 <h2 id="to-update">To update<a class="headerlink" href="#to-update" title="Permanent link">&para;</a></h2>
-<p>Restart Claude Code, then:</p>
-<div class="highlight"><pre><span></span><code>/plugin marketplace update kai-team-claude
-/plugin install &lt;plugin-name&gt;@kai-team-claude
-</code></pre></div>
+<p>You rarely need this; consumers update opt-in (your installed version keeps
+working). Only whoever maintains the toolkit updates after every change.</p>
+<p>When you do update, follow the canonical 4-step ritual — it's the single source
+of truth, and a partial (plugin-only) update leaves you half-updated:
+<a href="../install-toolkit/#updating-later--the-canonical-ritual">install the toolkit → "Updating later"</a>.</p>
 <hr />
 <!-- The changelog below is the single source of truth (root CHANGELOG.md),
      pulled in at build time. Edit CHANGELOG.md, never this include. -->

@@ -2664,6 +2664,7 @@ invite you separately to:</p>
 <hr />
 <h2 id="updating-later-the-canonical-ritual">Updating later — THE canonical ritual<a class="headerlink" href="#updating-later-the-canonical-ritual" title="Permanent link">&para;</a></h2>
 <p>This is the ONE place the update procedure is defined; other docs link here.</p>
+<p><strong>Who needs this, and how often.</strong> If you just <em>use</em> the toolkit for research, you do NOT need to update to keep working — your installed version keeps doing its job indefinitely. Update only when you <em>want</em> newer features, or a teammate says a specific fix landed that you need. There's no schedule; once or twice a semester is normal. The exception is whoever <em>maintains</em> the toolkit (edits the repo's skills/commands) — they update after every change. That's not you unless you're developing the toolkit itself.</p>
 <p><strong>Three places — don't mix them up (this is what trips people):</strong>
 - a <strong>terminal window</strong> (PowerShell on Windows, Terminal on macOS) — steps 1–2;
 - <strong>inside Claude Code</strong> (the chat box itself) — step 3;
@@ -2675,6 +2676,11 @@ type "PowerShell", press Enter. Then move into wherever you cloned
 kai-team-claude (replace the path with yours — right-click pastes in PowerShell):</p>
 <div class="highlight"><pre><span></span><code>cd &quot;C:\path\to\your\kai-team-claude&quot;
 </code></pre></div>
+<p>If you don't remember where you cloned it, find it first:</p>
+<div class="highlight"><pre><span></span><code>Get-ChildItem -Path $HOME,&quot;$HOME\Dropbox&quot; -Recurse -Directory -Filter kai-team-claude -ErrorAction SilentlyContinue | Select-Object FullName
+</code></pre></div>
+<p>(macOS/Linux: <code>find ~ -type d -name kai-team-claude 2&gt;/dev/null</code>.) Then <code>cd</code>
+into the path it prints.</p>
 <p>(macOS/Linux: <code>cd ~/kai-team-claude</code>.) Everything below assumes you ran this
 first — the <code>.\</code> in step 2 means "in the folder I'm standing in", so if you skip
 the <code>cd</code> it will fail.</p>
@@ -2691,7 +2697,12 @@ finishes with no red errors.</p>
 script doesn't touch):</p>
 <div class="highlight"><pre><span></span><code>/plugin marketplace update kai-team-claude
 </code></pre></div>
-<p><strong>Step 4 — restart Claude Code.</strong> Fully close the app and reopen it.</p>
+<p>First time only, you ran <code>/plugin marketplace add</code> (Step 6 of first-time
+install); from then on it's always <code>update</code>. If <code>update</code> says "marketplace not
+found", you never added it — run the Step 6 <code>add</code> line once.</p>
+<p><strong>Step 4 — restart Claude Code.</strong> Fully close the app and reopen it. If you use
+the terminal, type <code>/quit</code> then run <code>claude</code> again; if you use the desktop app,
+fully quit and reopen it.</p>
 <p><em>Why all four?</em> The two halves live in different places and neither update
 touches the other: the install script copies files into <code>~/.claude/</code>, while the
 plugins are managed by Claude Code's own registry — so you need both step 2 and
