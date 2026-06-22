@@ -320,6 +320,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -408,6 +412,62 @@
     
   
     What goes where — the project structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-provenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data provenance — raw + cleaning live IN the project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../one-click-replication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One-click replication across languages
   
 
     
@@ -986,6 +1046,8 @@
       
         
       
+        
+      
     
     
     
@@ -1317,6 +1379,34 @@
     
   
     The skills, by family
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skill-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill reference — what each does & when
   
 
     
@@ -2568,7 +2658,20 @@ These are built-in CLI commands — pasting them costs (almost) no tokens. Paste
 exactly; don't describe to Claude what you want it to install:</p>
 <ol>
 <li><strong>Close the terminal window completely</strong>, then open a fresh one.</li>
-<li>Type <code>claude</code> and press Enter, wait for the prompt.</li>
+<li><strong>Start Claude Code in that terminal.</strong> Type <code>claude</code> and press Enter, then
+   wait for the Claude prompt to appear. You'll know it worked when the prompt
+   changes from the regular <code>&gt;</code> (PowerShell) / <code>$</code> (macOS) to the Claude prompt.</li>
+</ol>
+<blockquote>
+<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/26a0.svg" title=":warning:" /> <strong>All the <code>/plugin ...</code> lines below must be typed at the Claude
+prompt, not at the PowerShell / Terminal prompt.</strong> That's what Arne hit on
+first install — <code>/plugin marketplace add ...</code> looks like a terminal command,
+but it's a Claude Code command and only works <strong>inside</strong> a Claude session.
+If you see "command not recognised" / "file not found" after pasting, you're
+at the regular shell prompt — type <code>claude</code>, wait for the Claude prompt,
+then paste again.</p>
+</blockquote>
+<ol>
 <li><strong>Register the marketplace first</strong> (without this, every install below fails
    with "marketplace not found"). Point it at the repo you cloned in Step 4:
    <div class="highlight"><pre><span></span><code>/plugin marketplace add ~/kai-team-claude

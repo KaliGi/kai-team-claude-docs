@@ -16,7 +16,7 @@
         <link rel="prev" href="../install-toolkit/">
       
       
-        <link rel="next" href="../INDEX/">
+        <link rel="next" href="../skill-reference/">
       
       
         
@@ -320,6 +320,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -408,6 +412,62 @@
     
   
     What goes where — the project structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-provenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data provenance — raw + cleaning live IN the project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../one-click-replication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One-click replication across languages
   
 
     
@@ -986,6 +1046,8 @@
       
         
       
+        
+      
     
     
     
@@ -1253,6 +1315,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skill-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill reference — what each does & when
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2296,9 +2386,20 @@ entries before you submit.
 <h2 id="figures-diagrams">Figures &amp; diagrams<a class="headerlink" href="#figures-diagrams" title="Permanent link">&para;</a></h2>
 <details class="note">
 <summary>real-data-figure — publication figures from real data</summary>
-<p>Time series, choropleths, scatter, coefficient, lollipop — sourced from OWID,
-World Bank, V-Dem, UCDP, ACLED, and others, with OWID-style design.
+<p>Time series, scatter, coefficient, lollipop — sourced from OWID, World Bank,
+V-Dem, UCDP, ACLED, and others, with research-house design. (For maps shaded
+by country, use map-figure below.)
 <strong>Fire it:</strong> "plot <indicator> for <countries> from <source> data."</p>
+</details>
+<details class="note">
+<summary>map-figure — publication-quality choropleth &amp; country maps</summary>
+<p>Country/region polygons shaded by a value (GDP, conflict deaths, refugee
+stock) in R (sf + ggplot2). Handles the map-specific traps that quietly
+break a choropleth: country-name/ISO reconciliation with a loud anti-join,
+equal-area projection, skew-aware binning, rates-not-counts, and an explicit
+"no data" key. Research/paper maps only — lecture maps go through the
+lecture pipeline.
+<strong>Fire it:</strong> "make a map / choropleth of <X> by country."</p>
 </details>
 <details class="note">
 <summary>tikz-figure — TikZ diagrams</summary>

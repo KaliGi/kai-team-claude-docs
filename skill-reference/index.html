@@ -1,0 +1,3497 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An AI research toolkit for Claude Code + a team workflow for collaborating on shared papers.">
+      
+      
+      
+        <link rel="canonical" href="https://kaligi.github.io/kai-team-claude-docs/skill-reference/">
+      
+      
+        <link rel="prev" href="../skills-by-family/">
+      
+      
+        <link rel="next" href="../INDEX/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Skill reference — what each does & when - kai-team-claude</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#skill-reference-what-each-skill-does-and-when-to-use-it" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="kai-team-claude" class="md-header__button md-logo" aria-label="kai-team-claude" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            kai-team-claude
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Skill reference — what each does & when
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="kai-team-claude" class="md-nav__button md-logo" aria-label="kai-team-claude" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    kai-team-claude
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../updates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizing a research project
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Organizing a research project
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../organizing-a-research-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why structure matters (even solo)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What goes where — the project structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-provenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data provenance — raw + cleaning live IN the project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../one-click-replication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One-click replication across languages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../replication-packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Replication packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../choosing-your-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Which setup do you need?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub, Dropbox, Overleaf, and LaTeX
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GitHub, Dropbox, Overleaf, and LaTeX
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why git, Dropbox, Overleaf & LaTeX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manual-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The manual workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new-to-claude-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../primer-git-and-claude-for-economists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terminal-101/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new-to-overleaf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overleaf
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new-to-latex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LaTeX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Claude Code Research Toolkit
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The Claude Code Research Toolkit
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Understanding Claude Code
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Understanding Claude Code
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-claude-code-thinks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Claude Code thinks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The toolkit itself
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The toolkit itself
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../toolkit-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What the toolkit is
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install-toolkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install the toolkit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skills-by-family/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The skills, by family
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill reference — what each does & when
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill reference — what each does & when
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#academic-workflow-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        academic-workflow (plugin)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="academic-workflow (plugin)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bib-audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bib-audit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bootstrap-paper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bootstrap-paper
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-data-source-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        build-data-source-table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-fragment-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        build-fragment-table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        data-catalog
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        humanize
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-replication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        init-replication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lit-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lit-review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preregister" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        preregister
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#respond-to-referees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        respond-to-referees
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suggest-jel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        suggest-jel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coord-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        coord (plugin)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="coord (plugin)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coord" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        coord
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-workflow-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        project-workflow (plugin)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="project-workflow (plugin)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#audit-exhibits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        audit-exhibits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-clone-discipline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        check-clone-discipline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git-assistant
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#housekeeping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        housekeeping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        learn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lit-corpus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lit-corpus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overleaf-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        overleaf-sync
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sync-codebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sync-codebook
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r-research-workflow-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        r-research-workflow (plugin)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="r-research-workflow (plugin)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#audit-reproducibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        audit-reproducibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coef-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        coef-plot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        data-analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descriptives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        descriptives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        regression
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#review-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        review-r
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stata-research-workflow-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        stata-research-workflow (plugin)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="stata-research-workflow (plugin)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#review-stata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        review-stata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stata-replication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        stata-replication
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talks-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        talks (plugin)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="talks (plugin)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#research-presentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        research-presentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-level-skills" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top-level skills
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Top-level skills">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adversarial-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        adversarial-review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kai-writing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kai-writing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-figure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        map-figure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qualitative-survey-coding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        qualitative-survey-coding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-data-figure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        real-data-figure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scientific-writing-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scientific-writing-analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulation-figure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        simulation-figure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tikz-figure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tikz-figure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full list of commands & skills
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Day-to-day use
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Day-to-day use
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-it-works/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How it works — skills, processes & gates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../triggering-skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Triggering skills
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../working-with-claude-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Good habits: permissions & planning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reviewing-with-adversarial-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reviewing with adversarial agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../self-correcting-figures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Self-correcting figures & diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Common tasks, step by step
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../first-things-to-try/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick wins to try first
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Working together
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Working together
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-collaboration-is-hard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why collaboration is hard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-merging-works/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How merging works (and when to coordinate)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../co-author-quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Co-author quickstart (start here)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-walkthrough/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Detailed setup walkthrough
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../per-project-onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set up your working clone
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../co-author-handbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Daily workflow (handbook)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practice-session/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A practice run (throwaway repo)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../co-author-onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First week: the essentials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../common-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Something broke — fixes & recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Kai's team is set up
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Under the hood (how the toolkit is built)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Under the hood (how the toolkit is built)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ARCHITECTURE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maintainer-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintainer notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../acknowledgements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Acknowledgements & sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#academic-workflow-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        academic-workflow (plugin)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="academic-workflow (plugin)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bib-audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bib-audit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bootstrap-paper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bootstrap-paper
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-data-source-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        build-data-source-table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-fragment-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        build-fragment-table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        data-catalog
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#humanize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        humanize
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-replication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        init-replication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lit-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lit-review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preregister" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        preregister
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#respond-to-referees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        respond-to-referees
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suggest-jel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        suggest-jel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coord-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        coord (plugin)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="coord (plugin)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coord" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        coord
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-workflow-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        project-workflow (plugin)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="project-workflow (plugin)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#audit-exhibits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        audit-exhibits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-clone-discipline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        check-clone-discipline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git-assistant
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#housekeeping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        housekeeping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        learn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lit-corpus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lit-corpus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overleaf-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        overleaf-sync
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sync-codebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sync-codebook
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r-research-workflow-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        r-research-workflow (plugin)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="r-research-workflow (plugin)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#audit-reproducibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        audit-reproducibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coef-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        coef-plot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        data-analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descriptives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        descriptives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        regression
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#review-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        review-r
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stata-research-workflow-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        stata-research-workflow (plugin)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="stata-research-workflow (plugin)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#review-stata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        review-stata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stata-replication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        stata-replication
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talks-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        talks (plugin)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="talks (plugin)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#research-presentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        research-presentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-level-skills" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top-level skills
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Top-level skills">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adversarial-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        adversarial-review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kai-writing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kai-writing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-figure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        map-figure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qualitative-survey-coding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        qualitative-survey-coding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-data-figure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        real-data-figure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scientific-writing-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scientific-writing-analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulation-figure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        simulation-figure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tikz-figure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tikz-figure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<!-- GENERATED by scripts/generate_skill_reference.py -- DO NOT EDIT BY HAND. -->
+<!-- Regenerate after any skill change; release_check.sh fails on drift. -->
+
+<h1 id="skill-reference-what-each-skill-does-and-when-to-use-it">Skill reference — what each skill does and when to use it<a class="headerlink" href="#skill-reference-what-each-skill-does-and-when-to-use-it" title="Permanent link">&para;</a></h1>
+<p>A detailed entry per skill: what it produces, when to reach for it, an example prompt, and what it is <em>not</em> for. For the grouped quick view see <a href="../skills-by-family/">the skills by family</a>; for the flat invocation list with exact syntax see <a href="../INDEX/">the full index</a>.</p>
+<h2 id="academic-workflow-plugin">academic-workflow (plugin)<a class="headerlink" href="#academic-workflow-plugin" title="Permanent link">&para;</a></h2>
+<h3 id="bib-audit">bib-audit<a class="headerlink" href="#bib-audit" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> catches hallucinated, chimeric, or broken references in a .bib via a dual-Claude audit -- two independent verification cascades run blind, then challenge each other on disagreements -- producing an evidence-backed scorecard.</li>
+<li><strong>When to use:</strong> before submission / circulation, or "check my bib for fake references", "verify citations", "did Claude hallucinate citations".</li>
+<li><strong>Example:</strong> "/bib-audit paper/references.bib"</li>
+<li><strong>Not for:</strong> refreshing or adding entries from Zotero (use /sync-bib, /add-cite-from-zotero).</li>
+</ul>
+<h3 id="bootstrap-paper">bootstrap-paper<a class="headerlink" href="#bootstrap-paper" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> scaffolds a new econ paper LaTeX project in Kai's house style -- paper.tex + appendix + preamble + labels (auto-FloatBarrier, appendix counters A1/A2, biblatex authoryear, threeparttable/dcolumn/tabularx) from the templates.</li>
+<li><strong>When to use:</strong> starting a new paper with no paper.tex yet -- "scaffold a new paper", "set up the LaTeX", "start a new paper in my style".</li>
+<li><strong>Example:</strong> "scaffold the paper LaTeX for this project, title "Roads and Revolt"</li>
+<li><strong>Not for:</strong> refactoring an existing paper (use /refactor-structure); slide decks (use the talks skill).</li>
+</ul>
+<h3 id="build-data-source-table">build-data-source-table<a class="headerlink" href="#build-data-source-table" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> emits a LaTeX data-sources appendix table from the datasets: block of replication_metadata.yaml (the YAML is the single source of truth; the table is regeneratable) -- caption + label + threeparttable, ready to \input into the appendix.</li>
+<li><strong>When to use:</strong> "build the data sources table", "data appendix table", after populating datasets: in the metadata.</li>
+<li><strong>Example:</strong> "build the data-sources appendix table from my replication metadata"</li>
+<li><strong>Not for:</strong> regression tables (use /build-fragment-table); projects with no populated metadata YAML (run /init-replication first).</li>
+</ul>
+<h3 id="build-fragment-table">build-fragment-table<a class="headerlink" href="#build-fragment-table" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> generates BOTH halves of a paper-ready regression table in Kai's outline-in-paper + fragment-from-code pattern (no stars; coef / [SE] / {p}; Mean-Control + N rows) -- the Stata esttab fragment block to paste in the .do, and the LaTeX outline to paste in the paper, with correct column counts.</li>
+<li><strong>When to use:</strong> "build me a fragment table", "wire this regression into the paper", "make a new house-style table".</li>
+<li><strong>Example:</strong> "build the fragment table + outline for the main treatment regression"</li>
+<li><strong>Not for:</strong> the data-sources appendix table (use /build-data-source-table); figures (use /coef-plot or real-data-figure).</li>
+</ul>
+<h3 id="data-catalog">data-catalog<a class="headerlink" href="#data-catalog" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> catalog + search + download for ~40 major empirical datasets (conflict, governance, economic, resources, climate, displacement, sanctions), with code templates (wbgapi / REST / direct file).</li>
+<li><strong>When to use:</strong> "what data exists for X", "find data on Y", "download dataset Z", "where can I get GDP / democracy / conflict / refugee data".</li>
+<li><strong>Example:</strong> "find and download V-Dem democracy scores for African countries"</li>
+<li><strong>Not for:</strong> plotting the data (use real-data-figure / map-figure); lecture data work (lecture pipeline owns that).</li>
+</ul>
+<h3 id="humanize">humanize<a class="headerlink" href="#humanize" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> read-only audit of .tex / .qmd / .md text for AI-voice tells -- boilerplate transitions ("Moreover", "It is important to note that"), AI-cliche lexicon ("delve", "tapestry"), em-dash overuse, symmetric paragraph shapes, tricolon abuse, hedging stacking. Produces a report; does NOT rewrite.</li>
+<li><strong>When to use:</strong> "humanize", "does this sound like AI", "de-AI this draft", "audit my prose for sycophancy", before journal submission. [Currently HALTED: auto-trigger disabled pending smoke-test.]</li>
+<li><strong>Example:</strong> "humanize the intro of paper/intro.tex"</li>
+<li><strong>Not for:</strong> actually rewriting (use kai-writing); structural writing critique (use scientific-writing-analysis).</li>
+</ul>
+<h3 id="init-replication">init-replication<a class="headerlink" href="#init-replication" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> scaffolds replication-package infrastructure into an EXISTING project -- replication_metadata.yaml + 00_setup scripts + paper/README placeholder -- with stubs auto-derived from project state (authors, dataset list, software language).</li>
+<li><strong>When to use:</strong> "make this project replication-ready", "set up the AEA replication scaffold", a paper that will need a replication package.</li>
+<li><strong>Example:</strong> "init the replication scaffold for this project"</li>
+<li><strong>Not for:</strong> fresh empty projects (use /bootstrap-project --replication-ready); projects that already have a populated metadata YAML (refuses without --force).</li>
+</ul>
+<h3 id="lit-review">lit-review<a class="headerlink" href="#lit-review" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> structured literature SEARCH + synthesis from the web -- thematic clustering, citation extraction, gap identification -- producing a written review with BibTeX-ready citations.</li>
+<li><strong>When to use:</strong> "find papers on X", "do a lit review", "what's the literature on...", "where's the gap in this field".</li>
+<li><strong>Example:</strong> "lit review on the resource curse and civil conflict"</li>
+<li><strong>Not for:</strong> processing an existing local literature/ PDF folder into a corpus (use /lit-corpus).</li>
+</ul>
+<h3 id="preregister">preregister<a class="headerlink" href="#preregister" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> drafts a structured preregistration document (OSF / AsPredicted / AEA RCT Registry style) from a research spec -- hypotheses, design, sampling plan, analysis plan, exclusions, inference criteria -- annotated with MUST/SHOULD/MAY clarity flags.</li>
+<li><strong>When to use:</strong> "preregister", "OSF preregistration", "AsPredicted", "AEA RCT registry", "preanalysis plan", before launching an experiment / data collection / analysis on unseen data. [Currently HALTED: auto-trigger disabled pending smoke-test.]</li>
+<li><strong>Example:</strong> "draft an AsPredicted preregistration for this RCT"</li>
+<li><strong>Not for:</strong> actual registry SUBMISSION (the user uploads to OSF/AsPredicted/AEA themselves).</li>
+</ul>
+<h3 id="respond-to-referees">respond-to-referees<a class="headerlink" href="#respond-to-referees" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> generates a structured response-to-referees document from a referee report and the revised manuscript -- maps each referee comment to the specific revision, classifies coverage (Addressed / Partially / Deferred / Disagreement), drafts polite-but-firm responses, runs CoVe post-flight verification on every "we added X on page Y" claim.</li>
+<li><strong>When to use:</strong> during R&amp;R -- "draft response to referees", "map referee comments to revisions". [Currently HALTED: pending end-to-end test on a real referee report.]</li>
+<li><strong>Example:</strong> "draft response-to-referees from referee_report.pdf + revised_paper.tex"</li>
+<li><strong>Not for:</strong> drafting the revisions themselves (use kai-writing); deciding which comments to address (author's call).</li>
+</ul>
+<h3 id="suggest-jel">suggest-jel<a class="headerlink" href="#suggest-jel" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> suggests 3-5 JEL classification codes for a specific paper or grant proposal -- a primary block (2-3) + optional secondary, with close-alternative swaps and a paste-ready "JEL Classification:" line.</li>
+<li><strong>When to use:</strong> "suggest JEL codes for this paper", "what JEL codes should I use", or the paper.tex JEL placeholder.</li>
+<li><strong>Example:</strong> "suggest JEL codes for this abstract (paste the abstract)"</li>
+<li><strong>Not for:</strong> one-shot definition lookups ("what does D74 mean") -- those are answered inline.</li>
+</ul>
+<h2 id="coord-plugin">coord (plugin)<a class="headerlink" href="#coord-plugin" title="Permanent link">&para;</a></h2>
+<h3 id="coord">coord<a class="headerlink" href="#coord" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> cross-session coordination -- check for and respond to messages between YOUR OWN Claude Code sessions running in different project folders (single user, many projects -- NOT team chat). Uses a private file-based channel with named threads.</li>
+<li><strong>When to use:</strong> "check coord", "any messages for me", "reply to that thread", "send a message to lp" (or any of your session shortnames), "what's in coord", "anything from lecture-pipeline".</li>
+<li><strong>Example:</strong> "/coord check"</li>
+<li><strong>Not for:</strong> team coordination across different users; bare "check inbox" (usually email).</li>
+</ul>
+<h2 id="project-workflow-plugin">project-workflow (plugin)<a class="headerlink" href="#project-workflow-plugin" title="Permanent link">&para;</a></h2>
+<h3 id="audit-exhibits">audit-exhibits<a class="headerlink" href="#audit-exhibits" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> builds a fail-closed provenance manifest classifying every file under output/{figures,tables,maps,figures_external}/ as CODE-REPRODUCED (producing script exists), EXTERNAL (under figures_external/), MANUAL (paper-referenced but no producing code), or ORPHAN (not referenced anywhere). Writes data/documentation/exhibit_manifest.yaml.</li>
+<li><strong>When to use:</strong> pre-submission audit; "exhibit manifest", "which figures don't have producing code", "what would regenerate vs not", "/audit-exhibits". CI-ready: --strict exits non-zero on any ORPHAN.</li>
+<li><strong>Example:</strong> "/audit-exhibits --strict as a pre-submission gate"</li>
+<li><strong>Not for:</strong> numeric-claim auditing (use /audit-reproducibility); actually fixing the orphans (judgement call by the author).</li>
+</ul>
+<h3 id="check-clone-discipline">check-clone-discipline<a class="headerlink" href="#check-clone-discipline" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> session-level structural check for multi-clone projects -- confirms you're standing in YOUR clone (clone_<XX>/) and not at the shared container before any git operation, and surfaces container-hygiene issues + per-clone .data-in-parent marker presence.</li>
+<li><strong>When to use:</strong> at session start in any project with a "Multi-clone layout" CLAUDE.md block; "am I in the right clone", "is it safe to run git here", before the first git-write operation of a session.</li>
+<li><strong>Example:</strong> "check-clone-discipline at session start, before the first commit"</li>
+<li><strong>Not for:</strong> general git help (use git-assistant); single-clone projects (exits NOT_APPLICABLE).</li>
+</ul>
+<h3 id="git-assistant">git-assistant<a class="headerlink" href="#git-assistant" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> conversational git helper for economists who don't want to memorise commands. Translates "save this", "share with co-author", "back to main", "abandon this experiment" into the right git plumbing, runs it, translates errors into plain English, and re-runs 00_setup so output paths stay correct after branch switches.</li>
+<li><strong>When to use:</strong> any git action described in plain language -- save / commit / branch / push / pull / merge / sync / finalize / abandon / snapshot. Auto-triggers on those verbs when the object is the repo or a co-author's work.</li>
+<li><strong>Example:</strong> "save this and share with my co-author"</li>
+<li><strong>Not for:</strong> bib syncing (use /sync-bib); a throwaway experiment scratch script (use /experiment); paper-prose versioning in working/ (different convention).</li>
+</ul>
+<h3 id="housekeeping">housekeeping<a class="headerlink" href="#housekeeping" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> read-only 7-check audit of a project directory (plan/CHANGELOG drift, transient artefacts, doc-code path drift, orphan exhibits, wrong-folder pollution, untracked files, filename rot) producing a HIGH/MED/LOW severity Markdown report. Never modifies files.</li>
+<li><strong>When to use:</strong> "tidy up", "what's getting messy", "any orphan files", "anything to clean up", proactively after creating &gt;5 new files in a session, or before opening a PR.</li>
+<li><strong>Example:</strong> "/housekeeping --all (report only) before a PR"</li>
+<li><strong>Not for:</strong> actually MOVING files (use /refactor-structure with confirmation).</li>
+</ul>
+<h3 id="learn">learn<a class="headerlink" href="#learn" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> appends a one-line correction or learned fact to the project's MEMORY.md (or your global ~/.claude/MEMORY.md with --global). Lightweight companion to /revise-claude-md (heavier synthesis) and /consolidate-memory (periodic prune).</li>
+<li><strong>When to use:</strong> any "remember that", "for next time", "from now on", "make a note", "we cluster at the village level" worth keeping.</li>
+<li><strong>Example:</strong> "/learn we cluster SEs at the village level for this paper"</li>
+<li><strong>Not for:</strong> large memory restructuring (use /consolidate-memory); deep CLAUDE.md edits (use /revise-claude-md).</li>
+</ul>
+<h3 id="lit-corpus">lit-corpus<a class="headerlink" href="#lit-corpus" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> converts a folder of academic PDFs into a token-efficient markdown corpus for lit review -- index.md (~400 tokens/paper: title, authors, year, abstract, JEL, keywords) + papers/*.md with cleaned full text. Incremental: only re-converts new or changed PDFs via SHA-256 hash tracking.</li>
+<li><strong>When to use:</strong> you have a folder of literature PDFs and want to query/synthesise them; after /sync-pdfs added new papers; "build my literature wiki", "convert my PDFs to markdown".</li>
+<li><strong>Example:</strong> "/lit-corpus literature/ literature/_wiki/"</li>
+<li><strong>Not for:</strong> one-off PDF queries (use pdf-query-recipe); searching the web for new papers (use /lit-review).</li>
+</ul>
+<h3 id="overleaf-sync">overleaf-sync<a class="headerlink" href="#overleaf-sync" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> diagnoses Overleaf&lt;-&gt;GitHub sync conflicts (typically post-restructure stale-snapshot branches from the Overleaf git bridge), classifies each (stale snapshot / real edits / mixed), and recommends the right resolution -- often <code>git merge -s ours &lt;overleaf-branch&gt;</code>. Never auto-merges; you approve.</li>
+<li><strong>When to use:</strong> "overleaf conflict", "overleaf is fighting me", "manual merge from overleaf"; auto-suggests when the project is Overleaf-mastered AND an overleaf* branch is present.</li>
+<li><strong>Example:</strong> "/overleaf-sync --branch overleaf-bridge"</li>
+<li><strong>Not for:</strong> general git conflict resolution (use git-assistant or /resolve-conflict).</li>
+</ul>
+<h3 id="sync-codebook">sync-codebook<a class="headerlink" href="#sync-codebook" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> two-codebook synchronisation (survey-frozen + derived-live) for survey + analysis projects. Identifies derived variables (set-difference between the analysis .dta and the survey codebook), merges with hand-authored YAML descriptions, emits the derived codebook markdown. --strict exits non-zero on any TODO -- CI-ready.</li>
+<li><strong>When to use:</strong> "sync codebook", "update derived codebook", "what variables don't have descriptions yet", "audit codebook", or any project with both a frozen survey codebook and derived variables.</li>
+<li><strong>Example:</strong> "/sync-codebook --strict before submission"</li>
+<li><strong>Not for:</strong> bib syncing (use /sync-bib); PDF syncing (use /sync-pdfs); fresh-data-source codebook scaffolding (use /init-replication first).</li>
+</ul>
+<h2 id="r-research-workflow-plugin">r-research-workflow (plugin)<a class="headerlink" href="#r-research-workflow-plugin" title="Permanent link">&para;</a></h2>
+<h3 id="audit-reproducibility">audit-reproducibility<a class="headerlink" href="#audit-reproducibility" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> cross-checks the numeric claims in a manuscript (point estimates, SEs, p-values, counts) against the actual R/Stata/Python outputs and reports PASS/FAIL per claim against tolerance thresholds.</li>
+<li><strong>When to use:</strong> a pre-submission / pre-replication-release check -- "audit the paper", "verify the paper matches the code", "reproducibility audit".</li>
+<li><strong>Example:</strong> "audit paper/paper.tex against output/tables/ and data/processed/"</li>
+<li><strong>Not for:</strong> producing or reviewing the analysis code (use /data-analysis / /review-r); checking exhibit provenance/orphans (use /audit-exhibits).</li>
+</ul>
+<h3 id="coef-plot">coef-plot<a class="headerlink" href="#coef-plot" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> ONE coefficient figure from a saved regression fit (.rds) or a fresh estimation -- forest plot, event-study plot, or multi-spec comparison panel -- in the research house style, saved to output/figures/.</li>
+<li><strong>When to use:</strong> "coefplot for the main regression", "forest plot of these estimates", "event-study plot", "plot the coefficients from this .rds".</li>
+<li><strong>Example:</strong> "event-study plot from data/processed/did_fit.rds"</li>
+<li><strong>Not for:</strong> raw-data scatter / time series (use real-data-figure); choropleths (use map-figure); lecture/slide figures.</li>
+</ul>
+<h3 id="data-analysis">data-analysis<a class="headerlink" href="#data-analysis" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> the FULL-PIPELINE umbrella for R analysis -- exploration -&gt; cleaning -&gt; regression -&gt; publication-ready tables &amp; figures -- appending to the canonical 01_cleaning.R / 02_analysis.R (one-canonical-script rule), with outputs branch-redirected on a non-main branch.</li>
+<li><strong>When to use:</strong> a FRESH dataset where you want the end-to-end flow -- "analyze this dataset", "explore this CSV and run the main spec", or you point at a new .csv/.dta without naming a single phase.</li>
+<li><strong>Example:</strong> "analyze this panel.dta end to end -- summary stats, main spec, and the key figure"</li>
+<li><strong>Not for:</strong> a single phase (use /descriptives, /regression, or /coef-plot); reviewing an existing script (use /review-r); lecture figures.</li>
+</ul>
+<h3 id="descriptives">descriptives<a class="headerlink" href="#descriptives" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> publication-ready descriptive statistics for research data -- summary-stats tables, treatment-vs-control balance tables, distribution diagnostics, missingness reports -- written to output/tables/ (.tex) and output/figures/diagnostics/.</li>
+<li><strong>When to use:</strong> you need "Table 1" / summary stats / a balance check on one dataset without a full pipeline -- "give me a balance table", "summary stats on X", "describe Y by treatment group".</li>
+<li><strong>Example:</strong> "balance table of pre-treatment covariates by treatment group"</li>
+<li><strong>Not for:</strong> a full analysis (use /data-analysis); lecture figures (lecture-pipeline data-visualizer).</li>
+</ul>
+<h3 id="regression">regression<a class="headerlink" href="#regression" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> estimate ONE regression specification (or a small column-stack of related specs) -- OLS / FE / IV / DID via fixest -- and emit the fitted model, tidy results, a publication-ready .tex table, and post-estimation diagnostics.</li>
+<li><strong>When to use:</strong> you want a specific spec run, not a whole pipeline -- "regress Y on X with state FE, cluster at state", "IV with z", "the DID spec".</li>
+<li><strong>Example:</strong> "regress wage on schooling with year + state FE, clustered at state"</li>
+<li><strong>Not for:</strong> a coefficient PLOT (use /coef-plot); the full exploration-to-figures pipeline (use /data-analysis); lecture figures.</li>
+</ul>
+<h3 id="review-r">review-r<a class="headerlink" href="#review-r" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> reviews EXISTING R scripts on disk via the r-reviewer agent (11 categories: structure, reproducibility, functions, domain correctness, figures, numerical discipline, ...) and writes a report. Does NOT write new scripts.</li>
+<li><strong>When to use:</strong> "review my R script", "audit code/03_main.R", "what's wrong with this script", or before committing any .R you just changed.</li>
+<li><strong>Example:</strong> "review code/02_analysis.R before I commit"</li>
+<li><strong>Not for:</strong> PRODUCING new analysis (use /data-analysis, or the atomic /descriptives / /regression / /coef-plot).</li>
+</ul>
+<h2 id="stata-research-workflow-plugin">stata-research-workflow (plugin)<a class="headerlink" href="#stata-research-workflow-plugin" title="Permanent link">&para;</a></h2>
+<h3 id="review-stata">review-stata<a class="headerlink" href="#review-stata" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> reviews EXISTING Stata .do files on disk via the stata-reviewer agent (12 categories: structure, header, reproducibility, programs, domain correctness, esttab tables, graph export, comments, error handling, polish, AEA compliance) and writes a report. Does NOT write new scripts.</li>
+<li><strong>When to use:</strong> "review my Stata script", "audit code/03_main.do", "what's wrong with this do-file", or before committing a .do you changed.</li>
+<li><strong>Example:</strong> "review code/02_analysis.do before I commit"</li>
+<li><strong>Not for:</strong> PRODUCING new Stata pipelines (use /stata-replication).</li>
+</ul>
+<h3 id="stata-replication">stata-replication<a class="headerlink" href="#stata-replication" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> end-to-end Stata RESEARCH pipeline -- scaffolds the canonical 00_setup / 01_cleaning / 02_analysis.do triad, runs them via stata-mcp, logs to output/logs/, and emits esttab tables + graph PDFs to $tables/$figures. The Stata counterpart to /data-analysis.</li>
+<li><strong>When to use:</strong> the project's analysis language is Stata -- "set up the Stata pipeline", "scaffold the .do files", "AEA replication package in Stata".</li>
+<li><strong>Example:</strong> "scaffold and run the Stata pipeline for this .dta"</li>
+<li><strong>Not for:</strong> R projects (use /data-analysis); reviewing existing do-files (use /review-stata).</li>
+</ul>
+<h2 id="talks-plugin">talks (plugin)<a class="headerlink" href="#talks-plugin" title="Permanent link">&para;</a></h2>
+<h3 id="research-presentation">research-presentation<a class="headerlink" href="#research-presentation" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> design and draft academic research presentations -- conference talks (15-20 min), department seminars (60-90 min), job market talks (JMP), brown-bags, workshop talks. Covers architecture-by-length (the Sargent rule -- prepare for 2/3 of your slot), intro design (Keith Head's Big 5, ABT, the Hourglass), identification defence, slide rhetoric, the Squint Test for charts.</li>
+<li><strong>When to use:</strong> "create a talk", "design my presentation", "structure my seminar", "outline my JMP", named formats (NBER, AEA session, JMP, departmental seminar). Use even when the user doesn't name the skill -- if they're making slides for presenting a paper, this is the right one.</li>
+<li><strong>Example:</strong> "design my 90-minute job market talk"</li>
+<li><strong>Not for:</strong> teaching lectures with exercises/quizzes (use create-lecture); a single data figure (use real-data-figure); a single TikZ/DAG diagram (use tikz-figure); pre-ship critique (use adversarial-review).</li>
+</ul>
+<h2 id="top-level-skills">Top-level skills<a class="headerlink" href="#top-level-skills" title="Permanent link">&para;</a></h2>
+<h3 id="adversarial-review">adversarial-review<a class="headerlink" href="#adversarial-review" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> structures a hostile pre-ship review of any artefact (code, figure, paper draft, slide deck, data analysis, design doc, build plan) where the reviewer is EXPLICITLY tasked to find flaws, not confirm correctness. Output is a HALT/HIGH/MEDIUM/LOW/NIT findings list, not a cheerleading summary.</li>
+<li><strong>When to use:</strong> "critical review", "red-team", "devil's advocate", "poke holes in X", "what could go wrong here", "sanity check before I ship", "find weaknesses", "stress-test", any time the user wants honest weakness-finding rather than rubber-stamp approval.</li>
+<li><strong>Example:</strong> "adversarial review this design doc before I share it"</li>
+<li><strong>Not for:</strong> a paper for a journal (use /review-paper / /review-paper-light); a grant proposal (use /review-grant); writing-quality critique (use scientific-writing-analysis); producing or revising text (use kai-writing).</li>
+</ul>
+<h3 id="kai-writing">kai-writing<a class="headerlink" href="#kai-writing" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> personalised academic-prose pipeline for Kai's voice -- two competitive drafters + a critic + a rewriter run internally before you see any output. Produces revised drafts of contribution paragraphs, intros, conclusions, abstracts, definitions, referee responses, etc.</li>
+<li><strong>When to use:</strong> any "write", "draft", "revise", "polish", "rewrite this in my style" request for academic prose.</li>
+<li><strong>Example:</strong> "write the contribution paragraph for this paper, two drafters then critic"</li>
+<li><strong>Not for:</strong> writing-quality DIAGNOSIS without rewriting (use scientific-writing-analysis); a journal-grade referee report (use /review-paper); slide design (use research-presentation).</li>
+</ul>
+<h3 id="map-figure">map-figure<a class="headerlink" href="#map-figure" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> publication-quality choropleth &amp; country-level maps from real data in R (sf + ggplot2), with the map-specific traps handled -- name/ISO reconciliation + a loud anti-join, equal-area projection, skew-aware binning, rates-not-counts, and an explicit no-data key.</li>
+<li><strong>When to use:</strong> a research / working-paper / policy-brief map where the geography IS the unit -- "make a map", "choropleth", "map X by country", "shade countries by X".</li>
+<li><strong>Example:</strong> "choropleth of battle deaths per capita by country, 2018-2024"</li>
+<li><strong>Not for:</strong> lecture / slide maps (the lecture-pipeline data-visualizer owns those); non-map charts like time series or scatter (use real-data-figure).</li>
+</ul>
+<h3 id="qualitative-survey-coding">qualitative-survey-coding<a class="headerlink" href="#qualitative-survey-coding" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> turns open-ended survey responses into validated, paper-ready quantitative variables using an LLM as the coder with human validation. Handles codebook design, hard-code vs free-code decisions, inter-coder agreement, and the audit trail.</li>
+<li><strong>When to use:</strong> "code these open-ended answers", "classify free-text survey responses", "turn this text into a measure", "design a codebook for open-ended", any qualitative-to-quantitative conversion of survey text.</li>
+<li><strong>Example:</strong> "code these 800 free-text answers about trust in government into a 3-level scale"</li>
+<li><strong>Not for:</strong> quantitative survey processing (use /descriptives or /regression); a literature corpus (use /lit-corpus).</li>
+</ul>
+<h3 id="real-data-figure">real-data-figure<a class="headerlink" href="#real-data-figure" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> publication-quality figures from REAL data -- time series, scatter, coefficient, lollipop -- sourced from OWID, World Bank, V-Dem, UCDP, ACLED and others, cleaned and plotted in the research house style with honest self-scoring.</li>
+<li><strong>When to use:</strong> any figure whose value depends on real numbers being correct, or when you name a source (OWID / World Bank / V-Dem / UCDP / ACLED) -- "plot GDP for these countries", "chart the democracy index over time".</li>
+<li><strong>Example:</strong> "plot GDP per capita for England vs France, 1600-1800, from Maddison"</li>
+<li><strong>Not for:</strong> maps shaded by country (use map-figure); coefficient plots from a SAVED model fit .rds (use /coef-plot); schematic / conceptual diagrams (use tikz-figure); pure data download with no plot (use data-catalog).</li>
+</ul>
+<h3 id="scientific-writing-analysis">scientific-writing-analysis<a class="headerlink" href="#scientific-writing-analysis" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> analyses scientific manuscripts for writing quality using Jean-Luc Lebrun's "Scientific Writing" (2007) framework augmented with econ-specific conventions (Cochrane, McCloskey, Nikolov). Diagnoses paragraph progression, lead sentences, flow, structure -- HOW the prose works, not what it claims.</li>
+<li><strong>When to use:</strong> "analyze the writing quality", "Lebrun review", "diagnose this draft's structure", "what's wrong with the flow".</li>
+<li><strong>Example:</strong> "scientific-writing-analysis of the intro and the contribution section"</li>
+<li><strong>Not for:</strong> actually rewriting (use kai-writing); checking factual / argumentative content (use /review-paper or adversarial-review); AI-voice tells specifically (use humanize).</li>
+</ul>
+<h3 id="simulation-figure">simulation-figure<a class="headerlink" href="#simulation-figure" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> builds Monte Carlo simulations + interactive parameter explorations that show how econometric methods break under assumption violations -- weak IV, parallel-trends, staggered DID, TWFE bias, exclusion-restriction failure. Produces BOTH a static multi-panel PDF (for Beamer/print) AND an interactive Plotly HTML with animation slider (for RevealJS/browser).</li>
+<li><strong>When to use:</strong> "simulate", "Monte Carlo", "show what happens when the instrument is weak", "demonstrate IV bias", "stress test the identification", "when does this method fail" for a talk, lecture, or appendix.</li>
+<li><strong>Example:</strong> "simulate weak-IV bias as the first stage F drops from 30 to 5"</li>
+<li><strong>Not for:</strong> real-data plots (use real-data-figure); a single conceptual diagram (use tikz-figure); a lecture map (lecture-pipeline data-visualizer).</li>
+</ul>
+<h3 id="tikz-figure">tikz-figure<a class="headerlink" href="#tikz-figure" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>What it does:</strong> builds, tests, and debugs publication-quality TikZ figures -- mechanism diagrams, DAGs for causal identification, game trees, decision trees, flowcharts, schematic maps, schematic time series. Uses the Cunningham "standalone-test" pattern so compile errors are crystal-clear.</li>
+<li><strong>When to use:</strong> "make a DAG", "mechanism diagram", "causal diagram", "game tree", "decision tree", "flow chart" in LaTeX/Beamer/Quarto; also when diagnosing a failed TikZ compile ("undefined key", "missing $", "you need \usetikzlibrary{...}").</li>
+<li><strong>Example:</strong> "build a DAG for the IV identification of X -&gt; Y with Z"</li>
+<li><strong>Not for:</strong> real-data figures (use real-data-figure); choropleths (use map-figure); Monte Carlo simulations (use simulation-figure).</li>
+</ul>
+<!-- coverage: 37/37 skills have a hand-written card -->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "content.code.copy", "search.highlight", "search.suggest", "search.share"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

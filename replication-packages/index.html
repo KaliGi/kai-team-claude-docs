@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://kaligi.github.io/kai-team-claude-docs/replication-packages/">
       
       
-        <link rel="prev" href="../project-structure/">
+        <link rel="prev" href="../one-click-replication/">
       
       
         <link rel="next" href="../choosing-your-setup/">
@@ -322,6 +322,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -410,6 +414,62 @@
     
   
     What goes where — the project structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-provenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data provenance — raw + cleaning live IN the project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../one-click-replication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One-click replication across languages
   
 
     
@@ -1075,6 +1135,8 @@
       
         
       
+        
+      
     
     
     
@@ -1188,6 +1250,34 @@
     
   
     The skills, by family
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skill-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill reference — what each does & when
   
 
     
@@ -2149,9 +2239,16 @@ day one (they're the same ones in
 <ul>
 <li><strong>Data</strong> — the raw data, <em>or</em>, if it's proprietary/confidential, a precise
   <strong>data-availability statement</strong>: what the data are, where to get them, and any
-  access terms. (Never ship data you're not licensed to redistribute.)</li>
+  access terms. (Never ship data you're not licensed to redistribute.)
+  ➡ <strong>The raw + the cleaning code live in <em>this</em> project</strong> — see
+  <a href="../data-provenance/">data-provenance</a>. Importing already-cleaned data from
+  another project of yours without bringing in the cleaning code breaks
+  reproducibility.</li>
 <li><strong>Code</strong> — the cleaning and analysis scripts, in runnable order, with one
-  <strong>master script</strong> (<code>99_run_all</code>) that executes the whole pipeline end to end.</li>
+  <strong>master script</strong> (<code>99_run_all</code>) that executes the whole pipeline end to end.
+  ➡ <strong>One command, even across languages</strong> — see
+  <a href="../one-click-replication/">one-click-replication</a> for the three accepted
+  patterns (single-language, file-mediated cross-language, master orchestrator).</li>
 <li><strong>A README</strong> — what to install, in what order to run things, expected runtime,
   and a mapping from each exhibit in the paper to the script that produces it.</li>
 <li><strong>Documentation</strong> — codebooks / data dictionaries for the variables.</li>

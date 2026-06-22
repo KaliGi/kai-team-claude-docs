@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://kaligi.github.io/kai-team-claude-docs/INDEX/">
       
       
-        <link rel="prev" href="../skills-by-family/">
+        <link rel="prev" href="../skill-reference/">
       
       
         <link rel="next" href="../how-it-works/">
@@ -320,6 +320,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -408,6 +412,62 @@
     
   
     What goes where — the project structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-provenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data provenance — raw + cleaning live IN the project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../one-click-replication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One-click replication across languages
   
 
     
@@ -986,6 +1046,8 @@
       
         
       
+        
+      
     
     
     
@@ -1099,6 +1161,34 @@
     
   
     The skills, by family
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skill-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill reference — what each does & when
   
 
     
@@ -2360,13 +2450,19 @@ For task-oriented chains ("I want to add a figure…"), see <code>docs/recipes.m
 <td>command</td>
 <td>build-exhibits-preview</td>
 <td><code>/build-exhibits-preview [paper.tex] (default paper/paper.tex)</code></td>
-<td>Scaffold + compile a prose-free "exhibits preview" of a paper — every \input table fragment and \includegraphics figure, in document order, under its section heading, wi…</td>
+<td>Build a BARE-BONES COPY of the paper for exhibit review — the paper's REAL preamble + its REAL section/subsection skeleton (titles kept, prose stripped) + every exhibit…</td>
 </tr>
 <tr>
 <td>command</td>
 <td>check-rules</td>
 <td><code>/check-rules</code></td>
 <td>Re-read active rule files (global CLAUDE.md, global CONTEXT.md, project CLAUDE.md, principles, project rules) and summarise the rules relevant to the current task contex…</td>
+</tr>
+<tr>
+<td>command</td>
+<td>experiment</td>
+<td><code>/experiment start &lt;topic&gt; | merge [&lt;topic&gt;]</code></td>
+<td>Run a coding experiment in a throwaway scratch script, then merge the working part back into the canonical analysis file.</td>
 </tr>
 <tr>
 <td>command</td>
@@ -2611,6 +2707,12 @@ For task-oriented chains ("I want to add a figure…"), see <code>docs/recipes.m
 </tr>
 <tr>
 <td>skill</td>
+<td>map-figure</td>
+<td>auto</td>
+<td>Build publication-quality choropleth and country-level maps from real data in R (sf + ggplot2) — values shaded by country/region.</td>
+</tr>
+<tr>
+<td>skill</td>
 <td>qualitative-survey-coding</td>
 <td>auto</td>
 <td>Turn open-ended survey responses into validated, paper-ready quantitative variables, using an LLM as the coder with human validation.</td>
@@ -2641,7 +2743,7 @@ For task-oriented chains ("I want to add a figure…"), see <code>docs/recipes.m
 </tr>
 </tbody>
 </table>
-<p><em>Totals: 24 commands, 36 skills across 6 plugins + the top-level tier.</em></p>
+<p><em>Totals: 25 commands, 37 skills across 6 plugins + the top-level tier.</em></p>
 
 
 

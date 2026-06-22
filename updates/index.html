@@ -389,6 +389,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -477,6 +481,62 @@
     
   
     What goes where — the project structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-provenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data provenance — raw + cleaning live IN the project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../one-click-replication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One-click replication across languages
   
 
     
@@ -1051,6 +1111,8 @@
       
         
       
+        
+      
     
     
     
@@ -1164,6 +1226,34 @@
     
   
     The skills, by family
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skill-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill reference — what each does & when
   
 
     
@@ -2106,6 +2196,97 @@ of truth, and a partial (plugin-only) update leaves you half-updated:
 <p>Entries below are chronological (newest first). Dates are the change date;
 they roll up into the monthly CalVer cut.</p>
 <hr />
+<h2 id="2026-06-18-research-figure-titles-descriptive-default-r-research-workflow-v131">2026-06-18 — Research figure titles: descriptive default (r-research-workflow v1.3.1)<a class="headerlink" href="#2026-06-18-research-figure-titles-descriptive-default-r-research-workflow-v131" title="Permanent link">&para;</a></h2>
+<p>Second research-vs-teaching divergence resolved (Kai's call). Research-paper figures now default
+to a <strong>descriptive title</strong> — variable + unit + period ("Battle deaths by country, 2018–2024") —
+with the finding argued in the <strong>body text</strong>, not baked into the figure (a conclusion in a results
+figure's title reads as editorializing to a referee). <strong>Narrative finding-titles remain the
+teaching / public-facing-explainer convention.</strong> Updated <code>figure-design-rules §1.2 + §9.1</code> (the
+canonical rule the <code>r-reviewer</code> agent enforces via the 8-point checklist — r-reviewer has no
+title-check of its own, so it inherits this), <code>coef-plot</code> (3 spots), and — in the top-level
+<code>real-data-figure</code> skill — §1 + the self-check + a research-paper caveat on
+<code>owid-design-principles</code>. Scope call (flagged for veto): <code>real-data-figure</code> keeps narrative titles
+<strong>available</strong> for policy-brief / public-facing figures rather than banning them outright.</p>
+<h2 id="2026-06-18-research-house-palette-research_pal-r-research-workflow-v130">2026-06-18 — Research house palette <code>research_pal</code> (r-research-workflow v1.3.0)<a class="headerlink" href="#2026-06-18-research-house-palette-research_pal-r-research-workflow-v130" title="Permanent link">&para;</a></h2>
+<p>After a research-vs-teaching colour review (Kai's point: I'd wrongly inferred teaching colours
+should carry into research), <code>_theme.R</code> gains <strong><code>research_pal</code></strong> — a strong, high-contrast,
+<strong>brand-free</strong> paper palette (blue <code>#1F4E8C</code>, red <code>#C8102E</code>, teal <code>#0A7E8C</code>, gold <code>#E1A100</code>,
+purple <code>#6A3D9A</code>, grey <code>#4D4D4D</code>) plus <code>scale_colour_research()</code> / <code>scale_fill_research()</code>. It is
+now the <strong>default</strong> for research figures; <strong>Okabe-Ito is retained as the colour-blind-safe
+fallback</strong> (&gt;4 categories / accessibility-critical). The rationale is the research-vs-teaching
+divergence: a paper has no brand, so colour is functional — the first four hues separate in
+greyscale (referees print B&amp;W) and for common colour-blindness. <code>figure-design-rules §9.5</code> and
+<code>map-figure §6b</code> updated to match (research_pal categorical; warm YlOrRd or viridis sequential;
+the USG brand ramps are explicitly <strong>teaching-only</strong>). Palette approved by Kai off rendered
+swatches (Economist data-team + OWID informed); verified by a rendered demo
+(<code>templates/examples/research_pal_demo.png</code>).</p>
+<h2 id="2026-06-18-_datarootdo-shared-stata-data-root-anchor-project-workflow-v1340">2026-06-18 — <code>_dataroot.do</code>: shared Stata data-root anchor (project-workflow v1.34.0)<a class="headerlink" href="#2026-06-18-_datarootdo-shared-stata-data-root-anchor-project-workflow-v1340" title="Permanent link">&para;</a></h2>
+<p>Completes id-mining's <code>clone-setup-marker-disconnect</code> ask #1. The path-resolution logic that
+was inlined in <code>00_setup.do</code> is extracted into a new <code>templates/_dataroot.do</code> — the <strong>single</strong>
+definition of <code>$ROOT / $DATAROOT / $rawdata / $processed / $documentation / $code / $output /
+$paper</code> (marker-first <code>.data-in-parent</code> re-anchor). <code>00_setup.do</code> now sources it (locating it
+whether run from the project root or <code>code/</code>); <code>01_*</code>/<code>02_*</code> inherit via <code>do 00_setup.do</code>, and a
+custom build do-file that needs only the data globals can <code>do _dataroot.do</code> directly. That ends
+the per-file path-ladder drift that blocked a new co-author (a builder honoured the marker while
+01/02 used a hard-coded per-user <code>cd</code> ladder). <code>_dataroot.do</code> does <strong>not</strong> <code>clear</code>, so it is safe
+to source mid-pipeline. Verified: the full template harness is <strong>23/23</strong> green (R + Python + Stata,
+cases C1–C7 incl. run-from-<code>code/</code> and detached-HEAD) after the refactor; the harness now copies
+<code>_dataroot.do</code> into the sandbox.</p>
+<h2 id="2026-06-18-check-clone-discipline-per-clone-data-in-parent-marker-check-project-workflow-v1330">2026-06-18 — check-clone-discipline: per-clone <code>.data-in-parent</code> marker check (project-workflow v1.33.0)<a class="headerlink" href="#2026-06-18-check-clone-discipline-per-clone-data-in-parent-marker-check-project-workflow-v1330" title="Permanent link">&para;</a></h2>
+<p>Closes the load-bearing half of id-mining's <code>clone-setup-marker-disconnect</code> report: a
+new co-author was blocked because a clone with no <code>.data-in-parent</code> marker resolves data
+only through the legacy per-user <code>cap cd</code> path ladder. <code>check_clone_discipline.py</code> now
+scans every deployed clone (<code>clone_&lt;XX&gt;/</code> and legacy <code>code_&lt;XX&gt;/</code>) for the marker and
+emits a "Clone setup" advisory naming the offenders, with the fix (<code>touch .data-in-parent</code>)
+and the why. Wired into both paths — from inside a clone (raises a clean <code>OK_CLONE</code> exit 0
+to soft-warning 2) and at the container (<code>AT_CONTAINER</code>). Fixtures now model a well-formed
+clone (with marker) by default; test battery 32 → <strong>40/40</strong>. Still to come (needs Stata-side
+verification): a lightweight shared <code>_dataroot.do</code> anchor + the <code>bootstrap-project</code> onboarding
+note ("run Stata only from <code>clone_&lt;XX&gt;/code</code>", <code>touch .data-in-parent</code>).</p>
+<h2 id="2026-06-18-map-figure-no-data-fill-footgun-fixed-kosovo-iso3-alias-skillsmap-figure">2026-06-18 — map-figure: "No data" fill footgun fixed + Kosovo ISO3 alias (skills/map-figure)<a class="headerlink" href="#2026-06-18-map-figure-no-data-fill-footgun-fixed-kosovo-iso3-alias-skillsmap-figure" title="Permanent link">&para;</a></h2>
+<p>Hardening surfaced by <strong>test-rendering the skill</strong> on real World Bank GDP-per-capita
+data (a deliberate "run it, don't trust the spec" check), then reviewing the PNG:</p>
+<ul>
+<li><strong>No-data fill footgun fixed.</strong> The skill's own §5 example paired
+  <code>to_no_data_factor()</code> (which makes "No data" a real factor <em>level</em>) with
+  <code>scale_fill_viridis_d(..., na.translate = FALSE)</code> — which then colours "No data"
+  viridis <em>yellow</em>, because <code>na.translate</code> cannot touch a real level. The render
+  walked straight into it. New bundled <strong><code>scale_fill_map_d(x, name=…)</code></strong> builds an
+  explicit manual palette (viridis for the data bins, grey for "No data"); §5, §A4
+  and the worked skeleton now use it. A misleading swatch is worse than silent grey.</li>
+<li><strong>Kosovo ISO3 alias.</strong> Added <code>ne_iso_aliases</code> (World Bank <code>XKX</code> → Natural Earth
+  <code>KOS</code>) applied automatically in the <code>by = "iso3"</code> join, so a pure code-system
+  difference no longer reports as a missing country.</li>
+<li><strong>Reproducible example</strong> added under <code>skills/map-figure/examples/</code>
+  (<code>demo_world_gdp_pc.R</code> + <code>.png</code> + source CSV) — no orphan exhibit.</li>
+<li><code>test_map_core.R</code> extended <strong>6 → 8/8</strong>: the alias resolution and the
+  grey-not-viridis no-data colouring are now regression-guarded.</li>
+<li><strong>Lecture-pipeline map style folded in</strong> (mined directly from
+  <code>fig2_africa_pastoralist_map.R</code> + <code>usg_theme.R</code> + the Plotly <code>create_choropleth</code>
+  factory, so the skill carries Kai's encoded style, not a reconstruction):
+  the house warm conflict ramp <code>#FFFFCC→#990000</code> + the USG blue/red diverging ramp
+  (§6b — viridis stays the colour-blind-safe <em>research</em> default per his own
+  <code>figure-design-rules §9.5</code>); the single-continent lon/lat <code>coord_sf(xlim,ylim)</code>
+  option for equator-straddling maps (§3); the OWID-style continuous log colorbar
+  with humanised breaks (§5); and white-halo <code>geom_text_repel</code> labels (§8).</li>
+</ul>
+<h2 id="2026-06-18-guard_clutter-bash-false-positive-fix-project-workflow-v1320">2026-06-18 — guard_clutter Bash false-positive fix (project-workflow v1.32.0)<a class="headerlink" href="#2026-06-18-guard_clutter-bash-false-positive-fix-project-workflow-v1320" title="Permanent link">&para;</a></h2>
+<p>The audit flagged that <code>guard_clutter</code>'s Bash mode scanned <em>every</em> token, so a
+legitimate versioned <strong>source</strong> file — <code>cp data/processed/acled_v9.csv dest/</code> —
+tripped on <code>_v9</code>. Now it's <strong>target-aware</strong>: for <code>cp</code>/<code>mv</code>/<code>rsync</code> only the
+destination (last positional) is checked, for <code>mkdir</code> every positional, and
+redirects flag their target file. Versioned/dated <em>source</em> files in data
+pipelines no longer nag, while backup <em>targets</em> (<code>paper_backup.tex</code>, <code>_ORIG/</code>,
+<code>draft_v2.tex</code>) still ask. 25-case smoke test green (+3 versioned-source cases).</p>
+<h2 id="2026-06-18-coord-move-proof-coord-session-marker-coord-v020">2026-06-18 — coord: move-proof <code>.coord-session</code> marker (coord v0.2.0)<a class="headerlink" href="#2026-06-18-coord-move-proof-coord-session-marker-coord-v020" title="Permanent link">&para;</a></h2>
+<p>Closes uam's Q3. The coord session-name resolver relied on <code>session_name_by_cwd</code>,
+which silently broke when a project moved/renamed in Dropbox (uam's
+<code>Research/UAM</code> → <code>understanding_artisinal_mining</code>). Now a <code>.coord-session</code> marker
+file in the project (or any parent) — first non-empty non-<code>#</code> line = the
+short-name — resolves the session name <em>above</em> the CWD map (below only the
+<code>CLAUDE_COORD_SESSION_NAME</code> env override). The project carries its own identity,
+so a rename can't misroute it. SKILL.md + command resolution order updated in
+sync; refuse-message now suggests the marker.</p>
 <h2 id="2026-06-18-clone-claudemd-thin-stub-model-project-workflow-v1310">2026-06-18 — clone-CLAUDE.md thin-stub model (project-workflow v1.31.0)<a class="headerlink" href="#2026-06-18-clone-claudemd-thin-stub-model-project-workflow-v1310" title="Permanent link">&para;</a></h2>
 <p>In the leaderless multi-clone layout, the <strong>container's loose <code>CLAUDE.md</code> is
 the single canonical project doc</strong>. The repo-TRACKED <code>clone_&lt;XX&gt;/CLAUDE.md</code>
