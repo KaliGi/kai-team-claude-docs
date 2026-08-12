@@ -1,0 +1,3113 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An AI research toolkit for Claude Code + a team workflow for collaborating on shared papers.">
+      
+      
+      
+        <link rel="canonical" href="https://kaligi.github.io/kai-team-claude-docs/folder-structure/">
+      
+      
+        <link rel="prev" href="../where-to-put-things/">
+      
+      
+        <link rel="next" href="../notes-and-feedback/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>The full folder layout - kai-team-claude</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#folder-structure-the-full-layout" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="kai-team-claude" class="md-header__button md-logo" aria-label="kai-team-claude" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            kai-team-claude
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The full folder layout
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="kai-team-claude" class="md-nav__button md-logo" aria-label="kai-team-claude" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    kai-team-claude
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../updates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizing a research project
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Organizing a research project
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../organizing-a-research-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why structure matters (even solo)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paper-anatomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The anatomy of an empirical paper — the arc and the hidden decisions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What goes where — the project structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-provenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data provenance — raw + cleaning live IN the project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../one-click-replication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One-click replication across languages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../replication-packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Replication packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../choosing-your-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Which setup do you need?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Where things go
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Where things go
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../where-to-put-things/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat sheet: where to put things
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The full folder layout
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The full folder layout
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-adds-and-what-is-already-settled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What this adds (and what is already settled)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-internal-layout-of-project_management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §1 The internal layout of project_management/
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2a-project_managementirb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §2a project_management/IRB/
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2b-project_managementadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §2b project_management/admin/
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-multi-paper-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §3 Multi-paper projects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-grants-separate-folder-convention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §4 Grants — separate folder convention
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-presentations-sub-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §5 Presentations sub-pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-a-complete-project-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example — a complete project tree
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anti-patterns-the-five-traps-collected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anti-patterns — the five traps, collected
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes-and-feedback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes and feedback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../submissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Submissions and revisions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../experimental-organization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Experimental organization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../literature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Literature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub, Dropbox, Overleaf, and LaTeX
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GitHub, Dropbox, Overleaf, and LaTeX
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why git, Dropbox, Overleaf & LaTeX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manual-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The manual workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new-to-claude-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../primer-git-and-claude-for-economists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terminal-101/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new-to-overleaf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overleaf
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new-to-latex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LaTeX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new-to-zotero/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zotero
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Claude Code Research Toolkit
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The Claude Code Research Toolkit
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Understanding Claude Code
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Understanding Claude Code
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-claude-code-thinks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Claude Code thinks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The toolkit itself
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The toolkit itself
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../toolkit-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What the toolkit is
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install-toolkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install the toolkit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../what-you-have-after-install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What you have after install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skills-by-family/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The skills, by family
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skill-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill reference — what each does & when
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full list of commands & skills
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Day-to-day use
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Day-to-day use
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-it-works/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How it works — skills, processes & gates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../where-ai-fits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Where AI fits the paper — loops, gates, and the store
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../triggering-skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Triggering skills
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../working-with-claude-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Good habits: permissions & planning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reviewing-with-adversarial-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reviewing with adversarial agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../self-correcting-figures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Self-correcting figures & diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../designing-experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Designing experiments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paper-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Consistent terminology — the per-paper glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Common tasks, step by step
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../first-things-to-try/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick wins to try first
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Working together
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Working together
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-collaboration-is-hard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why collaboration is hard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-merging-works/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How merging works (and when to coordinate)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../co-author-quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Co-author quickstart (start here)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-walkthrough/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Detailed setup walkthrough
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../per-project-onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set up your working clone
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../co-author-handbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Daily workflow (handbook)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practice-session/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A practice run (throwaway repo)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../co-author-onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First week: the essentials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../common-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Something broke — fixes & recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Kai's team is set up
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Under the hood (how the toolkit is built)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Under the hood (how the toolkit is built)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ARCHITECTURE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maintainer-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintainer notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../acknowledgements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Acknowledgements & sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-adds-and-what-is-already-settled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What this adds (and what is already settled)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-internal-layout-of-project_management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §1 The internal layout of project_management/
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2a-project_managementirb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §2a project_management/IRB/
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2b-project_managementadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §2b project_management/admin/
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-multi-paper-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §3 Multi-paper projects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-grants-separate-folder-convention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §4 Grants — separate folder convention
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-presentations-sub-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        §5 Presentations sub-pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-a-complete-project-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example — a complete project tree
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anti-patterns-the-five-traps-collected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anti-patterns — the five traps, collected
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="folder-structure-the-full-layout">Folder structure — the full layout<a class="headerlink" href="#folder-structure-the-full-layout" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Builds on <a href="../project-structure/">project-structure</a> (the canonical
+top-level layout) and the <a href="../where-to-put-things/">where-to-put-things</a>
+cheat sheet. Where the canonical layout fixes the top-level tree, this page
+fills in the detail the cheat sheet doesn't have room for: the internal
+structure of <code>project_management/</code>, multi-paper projects, the grants
+convention, and the presentations and submissions sub-patterns. Each section
+states the rule, gives the reason, shows an anchored example, and notes the
+variant when the default doesn't fit.</p>
+</blockquote>
+<h2 id="what-this-adds-and-what-is-already-settled">What this adds (and what is already settled)<a class="headerlink" href="#what-this-adds-and-what-is-already-settled" title="Permanent link">&para;</a></h2>
+<p>The canonical layout in <a href="../project-structure/">project-structure</a> pins down the
+top-level tree: <code>data/</code>, <code>code/</code>, <code>output/</code>, <code>paper/</code>, <code>literature/</code>,
+<code>project_management/</code>, and <code>.claude/tmp/</code> (session scratch). The cheat sheet pins down most artefact
+homes inside those. Five things go a level deeper here.</p>
+<p>The five gaps:</p>
+<ol>
+<li><strong>The internal layout of <code>project_management/</code></strong> — which subfolders exist, in
+   what order, and when each one is required vs. optional.</li>
+<li><strong><code>project_management/admin/</code> — what actually lives there.</strong> The folder is
+   referenced in the cheat sheet but not described.</li>
+<li><strong>Multi-paper projects.</strong> What do you do when one research project produces
+   two papers? Per-paper subtrees, shared layout with suffixes, or split into
+   two projects?</li>
+<li><strong>Grants — a separate folder convention.</strong> Grants behave like a paper
+   project but they are NOT a paper project. Where do they live, and what is
+   the recommended layout for the writeup itself?</li>
+<li><strong>Presentations sub-pattern.</strong> The cheat sheet says
+   <code>paper/presentations/&lt;venue&gt;_&lt;date&gt;/</code>; the contents and naming inside that
+   folder are not pinned down.</li>
+</ol>
+<p>Each section below states the rule, gives the WHY, shows one anchored
+example, and notes the variant when the default doesn't fit.</p>
+<h2 id="1-the-internal-layout-of-project_management">§1 The internal layout of <code>project_management/</code><a class="headerlink" href="#1-the-internal-layout-of-project_management" title="Permanent link">&para;</a></h2>
+<p><strong>The rule.</strong> <code>project_management/</code> has five canonical subfolders and two
+top-level files. Create a subfolder only when you have content for it.</p>
+<div class="highlight"><pre><span></span><code>project_management/
+├── TODO.md                      top-level: live task list
+├── submission_log.md            top-level: one line per submission round (see submissions)
+├── submissions/                 one folder per round; see submissions.md
+├── experiments/                 one folder per experiment; see experimental-organization.md
+├── notes_and_feedback/          dated meeting / call / feedback / decision notes
+├── IRB/                         IRB approvals + ethics correspondence; see §2a
+└── admin/                       other institutional paperwork (NDAs, contracts, funding letters); see §2b
+</code></pre></div>
+<p><strong>Why this layout.</strong> Each subfolder maps to a distinct kind of artefact with
+its own retention policy. Submissions and experiments are PER-EVENT (numbered,
+dated, immutable once closed). Notes and feedback ACCUMULATE over the life of
+the project (dated, queryable, see <a href="../notes-and-feedback/">notes-and-feedback</a>). Admin is one-off paperwork.
+TODOs and the submission log are the only files small enough and live enough
+to sit at the top of <code>project_management/</code> directly.</p>
+<p><strong>Skip-the-folder rule.</strong> A solo theory project never runs an experiment, so
+<code>experiments/</code> should not exist. A project not yet submitted has no
+<code>submissions/</code>. Create the subfolder the day you have the first file for it.
+Empty folders are noise.</p>
+<h2 id="2a-project_managementirb">§2a <code>project_management/IRB/</code><a class="headerlink" href="#2a-project_managementirb" title="Permanent link">&para;</a></h2>
+<p><strong>The rule.</strong> IRB approvals, ethics committee correspondence, and the
+institutional paperwork around them. Project-level IRBs live here;
+experiment-specific IRBs live with the experiment per the
+<a href="../experimental-organization/">experimental-organization</a> page.</p>
+<p><strong>Why a dedicated folder.</strong> Most projects that touch human subjects collect
+at least one IRB document, and "where is the IRB letter?" is a real question
+that comes up two years into a project. A named folder means one answer.
+IRB-adjacent paperwork (ethics committee questions and answers, amendment
+filings, expiration extensions) accumulates around the same letters, so
+co-locating it saves searching.</p>
+<p><strong>Skip-the-folder rule.</strong> A project with no IRB never creates this folder.
+Theory papers, descriptive analyses of public data, and similar projects skip
+it cleanly.</p>
+<h2 id="2b-project_managementadmin">§2b <code>project_management/admin/</code><a class="headerlink" href="#2b-project_managementadmin" title="Permanent link">&para;</a></h2>
+<p><strong>The rule.</strong> Other institutional paperwork that is neither data, nor a
+submission, nor an experiment, nor IRB, nor a meeting note. Specifically:</p>
+<ul>
+<li>Funding award letters, grant administrative correspondence, no-cost
+  extension paperwork (the <em>funded</em> paperwork — grant <em>proposals</em> live in
+  their own folder per §4).</li>
+<li>Co-author contracts, NDAs, data-sharing agreements.</li>
+<li>Conference / workshop acceptance letters, formal travel reimbursement
+  paperwork relevant to the project.</li>
+<li>Any other one-off institutional paperwork the project generates.</li>
+</ul>
+<p><strong>Why split this from IRB/.</strong> Two reasons. Semantically, "an NDA in a folder
+called IRB" reads oddly to a co-author looking for an NDA. Practically, IRB
+is the recurring item that deserves its own name; the other admin paperwork
+is a thin catch-all that benefits from being kept distinct so neither folder
+becomes a junk drawer.</p>
+<p><strong>Skip-the-folder rule.</strong> Most projects collect a handful of admin documents
+at most. If <code>admin/</code> ends up with one file, that's fine — the folder is a
+name, not a contract that it must fill up. Most projects without external
+contracts or grants never create it at all.</p>
+<h2 id="3-multi-paper-projects">§3 Multi-paper projects<a class="headerlink" href="#3-multi-paper-projects" title="Permanent link">&para;</a></h2>
+<p>Those five subfolders cover one paper cleanly. The harder question is what
+happens when a project grows a <em>second</em> paper — which is where the per-event
+discipline above starts to strain, and where the next rule earns its keep.</p>
+<p><strong>The rule.</strong> <strong>One project = one paper = one shared pipeline.</strong> When a
+project produces a second paper, GRADUATE the second paper into its own
+project (the exception — a genuinely shared pipeline — is below). The two then
+share the data via the standard <code>data/raw/</code> discipline (whoever owns the raw
+data keeps it; the second project imports the cleaning code per the
+data-provenance rule). I default to splitting; the shared-pipeline exception
+is rarer in practice than it sounds when you first hit it.</p>
+<p><strong>Why this default.</strong> A two-paper project layout sounds simple in the abstract
+("just add <code>paper_B/</code> next to <code>paper/</code>") and gets confusing fast in practice.
+<code>code/02_analysis.R</code> belongs to which paper? Are the figures in <code>output/</code>
+shared or per-paper? Co-authors who joined for paper B do not need read access
+to paper A's revisions. The cleanest answer is to take the seam at the project
+boundary, where the kit's tools (clones, gitignore, submission folders) already
+work.</p>
+<p><strong>The exception — share-the-pipeline split.</strong> When the two papers genuinely
+share the analysis pipeline (same data, same cleaning, same <code>02_analysis.R</code>,
+different write-ups), per-paper subtrees inside ONE project are acceptable:</p>
+<div class="highlight"><pre><span></span><code>project-root/
+├── data/                         shared
+├── code/                         shared
+├── output/                       shared
+├── paper_A/                      first paper: paper_A.tex, references.bib, presentations/, revisions/
+├── paper_B/                      second paper: paper_B.tex, ...
+├── literature/                   shared (one Zotero project per group of papers)
+└── project_management/
+    ├── submissions/              flat; per-round folder is NN_&lt;journal&gt;_&lt;paper&gt;/
+    └── notes_and_feedback/       shared
+</code></pre></div>
+<p>The submission folders carry the paper identifier in the name
+(<code>05_QJE_paperA/</code>, <code>06_AER_paperB/</code>) so the submission log stays one file. The
+canonical <code>paper/</code> becomes <code>paper_A/</code> + <code>paper_B/</code> only when both genuinely
+share the pipeline; otherwise split.</p>
+<p><strong>Anti-pattern.</strong> Long-lived branches for the second paper. Branches are for
+in-flight work, not for parallel write-ups; a branch that lives for a year is
+a sign the split should have happened.</p>
+<h2 id="4-grants-separate-folder-convention">§4 Grants — separate folder convention<a class="headerlink" href="#4-grants-separate-folder-convention" title="Permanent link">&para;</a></h2>
+<p>A grant raises the mirror image of the multi-paper question: it behaves like a
+paper project but is not one, so it gets the opposite treatment — its own
+folder, never nested inside the work it funds.</p>
+<blockquote>
+<p><strong>Scope caveat.</strong> This page deliberately stays short on grants. The rule for
+<em>where</em> grants live is firm; the <em>how to structure a grant proposal
+internally</em> is light-touch.</p>
+</blockquote>
+<p><strong>The rule.</strong> A grant proposal lives in its OWN folder, outside any research
+project. Keep grants out of any single research project so they survive when
+the project moves on.</p>
+<p><strong>Why.</strong> A grant is a writing project with its own bibliography, its own
+panel-interview slides, and its own submission round (the funder is the
+journal-equivalent). It draws on past research and seeds future research, but
+its lifecycle does not match any one paper. Mixing it into a paper folder
+breaks the paper's clean structure; mixing two grants into a single folder
+loses the per-grant submission history.</p>
+<p><strong>Suggested layout (per grant) — the paper layout, scaled down.</strong> Not
+prescriptive; treat it as a starting point.</p>
+<div class="highlight"><pre><span></span><code>grant_&lt;funder&gt;_&lt;NN&gt;/
+├── proposal.tex                  main writeup
+├── references.bib
+├── output/                       figures / tables for the proposal
+├── presentations/                slides for the panel interview, if any
+├── project_management/
+│   ├── notes_and_feedback/       feedback from mock review
+│   ├── IRB/                      if the grant requires ethics paperwork up front
+│   └── admin/                    application paperwork, signed forms, funder correspondence
+└── literature/                   reading specific to this proposal
+</code></pre></div>
+<p><strong>Anti-pattern.</strong> Putting a grant folder inside a research project's
+<code>project_management/</code>. The grant outlives the project; nesting it loses the
+grant when the project closes.</p>
+<h2 id="5-presentations-sub-pattern">§5 Presentations sub-pattern<a class="headerlink" href="#5-presentations-sub-pattern" title="Permanent link">&para;</a></h2>
+<p>Presentations raise a different concern from the boundary questions above: not
+where the project lives, but whether a folder stays portable when you copy it
+to a co-author or a conference laptop.</p>
+<p><strong>The rule.</strong> A talk lives in <code>paper/presentations/&lt;venue&gt;_&lt;YYYY-MM-DD&gt;/</code>,
+with the deck and all its assets in the same folder so it compiles cleanly.</p>
+<div class="highlight"><pre><span></span><code>paper/presentations/
+├── NBER_2026-04-12/
+│   ├── slides.tex                or slides.qmd
+│   ├── figures/                  copies of the figures used in this talk
+│   ├── logo_nber.png
+│   └── slides.pdf                compiled output (small enough; gitignore the build dir)
+├── AEA_2026-01-05/
+│   └── ...
+</code></pre></div>
+<p><strong>Why assets sit next to the deck.</strong> A talk deck references figures, logos, a
+photograph the venue asked for. If those live in a separate <code>assets/</code>
+sub-folder, the deck breaks when you copy the folder to share it. Co-located
+assets keep the talk folder self-contained.</p>
+<p><strong>Naming.</strong> <code>&lt;venue&gt;_&lt;YYYY-MM-DD&gt;/</code>. Venue is short (NBER, AEA, RESTAT-revise);
+date is the talk date, not the prep date. Sorting by name then sorts by venue,
+which is usually what you want when you re-use a talk for a similar audience.</p>
+<p><strong>Skip-the-folder rule.</strong> Reuse a deck across two venues by COPYING the folder
+and editing the copy, not by editing the original in place. The previous
+venue's deck is the historical record; reusing in place erases what you
+actually presented.</p>
+<h2 id="worked-example-a-complete-project-tree">Worked example — a complete project tree<a class="headerlink" href="#worked-example-a-complete-project-tree" title="Permanent link">&para;</a></h2>
+<p>Each rule above governs one corner of the tree. Here is how they compose into a
+single real project, with the skip-the-folder rule visible in what's <em>absent</em>.
+The default solo-paper project that ran for two years, was presented twice, and
+is currently at QJE R&amp;R:</p>
+<div class="highlight"><pre><span></span><code>gehring2026narrative/
+├── CLAUDE.md
+├── README.md
+├── data/
+│   ├── raw/
+│   ├── processed/
+│   └── documentation/
+├── code/
+│   ├── 00_setup.R
+│   ├── 01_clean.R
+│   ├── 02_analysis.R
+│   └── 99_run_all.R
+├── output/
+│   ├── figures/
+│   ├── tables/
+│   └── figures_external/
+├── paper/
+│   ├── paper.tex
+│   ├── references.bib
+│   ├── revisions/
+│   │   └── QJE/
+│   │       ├── response_to_referees.tex
+│   │       └── referee_reports_formatted.tex
+│   ├── presentations/
+│   │   ├── NBER_2026-04-12/
+│   │   └── AEA_2026-01-05/
+│   └── old/
+├── literature/
+│   └── _wiki/
+├── project_management/
+│   ├── TODO.md
+│   ├── submission_log.md
+│   ├── submissions/
+│   │   ├── 01_AER/
+│   │   ├── 02_QJE/
+│   │   └── 03_QJE_revision/
+│   ├── notes_and_feedback/
+│   │   ├── 2026-03-15_meeting_with_Arne.md
+│   │   ├── 2026-04-10_decision_framing_for_intro.md
+│   │   └── 2026-05-22_transcript_AEA_session.md
+│   ├── experiments/                 (does not exist — no experiment)
+│   └── IRB/
+│       └── IRB_2024-09.pdf
+└── .claude/tmp/
+</code></pre></div>
+<p>Notice <code>experiments/</code> is absent — the project has no experiment, so the folder
+does not exist. <code>output/figures_external/</code> exists because one figure is a
+photograph. <code>revisions/QJE/</code> exists because the paper is currently at R&amp;R.</p>
+<h2 id="anti-patterns-the-five-traps-collected">Anti-patterns — the five traps, collected<a class="headerlink" href="#anti-patterns-the-five-traps-collected" title="Permanent link">&para;</a></h2>
+<p>Each section above flagged its own trap; here they are in one place for a
+quick pre-flight scan:</p>
+<ul>
+<li>A <code>project_management/</code> populated with empty <code>submissions/</code>, <code>experiments/</code>,
+  <code>IRB/</code>, and <code>admin/</code> folders "in case we need them." Create the folder when
+  you have the first file for it.</li>
+<li>A second paper started inside the first paper's project as <code>paper2/</code>
+  without per-paper-subtree (no <code>paper_A/</code> / <code>paper_B/</code>). Pick the split,
+  don't half-do it.</li>
+<li>Grant proposals inside a project's <code>project_management/admin/</code>. Grants
+  live in their own folder.</li>
+<li>Presentation assets in a sibling <code>assets/</code> folder. Co-locate with the deck.</li>
+<li>Reusing a talk folder in place for the next venue. Copy the folder; the
+  previous deck is the historical record.</li>
+</ul>
+<h2 id="related">Related<a class="headerlink" href="#related" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../project-structure/">project-structure</a> — the top-level canonical layout this extends.</li>
+<li><a href="../where-to-put-things/">where-to-put-things</a> — the cheat-sheet hub.</li>
+<li><a href="../notes-and-feedback/">notes-and-feedback</a> — naming + template inside
+  <code>notes_and_feedback/</code>.</li>
+<li><a href="../submissions/">submissions</a> — per-round folder convention.</li>
+<li><a href="../experimental-organization/">experimental-organization</a> — the experiments
+  page this extends.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "content.code.copy", "search.highlight", "search.suggest", "search.share"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
