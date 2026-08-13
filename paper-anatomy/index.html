@@ -2681,54 +2681,61 @@ where your files go; this covers what the work inside them is.</p>
 480 villages, 2009–2019, roads finished in different years, so villages connected
 in 2012 are a comparison for those connected in 2017. Your estimate: a 0.14 rise
 in the log cash-crop share, standard error 0.05.</p>
-<p>Eighteen months after submission Referee 2 asks why the standard errors are
-clustered at district level when the road was built village by village. You had a
-reason, worked out over a day last spring, and it is nowhere: not the paper, not
-a code comment, not your notes. You re-derive it, lose two days, land on a sample
-rule that is defensible but not quite the one behind the draft's numbers, and
-every table gets re-run.</p>
+<p>Six months in, a discussant at a seminar asks about one of the choices behind
+your standard errors. You had a reason. It is nowhere: not the paper, not a code
+comment, not your notes.</p>
 <p>Nothing broke. No file was lost, no data corrupted, no step done sloppily. What
 was lost was a <strong>decision</strong>, and decisions are the part of a research project
 with no natural home. The road paper is invented; the failures in it are not.</p>
 <h2 id="the-arc">The arc<a class="headerlink" href="#the-arc" title="Permanent link">&para;</a></h2>
-<p><strong>The arc</strong> is the phases every empirical paper goes through: question → data →
-analysis → exhibits → argument → writing → review → submission. Not a one-way
-street; you will revisit earlier phases, and that is normal. Naming them lets us
-point at one precisely, and gives each its own definition of "done" — many
-stalled projects are stalled because someone is using the definition from a
+<p><strong>The arc</strong> is the phases every empirical paper goes through: question → theory →
+data → analysis → exhibits → argument → writing → review → submission. Not a
+one-way street; you will revisit earlier phases, and that is normal. Naming them
+lets us point at one precisely, and gives each its own definition of "done" —
+many stalled projects are stalled because someone is using the definition from a
 different phase.</p>
 <pre class="mermaid"><code>flowchart TB
     subgraph F["Establishing what is true"]
-        Q["1 · Question"] --&gt; D["2 · Data"] --&gt; A["3 · Analysis"] --&gt; E["4 · Exhibits"]
+        Q["1 · Question"] --&gt; T["2 · Theory"] --&gt; D["3 · Data"] --&gt; A["4 · Analysis"] --&gt; E["5 · Exhibits"]
     end
     subgraph M["Making a reader believe it"]
-        G["5 · Argument"] --&gt; W["6 · Writing"] --&gt; R["7 · Review"] --&gt; S["8 · Submission"]
+        G["6 · Argument"] --&gt; W["7 · Writing"] --&gt; R["8 · Review"] --&gt; S["9 · Submission"]
     end
     E --&gt; G
     A -.-&gt;|"the data can't answer it"| Q
+    A -.-&gt;|"cleaning turns up problems,&lt;br/&gt;or a variable is missing"| D
+    A -.-&gt;|"the result needs&lt;br/&gt;a mechanism"| T
     G -.-&gt;|"the story needs an exhibit&lt;br/&gt;that doesn't exist yet"| E
     R -.-&gt;|"a check is missing"| A
     S -.-&gt;|"revise and resubmit"| A</code></pre>
 <p>Read it top to bottom. Each box is one phase, numbered in the order you first
-reach it; solid arrows are the forward path. The two boxed groups split the arc
-in half: the first four establish what is true, judged by whether the finding
-survives; the last four make a reader believe it, judged by whether an
-unsympathetic reader is convinced. The one solid arrow crossing between the
-groups, exhibits to argument, is the handover, where you stop asking what the
-data say and start asking what a reader will accept.</p>
-<p>The four dotted arrows are the returns, each labelled with its trigger: analysis
-back to the question when the data can't answer it, argument back to exhibits
-when the story needs one that doesn't exist, review back to analysis when a check
-is missing, submission back there when the revise-and-resubmit lands eighteen
-months later. All four land on a phase you thought was finished, which is the
-most useful thing the picture says. No dotted arrow marks a failure; they are the
-normal shape of the work.</p>
-<p>What "done" means, phase by phase, on the road paper. I'd defend the first four
-hard; treat the rest as the defaults I use.</p>
+reach it; solid arrows are the forward path. The two boxed groups split the arc:
+the first five establish what is true, judged by whether the finding survives;
+the last four make a reader believe it, judged by whether an unsympathetic reader
+is convinced. The one solid arrow crossing between the groups, exhibits to
+argument, is the handover, where you stop asking what the data say and start
+asking what a reader will accept.</p>
+<p>Six dotted arrows are the returns, each labelled with its trigger. Three of the
+six start at analysis, which is the honest picture of where the back-and-forth
+concentrates: back to the question when the data can't answer it, back to data
+when cleaning turns up problems or a variable you need isn't there, and back to
+theory when the result needs a mechanism. The other three come from further
+along: argument back to exhibits when the story needs one that doesn't exist,
+review back to analysis when a check is missing, and submission back there when
+the formal revise-and-resubmit finally lands, years later. All six land on a
+phase you thought was finished, which is the most useful thing the picture says.
+No dotted arrow marks a failure; they are the normal shape of the work.</p>
+<p>What "done" means, phase by phase, on the road paper. I'd defend the first five
+hard, theory least of all: how much a paper needs is genuinely contested. Treat
+the rest as the defaults I use.</p>
 <ul>
 <li><strong>Question</strong> — one sentence naming the outcome, the comparison that identifies
   the effect, and why the answer isn't known: does road access shift crop mix
   toward cash crops, villages connected early against those connected later?</li>
+<li><strong>Theory</strong> — how much you need varies enormously in economics, from a framing
+  paragraph naming the mechanism to a formal model. Done when it is precise
+  enough to say which results would surprise you: if market access is what the
+  road changes, villages already near a market should gain least.</li>
 <li><strong>Data</strong> — every variable in a file your code built from raw data, every source
   nameable, down to the merge key you check by hand on 20 villages before
   trusting it on 480 (the standard <a href="../data-provenance/">data provenance</a> sets).</li>
@@ -2745,8 +2752,11 @@ hard; treat the rest as the defaults I use.</p>
 <li><strong>Writing</strong> — each paragraph delivers one takeaway you could state without
   rereading it. Hold on to this one; it gets a name below.</li>
 <li><strong>Review</strong> — someone whose job was to find problems has tried, and you answered
-  each objection in writing. Your own reread counts for little: you know what you
-  meant, so you read what you meant.</li>
+  each objection in writing. That runs from early on and never stops: co-author
+  comments, the seminar discussant, the conference audience. Referee reports and
+  the revise-and-resubmit are the same engine in formal dress, in economics
+  typically two to three years from first submission. Your own reread counts for
+  little: you know what you meant, so you read what you meant.</li>
 <li><strong>Submission</strong> — a stranger rebuilds every number from your raw data and code
   without asking you, the standard a
   <a href="../replication-packages/">replication package</a> is held to and the argument for
@@ -2798,28 +2808,34 @@ cross-references. Same research, both times.</p>
 you who has forgotten them. The objection runs the other way, that this is
 overhead for teams and you are one person who remembers your own project. I made
 it for years, and it is wrong for exactly that reason.</p>
-<p><strong>Future-you at the revise-and-resubmit.</strong> Remember the headline from the top of
-the page: 0.14, standard error 0.05. Work those two numbers through. A 95%
+<p><strong>Future-you at the next seminar.</strong> Remember the headline from the top of the
+page: 0.14, standard error 0.05. Work those two numbers through. A 95%
 confidence interval is roughly the coefficient plus or minus two standard errors,
 so 0.14 − 0.10 = 0.04 at the bottom and 0.14 + 0.10 = 0.24 at the top. The
 t-statistic is the coefficient over its standard error, 0.14 / 0.05 = 2.8, past
 the 1.96 that convention treats as the 5% threshold. You know the effect is
 positive; you don't know how close to zero it sits.</p>
-<p>That 0.05 is the district-clustered standard error, and why it was chosen is what
-Referee 2 asked: roads were approved district by district, so villages inside a
-district aren't independent draws. Cluster at village level and it falls to
-0.032, lifting the t-statistic to 0.14 / 0.032 = 4.4. Both clear 1.96, so the
-finding survives either way. The word "precisely" doesn't: the honest interval
-still runs 0.04 to 0.24, a factor of six end to end.</p>
+<p>That 0.05 is the district-clustered standard error, and why district rather than
+village, given a road built village by village, is what the discussant asked:
+roads were approved district by district, so villages inside a district aren't
+independent draws. Cluster at village level and it falls to 0.032, lifting the
+t-statistic to 0.14 / 0.032 = 4.4. Both clear 1.96, so the finding survives
+either way. The word "precisely" doesn't: the honest interval still runs 0.04 to
+0.24, a factor of six end to end.</p>
 <p>Economists differ on how conservative to be about clustering, and my point isn't
-which camp wins. It's that you had the reason in the spring and lost it. One line
-then answers Referee 2 in ten minutes; two days of re-derivation buys a reason
-you can defend, which is not the reason you actually had.</p>
-<p><strong>A referee asking why.</strong> "Why drop 2015?" has a good answer: the census changed
-its crop categories, so the outcome isn't comparable across the break. It also
-has a bad answer, which is any answer composed after the question arrives,
-because by then you can't tell yourself apart from someone rationalising. That is
-the analysis phase's own test from the arc, arriving eighteen months late.</p>
+which camp wins. It's that you worked the reason out over a day last spring and
+lost it. One line written that day answers the discussant in the room; without it
+you re-derive, lose two days, and land on a sample rule that is defensible but
+not quite the one behind the draft's numbers, so every table gets re-run.</p>
+<p><strong>Future-you when the referee letter finally comes.</strong> The same question comes
+back years later, from Referee 2, in writing, with the paper's fate attached: in
+economics a first submission typically takes two to three years to reach a
+revise-and-resubmit. The clustering question is not the only one waiting. "Why
+drop 2015?" has a good answer: the census changed its crop categories, so the
+outcome isn't comparable across the break. It also has a bad answer, which is any
+answer composed after the question arrives, because by then you can't tell
+yourself apart from someone rationalising. That is the analysis phase's own test
+from the arc, arriving years late instead of in the spring when it cost nothing.</p>
 <p>Write the reason down the day you make the choice, not the day you're asked for
 it. Where it goes matters less than that it goes somewhere; the three we keep are
 a terminology file, a list of exhibits, and a short plan per section carrying
